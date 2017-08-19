@@ -1,0 +1,422 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:layout_height="match_parent"
+    tools:context=".matrimony.BasicDetailsActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:orientation="vertical"
+        android:layout_height="match_parent">
+        <ImageView
+            android:id="@+id/d_person_image"
+            android:layout_width="300dp"
+            android:layout_height="250dp"
+            android:src="@drawable/one"
+            android:layout_gravity="center"/>
+        <TextView
+            android:id="@+id/tv_basicdetails"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="Basic Details"
+            android:textAlignment="center"
+            android:textSize="20dp"
+            android:textStyle="bold"
+            android:textColor="@color/colorAccent"/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_margin="2dp"
+            android:weightSum="1">
+            <TextView
+                android:id="@+id/per_fname"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="First Name :-"
+                android:layout_weight=".5"
+                android:layout_margin="10dp"
+                android:layout_gravity="center"
+                android:textStyle="bold" />
+            <TextView
+                android:id="@+id/d_per_fname"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="First Name"
+                android:layout_weight=".5"
+                android:layout_gravity="center"
+                android:textStyle="bold" />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_margin="2dp"
+            android:weightSum="1">
+            <TextView
+                android:id="@+id/per_mname"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Middle Name :-"
+                android:layout_weight=".5"
+                android:layout_margin="10dp"
+                android:layout_gravity="center"
+                android:textStyle="bold" />
+            <TextView
+                android:id="@+id/d_per_mname"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Middle Name"
+                android:layout_weight=".5"
+                android:layout_gravity="center"
+                android:textStyle="bold" />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_margin="2dp"
+            android:weightSum="1">
+            <TextView
+                android:id="@+id/per_lname"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Last Name :-"
+                android:layout_weight=".5"
+                android:layout_margin="10dp"
+                android:layout_gravity="center"
+                android:textStyle="bold" />
+            <TextView
+                android:id="@+id/d_per_lname"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Last Name"
+                android:layout_weight=".5"
+                android:layout_gravity="center"
+                android:textStyle="bold" />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_margin="2dp"
+            android:weightSum="1">
+            <TextView
+                android:id="@+id/per_dob"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Date of Birth :-"
+                android:layout_weight=".5"
+                android:layout_margin="10dp"
+                android:layout_gravity="center"
+                android:textStyle="bold" />
+            <TextView
+                android:id="@+id/d_per_dob"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="DD/MM/YY"
+                android:layout_weight=".5"
+                android:layout_gravity="center"
+                android:textStyle="bold" />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_margin="2dp"
+            android:weightSum="1">
+            <TextView
+                android:id="@+id/per_brthtime"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Time of Birth :-"
+                android:layout_weight=".5"
+                android:layout_margin="10dp"
+                android:layout_gravity="center"
+                android:textStyle="bold" />
+            <TextView
+                android:id="@+id/d_per_brthtime"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Hrs:Min"
+                android:layout_weight=".5"
+                android:layout_gravity="center"
+                android:textStyle="bold" />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_margin="2dp"
+            android:weightSum="1">
+            <TextView
+                android:id="@+id/per_brthplace"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Birth Place :-"
+                android:layout_weight=".5"
+                android:layout_margin="10dp"
+                android:layout_gravity="center"
+                android:textStyle="bold" />
+            <TextView
+                android:id="@+id/d_per_brthplace"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Birth Place"
+                android:layout_weight=".5"
+                android:layout_gravity="center"
+                android:textStyle="bold" />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_margin="2dp"
+            android:weightSum="1">
+            <TextView
+                android:id="@+id/per_ntvplace"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Native Place :-"
+                android:layout_weight=".5"
+                android:layout_margin="10dp"
+                android:layout_gravity="center"
+                android:textStyle="bold" />
+            <TextView
+                android:id="@+id/d_per_ntvplace"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Native Place"
+                android:layout_weight=".5"
+                android:layout_gravity="center"
+                android:textStyle="bold" />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_margin="2dp"
+            android:weightSum="1">
+            <TextView
+                android:id="@+id/per_maritalstatus"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Marital Status :-"
+                android:layout_weight=".5"
+                android:layout_margin="10dp"
+                android:layout_gravity="center"
+                android:textStyle="bold" />
+            <TextView
+                android:id="@+id/d_per_maritalstatus"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Marital Status"
+                android:layout_weight=".5"
+                android:layout_gravity="center"
+                android:textStyle="bold" />
+        </LinearLayout>
+        <LinearLayout
+            android:id="@+id/LL_No_of_Childs"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_margin="2dp"
+            android:weightSum="1"
+            >
+            <TextView
+                android:id="@+id/frm_per_no_of_children"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Number of Children's :-"
+                android:layout_weight=".5"
+                android:layout_margin="10dp"
+                android:layout_gravity="center"
+                android:textStyle="bold" />
+            <TextView
+                android:id="@+id/frm_d_per_no_of_children"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="0"
+                android:layout_gravity="center"
+                android:textStyle="bold"
+                android:layout_weight=".5"
+
+                />
+        </LinearLayout>
+        <LinearLayout
+            android:id="@+id/LL_Child_Living"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_margin="2dp"
+            android:weightSum="1"
+            >
+            <TextView
+                android:id="@+id/frm_per_children_living_status"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Children's Living status :-"
+                android:layout_weight=".5"
+                android:layout_margin="10dp"
+                android:layout_gravity="center"
+                android:textStyle="bold" />
+            <TextView
+                android:id="@+id/frm_d_per_children_living_status"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:textStyle="bold"
+                android:hint="Not Applicable"
+                android:layout_weight=".5"
+                />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_margin="2dp"
+            android:weightSum="1">
+            <TextView
+                android:id="@+id/per_gender"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Gender :-"
+                android:layout_weight=".5"
+                android:layout_margin="10dp"
+                android:layout_gravity="center"
+                android:textStyle="bold" />
+            <TextView
+                android:id="@+id/d_per_gender"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Gender"
+                android:layout_weight=".5"
+                android:layout_gravity="center"
+                android:textStyle="bold" />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_margin="2dp"
+            android:weightSum="1">
+            <TextView
+                android:id="@+id/per_mothertounge"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Mother Tongue :-"
+                android:layout_weight=".5"
+                android:layout_margin="10dp"
+                android:layout_gravity="center"
+                android:textStyle="bold" />
+            <TextView
+                android:id="@+id/d_per_mothertounge"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Mother Tongue"
+                android:layout_weight=".5"
+                android:layout_gravity="center"
+                android:textStyle="bold" />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_margin="2dp"
+            android:weightSum="1">
+            <TextView
+                android:id="@+id/per_religion"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Religion :-"
+                android:layout_weight=".5"
+                android:layout_margin="10dp"
+                android:layout_gravity="center"
+                android:textStyle="bold" />
+            <TextView
+                android:id="@+id/d_per_religion"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Religion"
+                android:layout_weight=".5"
+                android:layout_gravity="center"
+                android:textStyle="bold" />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_margin="2dp"
+            android:weightSum="1">
+            <TextView
+                android:id="@+id/per_cast"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Cast :-"
+                android:layout_weight=".5"
+                android:layout_margin="10dp"
+                android:layout_gravity="center"
+                android:textStyle="bold" />
+            <TextView
+                android:id="@+id/d_per_cast"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Cast"
+                android:layout_weight=".5"
+                android:layout_gravity="center"
+                android:textStyle="bold" />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_margin="2dp"
+            android:weightSum="1">
+            <TextView
+                android:id="@+id/per_subcast"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Subcast :-"
+                android:layout_weight=".5"
+                android:layout_margin="10dp"
+                android:layout_gravity="center"
+                android:textStyle="bold" />
+            <TextView
+                android:id="@+id/d_per_subcast"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Subcast"
+                android:layout_weight=".5"
+                android:layout_gravity="center"
+                android:textStyle="bold" />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_margin="2dp"
+            android:weightSum="1">
+            <TextView
+                android:id="@+id/per_abtme"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="About Me :-"
+                android:layout_weight=".5"
+                android:layout_margin="10dp"
+                android:layout_gravity="center"
+                android:textStyle="bold" />
+            <TextView
+                android:id="@+id/d_per_abtme"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="About Me"
+                android:layout_weight=".5"
+                android:layout_gravity="center"
+                android:textStyle="bold" />
+        </LinearLayout>
+    </LinearLayout>
+</ScrollView>

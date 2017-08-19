@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".matrimony.EventFullViewActivity">
+
+    <include
+        android:id="@+id/toolbar"
+        layout="@layout/toolbar" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="@dimen/event_full_layout_margin"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/evt_name"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/event_full_layout_margin"
+                    android:padding="@dimen/event_full_layout_tv_padding"
+                    android:text="@string/event_row_layout_eventname"
+                    android:textColor="@color/ev_name"
+                    android:textSize="@dimen/cont_us_heading_dimen"
+                    android:textStyle="bold" />
+
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:id="@+id/ev_iv_evpic"
+                    android:layout_width="@dimen/profile_pic_width"
+                    android:layout_height="@dimen/profile_pic_hight"
+                    android:scaleType="centerCrop"
+                    android:layout_gravity="center"
+                    android:layout_margin="@dimen/layout_margin"
+                    android:src="@drawable/jodp" />
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical"
+                        android:layout_margin="@dimen/layout_margin">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_marginTop="@dimen/event_full_layout_tv_mar_top"
+                            android:gravity="center"
+                            android:orientation="horizontal">
+
+                            <ImageView
+                                android:layout_width="@dimen/cont_us_logo_hight"
+                                android:layout_height="@dimen/cont_us_logo_width"
+                                android:layout_gravity="center"
+                                android:src="@drawable/ic_location_on" />
+
+                            <TextView
+                                android:id="@+id/ev_loc"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:text="@string/event_row_layout_ev_loc"
+                                android:layout_marginLeft="@dimen/event_full_layout_tv_mar_left"
+                                android:textSize="@dimen/event_full_layout_tv_size" />
+                        </LinearLayout>
+
+                        <include layout="@layout/item_divider" />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_marginTop="@dimen/event_full_layout_tv_mar_top"
+                            android:orientation="horizontal">
+
+                            <ImageView
+                                android:layout_width="@dimen/cont_us_logo_width"
+                                android:layout_height="@dimen/cont_us_logo_hight"
+                                android:layout_gravity="center"
+                                android:src="@drawable/ic_date_range_black_24dp" />
+
+                            <TextView
+                                android:id="@+id/ev_date"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:text="@string/event_row_layout_ev_date"
+                                android:layout_marginLeft="@dimen/event_full_layout_tv_mar_left"
+                                android:textSize="@dimen/event_full_layout_tv_size" />
+                        </LinearLayout>
+
+                        <include layout="@layout/item_divider" />
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/event_full_layout_tv_mar_top"
+                            android:gravity="center"
+                            android:orientation="horizontal">
+
+                            <ImageView
+                                android:layout_width="@dimen/cont_us_logo_width"
+                                android:layout_height="@dimen/cont_us_logo_hight"
+                                android:layout_gravity="center"
+                                android:src="@drawable/ic_access_time_black_24dp" />
+
+                            <TextView
+                                android:id="@+id/ev_time"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:layout_marginLeft="@dimen/event_full_layout_tv_mar_left"
+                                android:text="@string/event_row_layout_ev_time"
+                                android:textSize="@dimen/event_full_layout_tv_size" />
+                        </LinearLayout>
+
+                        <include layout="@layout/item_divider" />
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/event_full_layout_tv_mar_top"
+                            android:gravity="center"
+                            android:orientation="horizontal">
+
+                            <ImageView
+                                android:layout_width="@dimen/cont_us_logo_width"
+                                android:layout_height="@dimen/cont_us_logo_hight"
+                                android:layout_gravity="center"
+                                android:src="@drawable/ic_home_black_24dp" />
+
+                            <TextView
+                                android:id="@+id/ev_addr"
+                                android:layout_width="match_parent"
+                                android:layout_marginLeft="@dimen/event_full_layout_tv_mar_left"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:text="@string/event_full_layout_address"
+                                android:textSize="15sp" />
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <include layout="@layout/item_divider" />
+
+
+                <TextView
+                    android:id="@+id/ev_desc"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/event_full_layout_tv_mar_left"
+                    android:layout_marginRight="@dimen/event_full_layout_tv_mar_right"
+                    android:text="@string/event_row_layout_ev_desc" />
+
+                <include layout="@layout/item_divider" />
+
+                <ImageView
+                    android:id="@+id/ev_iv_patrika"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/event_full_layout_patrika_ht"
+                    android:layout_margin="@dimen/layout_margin"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/vardaan"
+                    />
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

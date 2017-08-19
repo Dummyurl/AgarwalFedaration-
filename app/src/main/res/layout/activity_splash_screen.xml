@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:background="@color/backgroundSplash"
+    android:layout_width="match_parent"
+    android:layout_height="fill_parent"
+    android:weightSum="1">
+
+    <ImageView
+        android:layout_width="180dp"
+        android:layout_height="180dp"
+        android:layout_marginTop="50dp"
+        android:src="@drawable/logosplash"
+        android:layout_gravity="center"/>
+
+    <me.itangqi.waveloadingview.WaveLoadingView
+        android:id="@+id/waveLoadingView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:wlv_progressValue="40"
+        app:wlv_shapeType="square"
+        app:wlv_round_rectangle="true"
+        app:wlv_triangle_direction="north"
+        app:wlv_titleCenterStrokeColor="@android:color/holo_blue_dark"
+        app:wlv_titleCenterStrokeWidth="3dp"
+        app:wlv_titleCenterColor="@android:color/white"
+        app:wlv_titleCenterSize="24sp"
+        app:wlv_waveAmplitude="70"
+        android:layout_marginTop="25dp"
+        app:wlv_waveColor="@color/colorAccent"
+        android:layout_weight="0.77" />
+
+</LinearLayout>

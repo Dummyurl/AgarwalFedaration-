@@ -1,0 +1,482 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_medical__posting"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.LeelaGroup.AgrawalFedration.medical.Medical_Posting">
+
+    <include layout="@layout/toolbar_matrimony" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:id="@+id/topLinearLayout"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="@dimen/layoutMargin"
+                android:orientation="vertical"
+                tools:ignore="ScrollViewSize">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:id="@+id/imgVwMedical_posting"
+                        android:layout_width="@dimen/image_width"
+                        android:layout_height="@dimen/image_height"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="@dimen/layoutMarginBottom"
+                        android:adjustViewBounds="true"
+                        android:visibility="gone" />
+
+                    <ImageView
+                        android:id="@+id/btnBrowse"
+                        android:layout_width="@dimen/image_width"
+                        android:layout_height="@dimen/image_height"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="@dimen/layoutMarginBottom"
+                        android:gravity="center"
+                        android:onClick="browse_btn"
+                        android:src="@drawable/ic_camera_alt_black_24dp"
+                        android:text="Upload Image" />
+
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/post_Basic_detail"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/layoutMargin"
+                    android:text="@string/Basic_Details"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Title"
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="20sp" />
+
+                <View
+
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="@dimen/marginButton1"
+                    android:background="#616161"
+                    tools:ignore="ObsoleteLayoutParam">
+
+                </View>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/layoutMarginBottom"
+                    android:orientation="vertical">
+
+                    <RadioGroup
+                        android:id="@+id/radioGroupDetail"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        tools:ignore="UselessParent">
+
+                        <RadioButton
+                            android:id="@+id/doctor"
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/radio_button_height"
+                            android:layout_weight="0.5"
+                            android:checked="true"
+                            android:text="@string/Doctor"
+                            android:textColor="#616161"
+                            android:textSize="20sp" />
+
+                        <RadioButton
+                            android:id="@+id/medical"
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/radio_button_height"
+                            android:layout_weight="0.5"
+                            android:checked="false"
+                            android:text="@string/Medical"
+                            android:textColor="#616161"
+                            android:textSize="20sp" />
+
+                        <RadioButton
+                            android:id="@+id/hospital"
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/radio_button_height"
+                            android:layout_weight="0.5"
+                            android:checked="false"
+                            android:text="@string/Hospital"
+                            android:textColor="#616161"
+                            android:textSize="20sp" />
+                    </RadioGroup>
+                </LinearLayout>
+
+                <android.support.design.widget.TextInputLayout
+                    android:id="@+id/layout_BusinessName"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/layoutMarginBottom">
+
+                    <EditText
+                        android:id="@+id/Id_Name"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="@string/Business_Name"
+                        android:inputType="text"
+                        android:maxLength="20">
+
+                    </EditText>
+                </android.support.design.widget.TextInputLayout>
+
+
+                <android.support.design.widget.TextInputLayout
+                    android:id="@+id/layout_BusinessAddress"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/layoutMarginBottom">
+
+                    <EditText
+                        android:id="@+id/Id_add"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="@string/Business_address"
+                        android:inputType="text"
+                        android:lines="4"
+                        android:maxLength="50"
+                        android:maxLines="5"
+                        android:minLines="2"
+                        android:scrollbars="vertical">
+
+                    </EditText>
+                </android.support.design.widget.TextInputLayout>
+
+
+                <android.support.design.widget.TextInputLayout
+                    android:id="@+id/layout_BusinessPincode"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/layoutMarginBottom">
+
+                    <EditText
+                        android:id="@+id/Id_pin"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="@string/Pincode"
+                        android:inputType="number"
+                        android:maxLength="6"
+                        android:scrollbars="vertical" />
+                </android.support.design.widget.TextInputLayout>
+
+                <android.support.design.widget.TextInputLayout
+                    android:id="@+id/layout_BusinessContact"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/layoutMarginBottom">
+
+                    <EditText
+                        android:id="@+id/Id_mobile"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="@string/Business_Contact"
+                        android:inputType="number"
+                        android:maxLength="10"
+                        android:scrollbars="vertical" />
+                </android.support.design.widget.TextInputLayout>
+
+                <Spinner
+
+                    android:id="@+id/posting_country"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/marginButton1"
+                    android:layout_weight="0.50"
+                    android:hint="Enter Country"
+                    android:maxLength="50" />
+
+                <Spinner
+                    android:id="@+id/posting_stat"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/marginButton1"
+                    android:layout_weight="0.50"
+                    android:hint="Enter State"
+                    android:maxLength="50" />
+
+                <Spinner
+                    android:id="@+id/posting_city"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/marginButton1"
+                    android:layout_weight="0.50"
+                    android:hint="Enter City"
+                    android:maxLength="50" />
+
+
+                <android.support.design.widget.TextInputLayout
+                    android:id="@+id/layout_BusinessQualification"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/layoutMarginBottom">
+
+                    <EditText
+                        android:id="@+id/Id_post_edu"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="@string/Qualification"
+                        android:inputType="text"
+                        android:scrollbars="vertical" />
+                </android.support.design.widget.TextInputLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/layoutMarginBottom"
+                    android:orientation="horizontal"
+                    tools:ignore="DisableBaselineAlignment">
+
+                    <android.support.design.widget.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/layoutMarginBottom"
+                        android:layout_weight="0.50">
+
+                        <TextView
+                            android:id="@+id/time"
+                            android:layout_width="200dp"
+                            android:layout_height="wrap_content"
+                            android:layout_centerHorizontal="true"
+                            android:hint="@string/Open_Time"
+                            android:padding="@dimen/layoutMarginBottom"
+                            android:textColor="#090"
+                            android:textSize="20sp"
+                            android:textStyle="bold" />
+                    </android.support.design.widget.TextInputLayout>
+
+                    <android.support.design.widget.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/layoutMarginBottom"
+                        android:layout_weight="0.50">
+
+                        <TextView
+                            android:id="@+id/timesec"
+                            android:layout_width="200dp"
+                            android:layout_height="wrap_content"
+                            android:layout_centerHorizontal="true"
+                            android:hint="@string/Close_Time"
+                            android:padding="@dimen/layoutMarginBottom"
+                            android:textColor="#090"
+                            android:textSize="20sp"
+                            android:textStyle="bold" />
+                    </android.support.design.widget.TextInputLayout>
+
+                </LinearLayout>
+
+                <android.support.design.widget.TextInputLayout
+                    android:id="@+id/layout_AboutBusiness"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/layoutMarginBottom">
+
+                    <EditText
+                        android:id="@+id/Id_AboutUs"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="@string/About_Business"
+                        android:inputType="text"
+                        android:maxLines="7"
+                        android:scrollbars="vertical" />
+                </android.support.design.widget.TextInputLayout>
+
+                <android.support.design.widget.TextInputLayout
+                    android:id="@+id/layout_BusinessEmail"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/layoutMarginBottom"
+                    android:layout_weight="0.50"
+                    tools:ignore="InefficientWeight">
+
+                    <EditText
+                        android:id="@+id/Id_website"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="@string/Business_Website"
+                        android:inputType="text"
+                        android:scrollbars="vertical" />
+                </android.support.design.widget.TextInputLayout>
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+
+                    <TextView
+                        android:id="@+id/post_person_Basic_detail"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/layoutMargin"
+                        android:text="@string/Contact_Person_Detail"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Title"
+                        android:textColor="@color/colorPrimary"
+                        android:textSize="20sp" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginTop="@dimen/marginButton1"
+                        android:background="#616161">
+
+                    </View>
+
+
+                    <android.support.design.widget.TextInputLayout
+                        android:id="@+id/layout_personName"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/layoutMarginBottom">
+
+                        <EditText
+                            android:id="@+id/contactperson_name"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="@string/Name"
+                            android:inputType="textPersonName"
+                            android:maxLength="30" />
+
+
+                    </android.support.design.widget.TextInputLayout>
+
+                    <android.support.design.widget.TextInputLayout
+                        android:id="@+id/layout_personNumber"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/layoutMarginBottom">
+
+
+                        <EditText
+                            android:id="@+id/contactperson_number"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="@string/mobile"
+                            android:inputType="number"
+                            android:maxLength="10" />
+
+                    </android.support.design.widget.TextInputLayout>
+
+                    <android.support.design.widget.TextInputLayout
+                        android:id="@+id/layout_personDesig"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/layoutMarginBottom">
+
+                        <EditText
+                            android:id="@+id/contactperson_designation"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="@string/Designation"
+                            android:inputType="text"
+                            android:maxLength="25"
+                            android:scrollbars="vertical" />
+
+                    </android.support.design.widget.TextInputLayout>
+
+                    <android.support.design.widget.TextInputLayout
+                        android:id="@+id/layout_personMail"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/layoutMarginBottom">
+
+                        <EditText
+                            android:id="@+id/contactperson_email"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="@string/Email"
+                            android:inputType="textEmailAddress" />
+
+                    </android.support.design.widget.TextInputLayout>
+
+
+                    <TextView
+                        android:id="@+id/contactperson_"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/layoutMargin"
+                        android:text="@string/Contact_Details"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Title"
+                        android:textColor="@color/colorPrimary" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_centerHorizontal="true"
+                        android:background="#616161">
+
+                    </View>
+
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/layoutMarginBottom"
+                        android:orientation="horizontal">
+
+                        <RadioGroup
+                            android:id="@+id/radioGroupContactDetail"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/layoutMarginBottom"
+                            android:orientation="horizontal">
+
+                            <RadioButton
+                                android:id="@+id/contactperson_show"
+                                android:layout_width="match_parent"
+                                android:layout_height="@dimen/radio_button_height"
+                                android:layout_weight="0.5"
+                                android:checked="true"
+                                android:text="@string/Show"
+                                android:textSize="@dimen/layoutMargin" />
+
+                            <RadioButton
+                                android:id="@+id/contactperson_hide"
+                                android:layout_width="match_parent"
+                                android:layout_height="@dimen/radio_button_height"
+                                android:layout_weight="0.5"
+                                android:checked="false"
+                                android:text="Hide"
+                                android:textSize="@dimen/layoutMargin" />
+
+
+                        </RadioGroup>
+
+                    </LinearLayout>
+
+                    <Button
+                        android:id="@+id/btn_postingSave"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="@dimen/layoutMarginBottom"
+                        android:background="@color/colorPrimary"
+                        android:gravity="center"
+                        android:text="Save" />
+
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>
+
+

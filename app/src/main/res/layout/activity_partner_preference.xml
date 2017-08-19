@@ -1,0 +1,467 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".matrimony.PartnerPreferenceActivity">
+
+    <include
+        android:id="@id/toolbar"
+        layout="@layout/toolbar" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+              <!--  <TextView
+                    android:id="@+id/tv_ptnerpref"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:text="Partner Preference"
+                    android:textAlignment="center"
+                    android:textColor="@color/colorAccent"
+                    android:textSize="20dp"
+                    android:textStyle="bold" />-->
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/form_inner_layout_margin"
+                    android:orientation="horizontal"
+                    android:weightSum="1">
+
+                    <TextView
+                        android:id="@+id/per_profl_lookngfor"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_margin="@dimen/layout_margin"
+                        android:layout_weight=".5"
+                        android:text="@string/LookingFor"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:layout_width="@dimen/seperator_width"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:gravity="center"
+                        android:text="@string/seprator"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/d_per_lookngfor"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_weight=".5"
+                        android:textStyle="bold" />
+                </LinearLayout>
+
+                <include layout="@layout/item_divider"/>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/form_inner_layout_margin"
+                    android:orientation="horizontal"
+                    android:weightSum="1">
+
+                    <TextView
+                        android:id="@+id/per_countrylvgin"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_margin="@dimen/layout_margin"
+                        android:layout_weight=".5"
+                        android:text="@string/CountryLivingIn"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:layout_width="@dimen/seperator_width"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:gravity="center"
+                        android:text="@string/seprator"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/d_per_contrylvgin"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_weight=".5"
+                        android:textStyle="bold" />
+                </LinearLayout>
+
+                <include layout="@layout/item_divider"/>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/form_inner_layout_margin"
+                    android:orientation="horizontal"
+                    android:weightSum="1">
+
+                    <TextView
+                        android:id="@+id/per_statlvgin"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_margin="@dimen/layout_margin"
+                        android:layout_weight=".5"
+                        android:text="@string/StateLivingIn"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:layout_width="@dimen/seperator_width"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:gravity="center"
+                        android:text="@string/seprator"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/d_per_statelvgin"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_weight=".5"
+                        android:textStyle="bold" />
+                </LinearLayout>
+
+                <include layout="@layout/item_divider"/>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/form_inner_layout_margin"
+                    android:orientation="horizontal"
+                    android:weightSum="1">
+
+                    <TextView
+                        android:id="@+id/per_citylvgin"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_margin="@dimen/layout_margin"
+                        android:layout_weight=".5"
+                        android:text="@string/CityLivingin"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:layout_width="@dimen/seperator_width"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:gravity="center"
+                        android:text="@string/seprator"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/d_per_citylvgin"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_weight=".5"
+                        android:textStyle="bold" />
+                </LinearLayout>
+
+                <include layout="@layout/item_divider"/>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/form_inner_layout_margin"
+                    android:orientation="horizontal"
+                    android:weightSum="2">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_margin="@dimen/layout_margin"
+                        android:layout_weight="1"
+                        android:text="@string/MinimumAge"
+                        android:textStyle="bold" />
+                    <TextView
+                        android:layout_width="@dimen/seperator_width"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:gravity="center"
+                        android:text="@string/seprator"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/d_agefrom"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_weight="1"
+                        android:textStyle="bold" />
+                </LinearLayout>
+
+                <include layout="@layout/item_divider"/>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/form_inner_layout_margin"
+                    android:orientation="horizontal"
+                    android:weightSum="2">
+
+                    <TextView
+                        android:id="@+id/per_prtnrprf_age"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_margin="@dimen/layout_margin"
+                        android:layout_weight="1"
+                        android:text="@string/MaximumAge"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:layout_width="@dimen/seperator_width"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:gravity="center"
+                        android:text="@string/seprator"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/d_ageto"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_weight="1"
+                        android:textStyle="bold" />
+                </LinearLayout>
+
+                <include layout="@layout/item_divider"/>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/form_inner_layout_margin"
+                    android:orientation="horizontal"
+                    android:weightSum="2">
+
+                    <TextView
+                        android:id="@+id/tv_height"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_margin="@dimen/layout_margin"
+                        android:layout_weight="1"
+                        android:text="@string/MinimumHeight"
+                        android:textStyle="bold" />
+                    <TextView
+                        android:layout_width="@dimen/seperator_width"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:gravity="center"
+                        android:text="@string/seprator"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/d_per_htfrm"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_weight="1"
+                        android:textStyle="bold" />
+                </LinearLayout>
+
+                <include layout="@layout/item_divider"/>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/form_inner_layout_margin"
+                    android:orientation="horizontal"
+                    android:weightSum="2">
+
+                    <TextView
+                        android:id="@+id/tv_per_maxht"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_margin="@dimen/layout_margin"
+                        android:layout_weight="1"
+                        android:text="@string/MaximumHeight"
+                        android:textStyle="bold" />
+                    <TextView
+                        android:layout_width="@dimen/seperator_width"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:gravity="center"
+                        android:text="@string/seprator"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/d_maxht"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_weight="1"
+                        android:textStyle="bold" />
+                </LinearLayout>
+
+                <include layout="@layout/item_divider"/>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/form_inner_layout_margin"
+                    android:orientation="horizontal"
+                    android:weightSum="1">
+
+                    <TextView
+                        android:id="@+id/tv_per_complxn"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_margin="@dimen/layout_margin"
+                        android:layout_weight=".5"
+                        android:text="@string/Complexion"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:layout_width="@dimen/seperator_width"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:gravity="center"
+                        android:text="@string/seprator"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/d_per_cmplxn"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_weight=".5"
+                        android:textStyle="bold" />
+                </LinearLayout>
+
+                <include layout="@layout/item_divider"/>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/form_inner_layout_margin"
+                    android:orientation="horizontal"
+                    android:weightSum="1">
+
+                    <TextView
+                        android:id="@+id/tv_per_eduction"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_margin="@dimen/layout_margin"
+                        android:layout_weight=".5"
+                        android:text="@string/Education"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:layout_width="@dimen/seperator_width"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:gravity="center"
+                        android:text="@string/seprator"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/d_per_educton"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_weight=".5"
+                        android:textStyle="bold" />
+                </LinearLayout>
+
+                <include layout="@layout/item_divider"/>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/form_inner_layout_margin"
+                    android:orientation="horizontal"
+                    android:weightSum="1">
+
+                    <TextView
+                        android:id="@+id/tv_per_religion"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_margin="@dimen/layout_margin"
+                        android:layout_weight=".5"
+                        android:text="@string/Religion"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:layout_width="@dimen/seperator_width"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:gravity="center"
+                        android:text="@string/seprator"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/d_per_religion"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_weight=".5"
+                        android:textStyle="bold" />
+                </LinearLayout>
+
+                <include layout="@layout/item_divider"/>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/form_inner_layout_margin"
+                    android:orientation="horizontal"
+                    android:weightSum="1">
+
+                    <TextView
+                        android:id="@+id/tv_per_cast"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_margin="@dimen/layout_margin"
+                        android:layout_weight=".5"
+                        android:text="@string/Cast"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:layout_width="@dimen/seperator_width"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:gravity="center"
+                        android:text="@string/seprator"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/d_per_cast"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_weight=".5"
+                        android:textStyle="bold" />
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item android:id="@+id/action_View_Form"
+        android:title="View Form"> </item>
+
+    <item android:id="@+id/action_marksheet"
+        android:title="upload marksheet"> </item>
+
+    <item android:id="@+id/action_update_marksheet"
+        android:title="view uploaded document"> </item>
+
+    <item android:id="@+id/education_logout"
+        android:title="Logout"
+        app:showAsAction="always"> </item>
+
+    <item android:id="@+id/scholarships"
+        android:title="Other Schemes"
+        > </item>
+</menu>

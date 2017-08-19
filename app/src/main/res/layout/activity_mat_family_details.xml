@@ -1,0 +1,457 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".matrimony.FamilyDetailsActivity">
+
+    <include
+        android:id="@id/toolbar"
+        layout="@layout/toolbar" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+
+            <!--  <TextView
+                    android:id="@+id/tv_famildtl"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:text="Family Details"
+                    android:textAlignment="center"
+                    android:textColor="@color/colorAccent"
+                    android:textSize="20dp"
+                    android:textStyle="bold" />
+-->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/basic_details_inner_lay_mar"
+                    android:orientation="horizontal"
+                    android:weightSum="1">
+
+                    <TextView
+                        android:id="@+id/per_fatherfullfname"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_margin="@dimen/layout_margin"
+                        android:layout_weight=".5"
+                        android:text="@string/family_details_layout_father_full_name"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:layout_width="@dimen/seperator_width"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_margin="@dimen/layout_margin"
+                        android:gravity="center"
+                        android:text="@string/seprator"
+                        android:textStyle="bold" />
+
+
+
+                    <TextView
+                        android:id="@+id/d_per_fatherfullname"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_weight=".5"
+                        android:textStyle="bold" />
+                </LinearLayout>
+
+                <include layout="@layout/item_divider"/>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/basic_details_inner_lay_mar"
+                    android:orientation="horizontal"
+                    android:weightSum="1">
+
+                    <TextView
+                        android:id="@+id/per_motherfullname"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_margin="@dimen/layout_margin"
+                        android:layout_weight=".5"
+                        android:text="@string/family_details_layout_mother_full_name"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:layout_width="@dimen/seperator_width"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_margin="@dimen/layout_margin"
+                        android:gravity="center"
+                        android:text="@string/seprator"
+                        android:textStyle="bold" />
+
+
+                    <TextView
+                        android:id="@+id/d_per_motherfullname"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_weight=".5"
+                        android:textStyle="bold" />
+                </LinearLayout>
+
+                <include layout="@layout/item_divider"/>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/basic_details_inner_lay_mar"
+                    android:orientation="horizontal"
+                    android:weightSum="1">
+
+                    <TextView
+                        android:id="@+id/per_ftheroccptn"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_margin="@dimen/layout_margin"
+                        android:layout_weight=".5"
+                        android:text="@string/family_details_layout_father_occu"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:layout_width="@dimen/seperator_width"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_margin="@dimen/layout_margin"
+                        android:gravity="center"
+                        android:text="@string/seprator"
+                        android:textStyle="bold" />
+
+
+                    <TextView
+                        android:id="@+id/d_per_ftheroccptn"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_weight=".5"
+                        android:textStyle="bold" />
+                </LinearLayout>
+
+                <include layout="@layout/item_divider"/>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/basic_details_inner_lay_mar"
+                    android:orientation="horizontal"
+                    android:weightSum="1">
+
+                    <TextView
+                        android:id="@+id/per_mtheroccptn"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_margin="@dimen/layout_margin"
+                        android:layout_weight=".5"
+                        android:text="@string/family_details_layout_mother_occu"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:layout_width="@dimen/seperator_width"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_margin="@dimen/layout_margin"
+                        android:gravity="center"
+                        android:text="@string/seprator"
+                        android:textStyle="bold" />
+
+
+                    <TextView
+                        android:id="@+id/d_per_mtheroccptn"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_weight=".5"
+                        android:textStyle="bold" />
+                </LinearLayout>
+
+                <include layout="@layout/item_divider"/>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/basic_details_inner_lay_mar"
+                    android:orientation="horizontal"
+                    android:weightSum="1">
+
+                    <TextView
+                        android:id="@+id/per_noofbros"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_margin="@dimen/layout_margin"
+                        android:layout_weight=".5"
+                        android:text="@string/family_details_layout_no_of_bros"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:layout_width="@dimen/seperator_width"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_margin="@dimen/layout_margin"
+                        android:gravity="center"
+                        android:text="@string/seprator"
+                        android:textStyle="bold" />
+
+
+                    <TextView
+                        android:id="@+id/d_per_noofbros"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_weight=".5"
+                        android:textStyle="bold" />
+                </LinearLayout>
+
+                <include layout="@layout/item_divider"/>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/basic_details_inner_lay_mar"
+                    android:orientation="horizontal"
+                    android:weightSum="1">
+
+                    <TextView
+                        android:id="@+id/per_noofsis"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_margin="@dimen/layout_margin"
+                        android:layout_weight=".5"
+                        android:text="@string/family_details_layout_no_of_sis"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:layout_width="@dimen/seperator_width"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_margin="@dimen/layout_margin"
+                        android:gravity="center"
+                        android:text="@string/seprator"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/d_per_sister"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_weight=".5"
+                        android:textStyle="bold" />
+                </LinearLayout>
+
+                <include layout="@layout/item_divider"/>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/basic_details_inner_lay_mar"
+                    android:orientation="horizontal"
+                    android:weightSum="1">
+
+                    <TextView
+                        android:id="@+id/per_noofbrosmaried"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_margin="@dimen/layout_margin"
+                        android:layout_weight=".5"
+                        android:text="@string/family_details_layout_no_of_bros_mar"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:layout_width="@dimen/seperator_width"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_margin="@dimen/layout_margin"
+                        android:gravity="center"
+                        android:text="@string/seprator"
+                        android:textStyle="bold" />
+
+
+                    <TextView
+                        android:id="@+id/d_per_noofbrosmaried"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_weight=".5"
+                        android:textStyle="bold" />
+                </LinearLayout>
+
+                <include layout="@layout/item_divider"/>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/basic_details_inner_lay_mar"
+                    android:orientation="horizontal"
+                    android:weightSum="1">
+
+                    <TextView
+                        android:id="@+id/per_noofsismaried"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_margin="@dimen/layout_margin"
+                        android:layout_weight=".5"
+                        android:text="@string/family_details_layout_no_of_sis_mar"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:layout_width="@dimen/seperator_width"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_margin="@dimen/layout_margin"
+                        android:gravity="center"
+                        android:text="@string/seprator"
+                        android:textStyle="bold" />
+
+
+                    <TextView
+                        android:id="@+id/d_per_noofsismarried"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_weight=".5"
+                        android:textStyle="bold" />
+                </LinearLayout>
+
+                <include layout="@layout/item_divider"/>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/basic_details_inner_lay_mar"
+                    android:orientation="horizontal"
+                    android:weightSum="1">
+
+                    <TextView
+                        android:id="@+id/per_familysatus"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_margin="@dimen/layout_margin"
+                        android:layout_weight=".5"
+                        android:text="@string/family_details_layout_fam_status"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:layout_width="@dimen/seperator_width"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_margin="@dimen/layout_margin"
+                        android:gravity="center"
+                        android:text=":"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/d_per_familysatus"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_weight=".5"
+                        android:textStyle="bold" />
+                </LinearLayout>
+
+                <include layout="@layout/item_divider"/>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/basic_details_inner_lay_mar"
+                    android:orientation="horizontal"
+                    android:weightSum="1">
+
+                    <TextView
+                        android:id="@+id/per_familytype"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_margin="@dimen/layout_margin"
+                        android:layout_weight=".5"
+                        android:text="@string/family_details_layout_fam_type"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:layout_width="@dimen/seperator_width"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_margin="@dimen/layout_margin"
+                        android:gravity="center"
+                        android:text="@string/seprator"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/d_per_familytype"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_weight=".5"
+                        android:textStyle="bold" />
+                </LinearLayout>
+
+                <include layout="@layout/item_divider"/>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/basic_details_inner_lay_mar"
+                    android:orientation="horizontal"
+                    android:weightSum="1">
+
+                    <TextView
+                        android:id="@+id/per_fmlyannulincome"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_margin="@dimen/layout_margin"
+                        android:layout_weight=".5"
+                        android:text="@string/family_details_layout_fam_income"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:layout_width="@dimen/seperator_width"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_margin="@dimen/layout_margin"
+                        android:gravity="center"
+                        android:text="@string/seprator"
+                        android:textStyle="bold" />
+
+
+                    <TextView
+                        android:id="@+id/d_per_familyanulincome"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_weight=".5"
+                        android:textStyle="bold" />
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

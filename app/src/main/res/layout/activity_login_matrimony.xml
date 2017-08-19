@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_login_matrimony"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bk_metro"
+    android:orientation="vertical"
+    tools:context="com.LeelaGroup.AgrawalFedration.matrimony.LoginMatrimony">
+
+
+    <include
+        android:id="@+id/toolbar"
+        layout="@layout/toolbar" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/form_login_main_lay_margin"
+            android:orientation="vertical">
+
+
+            <TextView
+                android:id="@+id/textView8"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/form_login_tv_mar_top"
+                android:text="@string/Login"
+                android:textAlignment="center"
+                android:textColor="@color/colorPrimary"
+                android:textSize="@dimen/form_login_tv_login_size" />
+
+            <android.support.design.widget.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/form_login_til_mar_top">
+
+                <EditText
+                    android:id="@+id/emailphone"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:drawableLeft="@drawable/ic_email_black_24dp"
+                    android:drawablePadding="@dimen/form_et_drawable_padding"
+                    android:hint="@string/Email"
+                    android:inputType="textEmailAddress" />
+            </android.support.design.widget.TextInputLayout>
+
+            <android.support.design.widget.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/form_login_til_mar_top">
+
+                <EditText
+                    android:id="@+id/logpass"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:drawableLeft="@drawable/ic_vpn_key_black_24dp"
+                    android:drawablePadding="@dimen/form_et_drawable_padding"
+                    android:hint="@string/Password"
+                    android:inputType="textPassword" />
+            </android.support.design.widget.TextInputLayout>
+
+            <Button
+                android:id="@+id/button"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="@dimen/button_margin_top"
+                android:background="@color/colorPrimary"
+                android:text="@string/Login"
+                android:textColor="@color/buttonTextColor"
+                android:textSize="@dimen/form_tv_size" />
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/layout_margin"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/newregister"
+                    android:layout_width="@dimen/form_login_tv_forgotpass_width"
+                    android:layout_height="wrap_content"
+                    android:clickable="true"
+                    android:padding="@dimen/form_login_tv_forgotpass_padding"
+                    android:text="@string/NewUser"
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="@dimen/form_tv_size" />
+
+
+                <TextView
+                    android:id="@+id/mat_forgot_pass"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:clickable="true"
+                    android:gravity="right"
+                    android:padding="@dimen/form_login_tv_forgotpass_padding"
+                    android:text="@string/ForgotPassword"
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="@dimen/form_tv_size" />
+
+
+            </LinearLayout>
+
+
+            <ProgressBar
+                android:id="@+id/progress"
+                style="@style/Base.Widget.AppCompat.ProgressBar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/button_margin_top"
+                android:indeterminate="true"
+                android:visibility="gone" />
+
+        </LinearLayout>
+    </LinearLayout>
+
+</LinearLayout>

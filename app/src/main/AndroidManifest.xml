@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.LeelaGroup.AgrawalFedration">
+
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <supports-screens
+        android:anyDensity="true"
+        android:largeScreens="true"
+        android:normalScreens="true"
+        android:resizeable="true"
+        android:smallScreens="true"
+        android:xlargeScreens="true" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:largeHeap="true"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity
+            android:name=".medical.Navigation_drawer"
+            android:label="@string/app_name"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".Social_Refurn.SplashScreen"
+            android:theme="@style/AppTheme.NoActionBar">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <!-- <activity android:name=".medical.MainActivityModules"/> -->
+        <activity android:name=".MainActivityModules" />
+
+        <activity android:name=".medical.Medical_Module" />
+        <activity android:name=".medical.SearchResult_Medical" />
+        <activity android:name=".medical.Share_App" />
+        <activity android:name=".medical.Event" />
+        <activity android:name=".medical.MyProfile" />
+        <activity android:name=".medical.Photo_Gallery" />
+        <activity android:name=".medical.PhotoGallery_FullImage" />
+        <activity android:name=".medical.Medical_Posting" />
+        <activity android:name=".medical.Medical_browse" />
+        <activity android:name=".medical.Login_Medical" />
+        <activity android:name=".medical.Demo" />
+        <activity android:name=".medical.Doctor_fetch" />
+        <activity android:name=".medical.Hospital_fetch" />
+        <activity android:name=".medical.Medical_Fetch" />
+        <activity android:name=".medical.TopSearch" />
+        <activity android:name=".medical.Medical_Sign_UP" />
+        <activity android:name=".medical.Posting_ContactPerson" />
+        **************************************************Education
+        Module************************************************
+        <activity android:name=".education.login_education" />
+        <activity android:name=".education.Education" />
+        <activity android:name=".education.BestOfLuck" />
+        <activity android:name=".education.CET" />
+        <activity android:name=".education.Education_Loan_Program" />
+        <activity android:name=".education.Seed_Scholarship" />
+        <activity android:name=".education.Education_Scholarships" />
+        <activity android:name=".education.Education_Upload_Doc" />
+        <activity android:name=".education.EducationDetails" />
+        <activity android:name=".education.ExamSubject" />
+        <activity android:name=".education.FamilyDetails" />
+        <activity android:name=".education.FeatchDetails" />
+        <activity android:name=".education.MainActivity" />
+        <activity android:name=".education.Education_Rules" />
+        <activity android:name=".education.OtherDetails" />
+        <activity android:name=".education.PersonalDetails" />
+        <activity android:name=".education.Profile" />
+        <activity android:name=".education.Refference" />
+        <activity android:name=".education.Registration" />
+        <activity android:name=".education.Signup" />
+        <activity android:name=".education.Document" />
+        <activity android:name=".education.ViewFlipperEducation" />
+        <activity android:name=".education.BEAT" />
+        <activity android:name=".education.B_OtherDetail" />
+        <activity android:name=".education.B_Refference"></activity>
+
+        <!-- <activity android:name=".Event"/> -->
+
+        ********************************Matrimony Module**********************
+        <activity android:name=".matrimony.MatrimonyRegistration" />
+        <activity android:name=".matrimony.LoginMatrimony" />
+        <activity android:name=".matrimony.AboutUsActivity" />
+        <activity android:name=".matrimony.BasicDetailsActivity" />
+        <activity android:name=".matrimony.ConceptActivity" />
+        <activity android:name=".matrimony.ContactInformationActivity" />
+        <activity android:name=".matrimony.ContactUsActivity" />
+        <activity android:name=".matrimony.EducationDetailsActivity" />
+        <activity android:name=".matrimony.EventFullViewActivity" />
+        <activity android:name=".matrimony.EventsActivity" />
+        <activity android:name=".matrimony.FamilyDetailsActivity" />
+        <activity android:name=".matrimony.FeedbackActivity" />
+        <activity android:name=".matrimony.FindMatchActivity" />
+        <activity android:name=".matrimony.FloatingButton" />
+        <activity android:name=".matrimony.FormBasicDetailsActivity" />
+        <activity android:name=".matrimony.FormContactInformationActivity" />
+        <activity android:name=".matrimony.FormEducationDetailsActivity" />
+        <activity android:name=".matrimony.FormFamilyDetailsActivity" />
+        <activity android:name=".matrimony.FormOccupationDetailsActivity" />
+        <activity android:name=".matrimony.FormOthersActivity" />
+        <activity android:name=".matrimony.FormPartnerPreferenceActivity" />
+        <activity android:name=".matrimony.FormPhysicalAttributeActivity" />
+        <activity android:name=".matrimony.FormSocialAttributeActivity" />
+        <activity android:name=".matrimony.MatrimonyActivity" />
+        <activity android:name=".matrimony.MyProfileActivity" />
+        <activity android:name=".matrimony.NeedActivity" />
+        <activity android:name=".matrimony.OccupationDetailsActivity" />
+        <activity android:name=".matrimony.OtherActivity" />
+        <activity android:name=".matrimony.PartnerPreferenceActivity" />
+        <activity android:name=".matrimony.PersonDeailsAbstract" />
+        <activity android:name=".matrimony.PersonEditDetailsActivity" />
+        <activity android:name=".matrimony.PersonFullDetails" />
+        <activity android:name=".matrimony.PhysicalAttributeActivity" />
+        <activity android:name=".matrimony.ProfileSearchActivity" />
+        <activity android:name=".matrimony.SocialAttributeActivity" />
+        <activity android:name=".matrimony.SuccessStoriesActivity" />
+        <activity android:name=".matrimony.SuccessStoriesFullViewActivity" />
+        ********************************End Matrimony Module**********************
+
+
+        ****************************************************************Business
+        Module**************************************************************
+        <activity android:name=".business.Login_Business" />
+        <activity android:name=".business.BusinessActivity" />
+        <activity android:name=".business.BusinessAddAdvertized" />
+        <activity android:name=".business.BusinessFranchisee" />
+        <activity android:name=".business.BusinessModuleClick" />
+        <activity android:name=".business.Business_View_Click_Activity" />
+        <activity android:name=".business.Businees_Edit_My_Add" />
+        <activity android:name=".business.Business_My_Add" />
+        <activity android:name=".business.Business_registration" />
+        <activity android:name=".Social_Refurn.Social_Refurn"/>
+    </application>
+
+</manifest>

@@ -1,0 +1,2763 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".matrimony.MyProfileActivity">
+
+    <include
+        android:id="@+id/toolbar"
+        layout="@layout/toolbar" />
+
+
+    <ScrollView
+        android:id="@+id/sv_myprofile"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                tools:ignore="ScrollViewSize">
+
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:id="@+id/iv_profile"
+                    android:layout_width="@dimen/profile_pic_width"
+                    android:layout_height="@dimen/profile_pic_hight"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="@dimen/button_margin_top"
+                    android:src="@drawable/ic_person_profile_dp" />
+
+                <!-- <ImageButton
+                     android:id="@+id/ib_edtprfile"
+                     android:layout_width="45dp"
+                     android:layout_height="45dp"
+                     android:layout_gravity="end"
+                     android:layout_marginRight="35dp"
+                     android:layout_marginTop="-50dp"
+                     android:adjustViewBounds="true"
+                     android:background="#00000000"
+                     android:backgroundTint="@color/colorAccent"
+                     android:scaleType="fitCenter"
+                     android:src="@drawable/editproficon"
+                     tools:ignore="UnusedAttribute" />-->
+
+                <TextView
+                    android:id="@+id/tv_basicdetails"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/myProfileHeadingMarLeft"
+                    android:layout_marginTop="@dimen/myProfileHeadingMarTop"
+                    android:text="@string/BasicDetails"
+                    android:textColor="@color/colorAccent"
+                    android:textSize="@dimen/myProfileHeadingSize"
+                    android:textStyle="bold"
+                   />
+
+                <LinearLayout
+                    android:id="@+id/layout_basic_dtail"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="@dimen/form_inner_layout_margin"
+                        android:orientation="horizontal"
+                        android:weightSum="1">
+
+                        <TextView
+                            android:id="@+id/per_fname"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_margin="@dimen/layout_margin"
+                            android:layout_weight=".5"
+                            android:text="@string/first_name"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:layout_width="@dimen/seperator_width"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:text="@string/seprator"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/d_per_fname"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_weight=".5"
+                            android:textStyle="bold" />
+                    </LinearLayout>
+
+                    <include layout="@layout/item_divider2" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="@dimen/form_inner_layout_margin"
+                        android:orientation="horizontal"
+                        android:weightSum="1">
+
+                        <TextView
+                            android:id="@+id/per_mname"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_margin="@dimen/layout_margin"
+                            android:layout_weight=".5"
+                            android:text="@string/mid_name"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:layout_width="@dimen/seperator_width"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:text="@string/seprator"
+                            android:textStyle="bold" />
+
+
+                        <TextView
+                            android:id="@+id/d_per_mname"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_weight=".5"
+                            android:textStyle="bold" />
+                    </LinearLayout>
+
+                    <include layout="@layout/item_divider2" />
+
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="@dimen/form_inner_layout_margin"
+                        android:orientation="horizontal"
+                        android:weightSum="1">
+
+                        <TextView
+                            android:id="@+id/per_lname"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_margin="@dimen/layout_margin"
+                            android:layout_weight=".5"
+                            android:text="@string/last_name"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:layout_width="@dimen/seperator_width"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:text="@string/seprator"
+                            android:textStyle="bold" />
+
+
+                        <TextView
+                            android:id="@+id/d_per_lname"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_weight=".5"
+                            android:textStyle="bold" />
+                    </LinearLayout>
+
+                    <include layout="@layout/item_divider2" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="@dimen/form_inner_layout_margin"
+                        android:orientation="horizontal"
+                        android:weightSum="1">
+
+                        <TextView
+                            android:id="@+id/per_dob"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_margin="@dimen/layout_margin"
+                            android:layout_weight=".5"
+                            android:text="@string/basic_detail_dob"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:layout_width="@dimen/seperator_width"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:text="@string/seprator"
+                            android:textStyle="bold" />
+
+
+                        <TextView
+                            android:id="@+id/d_per_dob"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_weight=".5"
+                            android:textStyle="bold" />
+                    </LinearLayout>
+
+                    <include layout="@layout/item_divider2" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="@dimen/form_inner_layout_margin"
+                        android:orientation="horizontal"
+                        android:weightSum="1">
+
+                        <TextView
+                            android:id="@+id/per_brthtime"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_margin="@dimen/layout_margin"
+                            android:layout_weight=".5"
+                            android:text="@string/basic_detail_tob"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:layout_width="@dimen/seperator_width"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:text="@string/seprator"
+                            android:textStyle="bold" />
+
+
+                        <TextView
+                            android:id="@+id/d_per_brthtime"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_weight=".5"
+                            android:textStyle="bold" />
+                    </LinearLayout>
+
+                    <include layout="@layout/item_divider2" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="@dimen/form_inner_layout_margin"
+                        android:orientation="horizontal"
+                        android:weightSum="1">
+
+                        <TextView
+                            android:id="@+id/per_brthplace"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_margin="@dimen/layout_margin"
+                            android:layout_weight=".5"
+                            android:text="@string/birth_place"
+                            android:textStyle="bold"
+                            />
+
+                        <TextView
+                            android:layout_width="@dimen/seperator_width"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:text="@string/seprator"
+                            android:textStyle="bold" />
+
+
+                        <TextView
+                            android:id="@+id/d_per_brthplace"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_weight=".5"
+                            android:textStyle="bold"
+                             />
+                    </LinearLayout>
+
+                    <include layout="@layout/item_divider2" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="@dimen/form_inner_layout_margin"
+                        android:orientation="horizontal"
+                        android:weightSum="1">
+
+                        <TextView
+                            android:id="@+id/per_ntvplace"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_margin="@dimen/layout_margin"
+                            android:layout_weight=".5"
+                            android:text="@string/native_place"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:layout_width="@dimen/seperator_width"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:text="@string/seprator"
+                            android:textStyle="bold" />
+
+
+                        <TextView
+                            android:id="@+id/d_per_ntvplace"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_weight=".5"
+                            android:textStyle="bold" />
+                    </LinearLayout>
+
+                    <include layout="@layout/item_divider2" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="@dimen/form_inner_layout_margin"
+                        android:orientation="horizontal"
+                        android:weightSum="1">
+
+                        <TextView
+                            android:id="@+id/per_maritalstatus"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_margin="@dimen/layout_margin"
+                            android:layout_weight=".5"
+                            android:text="@string/basic_detail_marital_status"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:layout_width="@dimen/seperator_width"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:text="@string/seprator"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/d_per_maritalstatus"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_weight=".5"
+                            android:textStyle="bold" />
+                    </LinearLayout>
+
+                    <include layout="@layout/item_divider2" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="@dimen/form_inner_layout_margin"
+                        android:orientation="horizontal"
+                        android:weightSum="1">
+
+                        <TextView
+                            android:id="@+id/per_gender"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_margin="@dimen/layout_margin"
+                            android:layout_weight=".5"
+                            android:text="@string/basic_detail_gender"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:layout_width="@dimen/seperator_width"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:text="@string/seprator"
+                            android:textStyle="bold" />
+
+
+                        <TextView
+                            android:id="@+id/d_per_gender"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_weight=".5"
+                            android:textStyle="bold" />
+                    </LinearLayout>
+
+                    <include layout="@layout/item_divider2" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="@dimen/form_inner_layout_margin"
+                        android:orientation="horizontal"
+                        android:weightSum="1">
+
+                        <TextView
+                            android:id="@+id/per_mothertounge"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_margin="@dimen/layout_margin"
+                            android:layout_weight=".5"
+                            android:text="@string/basic_detail_mother_tongue"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:layout_width="@dimen/seperator_width"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:text="@string/seprator"
+                            android:textStyle="bold" />
+
+
+                        <TextView
+                            android:id="@+id/d_per_mothertounge"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_weight=".5"
+                            android:textStyle="bold" />
+                    </LinearLayout>
+
+                    <include layout="@layout/item_divider2" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="@dimen/form_inner_layout_margin"
+                        android:orientation="horizontal"
+                        android:weightSum="1">
+
+                        <TextView
+                            android:id="@+id/per_religion"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_margin="@dimen/layout_margin"
+                            android:layout_weight=".5"
+                            android:text="@string/Religion"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:layout_width="@dimen/seperator_width"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:text="@string/seprator"
+                            android:textStyle="bold" />
+
+
+                        <TextView
+                            android:id="@+id/d_per_ep_religion"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_weight=".5"
+                            android:textStyle="bold" />
+                    </LinearLayout>
+
+                    <include layout="@layout/item_divider2" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="@dimen/form_inner_layout_margin"
+                        android:orientation="horizontal"
+                        android:weightSum="1">
+
+                        <TextView
+                            android:id="@+id/per_cast"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_margin="@dimen/layout_margin"
+                            android:layout_weight=".5"
+                            android:text="@string/Cast"
+                            android:textStyle="bold"
+                            />
+
+                        <TextView
+                            android:layout_width="@dimen/seperator_width"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:text="@string/seprator"
+                            android:textStyle="bold" />
+
+
+                        <TextView
+                            android:id="@+id/d_per_ep_cast"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_weight=".5"
+                            android:textStyle="bold"
+                           />
+                    </LinearLayout>
+
+                    <include layout="@layout/item_divider2" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="@dimen/form_inner_layout_margin"
+                        android:orientation="horizontal"
+                        android:weightSum="1">
+
+                        <TextView
+                            android:id="@+id/per_subcast"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_margin="@dimen/layout_margin"
+                            android:layout_weight=".5"
+                            android:text="@string/subcast"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:layout_width="@dimen/seperator_width"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:text="@string/seprator"
+                            android:textStyle="bold" />
+
+
+                        <TextView
+                            android:id="@+id/d_per_subcast"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_weight=".5"
+                            android:textStyle="bold" />
+                    </LinearLayout>
+
+                    <include layout="@layout/item_divider2" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="@dimen/form_inner_layout_margin"
+                        android:orientation="horizontal"
+                        android:weightSum="1">
+
+                        <TextView
+                            android:id="@+id/per_abtme"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_margin="@dimen/layout_margin"
+                            android:layout_weight=".5"
+                            android:text="@string/basic_detail_aboutme"
+                            android:textStyle="bold"
+                            tools:ignore="HardcodedText"/>
+
+                        <TextView
+                            android:layout_width="@dimen/seperator_width"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:text="@string/seprator"
+                            android:textStyle="bold" />
+
+
+                        <TextView
+                            android:id="@+id/d_per_abtme"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_weight=".5"
+                            android:textStyle="bold"
+                            tools:ignore="HardcodedText" />
+                    </LinearLayout>
+
+                    <include layout="@layout/item_divider2" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/layout_contact_detail"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/tv_contactinfo"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/layout_margin"
+                        android:layout_marginTop="@dimen/myProfileHeadingMarTop"
+                        android:text="@string/ContactInformation"
+                        android:textColor="@color/colorAccent"
+                        android:textSize="@dimen/myProfileHeadingSize"
+                        android:textStyle="bold"
+                        tools:ignore="HardcodedText" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="@dimen/form_inner_layout_margin"
+                        android:orientation="horizontal"
+                        android:weightSum="1">
+
+                        <TextView
+                            android:id="@+id/per_mobile_no"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_margin="@dimen/layout_margin"
+                            android:layout_weight=".5"
+                            android:text="@string/contact_info_mob_no"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:layout_width="@dimen/seperator_width"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:text="@string/seprator"
+                            android:textStyle="bold" />
+
+
+                        <TextView
+                            android:id="@+id/d_per_mobno"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:textStyle="bold" />
+                    </LinearLayout>
+
+                    <include layout="@layout/item_divider2" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="@dimen/form_inner_layout_margin"
+                        android:orientation="horizontal"
+                        android:weightSum="1">
+
+                        <TextView
+                            android:id="@+id/per_landline_no"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_margin="@dimen/layout_margin"
+                            android:layout_weight=".5"
+                            android:text="@string/contact_info_lanline_no"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:layout_width="@dimen/seperator_width"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:text="@string/seprator"
+                            android:textStyle="bold" />
+
+
+                        <TextView
+                            android:id="@+id/d_per_landline_no"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_weight=".5"
+                            android:textStyle="bold" />
+                    </LinearLayout>
+
+                    <include layout="@layout/item_divider2" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="@dimen/form_inner_layout_margin"
+                        android:orientation="horizontal"
+                        android:weightSum="1">
+
+                        <TextView
+                            android:id="@+id/per_email"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_margin="@dimen/layout_margin"
+                            android:layout_weight=".5"
+                            android:text="@string/Email"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:layout_width="@dimen/seperator_width"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:text="@string/seprator"
+                            android:textStyle="bold" />
+
+
+                        <TextView
+                            android:id="@+id/d_per_email"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_weight=".5"
+                            android:textStyle="bold" />
+                    </LinearLayout>
+
+                    <include layout="@layout/item_divider2" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="@dimen/form_inner_layout_margin"
+                        android:orientation="horizontal"
+                        android:weightSum="1">
+
+                        <TextView
+                            android:id="@+id/per_address"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_margin="@dimen/layout_margin"
+                            android:layout_weight=".5"
+                            android:text="@string/Address"
+                            android:textStyle="bold"
+                            tools:ignore="HardcodedText" />
+
+                        <TextView
+                            android:layout_width="@dimen/seperator_width"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:text="@string/seprator"
+                            android:textStyle="bold" />
+
+
+                        <TextView
+                            android:id="@+id/d_per_address"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_weight=".5"
+                            android:textStyle="bold"
+                            tools:ignore="HardcodedText" />
+                    </LinearLayout>
+
+                    <include layout="@layout/item_divider2" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="@dimen/form_inner_layout_margin"
+                        android:orientation="horizontal"
+                        android:weightSum="1">
+
+                        <TextView
+                            android:id="@+id/per_country"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_margin="@dimen/layout_margin"
+                            android:layout_weight=".5"
+                            android:text="@string/Country"
+                            android:textStyle="bold"
+                            tools:ignore="HardcodedText" />
+
+                        <TextView
+                            android:layout_width="@dimen/seperator_width"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:text="@string/seprator"
+                            android:textStyle="bold" />
+
+
+                        <TextView
+                            android:id="@+id/d_per_country"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_weight=".5"
+                            android:textStyle="bold" />
+                    </LinearLayout>
+
+                    <include layout="@layout/item_divider2" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="@dimen/form_inner_layout_margin"
+                        android:orientation="horizontal"
+                        android:weightSum="1">
+
+                        <TextView
+                            android:id="@+id/per_state"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_margin="@dimen/layout_margin"
+                            android:layout_weight=".5"
+                            android:text="@string/State"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:layout_width="@dimen/seperator_width"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:text="@string/seprator"
+                            android:textStyle="bold" />
+
+
+                        <TextView
+                            android:id="@+id/d_per_state"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_weight=".5"
+                            android:textStyle="bold" />
+                    </LinearLayout>
+
+                    <include layout="@layout/item_divider2" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="@dimen/form_inner_layout_margin"
+                        android:orientation="horizontal"
+                        android:weightSum="1">
+
+                        <TextView
+                            android:id="@+id/per_city"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_margin="@dimen/layout_margin"
+                            android:layout_weight=".5"
+                            android:text="@string/City"
+                            android:textStyle="bold"
+                            tools:ignore="HardcodedText" />
+
+                        <TextView
+                            android:layout_width="@dimen/seperator_width"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:text="@string/seprator"
+                            android:textStyle="bold" />
+
+
+                        <TextView
+                            android:id="@+id/d_per_city"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_weight=".5"
+                            android:textStyle="bold"
+                            tools:ignore="HardcodedText" />
+                    </LinearLayout>
+
+                    <include layout="@layout/item_divider2" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="@dimen/form_inner_layout_margin"
+                        android:orientation="horizontal"
+                        android:weightSum="1">
+
+                        <TextView
+                            android:id="@+id/per_pincode"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_margin="@dimen/layout_margin"
+                            android:layout_weight=".5"
+                            android:text="@string/contact_info_pincode"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:layout_width="@dimen/seperator_width"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:text="@string/seprator"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/d_per_pincode"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_weight=".5"
+                            android:textStyle="bold" />
+                    </LinearLayout>
+
+                    <include layout="@layout/item_divider2" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="@dimen/form_inner_layout_margin"
+                        android:orientation="horizontal"
+                        android:weightSum="1">
+
+                        <TextView
+                            android:id="@+id/per_residential_sttus"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_margin="@dimen/layout_margin"
+                            android:layout_weight=".5"
+                            android:text="@string/contact_info_resedential_status"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:layout_width="@dimen/seperator_width"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:text="@string/seprator"
+                            android:textStyle="bold" />
+
+
+                        <TextView
+                            android:id="@+id/d_per_residential_sttus"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_weight=".5"
+                            android:textStyle="bold" />
+                    </LinearLayout>
+
+                    <include layout="@layout/item_divider2" />
+
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:id="@+id/layout_social_attribute"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/tv_socialattri"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/myProfileHeadingMarTop"
+                        android:layout_marginLeft="@dimen/layout_margin"
+                        android:text="@string/SocialAttributes"
+                        android:textColor="@color/colorAccent"
+                        android:textSize="@dimen/myProfileHeadingSize"
+                        android:textStyle="bold" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="@dimen/form_inner_layout_margin"
+                        android:orientation="horizontal"
+                        android:weightSum="1">
+
+                        <TextView
+                            android:id="@+id/per_maglik"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_margin="@dimen/layout_margin"
+                            android:layout_weight=".5"
+                            android:text="@string/Manglik"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:layout_width="@dimen/seperator_width"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:text="@string/seprator"
+                            android:textStyle="bold" />
+
+
+                        <TextView
+                            android:id="@+id/d_per_manglik"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_weight=".5"
+                            android:textStyle="bold" />
+                    </LinearLayout>
+
+                    <include layout="@layout/item_divider2" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="@dimen/form_inner_layout_margin"
+                        android:orientation="horizontal"
+                        android:weightSum="1">
+
+                        <TextView
+                            android:id="@+id/per_horoscope"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_margin="@dimen/layout_margin"
+                            android:layout_weight=".5"
+                            android:text="@string/Horoscope"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:layout_width="@dimen/seperator_width"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:text="@string/seprator"
+                            android:textStyle="bold" />
+
+
+                        <TextView
+                            android:id="@+id/d_per_horoscope"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_weight=".5"
+                            android:textStyle="bold" />
+                    </LinearLayout>
+
+                    <include layout="@layout/item_divider2" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="@dimen/form_inner_layout_margin"
+                        android:orientation="horizontal"
+                        android:weightSum="1">
+
+                        <TextView
+                            android:id="@+id/per_gothra"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_margin="@dimen/layout_margin"
+                            android:layout_weight=".5"
+                            android:text="@string/Gothra"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:layout_width="@dimen/seperator_width"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:text="@string/seprator"
+                            android:textStyle="bold" />
+
+
+                        <TextView
+                            android:id="@+id/d_per_gothraself"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_weight=".5"
+                            android:textStyle="bold" />
+                    </LinearLayout>
+
+                    <include layout="@layout/item_divider2" />
+                    <!--
+                                    <LinearLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_margin="@dimen/form_inner_layout_margin"
+                                        android:orientation="horizontal"
+                                        android:weightSum="1">
+
+                                        <TextView
+                                            android:id="@+id/per_gothramama"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:layout_gravity="center"
+                                            android:layout_margin="@dimen/layout_margin"
+                                            android:layout_weight=".5"
+                                            android:text="Gohra(Mama) :-"
+                                            android:textStyle="bold" />
+
+                                        <TextView
+                                            android:id="@+id/d_per_gothramama"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:layout_gravity="center"
+                                            android:layout_weight=".5"
+                                            android:text="Gohra(Mama)"
+                                            android:textStyle="bold" />
+                                    </LinearLayout>-->
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:id="@+id/layout_education_detl"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/tv_edudetail"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/myProfileHeadingMarTop"
+                        android:layout_marginLeft="@dimen/layout_margin"
+                        android:text="@string/EducationDetails"
+                        android:textColor="@color/colorAccent"
+                        android:textSize="@dimen/myProfileHeadingSize"
+                        android:textStyle="bold" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="@dimen/form_inner_layout_margin"
+                        android:orientation="horizontal"
+                        android:weightSum="1">
+
+                        <TextView
+                            android:id="@+id/per_graduatein"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_margin="@dimen/layout_margin"
+                            android:layout_weight=".5"
+                            android:text="@string/HighestEducation"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:layout_width="@dimen/seperator_width"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:text="@string/seprator"
+                            android:textStyle="bold" />
+
+
+                        <TextView
+                            android:id="@+id/d_per_graduatein"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_weight=".5"
+                            android:textStyle="bold" />
+                    </LinearLayout>
+
+                    <include layout="@layout/item_divider2" />
+                    <!--  <LinearLayout
+                          android:layout_width="match_parent"
+                          android:layout_height="wrap_content"
+                          android:layout_margin="@dimen/form_inner_layout_margin"
+                          android:orientation="horizontal"
+                          android:weightSum="1">
+
+                          <TextView
+                              android:id="@+id/per_postgradin"
+                              android:layout_width="match_parent"
+                              android:layout_height="wrap_content"
+                              android:layout_gravity="center"
+                              android:layout_margin="@dimen/layout_margin"
+                              android:layout_weight=".5"
+                              android:text="Post Graduate In :-"
+                              android:textStyle="bold" />
+
+                          <TextView
+                              android:id="@+id/d_per_postgrad"
+                              android:layout_width="match_parent"
+                              android:layout_height="wrap_content"
+                              android:layout_gravity="center"
+                              android:layout_weight=".5"
+                              android:text="Post Graduation"
+                              android:textStyle="bold" />
+                      </LinearLayout>
+
+
+                      <LinearLayout
+                          android:layout_width="match_parent"
+                          android:layout_height="wrap_content"
+                          android:layout_margin="@dimen/form_inner_layout_margin"
+                          android:orientation="horizontal"
+                          android:weightSum="1">
+
+                          <TextView
+                              android:id="@+id/per_doctrate"
+                              android:layout_width="match_parent"
+                              android:layout_height="wrap_content"
+                              android:layout_gravity="center"
+                              android:layout_margin="@dimen/layout_margin"
+                              android:layout_weight=".5"
+                              android:text="Doctorate In:-"
+                              android:textStyle="bold" />
+
+                          <TextView
+                              android:id="@+id/d_per_doctrate"
+                              android:layout_width="match_parent"
+                              android:layout_height="wrap_content"
+                              android:layout_gravity="center"
+                              android:layout_weight=".5"
+                              android:text="Doctorate"
+                              android:textStyle="bold" />
+                      </LinearLayout>
+
+                      <LinearLayout
+                          android:layout_width="match_parent"
+                          android:layout_height="wrap_content"
+                          android:layout_margin="@dimen/form_inner_layout_margin"
+                          android:orientation="horizontal"
+                          android:weightSum="1">
+
+                          <TextView
+                              android:id="@+id/per_cetifcation"
+                              android:layout_width="match_parent"
+                              android:layout_height="wrap_content"
+                              android:layout_gravity="center"
+                              android:layout_margin="@dimen/layout_margin"
+                              android:layout_weight=".5"
+                              android:text="Certification :-"
+                              android:textStyle="bold"
+                              tools:ignore="HardcodedText" />
+
+                          <TextView
+                              android:id="@+id/d_per_certfcion"
+                              android:layout_width="match_parent"
+                              android:layout_height="wrap_content"
+                              android:layout_gravity="center"
+                              android:layout_weight=".5"
+                              android:text="Certification"
+                              android:textStyle="bold"
+                              tools:ignore="HardcodedText" />
+                      </LinearLayout>-->
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/layout_occupation_detl"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/tv_occupation"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/myProfileHeadingMarTop"
+                        android:layout_marginLeft="@dimen/layout_margin"
+                        android:text="@string/OccupationDetails"
+                        android:textColor="@color/colorAccent"
+                        android:textSize="@dimen/myProfileHeadingSize"
+                        android:textStyle="bold" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="@dimen/form_inner_layout_margin"
+                        android:orientation="horizontal"
+                        android:weightSum="1">
+
+                        <TextView
+                            android:id="@+id/per_occupatn"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_margin="@dimen/layout_margin"
+                            android:layout_weight=".5"
+                            android:text="@string/Occupation"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:layout_width="@dimen/seperator_width"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:text="@string/seprator"
+                            android:textStyle="bold" />
+
+
+                        <TextView
+                            android:id="@+id/d_per_occupation"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_weight=".5"
+                            android:textStyle="bold" />
+                    </LinearLayout>
+
+                    <include layout="@layout/item_divider2" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="@dimen/form_inner_layout_margin"
+                        android:orientation="horizontal"
+                        android:weightSum="1">
+
+                        <TextView
+                            android:id="@+id/per_industry"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_margin="@dimen/layout_margin"
+                            android:layout_weight=".5"
+                            android:text="@string/Industry"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:layout_width="@dimen/seperator_width"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:text="@string/seprator"
+                            android:textStyle="bold" />
+
+
+                        <TextView
+                            android:id="@+id/d_per_industry"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_weight=".5"
+                            android:textStyle="bold" />
+                    </LinearLayout>
+
+                    <include layout="@layout/item_divider2" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="@dimen/form_inner_layout_margin"
+                        android:orientation="horizontal"
+                        android:weightSum="1">
+
+                        <TextView
+                            android:id="@+id/per_bsnsempat"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_margin="@dimen/layout_margin"
+                            android:layout_weight=".5"
+                            android:text="@string/BusinessEmployeeAt"
+                            android:textStyle="bold"
+                            tools:ignore="HardcodedText" />
+
+                        <TextView
+                            android:layout_width="@dimen/seperator_width"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:text="@string/seprator"
+                            android:textStyle="bold" />
+
+
+                        <TextView
+                            android:id="@+id/d_per_bsnsempat"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_weight=".5"
+                            android:textStyle="bold"
+                            tools:ignore="HardcodedText" />
+                    </LinearLayout>
+
+                    <include layout="@layout/item_divider2" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="@dimen/form_inner_layout_margin"
+                        android:orientation="horizontal"
+                        android:weightSum="1">
+
+                        <TextView
+                            android:id="@+id/per_psnalanulincome"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_margin="@dimen/layout_margin"
+                            android:layout_weight=".5"
+                            android:text="@string/PersonalAnnualIncome"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:layout_width="@dimen/seperator_width"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:text="@string/seprator"
+                            android:textStyle="bold" />
+
+
+                        <TextView
+                            android:id="@+id/d_per_psnalanulincome"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_weight=".5"
+                            android:textStyle="bold" />
+                    </LinearLayout>
+
+                    <include layout="@layout/item_divider2" />
+
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:id="@+id/layout_family_detl"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/tv_famildtl"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/myProfileHeadingMarTop"
+                        android:layout_marginLeft="@dimen/layout_margin"
+                        android:text="@string/FamilyDetails"
+                        android:textColor="@color/colorAccent"
+                        android:textSize="@dimen/myProfileHeadingSize"
+                        android:textStyle="bold" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="@dimen/form_inner_layout_margin"
+                        android:orientation="horizontal"
+                        android:weightSum="1">
+
+                        <TextView
+                            android:id="@+id/per_fatherfullfname"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_margin="@dimen/layout_margin"
+                            android:layout_weight=".5"
+                            android:text="@string/FatherFullName"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:layout_width="@dimen/seperator_width"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:text="@string/seprator"
+                            android:textStyle="bold" />
+
+
+                        <TextView
+                            android:id="@+id/d_per_fatherfullname"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_weight=".5"
+                            android:textStyle="bold" />
+                    </LinearLayout>
+
+                    <include layout="@layout/item_divider2" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="@dimen/form_inner_layout_margin"
+                        android:orientation="horizontal"
+                        android:weightSum="1">
+
+                        <TextView
+                            android:id="@+id/per_motherfullname"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_margin="@dimen/layout_margin"
+                            android:layout_weight=".5"
+                            android:text="@string/MotherFullName"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:layout_width="@dimen/seperator_width"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:text="@string/seprator"
+                            android:textStyle="bold" />
+
+
+                        <TextView
+                            android:id="@+id/d_per_motherfullname"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_weight=".5"
+                            android:textStyle="bold" />
+                    </LinearLayout>
+
+                    <include layout="@layout/item_divider2" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="@dimen/form_inner_layout_margin"
+                        android:orientation="horizontal"
+                        android:weightSum="1">
+
+                        <TextView
+                            android:id="@+id/per_ftheroccptn"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_margin="@dimen/layout_margin"
+                            android:layout_weight=".5"
+                            android:text="@string/FatherOccupation"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:layout_width="@dimen/seperator_width"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:text="@string/seprator"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/d_per_ftheroccptn"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_weight=".5"
+                            android:textStyle="bold" />
+                    </LinearLayout>
+
+                    <include layout="@layout/item_divider2" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="@dimen/form_inner_layout_margin"
+                        android:orientation="horizontal"
+                        android:weightSum="1">
+
+                        <TextView
+                            android:id="@+id/per_mthe_roccptn"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_margin="@dimen/layout_margin"
+                            android:layout_weight=".5"
+                            android:text="@string/MotherOccupation"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:layout_width="@dimen/seperator_width"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:text="@string/seprator"
+                            android:textStyle="bold" />
+
+
+                        <TextView
+                            android:id="@+id/d_per_mthr_occptn"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_weight=".5"
+                            android:textStyle="bold" />
+                    </LinearLayout>
+
+                    <include layout="@layout/item_divider2" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="@dimen/form_inner_layout_margin"
+                        android:orientation="horizontal"
+                        android:weightSum="1">
+
+                        <TextView
+                            android:id="@+id/per_noofbros"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_margin="@dimen/layout_margin"
+                            android:layout_weight=".5"
+                            android:text="@string/family_details_layout_no_of_bros"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:layout_width="@dimen/seperator_width"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:text="@string/seprator"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/d_per_noofbros"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_weight=".5"
+                            android:textStyle="bold" />
+                    </LinearLayout>
+
+                    <include layout="@layout/item_divider2" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="@dimen/form_inner_layout_margin"
+                        android:orientation="horizontal"
+                        android:weightSum="1">
+
+                        <TextView
+                            android:id="@+id/per_noofsis"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_margin="@dimen/layout_margin"
+                            android:layout_weight=".5"
+                            android:text="@string/family_details_layout_no_of_sis"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:layout_width="@dimen/seperator_width"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:text="@string/seprator"
+                            android:textStyle="bold" />
+
+
+                        <TextView
+                            android:id="@+id/d_per_sister"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_weight=".5"
+                            android:textStyle="bold" />
+                    </LinearLayout>
+
+                    <include layout="@layout/item_divider2" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="@dimen/form_inner_layout_margin"
+                        android:orientation="horizontal"
+                        android:weightSum="1">
+
+                        <TextView
+                            android:id="@+id/per_noofbrosmaried"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_margin="@dimen/layout_margin"
+                            android:layout_weight=".5"
+                            android:text="@string/family_details_layout_no_of_bros_mar"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:layout_width="@dimen/seperator_width"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:text="@string/seprator"
+                            android:textStyle="bold" />
+
+
+                        <TextView
+                            android:id="@+id/d_per_noofbrosmaried"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_weight=".5"
+                            android:textStyle="bold" />
+                    </LinearLayout>
+
+                    <include layout="@layout/item_divider2" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="@dimen/form_inner_layout_margin"
+                        android:orientation="horizontal"
+                        android:weightSum="1">
+
+                        <TextView
+                            android:id="@+id/per_noofsismaried"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_margin="@dimen/layout_margin"
+                            android:layout_weight=".5"
+                            android:text="@string/family_details_layout_no_of_sis_mar"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:layout_width="@dimen/seperator_width"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:text="@string/seprator"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/d_per_noofsismarried"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_weight=".5"
+                            android:textStyle="bold" />
+                    </LinearLayout>
+
+                    <include layout="@layout/item_divider2" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="@dimen/form_inner_layout_margin"
+                        android:orientation="horizontal"
+                        android:weightSum="1">
+
+                        <TextView
+                            android:id="@+id/per_familysatus"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_margin="@dimen/layout_margin"
+                            android:layout_weight=".5"
+                            android:text="@string/family_details_layout_fam_status"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:layout_width="@dimen/seperator_width"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:text="@string/seprator"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/d_per_familysatus"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_weight=".5"
+                            android:textStyle="bold" />
+                    </LinearLayout>
+
+                    <include layout="@layout/item_divider2" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="@dimen/form_inner_layout_margin"
+                        android:orientation="horizontal"
+                        android:weightSum="1">
+
+                        <TextView
+                            android:id="@+id/per_familytype"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_margin="@dimen/layout_margin"
+                            android:layout_weight=".5"
+                            android:text="@string/family_details_layout_fam_type"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:layout_width="@dimen/seperator_width"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:text="@string/seprator"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/d_per_familytype"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_weight=".5"
+                            android:textStyle="bold" />
+                    </LinearLayout>
+
+                    <include layout="@layout/item_divider2" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="@dimen/form_inner_layout_margin"
+                        android:orientation="horizontal"
+                        android:weightSum="1">
+
+                        <TextView
+                            android:id="@+id/per_fmlyannulincome"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_margin="@dimen/layout_margin"
+                            android:layout_weight=".5"
+                            android:text="@string/FamilyAnnualIncome"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:layout_width="@dimen/seperator_width"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:text="@string/seprator"
+                            android:textStyle="bold" />
+
+
+                        <TextView
+                            android:id="@+id/d_per_familyanulincome"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_weight=".5"
+                            android:textStyle="bold" />
+                    </LinearLayout>
+
+                    <include layout="@layout/item_divider2" />
+
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:id="@+id/layout_physical_detl"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/tv_ahycialattr"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/myProfileHeadingMarTop"
+                        android:layout_marginLeft="@dimen/layout_margin"
+                        android:text="@string/PhysicalAttribute"
+                        android:textColor="@color/colorAccent"
+                        android:textSize="@dimen/myProfileHeadingSize"
+                        android:textStyle="bold" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="@dimen/form_inner_layout_margin"
+                        android:orientation="horizontal"
+                        android:weightSum="1">
+
+                        <TextView
+                            android:id="@+id/per_height"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_margin="@dimen/layout_margin"
+                            android:layout_weight=".5"
+                            android:text="@string/Height"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:layout_width="@dimen/seperator_width"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:text="@string/seprator"
+                            android:textStyle="bold" />
+
+
+                        <TextView
+                            android:id="@+id/d_per_height"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_weight=".5"
+                            android:textStyle="bold" />
+                    </LinearLayout>
+
+                    <include layout="@layout/item_divider2" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="@dimen/form_inner_layout_margin"
+                        android:orientation="horizontal"
+                        android:weightSum="1">
+
+                        <TextView
+                            android:id="@+id/per_weight"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_margin="@dimen/layout_margin"
+                            android:layout_weight=".5"
+                            android:text="@string/Weight"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:layout_width="@dimen/seperator_width"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:text="@string/seprator"
+                            android:textStyle="bold" />
+
+
+                        <TextView
+                            android:id="@+id/d_per_weight"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_weight=".5"
+                            android:textStyle="bold" />
+                    </LinearLayout>
+
+                    <include layout="@layout/item_divider2" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="@dimen/form_inner_layout_margin"
+                        android:orientation="horizontal"
+                        android:weightSum="1">
+
+                        <TextView
+                            android:id="@+id/per_bdytype"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_margin="@dimen/layout_margin"
+                            android:layout_weight=".5"
+                            android:text="@string/BodyType"
+                            android:textStyle="bold"
+                            tools:ignore="HardcodedText" />
+
+                        <TextView
+                            android:layout_width="@dimen/seperator_width"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:text="@string/seprator"
+                            android:textStyle="bold" />
+
+
+                        <TextView
+                            android:id="@+id/d_per_bdyype"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_weight=".5"
+                            android:textStyle="bold"
+                            tools:ignore="HardcodedText" />
+                    </LinearLayout>
+
+                    <include layout="@layout/item_divider2" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="@dimen/form_inner_layout_margin"
+                        android:orientation="horizontal"
+                        android:weightSum="1">
+
+                        <TextView
+                            android:id="@+id/per_bloodgrp"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_margin="@dimen/layout_margin"
+                            android:layout_weight=".5"
+                            android:text="@string/bloodgouup"
+                            android:textStyle="bold"
+                            tools:ignore="HardcodedText" />
+
+                        <TextView
+                            android:layout_width="@dimen/seperator_width"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:text="@string/seprator"
+                            android:textStyle="bold" />
+
+
+                        <TextView
+                            android:id="@+id/d_per_bloodgrp"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_weight=".5"
+                            android:textStyle="bold"
+                            tools:ignore="HardcodedText" />
+                    </LinearLayout>
+
+                    <include layout="@layout/item_divider2" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="@dimen/form_inner_layout_margin"
+                        android:orientation="horizontal"
+                        android:weightSum="1">
+
+                        <TextView
+                            android:id="@+id/per_complexion"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_margin="@dimen/layout_margin"
+                            android:layout_weight=".5"
+                            android:text="@string/Complexion"
+                            android:textStyle="bold"
+                            tools:ignore="HardcodedText" />
+
+                        <TextView
+                            android:layout_width="@dimen/seperator_width"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:text="@string/seprator"
+                            android:textStyle="bold" />
+
+
+                        <TextView
+                            android:id="@+id/d_per_complexion"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_weight=".5"
+                            android:textStyle="bold"
+                            tools:ignore="HardcodedText" />
+                    </LinearLayout>
+
+                    <include layout="@layout/item_divider2" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="@dimen/form_inner_layout_margin"
+                        android:orientation="horizontal"
+                        android:weightSum="1">
+
+                        <TextView
+                            android:id="@+id/per_diet"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_margin="@dimen/layout_margin"
+                            android:layout_weight=".5"
+                            android:text="@string/Diet"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:layout_width="@dimen/seperator_width"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:text="@string/seprator"
+                            android:textStyle="bold" />
+
+
+                        <TextView
+                            android:id="@+id/d_per_dirt"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_weight=".5"
+                            android:textStyle="bold" />
+                    </LinearLayout>
+
+                    <include layout="@layout/item_divider2" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="@dimen/form_inner_layout_margin"
+                        android:orientation="horizontal"
+                        android:weightSum="1">
+
+                        <TextView
+                            android:id="@+id/per_smoke"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_margin="@dimen/layout_margin"
+                            android:layout_weight=".5"
+                            android:text="@string/Smoke"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:layout_width="@dimen/seperator_width"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:text="@string/seprator"
+                            android:textStyle="bold" />
+
+
+                        <TextView
+                            android:id="@+id/d_per_smoke"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_weight=".5"
+                            android:textStyle="bold" />
+                    </LinearLayout>
+
+                    <include layout="@layout/item_divider2" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="@dimen/form_inner_layout_margin"
+                        android:orientation="horizontal"
+                        android:weightSum="1">
+
+                        <TextView
+                            android:id="@+id/per_drink"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_margin="@dimen/layout_margin"
+                            android:layout_weight=".5"
+                            android:text="@string/Drink"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:layout_width="@dimen/seperator_width"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:text="@string/seprator"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/d_per_drink"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_weight=".5"
+                            android:textStyle="bold" />
+                    </LinearLayout>
+
+                    <include layout="@layout/item_divider2" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="@dimen/form_inner_layout_margin"
+                        android:orientation="horizontal"
+                        android:weightSum="1">
+
+                        <TextView
+                            android:id="@+id/per_handicap"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_margin="@dimen/layout_margin"
+                            android:layout_weight=".5"
+                            android:text="You Are Handicapped?"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:layout_width="@dimen/seperator_width"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:text="@string/seprator"
+                            android:textStyle="bold" />
+
+
+                        <TextView
+                            android:id="@+id/d_per_handicap"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_weight=".5"
+                            android:textStyle="bold" />
+                    </LinearLayout>
+
+                    <include layout="@layout/item_divider2" />
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:id="@+id/layout_other_detl"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/tv_other"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/myProfileHeadingMarTop"
+                        android:layout_marginLeft="@dimen/layout_margin"
+                        android:text="@string/Other"
+                        android:textColor="@color/colorAccent"
+                        android:textSize="@dimen/myProfileHeadingSize"
+                        android:textStyle="bold" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="@dimen/form_inner_layout_margin"
+                        android:orientation="horizontal"
+                        android:weightSum="1">
+
+                        <TextView
+                            android:id="@+id/per_profl_crtedby"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_margin="@dimen/layout_margin"
+                            android:layout_weight=".5"
+                            android:text="@string/ProfileCreatedBy"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:layout_width="@dimen/seperator_width"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:text="@string/seprator"
+                            android:textStyle="bold" />
+
+
+                        <TextView
+                            android:id="@+id/d_per_profilecreatedby"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_weight=".5"
+                            android:textStyle="bold" />
+                    </LinearLayout>
+
+                    <include layout="@layout/item_divider2" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="@dimen/form_inner_layout_margin"
+                        android:orientation="horizontal"
+                        android:weightSum="1">
+
+                        <TextView
+                            android:id="@+id/per_hobbies"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_margin="@dimen/layout_margin"
+                            android:layout_weight=".5"
+                            android:text="@string/Hobbies"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:layout_width="@dimen/seperator_width"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:text="@string/seprator"
+                            android:textStyle="bold" />
+
+
+                        <TextView
+                            android:id="@+id/d_per_ep_postgrad"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_weight=".5"
+                            android:textStyle="bold" />
+                    </LinearLayout>
+
+                    <include layout="@layout/item_divider2" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="@dimen/form_inner_layout_margin"
+                        android:orientation="horizontal"
+                        android:weightSum="1">
+
+                        <TextView
+                            android:id="@+id/per_interests"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_margin="@dimen/layout_margin"
+                            android:layout_weight=".5"
+                            android:text="@string/Interests"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:layout_width="@dimen/seperator_width"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:text="@string/seprator"
+                            android:textStyle="bold" />
+
+
+                        <TextView
+                            android:id="@+id/d_per_intrests"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_weight=".5"
+                            android:textStyle="bold" />
+                    </LinearLayout>
+
+                    <include layout="@layout/item_divider2" />
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:id="@+id/layout_partnr_pref_detl"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/tv_ptnerpref"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/myProfileHeadingMarTop"
+                        android:layout_marginLeft="@dimen/layout_margin"
+                        android:text="@string/PartnerPreference"
+                        android:textColor="@color/colorAccent"
+                        android:textSize="@dimen/myProfileHeadingSize"
+                        android:textStyle="bold" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="@dimen/form_inner_layout_margin"
+                        android:orientation="horizontal"
+                        android:weightSum="1">
+
+                        <TextView
+                            android:id="@+id/per_profl_lookngfor"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_margin="@dimen/layout_margin"
+                            android:layout_weight=".5"
+                            android:text="@string/LookingFor"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:layout_width="@dimen/seperator_width"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:text="@string/seprator"
+                            android:textStyle="bold" />
+
+
+                        <TextView
+                            android:id="@+id/d_per_lookngfor"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_weight=".5"
+                            android:textStyle="bold" />
+                    </LinearLayout>
+
+                    <include layout="@layout/item_divider2" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="@dimen/form_inner_layout_margin"
+                        android:orientation="horizontal"
+                        android:weightSum="1">
+
+                        <TextView
+                            android:id="@+id/per_countrylvgin"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_margin="@dimen/layout_margin"
+                            android:layout_weight=".5"
+                            android:text="@string/CountryLivingIn"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:layout_width="@dimen/seperator_width"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:text="@string/seprator"
+                            android:textStyle="bold" />
+
+
+                        <TextView
+                            android:id="@+id/d_per_contrylvgin"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_weight=".5"
+                            android:textStyle="bold" />
+                    </LinearLayout>
+
+                    <include layout="@layout/item_divider2" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="@dimen/form_inner_layout_margin"
+                        android:orientation="horizontal"
+                        android:weightSum="1">
+
+                        <TextView
+                            android:id="@+id/per_statlvgin"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_margin="@dimen/layout_margin"
+                            android:layout_weight=".5"
+                            android:text="@string/StateLivingIn"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:layout_width="@dimen/seperator_width"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:text="@string/seprator"
+                            android:textStyle="bold" />
+
+
+                        <TextView
+                            android:id="@+id/d_per_statelvgin"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_weight=".5"
+                            android:textStyle="bold" />
+                    </LinearLayout>
+
+                    <include layout="@layout/item_divider2" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="@dimen/form_inner_layout_margin"
+                        android:orientation="horizontal"
+                        android:weightSum="1">
+
+                        <TextView
+                            android:id="@+id/per_citylvgin"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_margin="@dimen/layout_margin"
+                            android:layout_weight=".5"
+                            android:text="@string/CityLivingin"
+                            android:textStyle="bold"
+                            tools:ignore="HardcodedText" />
+
+                        <TextView
+                            android:layout_width="@dimen/seperator_width"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:text="@string/seprator"
+                            android:textStyle="bold" />
+
+
+                        <TextView
+                            android:id="@+id/d_per_citylvgin"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_weight=".5"
+                            android:textStyle="bold"
+                            tools:ignore="HardcodedText" />
+                    </LinearLayout>
+
+                    <include layout="@layout/item_divider2" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="@dimen/form_inner_layout_margin"
+                        android:orientation="horizontal"
+                        android:weightSum="2">
+
+                        <TextView
+                            android:id="@+id/per_prtnrprf_age"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_margin="@dimen/layout_margin"
+                            android:layout_weight="1"
+                            android:text="@string/MinimumAge"
+                            android:textStyle="bold"
+                            tools:ignore="HardcodedText" />
+
+                        <TextView
+                            android:layout_width="@dimen/seperator_width"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:text="@string/seprator"
+                            android:textStyle="bold" />
+
+
+                        <TextView
+                            android:id="@+id/d_agefrm"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_weight="1"
+                            android:textStyle="bold"
+                            tools:ignore="HardcodedText" />
+                    </LinearLayout>
+
+                    <include layout="@layout/item_divider2" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="@dimen/form_inner_layout_margin"
+                        android:orientation="horizontal"
+                        android:weightSum="2">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_margin="@dimen/layout_margin"
+                            android:layout_weight="1"
+                            android:text="@string/MaximumAge"
+                            android:textStyle="bold"
+                            tools:ignore="HardcodedText" />
+
+                        <TextView
+                            android:layout_width="@dimen/seperator_width"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:text="@string/seprator"
+                            android:textStyle="bold" />
+
+
+                        <TextView
+                            android:id="@+id/d_ageto"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_weight="1"
+                            android:textStyle="bold"
+                            tools:ignore="HardcodedText" />
+                    </LinearLayout>
+
+                    <include layout="@layout/item_divider2" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="@dimen/form_inner_layout_margin"
+                        android:orientation="horizontal"
+                        android:weightSum="2">
+
+                        <TextView
+                            android:id="@+id/tv_minheight"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_margin="@dimen/layout_margin"
+                            android:layout_weight="1"
+                            android:text="@string/MinimumHeight"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:layout_width="@dimen/seperator_width"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:text="@string/seprator"
+                            android:textStyle="bold" />
+
+
+                        <TextView
+                            android:id="@+id/d_per_minhtfrmft"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_weight="1"
+                            android:textStyle="bold" />
+                    </LinearLayout>
+
+                    <include layout="@layout/item_divider2" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="@dimen/form_inner_layout_margin"
+                        android:orientation="horizontal"
+                        android:weightSum="2">
+
+                        <TextView
+                            android:id="@+id/tv_height"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_margin="@dimen/layout_margin"
+                            android:layout_weight="1"
+                            android:text="@string/MaximumHeight"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:layout_width="@dimen/seperator_width"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:text="@string/seprator"
+                            android:textStyle="bold" />
+
+
+                        <TextView
+                            android:id="@+id/d_per_htfrmft"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_weight="1"
+                            android:textStyle="bold" />
+                    </LinearLayout>
+
+                    <include layout="@layout/item_divider2" />
+
+                    <!--  <LinearLayout
+                          android:layout_width="match_parent"
+                          android:layout_height="wrap_content"
+                          android:layout_margin="@dimen/form_inner_layout_margin"
+                          android:orientation="horizontal"
+                          android:weightSum="2">
+
+                          <TextView
+                              android:id="@+id/tv_per_weight"
+                              android:layout_width="match_parent"
+                              android:layout_height="wrap_content"
+                              android:layout_gravity="center"
+                              android:layout_margin="@dimen/layout_margin"
+                              android:layout_weight="1"
+                              android:text="Weight :-"
+                              android:textStyle="bold" />
+
+                          <TextView
+                              android:id="@+id/d_wtfrm"
+                              android:layout_width="match_parent"
+                              android:layout_height="wrap_content"
+                              android:layout_gravity="center"
+                              android:layout_weight="1"
+                              android:text="Weight"
+                              android:textStyle="bold" />
+                      </LinearLayout>
+      -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="@dimen/form_inner_layout_margin"
+                        android:orientation="horizontal"
+                        android:weightSum="1">
+
+                        <TextView
+                            android:id="@+id/tv_per_complxn"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_margin="@dimen/layout_margin"
+                            android:layout_weight=".5"
+                            android:text="@string/Complexion"
+                            android:textStyle="bold"
+                            tools:ignore="HardcodedText" />
+
+                        <TextView
+                            android:layout_width="@dimen/seperator_width"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:text="@string/seprator"
+                            android:textStyle="bold" />
+
+
+                        <TextView
+                            android:id="@+id/d_per_cmplxn"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_weight=".5"
+                            android:textStyle="bold"
+                            tools:ignore="HardcodedText" />
+                    </LinearLayout>
+
+                    <include layout="@layout/item_divider2" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="@dimen/form_inner_layout_margin"
+                        android:orientation="horizontal"
+                        android:weightSum="1">
+
+                        <TextView
+                            android:id="@+id/tv_per_eduction"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_margin="@dimen/layout_margin"
+                            android:layout_weight=".5"
+                            android:text="@string/Education"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:layout_width="@dimen/seperator_width"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:text="@string/seprator"
+                            android:textStyle="bold" />
+
+
+                        <TextView
+                            android:id="@+id/d_per_educton"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_weight=".5"
+                            android:textStyle="bold" />
+                    </LinearLayout>
+
+                    <include layout="@layout/item_divider2" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="@dimen/form_inner_layout_margin"
+                        android:orientation="horizontal"
+                        android:weightSum="1">
+
+                        <TextView
+                            android:id="@+id/tv_per_religion"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_margin="@dimen/layout_margin"
+                            android:layout_weight=".5"
+                            android:text="@string/Religion"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:layout_width="@dimen/seperator_width"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:text="@string/seprator"
+                            android:textStyle="bold" />
+
+
+                        <TextView
+                            android:id="@+id/d_per_religion"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_weight=".5"
+                            android:textStyle="bold" />
+                    </LinearLayout>
+
+                    <include layout="@layout/item_divider2" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="@dimen/form_inner_layout_margin"
+                        android:orientation="horizontal"
+                        android:weightSum="1"                        >
+
+                        <TextView
+                            android:id="@+id/tv_per_cast"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_margin="@dimen/layout_margin"
+                            android:layout_weight=".5"
+                            android:text="@string/Cast"
+                            android:textStyle="bold"
+                            tools:ignore="HardcodedText" />
+
+                        <TextView
+                            android:layout_width="@dimen/seperator_width"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:text="@string/seprator"
+                            android:textStyle="bold" />
+
+
+                        <TextView
+                            android:id="@+id/d_per_cast"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_weight=".5"
+                            android:textStyle="bold"
+                            tools:ignore="HardcodedText" />
+                    </LinearLayout>
+
+
+                </LinearLayout>
+
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+
+
+</LinearLayout>

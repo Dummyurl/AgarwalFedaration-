@@ -1,0 +1,509 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".matrimony.FormPartnerPreferenceActivity">
+
+    <include
+        android:id="@id/toolbar"
+        layout="@layout/toolbar" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="@dimen/form_layout_margin"
+            android:orientation="vertical">
+            <!--
+                        <TextView
+                            android:id="@+id/frm_prtnrpref_tv_pfrnrpref"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="10dp"
+                            android:layout_marginTop="20dp"
+                            android:text="Partner Preference"
+                            android:textAlignment="center"
+                            android:textColor="@color/colorAccent"
+                            android:textSize="20dp"
+                            android:textStyle="bold" />-->
+            <TextView
+                android:id="@+id/frm_prtnrpref_tv_lknfor"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_margin="@dimen/layout_margin"
+                android:layout_weight=".5"
+                android:text="@string/LookingFor"
+                android:textSize="@dimen/form_tv_size" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/form_inner_layout_margin"
+                android:orientation="horizontal"
+                android:weightSum="1">
+
+                <Spinner
+                    android:id="@+id/frm_prtnrpref_spr_lknfor"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_weight=".5"
+                    android:entries="@array/looking_for" />
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/frm_prtnrpref_tv_minage"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginLeft="@dimen/form_spinner_label_mar_left"
+                android:layout_marginTop="@dimen/form_spinner_layout_margin_top"
+                android:layout_weight=".5"
+                android:text="@string/MinimumAge"
+                android:textSize="@dimen/form_tv_size" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10sp"
+                android:orientation="horizontal"
+                android:weightSum="1">
+
+
+                <Spinner
+                    android:id="@+id/frm_prtnrpref_et_minagefrom"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_weight=".5"
+                    android:entries="@array/select_age" />
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/frm_prtnrpref_tv_maxage"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginLeft="@dimen/form_spinner_label_mar_left"
+                android:layout_marginTop="@dimen/form_spinner_layout_margin_top"
+                android:layout_weight=".5"
+                android:text="@string/MaximumAge"
+                android:textSize="@dimen/form_tv_size" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/form_spinner_layout_margin_top"
+                android:orientation="horizontal"
+                android:weightSum="1">
+
+
+                <Spinner
+                    android:id="@+id/frm_prtnrpref_et_maxagefrom"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_weight=".5"
+                    android:entries="@array/select_age" />
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/form_inner_layout_margin"
+                android:orientation="horizontal"
+                android:weightSum="1">
+
+                <!--    <TextView
+                            android:id="@+id/frm_prtnrpref_tv_cntry"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_margin="10dp"
+                            android:layout_weight=".5"
+                            android:text="Country Living In:-"
+                            android:textStyle="bold" />
+            -->
+                <android.support.design.widget.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <AutoCompleteTextView
+                        android:id="@+id/frm_prtnrpref_spr_cntry"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_weight=".5"
+                        android:hint="@string/Country"
+                        android:inputType="textCapWords" />
+                </android.support.design.widget.TextInputLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/form_inner_layout_margin"
+                android:orientation="horizontal"
+                android:weightSum="1">
+                <!--
+
+                                <TextView
+                                    android:id="@+id/frm_prtnrpref_tv_state"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center"
+                                    android:layout_margin="10dp"
+                                    android:layout_weight=".5"
+                                    android:text="State Living In:-"
+                                    android:textStyle="bold" />
+                    -->
+                <android.support.design.widget.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <AutoCompleteTextView
+                        android:id="@+id/frm_prtnrpref_spr_state"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_weight=".5"
+                        android:hint="@string/State"
+                        android:inputType="textCapWords" />
+
+                </android.support.design.widget.TextInputLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/form_inner_layout_margin"
+                android:orientation="horizontal"
+                android:weightSum="1">
+
+                <!-- <TextView
+                         android:id="@+id/frm_prtnrpref_tv_city"
+                         android:layout_width="match_parent"
+                         android:layout_height="wrap_content"
+                         android:layout_gravity="center"
+                         android:layout_margin="10dp"
+                         android:layout_weight=".5"
+                         android:text="City Living In:-"
+                         android:textStyle="bold" />-->
+
+                <android.support.design.widget.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <AutoCompleteTextView
+                        android:id="@+id/frm_prtnrpref_spr_city"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_weight=".5"
+                        android:hint="@string/City"
+                        android:inputType="textCapWords" />
+                </android.support.design.widget.TextInputLayout>
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/frm_prtnrpref_tv_resdntrstts"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginLeft="@dimen/form_spinner_label_mar_left"
+                android:layout_marginTop="@dimen/form_spinner_layout_margin_top"
+                android:layout_weight=".5"
+                android:text="@string/ResidentStatus"
+                android:textSize="18sp" />
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/form_spinner_layout_margin_top"
+                android:orientation="horizontal"
+                android:weightSum="1">
+
+
+                <Spinner
+                    android:id="@+id/frm_prtnrpref_spr_resdntrstts"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_weight=".5"
+                    android:entries="@array/resident_status" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/form_inner_layout_margin"
+                android:orientation="horizontal"
+                android:weightSum="1">
+
+                <!--  <TextView
+                          android:id="@+id/frm_prtnrpref_tv_height"
+                          android:layout_width="match_parent"
+                          android:layout_height="wrap_content"
+                          android:layout_gravity="center"
+                          android:layout_margin="10dp"
+                          android:layout_weight=".5"
+                          android:text="Minimum Height(cm)  :-"
+                          android:textStyle="bold" />
+          -->
+                <android.support.design.widget.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+
+                    <EditText
+                        android:id="@+id/frm_prtnrpref_et_minht"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_weight=".5"
+                        android:hint="@string/MinimumHeight"
+                        android:inputType="number"
+                        android:maxLength="3" />
+                </android.support.design.widget.TextInputLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/form_inner_layout_margin"
+                android:orientation="horizontal"
+                android:weightSum="1">
+
+                <!--  <TextView
+                          android:id="@+id/frm_prtnrpref_tv_weight"
+                          android:layout_width="match_parent"
+                          android:layout_height="wrap_content"
+                          android:layout_gravity="center"
+                          android:layout_margin="10dp"
+                          android:layout_weight=".5"
+                          android:text="Maximum height(cm) :-"
+                          android:textStyle="bold" />
+          -->
+                <android.support.design.widget.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <EditText
+                        android:id="@+id/frm_prtnrpref_et_maxht"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_weight=".5"
+                        android:hint="@string/MaximumHeight"
+                        android:inputType="number"
+                        android:maxLength="3" />
+                </android.support.design.widget.TextInputLayout>
+
+            </LinearLayout>
+
+
+            <TextView
+                android:id="@+id/frm_prtnrpref_tv_complexion"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginLeft="@dimen/form_spinner_label_mar_left"
+                android:layout_marginTop="@dimen/button_margin_top"
+                android:layout_weight=".5"
+                android:text="@string/Complexion"
+                android:textSize="@dimen/form_tv_size" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/layout_margin"
+                android:orientation="horizontal"
+                android:weightSum="1">
+
+                <Spinner
+                    android:id="@+id/frm_prtnrpref_spr_complexion"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_weight=".5"
+                    android:entries="@array/complexion" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/form_inner_layout_margin"
+                android:orientation="horizontal"
+                android:weightSum="1">
+
+                <!-- <TextView
+                         android:id="@+id/frm_prtnrpref_tv_education"
+                         android:layout_width="match_parent"
+                         android:layout_height="wrap_content"
+                         android:layout_gravity="center"
+                         android:layout_margin="10dp"
+                         android:layout_weight=".5"
+                         android:text="Education :-"
+                         android:textStyle="bold" />
+         -->
+                <android.support.design.widget.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <EditText
+                        android:id="@+id/frm_prtnrpref_et_education"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_weight=".5"
+                        android:hint="@string/HighestEducation"
+                        android:inputType="textCapWords" />
+                </android.support.design.widget.TextInputLayout>
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/frm_prtnrpref_tv_religion"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginLeft="@dimen/form_spinner_label_mar_left"
+                android:layout_marginTop="@dimen/form_spinner_layout_margin_top"
+                android:layout_weight=".5"
+                android:text="@string/Religion"
+                android:textSize="@dimen/form_tv_size"
+                android:textStyle="bold" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/layout_margin"
+                android:orientation="horizontal"
+                android:weightSum="1">
+
+                <Spinner
+                    android:id="@+id/frm_prtnrpref_spr_religion"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_weight=".5"
+                    android:entries="@array/religion" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/form_inner_layout_margin"
+                android:orientation="horizontal"
+                android:weightSum="1">
+                <!--
+
+                                <TextView
+                                    android:id="@+id/frm_prtnrpref_tv_cast"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center"
+                                    android:layout_margin="10dp"
+                                    android:layout_weight=".5"
+                                    android:text="Cast :-"
+                                    android:textStyle="bold" />
+                    -->
+                <android.support.design.widget.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <EditText
+                        android:id="@+id/frm_prtnrpref_spr_cast"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_weight=".5"
+                        android:hint="@string/Cast"
+                        android:inputType="textCapWords" />
+                </android.support.design.widget.TextInputLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/form_spinner_layout_margin_top"
+                android:orientation="horizontal"
+                android:weightSum="1">
+
+                <CheckBox
+                    android:id="@+id/frm_prtnrpref_ckbx_termcondtn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:focusable="true" />
+
+                <TextView
+                    android:id="@+id/term_and_cond"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center_vertical"
+                    android:text="@string/termsandConditions"
+                    android:textColor="@color/ev_name" />
+            </LinearLayout>
+
+
+
+                <!--
+                                <Button
+                                    android:layout_width="50dp"
+                                    android:layout_height="50dp"
+                                    android:layout_gravity="start"
+                                    android:layout_marginLeft="10dp"
+                                    android:layout_marginRight="10dp"
+                                    android:layout_marginTop="10dp"
+                                    android:layout_weight=".5"
+                                    android:background="@color/circleArrowButton"
+                                    android:text="Clear"
+                                    android:textStyle="bold"
+                                    android:textColor="#fff" />-->
+
+                <Button
+                    android:id="@+id/button7"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/button_margin_top"
+                    android:layout_marginBottom="@dimen/formPartnerPref_button_margin_bottom"
+                    android:background="@color/circleArrowButton"
+                    android:onClick="saveAndGoToMatrimonyActivity"
+                    android:text="@string/SaveAll"
+                    android:textColor="@color/buttonTextColor"
+                    android:textStyle="bold" />
+                <!--<Button
+                        android:id="@+id/bnsaveupdate"
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:layout_gravity="end"
+                        android:layout_marginTop="10dp"
+                        android:layout_weight=".5"
+                        android:textColor="#fff"
+                        android:textStyle="bold"
+                        android:background="@color/circleArrowButton"
+                        android:onClick="goToFormContactInformation"
+                        android:text="save update"
+                        android:visibility="gone"/>-->
+        </LinearLayout>
+    </ScrollView>
+    <!--  <ImageButton
+          android:id="@+id/draggable_view"
+          android:background="@drawable/home_icon"
+          android:layout_gravity="bottom|right"
+          android:layout_marginBottom="20dp"
+          android:layout_marginEnd="20dp"
+          android:layout_width="50dp"
+          android:layout_height="50dp"/>
+  -->
+</LinearLayout>

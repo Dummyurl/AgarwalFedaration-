@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <include layout="@layout/toolbar_matrimony"/>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/layoutMargin"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+               <!-- <TextView
+                    android:id="@+id/OtherDetails"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+
+                    android:layout_marginBottom="@dimen/layoutMarginBottom"
+                    android:layout_marginTop="@dimen/layoutMarginBottom"
+                    android:text="@string/OTHER_DETAILS"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Title"
+                    android:textColor="#ef5350"
+                    android:textSize="24sp"
+                    android:textStyle="bold" />-->
+
+                <android.support.design.widget.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/TextInputLayoutMargin_top_bottom"
+                    android:layout_marginTop="@dimen/TextInputLayoutMargin_top_bottom">
+
+                    <EditText
+                        android:id="@+id/Extra_Activity"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="@string/Extra_Curriculum_Activity"
+                        android:inputType="textEmailAddress" />
+                </android.support.design.widget.TextInputLayout>
+
+                <android.support.design.widget.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/TextInputLayoutMargin_top_bottom"
+                    android:layout_marginTop="@dimen/TextInputLayoutMargin_top_bottom">
+
+                    <EditText
+                        android:id="@+id/Level"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="@string/Zonal_National_International_Level"
+                        android:inputType="textEmailAddress" />
+                </android.support.design.widget.TextInputLayout>
+
+                <android.support.design.widget.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/TextInputLayoutMargin_top_bottom"
+                    android:layout_marginTop="@dimen/TextInputLayoutMargin_top_bottom">
+
+                    <EditText
+                        android:id="@+id/Year"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="@string/Year"
+                        android:inputType="number"
+                        android:maxLength="4" />
+                </android.support.design.widget.TextInputLayout>
+
+                <android.support.design.widget.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/TextInputLayoutMargin_top_bottom"
+                    android:layout_marginTop="@dimen/TextInputLayoutMargin_top_bottom">
+
+                    <EditText
+                        android:id="@+id/Position"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="@string/Position"
+                        android:inputType="textEmailAddress" />
+                </android.support.design.widget.TextInputLayout>
+
+                <TextView
+                    android:id="@+id/Other_Achivment"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/layoutMarginBottom"
+                    android:layout_marginTop="@dimen/layoutMarginBottom"
+                    android:text="@string/Any_Other_Achivment"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Title"
+                    android:textColor="#000000"
+                    android:textSize="@dimen/text_size" />
+
+                <EditText
+                    android:id="@+id/AnyOtherAchivment"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="top|left"
+                    android:inputType="textMultiLine"
+                    android:lines="1"
+                    android:maxLines="5"
+                    android:scrollHorizontally="false" />
+
+                <TextView
+                    android:id="@+id/Hobbies"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/layoutMarginBottom"
+                    android:layout_marginTop="@dimen/layoutMarginBottom"
+                    android:text="@string/Hobbies"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Title"
+                    android:textColor="#000000"
+                    android:textSize="18sp" />
+
+                <EditText
+                    android:id="@+id/EditText_Hobbies"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="top|left"
+                    android:inputType="textMultiLine"
+                    android:lines="1"
+                    android:maxLines="5"
+                    android:scrollHorizontally="false" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_margin="@dimen/button_margin"
+                    android:gravity="center"
+                    android:orientation="horizontal"
+                    android:weightSum="1">
+
+                    <!--<Button
+                        android:id="@+id/O_Prev"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Prev"
+                        android:background="#ef5350"
+                        android:textColor="#ffffff"
+                        android:layout_gravity="center"
+                        android:gravity="center"
+                        android:layout_weight="1"
+                        android:layout_margin="@dimen/marginButton1" />-->
+
+                    <Button
+                        android:id="@+id/O_Next"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignTop="@+id/bt_Prev"
+                        android:layout_gravity="center"
+                        android:layout_margin="@dimen/marginButton1"
+                        android:layout_marginTop="@dimen/layoutMargin"
+                        android:layout_weight="1"
+                        android:background="#ef5350"
+                        android:gravity="center"
+                        android:onClick="startNext"
+                        android:text="@string/Next"
+                        android:textColor="#ffffff" />
+                </LinearLayout>
+
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

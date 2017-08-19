@@ -1,0 +1,2951 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".education.FeatchDetails">
+
+    <include layout="@layout/toolbar_matrimony" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:id="@+id/iv_profile"
+                    android:layout_width="@dimen/image_width"
+                    android:layout_height="@dimen/image_height"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="@dimen/layoutMarginBottom"
+                    android:src="@drawable/one" />
+
+                <TextView
+                    android:id="@+id/tv_personaldetails1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/layoutMargin"
+                    android:text="Personal Details"
+                    android:textAlignment="viewStart"
+                    android:textColor="@color/colorAccent"
+                    android:textSize="@dimen/layoutMargin"
+                    android:textStyle="bold"
+                    tools:ignore="HardcodedText" />
+
+                <LinearLayout
+                    android:id="@+id/layout_basic_dtail"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="@dimen/layoutMarginBottom"
+                        android:orientation="horizontal"
+                        android:weightSum="1">
+
+                        <TextView
+                            android:id="@+id/per_fname"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_weight=".5"
+                            android:text="@string/First_Name"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_marginRight="@dimen/layoutMarginBottom"
+                            android:text=":"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/d_per_fname"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_weight=".5"
+                            android:textStyle="bold" />
+                    </LinearLayout>
+
+                    <include layout="@layout/item_devider1" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="@dimen/layoutMarginBottom"
+                        android:orientation="horizontal"
+                        android:weightSum="1">
+
+                        <TextView
+                            android:id="@+id/per_lname"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_weight=".5"
+                            android:text="@string/Last_Name"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_marginRight="@dimen/layoutMarginBottom"
+                            android:text=":"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/d_per_lname"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_weight=".5"
+                            android:textStyle="bold" />
+                    </LinearLayout>
+
+                    <include layout="@layout/item_devider1" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="@dimen/layoutMarginBottom"
+                        android:orientation="horizontal"
+                        android:weightSum="1">
+
+                        <TextView
+                            android:id="@+id/per_dob"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_weight=".5"
+                            android:text="@string/DOB"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_marginRight="@dimen/layoutMarginBottom"
+                            android:text=":"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/d_per_dob"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_weight=".5"
+                            android:textStyle="bold" />
+                    </LinearLayout>
+
+                    <include layout="@layout/item_devider1" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="@dimen/layoutMarginBottom"
+                        android:orientation="horizontal"
+                        android:weightSum="1">
+
+                        <TextView
+                            android:id="@+id/per_fathername"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_weight=".5"
+                            android:text="@string/Father_Name"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_marginRight="@dimen/layoutMarginBottom"
+                            android:text=":"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/d_per_fathername"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_weight=".5"
+                            android:textStyle="bold" />
+                    </LinearLayout>
+
+                    <include layout="@layout/item_devider1" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="@dimen/layoutMarginBottom"
+                        android:orientation="horizontal"
+                        android:weightSum="1">
+
+                        <TextView
+                            android:id="@+id/per_Mothername"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_weight=".5"
+                            android:text="@string/Mother_Name"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_marginRight="@dimen/layoutMarginBottom"
+                            android:text=":"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/d_per_Mothername"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_weight=".5"
+                            android:textStyle="bold" />
+                    </LinearLayout>
+
+                    <include layout="@layout/item_devider1" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="@dimen/layoutMarginBottom"
+                        android:orientation="horizontal"
+                        android:weightSum="1">
+
+                        <TextView
+                            android:id="@+id/per_gender"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_weight=".5"
+                            android:text="@string/Gender"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_marginRight="@dimen/layoutMarginBottom"
+                            android:text=":"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/d_per_gender"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_weight=".5"
+                            android:textStyle="bold" />
+                    </LinearLayout>
+
+                    <include layout="@layout/item_devider1" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="@dimen/layoutMarginBottom"
+                        android:orientation="horizontal"
+                        android:weightSum="1">
+
+                        <TextView
+                            android:id="@+id/country1"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_weight=".5"
+                            android:text="@string/CountryName"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_marginRight="@dimen/layoutMarginBottom"
+                            android:text=":"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/per_country1"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_weight=".5"
+                            android:textStyle="bold" />
+                    </LinearLayout>
+
+                    <include layout="@layout/item_devider1" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="@dimen/layoutMarginBottom"
+                        android:orientation="horizontal"
+                        android:weightSum="1">
+
+                        <TextView
+                            android:id="@+id/state1"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_weight=".5"
+                            android:text="@string/States"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_marginRight="@dimen/layoutMarginBottom"
+                            android:text=":"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/d_per_state1"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_weight=".5"
+                            android:textStyle="bold" />
+                    </LinearLayout>
+
+                    <include layout="@layout/item_devider1" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="@dimen/layoutMarginBottom"
+                        android:orientation="horizontal"
+                        android:weightSum="1">
+
+                        <TextView
+                            android:id="@+id/city1"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_weight=".5"
+                            android:text="@string/City"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_marginRight="@dimen/layoutMarginBottom"
+                            android:text=":"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/d_per_city1"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_weight=".5"
+                            android:textStyle="bold" />
+                    </LinearLayout>
+
+                    <include layout="@layout/item_devider1" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="@dimen/layoutMarginBottom"
+                        android:orientation="horizontal"
+                        android:weightSum="1">
+
+                        <TextView
+                            android:id="@+id/address1"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_weight=".5"
+                            android:text="@string/Address"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_marginRight="@dimen/layoutMarginBottom"
+                            android:text=":"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/d_per_address1"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_weight=".5"
+                            android:textStyle="bold" />
+                    </LinearLayout>
+
+                    <include layout="@layout/item_devider1" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="@dimen/layoutMarginBottom"
+                        android:orientation="horizontal"
+                        android:weightSum="1">
+
+                        <TextView
+                            android:id="@+id/pincode1"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_weight=".5"
+                            android:text="@string/Pincode"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_marginRight="@dimen/layoutMarginBottom"
+                            android:text=":"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/d_per_pincode1"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_weight=".5"
+                            android:textStyle="bold" />
+                    </LinearLayout>
+
+                    <include layout="@layout/item_devider1" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/layout_family_detl"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+
+                    <TextView
+                        android:id="@+id/tv_famildtl"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="@dimen/layoutMargin"
+                        android:text="@string/Family_Details"
+                        android:textAlignment="viewStart"
+                        android:textColor="@color/colorAccent"
+                        android:textSize="@dimen/layoutMargin"
+                        android:textStyle="bold" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="@dimen/layoutMarginBottom"
+                        android:orientation="horizontal"
+                        android:weightSum="1">
+
+                        <TextView
+                            android:id="@+id/per_ftheroccptn"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_weight=".5"
+                            android:text="@string/Father_occupation"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_marginRight="@dimen/layoutMarginBottom"
+                            android:text=":"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/d_per_ftheroccptn"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_weight=".5"
+                            android:textStyle="bold" />
+                    </LinearLayout>
+
+                    <include layout="@layout/item_devider1" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="@dimen/layoutMarginBottom"
+                        android:orientation="horizontal"
+                        android:weightSum="1">
+
+                        <TextView
+                            android:id="@+id/Father_MobileNo1"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_weight=".5"
+                            android:text="@string/Father_Mobile_No"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_marginRight="@dimen/layoutMarginBottom"
+                            android:text=":"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/d_per_Father_MobileNo1"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_weight=".5"
+                            android:textStyle="bold" />
+                    </LinearLayout>
+
+                    <include layout="@layout/item_devider1" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="@dimen/layoutMarginBottom"
+                        android:orientation="horizontal"
+                        android:weightSum="1">
+
+                        <TextView
+                            android:id="@+id/Father_Telephone"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_weight=".5"
+                            android:text="@string/Father_Telephone_No"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_marginRight="@dimen/layoutMarginBottom"
+                            android:text=":"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/d_per_Father_Telephone"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_weight=".5"
+                            android:textStyle="bold" />
+                    </LinearLayout>
+
+                    <include layout="@layout/item_devider1" />
+
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="@dimen/layoutMarginBottom"
+                        android:orientation="horizontal"
+                        android:weightSum="1">
+
+                        <TextView
+                            android:id="@+id/Designation1"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_weight=".5"
+                            android:text="@string/Designation"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_marginRight="@dimen/layoutMarginBottom"
+                            android:text=":"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/d_per_Designation"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_weight=".5"
+                            android:textStyle="bold" />
+                    </LinearLayout>
+
+                    <include layout="@layout/item_devider1" />
+
+                    <!-- <LinearLayout
+                         android:layout_width="match_parent"
+                         android:layout_height="wrap_content"
+                         android:orientation="horizontal"
+                         android:layout_margin="2dp"
+                         android:weightSum="1">
+                         <TextView
+                             android:id="@+id/Anual_Income1"
+                             android:layout_width="match_parent"
+                             android:layout_height="wrap_content"
+                             android:text="Anual Income :-"
+                             android:layout_weight=".5"
+                             android:layout_margin="@dimen/layoutMarginBottom"
+                             android:layout_gravity="center"
+                             android:textStyle="bold" />
+                         <TextView
+                             android:id="@+id/d_per_Anual_Income1"
+                             android:layout_width="match_parent"
+                             android:layout_height="wrap_content"
+                             android:text="Anual Income"
+                             android:layout_weight=".5"
+                             android:layout_gravity="center"
+                             android:textStyle="bold" />
+                     </LinearLayout>-->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="@dimen/layoutMarginBottom"
+                        android:orientation="horizontal"
+                        android:weightSum="1">
+
+                        <TextView
+                            android:id="@+id/PAN1"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_weight=".5"
+                            android:text="@string/PANCARDNo"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_marginRight="@dimen/layoutMarginBottom"
+                            android:text=":"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/d_per_PAN1"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_weight=".5"
+                            android:textStyle="bold" />
+                    </LinearLayout>
+
+                    <include layout="@layout/item_devider1" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="@dimen/layoutMarginBottom"
+                        android:orientation="horizontal"
+                        android:weightSum="1">
+
+                        <TextView
+                            android:id="@+id/Mother_Occupation1"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_weight=".5"
+                            android:text="@string/Mother_Occupation"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_marginRight="@dimen/layoutMarginBottom"
+                            android:text=":"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/d_per_Mother_Occupation1"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_weight=".5"
+                            android:textStyle="bold" />
+                    </LinearLayout>
+
+                    <include layout="@layout/item_devider1" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="@dimen/layoutMarginBottom"
+                        android:orientation="horizontal"
+                        android:weightSum="1">
+
+                        <TextView
+                            android:id="@+id/Mother_Telephone1"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_weight=".5"
+                            android:text="@string/Mother_Telephone_No"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_marginRight="@dimen/layoutMarginBottom"
+                            android:text=":"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/d_per_Mother_Telephone1"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_weight=".5"
+                            android:textStyle="bold" />
+                    </LinearLayout>
+
+                    <include layout="@layout/item_devider1" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="@dimen/layoutMarginBottom"
+                        android:orientation="horizontal"
+                        android:weightSum="1">
+
+                        <TextView
+                            android:id="@+id/Mother_MobileNo1"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_weight=".5"
+                            android:text="@string/Mother_Mobile_No"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_marginRight="@dimen/layoutMarginBottom"
+                            android:text=":"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/d_per_MobileNo1"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_weight=".5"
+                            android:textStyle="bold" />
+                    </LinearLayout>
+
+                    <include layout="@layout/item_devider1" />
+
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="@dimen/layoutMarginBottom"
+                        android:orientation="horizontal"
+                        android:weightSum="1">
+
+                        <TextView
+                            android:id="@+id/Religion2"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_weight=".5"
+                            android:text="@string/Religion"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_marginRight="@dimen/layoutMarginBottom"
+                            android:text=":"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/d_per_Religion2"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_weight=".5"
+                            android:textStyle="bold" />
+
+
+                    </LinearLayout>
+
+                    <include layout="@layout/item_devider1" />
+
+                    <LinearLayout
+                        android:id="@+id/layout_education_detl"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/SS"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="@dimen/layoutMargin"
+                            android:text="@string/Education_Details"
+                            android:textAlignment="viewStart"
+                            android:textColor="@color/colorAccent"
+                            android:textSize="@dimen/layoutMargin"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/SSC"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="@dimen/layoutMargin"
+                            android:layout_marginLeft="@dimen/layoutMargin"
+                            android:text="@string/SSC_Details"
+                            android:textColor="#000"
+                            android:textSize="@dimen/layoutMargin"
+                            android:textStyle="bold" />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="@dimen/layoutMarginBottom"
+                            android:orientation="horizontal"
+                            android:weightSum="1">
+
+                            <TextView
+                                android:id="@+id/SSC_Board"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:layout_weight=".5"
+                                android:text="@string/SSC_Result"
+                                android:textStyle="bold" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:layout_marginRight="@dimen/layoutMarginBottom"
+                                android:text=":"
+                                android:textStyle="bold" />
+
+                            <TextView
+                                android:id="@+id/d_per_SSC_Board"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:layout_weight=".5"
+                                android:textStyle="bold" />
+                        </LinearLayout>
+
+                        <include layout="@layout/item_devider1" />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="@dimen/layoutMarginBottom"
+                            android:orientation="horizontal"
+                            android:weightSum="1">
+
+                            <TextView
+                                android:id="@+id/SSC_SchoolName"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:layout_weight=".5"
+                                android:text="@string/School_Name"
+                                android:textStyle="bold" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:layout_marginRight="@dimen/layoutMarginBottom"
+                                android:text=":"
+                                android:textStyle="bold" />
+
+                            <TextView
+                                android:id="@+id/d_per_SSC_SchoolName"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:layout_weight=".5"
+                                android:textStyle="bold" />
+                        </LinearLayout>
+
+                        <include layout="@layout/item_devider1" />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="@dimen/layoutMarginBottom"
+                            android:orientation="horizontal"
+                            android:weightSum="1">
+
+                            <TextView
+                                android:id="@+id/SSC_Roll_No"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:layout_weight=".5"
+                                android:text="@string/Roll_No"
+                                android:textStyle="bold" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:layout_marginRight="@dimen/layoutMarginBottom"
+                                android:text=":"
+                                android:textStyle="bold" />
+
+                            <TextView
+                                android:id="@+id/d_per_SSC_graduatein"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:layout_weight=".5"
+                                android:textStyle="bold" />
+                        </LinearLayout>
+
+                        <include layout="@layout/item_devider1" />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="@dimen/layoutMarginBottom"
+                            android:orientation="horizontal"
+                            android:weightSum="1">
+
+                            <TextView
+                                android:id="@+id/SSC_Year"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:layout_weight=".5"
+                                android:text="@string/Year"
+                                android:textStyle="bold" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:layout_marginRight="@dimen/layoutMarginBottom"
+                                android:text=":"
+                                android:textStyle="bold" />
+
+                            <TextView
+                                android:id="@+id/d_per_Year"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:layout_weight=".5"
+                                android:textStyle="bold" />
+                        </LinearLayout>
+
+                        <include layout="@layout/item_devider1" />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="@dimen/layoutMarginBottom"
+                            android:orientation="horizontal"
+                            android:weightSum="1">
+
+                            <TextView
+                                android:id="@+id/SSC_Percent"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:layout_weight=".5"
+                                android:text="@string/Percent"
+                                android:textStyle="bold" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:layout_marginRight="@dimen/layoutMarginBottom"
+                                android:text=":"
+                                android:textStyle="bold" />
+
+                            <TextView
+                                android:id="@+id/d_per_SSC_Percent"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:layout_weight=".5"
+                                android:textStyle="bold" />
+                        </LinearLayout>
+
+                        <include layout="@layout/item_devider1" />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="@dimen/layoutMarginBottom"
+                            android:orientation="horizontal"
+                            android:weightSum="1">
+
+                            <TextView
+                                android:id="@+id/SSC_Rank1"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:layout_weight=".5"
+                                android:text="@string/Rank_If_any"
+                                android:textStyle="bold"
+                                tools:ignore="HardcodedText" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:layout_marginRight="@dimen/layoutMarginBottom"
+                                android:text=":"
+                                android:textStyle="bold" />
+
+                            <TextView
+                                android:id="@+id/d_per_SSC_Rank1"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:layout_weight=".5"
+                                android:textStyle="bold"
+                                tools:ignore="HardcodedText" />
+
+                        </LinearLayout>
+
+                        <include layout="@layout/item_devider1" />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:id="@+id/HSC"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_margin="@dimen/layoutMargin"
+                                android:text="@string/HSC_Details"
+                                android:textColor="#000"
+                                android:textSize="@dimen/layoutMargin"
+                                android:textStyle="bold" />
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_margin="@dimen/layoutMarginBottom"
+                                android:orientation="horizontal"
+                                android:weightSum="1">
+
+                                <TextView
+                                    android:id="@+id/HSC_Board"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center"
+                                    android:layout_weight=".5"
+                                    android:text="@string/HSC_Board"
+                                    android:textStyle="bold" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center"
+                                    android:layout_marginRight="@dimen/layoutMarginBottom"
+                                    android:text=":"
+                                    android:textStyle="bold" />
+
+                                <TextView
+                                    android:id="@+id/d_per_HSC_Board"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center"
+                                    android:layout_weight=".5"
+                                    android:textStyle="bold" />
+                            </LinearLayout>
+
+                            <include layout="@layout/item_devider1" />
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_margin="@dimen/layoutMarginBottom"
+                                android:orientation="horizontal"
+                                android:weightSum="1">
+
+                                <TextView
+                                    android:id="@+id/HSC_SchoolName"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center"
+                                    android:layout_weight=".5"
+                                    android:text="@string/School_Name"
+                                    android:textStyle="bold" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center"
+                                    android:layout_marginRight="@dimen/layoutMarginBottom"
+                                    android:text=":"
+                                    android:textStyle="bold" />
+
+                                <TextView
+                                    android:id="@+id/d_per_HSC_SchoolName"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center"
+                                    android:layout_weight=".5"
+                                    android:textStyle="bold" />
+                            </LinearLayout>
+
+                            <include layout="@layout/item_devider1" />
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_margin="@dimen/layoutMarginBottom"
+                                android:orientation="horizontal"
+                                android:weightSum="1">
+
+                                <TextView
+                                    android:id="@+id/HSC_Roll_No"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center"
+                                    android:layout_weight=".5"
+                                    android:text="@string/Roll_No"
+                                    android:textStyle="bold" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center"
+                                    android:layout_marginRight="@dimen/layoutMarginBottom"
+                                    android:text=":"
+                                    android:textStyle="bold" />
+
+                                <TextView
+                                    android:id="@+id/d_per_graduatein"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center"
+                                    android:layout_weight=".5"
+                                    android:textStyle="bold" />
+                            </LinearLayout>
+
+                            <include layout="@layout/item_devider1" />
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_margin="@dimen/layoutMarginBottom"
+                                android:orientation="horizontal"
+                                android:weightSum="1">
+
+                                <TextView
+                                    android:id="@+id/HSC_Year"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center"
+                                    android:layout_weight=".5"
+                                    android:text="@string/Year"
+                                    android:textStyle="bold" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center"
+                                    android:layout_marginRight="@dimen/layoutMarginBottom"
+                                    android:text=":"
+                                    android:textStyle="bold" />
+
+                                <TextView
+                                    android:id="@+id/d_per_HSC_Year"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center"
+                                    android:layout_weight=".5"
+                                    android:textStyle="bold" />
+                            </LinearLayout>
+
+                            <include layout="@layout/item_devider1" />
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_margin="@dimen/layoutMarginBottom"
+                                android:orientation="horizontal"
+                                android:weightSum="1">
+
+                                <TextView
+                                    android:id="@+id/HSC_Percent"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center"
+                                    android:layout_weight=".5"
+                                    android:text="@string/Percent"
+                                    android:textStyle="bold" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center"
+                                    android:layout_marginRight="@dimen/layoutMarginBottom"
+                                    android:text=":"
+                                    android:textStyle="bold" />
+
+                                <TextView
+                                    android:id="@+id/d_per_HSC_Percent"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center"
+                                    android:layout_weight=".5"
+                                    android:textStyle="bold" />
+                            </LinearLayout>
+
+                            <include layout="@layout/item_devider1" />
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_margin="@dimen/layoutMarginBottom"
+                                android:orientation="horizontal"
+                                android:weightSum="1">
+
+                                <TextView
+                                    android:id="@+id/HSC_Rank1"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center"
+                                    android:layout_weight=".5"
+                                    android:text="@string/Rank_If_any"
+                                    android:textStyle="bold"
+                                    tools:ignore="HardcodedText" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center"
+                                    android:layout_marginRight="@dimen/layoutMarginBottom"
+                                    android:text=":"
+                                    android:textStyle="bold" />
+
+                                <TextView
+                                    android:id="@+id/d_per_HSC_Rank1"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center"
+                                    android:layout_weight=".5"
+                                    android:textStyle="bold"
+                                    tools:ignore="HardcodedText" />
+                            </LinearLayout>
+
+                            <include layout="@layout/item_devider1" />
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:orientation="vertical">
+
+                                <TextView
+                                    android:id="@+id/Graduation"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_margin="@dimen/layoutMargin"
+                                    android:text="@string/Graduation_Details"
+                                    android:textColor="#000"
+                                    android:textSize="@dimen/layoutMargin"
+                                    android:textStyle="bold" />
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_margin="@dimen/layoutMarginBottom"
+                                    android:orientation="horizontal"
+                                    android:weightSum="1">
+
+                                    <TextView
+                                        android:id="@+id/Grad_Board"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_gravity="center"
+                                        android:layout_weight=".5"
+                                        android:text="@string/Graduation_University"
+                                        android:textStyle="bold" />
+
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_gravity="center"
+                                        android:layout_marginRight="@dimen/layoutMarginBottom"
+                                        android:text=":"
+                                        android:textStyle="bold" />
+
+                                    <TextView
+                                        android:id="@+id/d_per_Grad_Board"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_gravity="center"
+                                        android:layout_weight=".5"
+                                        android:textStyle="bold" />
+                                </LinearLayout>
+
+                                <include layout="@layout/item_devider1" />
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_margin="@dimen/layoutMarginBottom"
+                                    android:orientation="horizontal"
+                                    android:weightSum="1">
+
+                                    <TextView
+                                        android:id="@+id/Gard_SchoolName"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_gravity="center"
+                                        android:layout_weight=".5"
+                                        android:text="@string/School_College_Name"
+                                        android:textStyle="bold" />
+
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_gravity="center"
+                                        android:layout_marginRight="@dimen/layoutMarginBottom"
+                                        android:text=":"
+                                        android:textStyle="bold" />
+
+                                    <TextView
+                                        android:id="@+id/d_per_Grad_SchoolName"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_gravity="center"
+                                        android:layout_weight=".5"
+                                        android:textStyle="bold" />
+                                </LinearLayout>
+
+                                <include layout="@layout/item_devider1" />
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_margin="@dimen/layoutMarginBottom"
+                                    android:orientation="horizontal"
+                                    android:weightSum="1">
+
+                                    <TextView
+                                        android:id="@+id/Gard_Roll_No"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_gravity="center"
+                                        android:layout_weight=".5"
+                                        android:text="@string/Degree_Name"
+                                        android:textStyle="bold" />
+
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_gravity="center"
+                                        android:layout_marginRight="@dimen/layoutMarginBottom"
+                                        android:text=":"
+                                        android:textStyle="bold" />
+
+                                    <TextView
+                                        android:id="@+id/d_per_grad_Roll_No"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_gravity="center"
+                                        android:layout_weight=".5"
+                                        android:textStyle="bold" />
+                                </LinearLayout>
+
+                                <include layout="@layout/item_devider1" />
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_margin="@dimen/layoutMarginBottom"
+                                    android:orientation="horizontal"
+                                    android:weightSum="1">
+
+                                    <TextView
+                                        android:id="@+id/Grad_Year"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_gravity="center"
+                                        android:layout_weight=".5"
+                                        android:text="@string/Year"
+                                        android:textStyle="bold" />
+
+                                    <TextView
+                                        android:id="@+id/d_per_Grad_Year"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_gravity="center"
+                                        android:layout_weight=".5"
+                                        android:textStyle="bold" />
+                                </LinearLayout>
+
+                                <include layout="@layout/item_devider1" />
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_margin="@dimen/layoutMarginBottom"
+                                    android:orientation="horizontal"
+                                    android:weightSum="1">
+
+                                    <TextView
+                                        android:id="@+id/Grad_Percent"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_gravity="center"
+                                        android:layout_weight=".5"
+                                        android:text="@string/Percent"
+                                        android:textStyle="bold" />
+
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_gravity="center"
+                                        android:layout_marginRight="@dimen/layoutMarginBottom"
+                                        android:text=":"
+                                        android:textStyle="bold" />
+
+                                    <TextView
+                                        android:id="@+id/d_per_Grad_Percent"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_gravity="center"
+                                        android:layout_weight=".5"
+                                        android:textStyle="bold" />
+                                </LinearLayout>
+
+                                <include layout="@layout/item_devider1" />
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_margin="@dimen/layoutMarginBottom"
+                                    android:orientation="horizontal"
+                                    android:weightSum="1">
+
+                                    <TextView
+                                        android:id="@+id/Grad_Rank1"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_gravity="center"
+                                        android:layout_weight=".5"
+                                        android:text="@string/Rank_If_any"
+                                        android:textStyle="bold"
+                                        tools:ignore="HardcodedText" />
+
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_gravity="center"
+                                        android:layout_marginRight="@dimen/layoutMarginBottom"
+                                        android:text=":"
+                                        android:textStyle="bold" />
+
+                                    <TextView
+                                        android:id="@+id/d_per_Grad_Rank1"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_gravity="center"
+                                        android:layout_weight=".5"
+                                        android:textStyle="bold"
+                                        tools:ignore="HardcodedText" />
+                                </LinearLayout>
+
+                                <include layout="@layout/item_devider1" />
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_margin="@dimen/layoutMarginBottom"
+                                    android:orientation="horizontal"
+                                    android:weightSum="1">
+
+                                    <TextView
+                                        android:id="@+id/Grad_Final_Year"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_gravity="center"
+                                        android:layout_weight=".5"
+                                        android:text="@string/Final_Year"
+                                        android:textStyle="bold"
+                                        tools:ignore="HardcodedText" />
+
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_gravity="center"
+                                        android:layout_marginRight="@dimen/layoutMarginBottom"
+                                        android:text=":"
+                                        android:textStyle="bold" />
+
+                                    <TextView
+                                        android:id="@+id/d_per_Grad_Final_Year"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_gravity="center"
+                                        android:layout_weight=".5"
+                                        android:textStyle="bold"
+                                        tools:ignore="HardcodedText" />
+                                </LinearLayout>
+
+                                <include layout="@layout/item_devider1" />
+
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:orientation="vertical">
+
+                                <TextView
+                                    android:id="@+id/Post_Graduation"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_margin="@dimen/layoutMargin"
+                                    android:text="@string/Post_Graduation_Details"
+                                    android:textColor="#000"
+                                    android:textSize="@dimen/layoutMargin"
+                                    android:textStyle="bold" />
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_margin="@dimen/layoutMarginBottom"
+                                    android:orientation="horizontal"
+                                    android:weightSum="1">
+
+                                    <TextView
+                                        android:id="@+id/Post_Grad_Board"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_gravity="center"
+                                        android:layout_weight=".5"
+                                        android:text="@string/Post_Graduation_University"
+                                        android:textStyle="bold" />
+
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_gravity="center"
+                                        android:layout_marginRight="@dimen/layoutMarginBottom"
+                                        android:text=":"
+                                        android:textStyle="bold" />
+
+                                    <TextView
+                                        android:id="@+id/d_per_Post_Grad_Board"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_gravity="center"
+                                        android:layout_weight=".5"
+                                        android:textStyle="bold" />
+                                </LinearLayout>
+
+                                <include layout="@layout/item_devider1" />
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_margin="@dimen/layoutMarginBottom"
+                                    android:orientation="horizontal"
+                                    android:weightSum="1">
+
+                                    <TextView
+                                        android:id="@+id/Post_Gard_SchoolName"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_gravity="center"
+                                        android:layout_weight=".5"
+                                        android:text="@string/School_College_Name"
+                                        android:textStyle="bold" />
+
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_gravity="center"
+                                        android:layout_marginRight="@dimen/layoutMarginBottom"
+                                        android:text=":"
+                                        android:textStyle="bold" />
+
+                                    <TextView
+                                        android:id="@+id/d_per_Post_Grad_SchoolName"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_gravity="center"
+                                        android:layout_weight=".5"
+                                        android:textStyle="bold" />
+                                </LinearLayout>
+
+                                <include layout="@layout/item_devider1" />
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_margin="@dimen/layoutMarginBottom"
+                                    android:orientation="horizontal"
+                                    android:weightSum="1">
+
+                                    <TextView
+                                        android:id="@+id/Post_Gard_Roll_No"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_gravity="center"
+                                        android:layout_weight=".5"
+                                        android:text="@string/Roll_No"
+                                        android:textStyle="bold" />
+
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_gravity="center"
+                                        android:layout_marginRight="@dimen/layoutMarginBottom"
+                                        android:text=":"
+                                        android:textStyle="bold" />
+
+                                    <TextView
+                                        android:id="@+id/d_per_Grad_Roll_No"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_gravity="center"
+                                        android:layout_weight=".5"
+                                        android:textStyle="bold" />
+                                </LinearLayout>
+
+                                <include layout="@layout/item_devider1" />
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_margin="@dimen/layoutMarginBottom"
+                                    android:orientation="horizontal"
+                                    android:weightSum="1">
+
+                                    <TextView
+                                        android:id="@+id/Post_Grad_Year"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_gravity="center"
+                                        android:layout_weight=".5"
+                                        android:text="@string/Year"
+                                        android:textStyle="bold" />
+
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_gravity="center"
+                                        android:layout_marginRight="@dimen/layoutMarginBottom"
+                                        android:text=":"
+                                        android:textStyle="bold" />
+
+                                    <TextView
+                                        android:id="@+id/d_per_Post_Grad_Year"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_gravity="center"
+                                        android:layout_weight=".5"
+                                        android:textStyle="bold" />
+                                </LinearLayout>
+
+                                <include layout="@layout/item_devider1" />
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_margin="@dimen/layoutMarginBottom"
+                                    android:orientation="horizontal"
+                                    android:weightSum="1">
+
+                                    <TextView
+                                        android:id="@+id/Post_Grad_Percent"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_gravity="center"
+                                        android:layout_weight=".5"
+                                        android:text="@string/Percent"
+                                        android:textStyle="bold" />
+
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_gravity="center"
+                                        android:layout_marginRight="@dimen/layoutMarginBottom"
+                                        android:text=":"
+                                        android:textStyle="bold" />
+
+                                    <TextView
+                                        android:id="@+id/d_per_Post_Grad_Percent"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_gravity="center"
+                                        android:layout_weight=".5"
+                                        android:textStyle="bold" />
+                                </LinearLayout>
+
+                                <include layout="@layout/item_devider1" />
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_margin="@dimen/layoutMarginBottom"
+                                    android:orientation="horizontal"
+                                    android:weightSum="1">
+
+                                    <TextView
+                                        android:id="@+id/Post_Grad_Rank1"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_gravity="center"
+                                        android:layout_weight=".5"
+                                        android:text="@string/Rank_If_any"
+                                        android:textStyle="bold"
+                                        tools:ignore="HardcodedText" />
+
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_gravity="center"
+                                        android:layout_marginRight="@dimen/layoutMarginBottom"
+                                        android:text=":"
+                                        android:textStyle="bold" />
+
+                                    <TextView
+                                        android:id="@+id/d_per_Post_Grad_Rank1"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_gravity="center"
+                                        android:layout_weight=".5"
+                                        android:textStyle="bold"
+                                        tools:ignore="HardcodedText" />
+                                </LinearLayout>
+
+                                <include layout="@layout/item_devider1" />
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_margin="@dimen/layoutMarginBottom"
+                                    android:orientation="horizontal"
+                                    android:weightSum="1">
+
+                                    <TextView
+                                        android:id="@+id/Post_Grad_Final_Year"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_gravity="center"
+                                        android:layout_weight=".5"
+                                        android:text="@string/Final_Year"
+                                        android:textStyle="bold"
+                                        tools:ignore="HardcodedText" />
+
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_gravity="center"
+                                        android:layout_marginRight="@dimen/layoutMarginBottom"
+                                        android:text=":"
+                                        android:textStyle="bold" />
+
+                                    <TextView
+                                        android:id="@+id/d_per_Post_Grad_Final_Year"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_gravity="center"
+                                        android:layout_weight=".5"
+                                        android:textStyle="bold"
+                                        tools:ignore="HardcodedText" />
+                                </LinearLayout>
+
+                                <include layout="@layout/item_devider1" />
+
+                            </LinearLayout>
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/layout_contact_detail"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:id="@+id/CET"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_margin="@dimen/layoutMargin"
+                                android:text="@string/CET_Details"
+                                android:textAlignment="viewStart"
+                                android:textColor="@color/colorAccent"
+                                android:textSize="@dimen/layoutMargin"
+                                android:textStyle="bold"
+                                tools:ignore="HardcodedText" />
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_margin="@dimen/layoutMarginBottom"
+                                android:orientation="horizontal"
+                                android:weightSum="1">
+
+                                <TextView
+                                    android:id="@+id/Facilty_from_AF"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center"
+                                    android:layout_weight=".5"
+                                    android:text="@string/Facilty_from_Af"
+                                    android:textStyle="bold" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center"
+                                    android:layout_marginRight="@dimen/layoutMarginBottom"
+                                    android:text=":"
+                                    android:textStyle="bold" />
+
+                                <TextView
+                                    android:id="@+id/d_per_Facilty_from_AF"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center"
+                                    android:layout_weight=".5"
+                                    android:textStyle="bold" />
+                            </LinearLayout>
+
+                            <include layout="@layout/item_devider1" />
+
+                            <!--<LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal"
+                                android:layout_margin="2dp"
+                                android:weightSum="1">
+                                <TextView
+                                    android:id="@+id/Know_About_CET1"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:text="Know About CET/AF :-"
+                                    android:layout_weight=".5"
+                                    android:layout_margin="@dimen/layoutMarginBottom"
+                                    android:layout_gravity="center"
+                                    android:textStyle="bold" />
+                                <TextView
+                                    android:id="@+id/d_per_Know_About_CET1"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:text="CET/AF"
+                                    android:layout_weight=".5"
+                                    android:layout_gravity="center"
+                                    android:textStyle="bold" />
+                            </LinearLayout>-->
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_margin="@dimen/layoutMarginBottom"
+                                android:orientation="horizontal"
+                                android:weightSum="1">
+
+                                <TextView
+                                    android:id="@+id/Language_CET"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center"
+                                    android:layout_weight=".5"
+                                    android:text="@string/LanguageMediumofExamination"
+                                    android:textStyle="bold" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center"
+                                    android:layout_marginRight="@dimen/layoutMarginBottom"
+                                    android:text=":"
+                                    android:textStyle="bold" />
+
+                                <TextView
+                                    android:id="@+id/d_per_Language_CET"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center"
+                                    android:layout_weight=".5"
+                                    android:textStyle="bold" />
+                            </LinearLayout>
+
+                            <include layout="@layout/item_devider1" />
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_margin="@dimen/layoutMarginBottom"
+                                android:orientation="horizontal"
+                                android:weightSum="1">
+
+                                <TextView
+                                    android:id="@+id/Examination_Center"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center"
+                                    android:layout_margin="@dimen/layoutMarginBottom"
+                                    android:layout_weight=".5"
+                                    android:text="@string/Examination_Center"
+                                    android:textStyle="bold"
+                                    tools:ignore="HardcodedText" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center"
+                                    android:layout_marginRight="@dimen/layoutMarginBottom"
+                                    android:text=":"
+                                    android:textStyle="bold" />
+
+                                <TextView
+                                    android:id="@+id/d_per_Examination_Center"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center"
+                                    android:layout_weight=".5"
+                                    android:textStyle="bold"
+                                    tools:ignore="HardcodedText" />
+                            </LinearLayout>
+
+                            <include layout="@layout/item_devider1" />
+
+
+                        </LinearLayout>
+
+
+                        <LinearLayout
+                            android:id="@+id/layout_social_attribute"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:id="@+id/Exam_And_Subject"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_margin="@dimen/layoutMargin"
+                                android:text="@string/APPEAR"
+                                android:textAlignment="viewStart"
+                                android:textColor="@color/colorAccent"
+                                android:textSize="@dimen/layoutMargin"
+                                android:textStyle="bold" />
+
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_margin="@dimen/layoutMarginBottom"
+                                android:orientation="horizontal"
+                                android:weightSum="1">
+
+                                <TextView
+                                    android:id="@+id/Exam_name"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center"
+                                    android:layout_weight=".5"
+                                    android:text="@string/Exam_Name"
+                                    android:textStyle="bold" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center"
+                                    android:layout_marginRight="@dimen/layoutMarginBottom"
+                                    android:text=":"
+                                    android:textStyle="bold" />
+
+                                <TextView
+                                    android:id="@+id/d_exam_name"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center"
+                                    android:layout_weight=".5"
+                                    android:textStyle="bold" />
+                            </LinearLayout>
+
+                            <include layout="@layout/item_devider1" />
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_margin="@dimen/layoutMarginBottom"
+                                android:orientation="horizontal"
+                                android:weightSum="1">
+
+                                <TextView
+                                    android:id="@+id/ES_Year"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center"
+                                    android:layout_weight=".5"
+                                    android:text="@string/Year"
+                                    android:textStyle="bold" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center"
+                                    android:layout_marginRight="@dimen/layoutMarginBottom"
+                                    android:text=":"
+                                    android:textStyle="bold" />
+
+                                <TextView
+                                    android:id="@+id/d_per_ExS_Year"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center"
+                                    android:layout_weight=".5"
+                                    android:textStyle="bold" />
+                            </LinearLayout>
+
+                            <include layout="@layout/item_devider1" />
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_margin="@dimen/layoutMarginBottom"
+                                android:orientation="horizontal"
+                                android:weightSum="1">
+
+                                <TextView
+                                    android:id="@+id/ES_Languages"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center"
+                                    android:layout_weight=".5"
+                                    android:text="@string/Languages"
+                                    android:textStyle="bold" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center"
+                                    android:layout_marginRight="@dimen/layoutMarginBottom"
+                                    android:text=":"
+                                    android:textStyle="bold" />
+
+                                <TextView
+                                    android:id="@+id/d_exam_lang"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center"
+                                    android:layout_weight=".5"
+                                    android:textStyle="bold" />
+                            </LinearLayout>
+
+                            <include layout="@layout/item_devider1" />
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_margin="@dimen/layoutMarginBottom"
+                                android:orientation="horizontal"
+                                android:weightSum="1">
+
+                                <TextView
+                                    android:id="@+id/ES_Exam_Center"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center"
+                                    android:layout_weight=".5"
+                                    android:text="@string/Examination_Center"
+                                    android:textStyle="bold" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center"
+                                    android:layout_marginRight="@dimen/layoutMarginBottom"
+                                    android:text=":"
+                                    android:textStyle="bold" />
+
+                                <TextView
+                                    android:id="@+id/d_per_ES_Exam_Center"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center"
+                                    android:layout_weight=".5"
+                                    android:textStyle="bold" />
+                            </LinearLayout>
+
+                            <include layout="@layout/item_devider1" />
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_margin="@dimen/layoutMarginBottom"
+                                android:orientation="horizontal"
+                                android:weightSum="1">
+
+                                <TextView
+                                    android:id="@+id/ES_Exam_Language"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center"
+                                    android:layout_weight=".5"
+                                    android:text="@string/Languages"
+                                    android:textStyle="bold" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center"
+                                    android:layout_marginRight="@dimen/layoutMarginBottom"
+                                    android:text=":"
+                                    android:textStyle="bold" />
+
+                                <TextView
+                                    android:id="@+id/d_per_ES_Exam_Language"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center"
+                                    android:layout_weight=".5"
+                                    android:textStyle="bold" />
+                            </LinearLayout>
+
+                            <include layout="@layout/item_devider1" />
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="vertical">
+
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_margin="@dimen/layoutMarginBottom"
+                                    android:orientation="horizontal"
+                                    android:weightSum="1">
+
+                                    <TextView
+                                        android:id="@+id/Exam_Name"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_gravity="center"
+                                        android:layout_weight=".5"
+                                        android:text="@string/Exam_Name"
+                                        android:textStyle="bold" />
+
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_gravity="center"
+                                        android:layout_marginRight="@dimen/layoutMarginBottom"
+                                        android:text=":"
+                                        android:textStyle="bold" />
+
+                                    <TextView
+                                        android:id="@+id/d_state_exam_name"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_gravity="center"
+                                        android:layout_weight=".5"
+                                        android:textStyle="bold" />
+                                </LinearLayout>
+
+                                <include layout="@layout/item_devider1" />
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_margin="@dimen/layoutMarginBottom"
+                                    android:orientation="horizontal"
+                                    android:weightSum="1">
+
+                                    <TextView
+                                        android:id="@+id/ES_year"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_gravity="center"
+                                        android:layout_weight=".5"
+                                        android:text="@string/Year"
+                                        android:textStyle="bold" />
+
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_gravity="center"
+                                        android:layout_marginRight="@dimen/layoutMarginBottom"
+                                        android:text=":"
+                                        android:textStyle="bold" />
+
+                                    <TextView
+                                        android:id="@+id/d_sec_ES_year"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_gravity="center"
+                                        android:layout_weight=".5"
+                                        android:textStyle="bold" />
+                                </LinearLayout>
+
+                                <include layout="@layout/item_devider1" />
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_margin="@dimen/layoutMarginBottom"
+                                    android:orientation="horizontal"
+                                    android:weightSum="1">
+
+                                    <TextView
+                                        android:id="@+id/ES_Exam_center"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_gravity="center"
+                                        android:layout_weight=".5"
+                                        android:text="@string/Examination_Center"
+                                        android:textStyle="bold" />
+
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_gravity="center"
+                                        android:layout_marginRight="@dimen/layoutMarginBottom"
+                                        android:text=":"
+                                        android:textStyle="bold" />
+
+                                    <TextView
+                                        android:id="@+id/state_exam_center"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_gravity="center"
+                                        android:layout_weight=".5"
+                                        android:textStyle="bold" />
+                                </LinearLayout>
+
+                                <include layout="@layout/item_devider1" />
+
+                            </LinearLayout>
+                        </LinearLayout>
+
+
+                        <LinearLayout
+                            android:id="@+id/layout_occupation_detl"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:id="@+id/OtherInformation"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_margin="@dimen/layoutMargin"
+                                android:text="@string/Other_Information"
+                                android:textAlignment="viewStart"
+                                android:textColor="@color/colorAccent"
+                                android:textSize="@dimen/layoutMargin"
+                                android:textStyle="bold" />
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_margin="@dimen/layoutMarginBottom"
+                                android:orientation="horizontal"
+                                android:weightSum="1">
+
+                                <TextView
+                                    android:id="@+id/OI_Activity"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center"
+                                    android:layout_weight=".5"
+                                    android:text="@string/Extra_Curriculum_Activity"
+                                    android:textStyle="bold" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center"
+                                    android:layout_marginRight="@dimen/layoutMarginBottom"
+                                    android:text=":"
+                                    android:textStyle="bold" />
+
+                                <TextView
+                                    android:id="@+id/other_activity"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center"
+                                    android:layout_weight=".5"
+                                    android:textStyle="bold" />
+                            </LinearLayout>
+
+                            <include layout="@layout/item_devider1" />
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_margin="@dimen/layoutMarginBottom"
+                                android:orientation="horizontal"
+                                android:weightSum="1">
+
+                                <TextView
+                                    android:id="@+id/OI_Level"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center"
+                                    android:layout_weight=".5"
+                                    android:text="@string/Zonal_National_International_Level"
+                                    android:textStyle="bold"
+                                    tools:ignore="HardcodedText" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center"
+                                    android:layout_marginRight="@dimen/layoutMarginBottom"
+                                    android:text=":"
+                                    android:textStyle="bold" />
+
+                                <TextView
+                                    android:id="@+id/other_level"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center"
+                                    android:layout_weight=".5"
+                                    android:textStyle="bold"
+                                    tools:ignore="HardcodedText" />
+                            </LinearLayout>
+
+                            <include layout="@layout/item_devider1" />
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_margin="@dimen/layoutMarginBottom"
+                                android:orientation="horizontal"
+                                android:weightSum="1">
+
+                                <TextView
+                                    android:id="@+id/OI_Year"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center"
+                                    android:layout_weight=".5"
+                                    android:text="@string/Year"
+                                    android:textStyle="bold" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center"
+                                    android:layout_marginRight="@dimen/layoutMarginBottom"
+                                    android:text=":"
+                                    android:textStyle="bold" />
+
+                                <TextView
+                                    android:id="@+id/other_year"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center"
+                                    android:layout_weight=".5"
+                                    android:textStyle="bold" />
+                            </LinearLayout>
+
+                            <include layout="@layout/item_devider1" />
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_margin="@dimen/layoutMarginBottom"
+                                android:orientation="horizontal"
+                                android:weightSum="1">
+
+                                <TextView
+                                    android:id="@+id/OI_Position"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center"
+                                    android:layout_weight=".5"
+                                    android:text="@string/Position"
+                                    android:textStyle="bold" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center"
+                                    android:layout_marginRight="@dimen/layoutMarginBottom"
+                                    android:text=":"
+                                    android:textStyle="bold" />
+
+                                <TextView
+                                    android:id="@+id/other_Position"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center"
+                                    android:layout_weight=".5"
+                                    android:textStyle="bold" />
+                            </LinearLayout>
+
+                            <include layout="@layout/item_devider1" />
+
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/layout_physical_detl"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:id="@+id/REFERENCE"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_margin="@dimen/layoutMargin"
+                                android:text="@string/REFERENCE"
+                                android:textAlignment="viewStart"
+                                android:textColor="@color/colorAccent"
+                                android:textSize="@dimen/layoutMargin"
+                                android:textStyle="bold" />
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_margin="@dimen/layoutMarginBottom"
+                                android:orientation="horizontal"
+                                android:weightSum="1">
+
+                                <TextView
+                                    android:id="@+id/Ref_Name1"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center"
+                                    android:layout_weight=".5"
+                                    android:text="@string/Name"
+                                    android:textStyle="bold" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center"
+                                    android:layout_marginRight="@dimen/layoutMarginBottom"
+                                    android:text=":"
+                                    android:textStyle="bold" />
+
+                                <TextView
+                                    android:id="@+id/d_Ref_Name1"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center"
+                                    android:layout_weight=".5"
+                                    android:textStyle="bold" />
+                            </LinearLayout>
+
+                            <include layout="@layout/item_devider1" />
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_margin="@dimen/layoutMarginBottom"
+                                android:orientation="horizontal"
+                                android:weightSum="1">
+
+                                <TextView
+                                    android:id="@+id/Ref_Address1"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center"
+                                    android:layout_weight=".5"
+                                    android:text="@string/Address"
+                                    android:textStyle="bold" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center"
+                                    android:layout_marginRight="@dimen/layoutMarginBottom"
+                                    android:text=":"
+                                    android:textStyle="bold" />
+
+                                <TextView
+                                    android:id="@+id/d_Ref_Address1"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center"
+                                    android:layout_weight=".5"
+                                    android:textStyle="bold" />
+                            </LinearLayout>
+
+                            <include layout="@layout/item_devider1" />
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_margin="@dimen/layoutMarginBottom"
+                                android:orientation="horizontal"
+                                android:weightSum="1">
+
+                                <TextView
+                                    android:id="@+id/Ref_City1"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center"
+                                    android:layout_weight=".5"
+                                    android:text="@string/City"
+                                    android:textStyle="bold"
+                                    tools:ignore="HardcodedText" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center"
+                                    android:layout_marginRight="@dimen/layoutMarginBottom"
+                                    android:text=":"
+                                    android:textStyle="bold" />
+
+                                <TextView
+                                    android:id="@+id/d_Ref_City1"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center"
+                                    android:layout_weight=".5"
+                                    android:textStyle="bold"
+                                    tools:ignore="HardcodedText" />
+                            </LinearLayout>
+
+                            <include layout="@layout/item_devider1" />
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_margin="@dimen/layoutMarginBottom"
+                                android:orientation="horizontal"
+                                android:weightSum="1">
+
+                                <TextView
+                                    android:id="@+id/Ref_Mobile1"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center"
+                                    android:layout_weight=".5"
+                                    android:text="@string/Mobile_No"
+                                    android:textStyle="bold"
+                                    tools:ignore="HardcodedText" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center"
+                                    android:layout_marginRight="@dimen/layoutMarginBottom"
+                                    android:text=":"
+                                    android:textStyle="bold" />
+
+                                <TextView
+                                    android:id="@+id/d_Ref_Mobile1"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center"
+                                    android:layout_weight=".5"
+                                    android:textStyle="bold"
+                                    tools:ignore="HardcodedText" />
+                            </LinearLayout>
+
+                            <include layout="@layout/item_devider1" />
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_margin="@dimen/layoutMarginBottom"
+                                android:orientation="horizontal"
+                                android:weightSum="1">
+
+                                <TextView
+                                    android:id="@+id/Ref_Telephone1"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center"
+                                    android:layout_weight=".5"
+                                    android:text="@string/Telephone_No"
+                                    android:textStyle="bold"
+                                    tools:ignore="HardcodedText" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center"
+                                    android:layout_marginRight="@dimen/layoutMarginBottom"
+                                    android:text=":"
+                                    android:textStyle="bold" />
+
+                                <TextView
+                                    android:id="@+id/d_Ref_Telephone1"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center"
+                                    android:layout_weight=".5"
+                                    android:textStyle="bold"
+                                    tools:ignore="HardcodedText" />
+                            </LinearLayout>
+
+                            <include layout="@layout/item_devider1" />
+
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_margin="@dimen/layoutMarginBottom"
+                                android:orientation="horizontal"
+                                android:weightSum="1">
+
+                                <TextView
+                                    android:id="@+id/Ref_Name2"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center"
+                                    android:layout_weight=".5"
+                                    android:text="@string/Name"
+                                    android:textStyle="bold" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center"
+                                    android:layout_marginRight="@dimen/layoutMarginBottom"
+                                    android:text=":"
+                                    android:textStyle="bold" />
+
+                                <TextView
+                                    android:id="@+id/d_Ref_Name2"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center"
+                                    android:layout_weight=".5"
+                                    android:textStyle="bold" />
+                            </LinearLayout>
+
+                            <include layout="@layout/item_devider1" />
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_margin="@dimen/layoutMarginBottom"
+                                android:orientation="horizontal"
+                                android:weightSum="1">
+
+                                <TextView
+                                    android:id="@+id/Ref_Address2"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center"
+                                    android:layout_weight=".5"
+                                    android:text="@string/Address"
+                                    android:textStyle="bold" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center"
+                                    android:layout_marginRight="@dimen/layoutMarginBottom"
+                                    android:text=":"
+                                    android:textStyle="bold" />
+
+                                <TextView
+                                    android:id="@+id/d_Ref_Address2"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center"
+                                    android:layout_weight=".5"
+                                    android:textStyle="bold" />
+                            </LinearLayout>
+
+                            <include layout="@layout/item_devider1" />
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_margin="@dimen/layoutMarginBottom"
+                                android:orientation="horizontal"
+                                android:weightSum="1">
+
+                                <TextView
+                                    android:id="@+id/Ref_City2"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center"
+                                    android:layout_weight=".5"
+                                    android:text="@string/City"
+                                    android:textStyle="bold"
+                                    tools:ignore="HardcodedText" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center"
+                                    android:layout_marginRight="@dimen/layoutMarginBottom"
+                                    android:text=":"
+                                    android:textStyle="bold" />
+
+                                <TextView
+                                    android:id="@+id/d_Ref_City2"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center"
+                                    android:layout_weight=".5"
+                                    android:textStyle="bold"
+                                    tools:ignore="HardcodedText" />
+                            </LinearLayout>
+
+                            <include layout="@layout/item_devider1" />
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_margin="@dimen/layoutMarginBottom"
+                                android:orientation="horizontal"
+                                android:weightSum="1">
+
+                                <TextView
+                                    android:id="@+id/Ref_Mobile2"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center"
+                                    android:layout_weight=".5"
+                                    android:text="@string/Mobile_No"
+                                    android:textStyle="bold"
+                                    tools:ignore="HardcodedText" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center"
+                                    android:layout_marginRight="@dimen/layoutMarginBottom"
+                                    android:text=":"
+                                    android:textStyle="bold" />
+
+                                <TextView
+                                    android:id="@+id/d_per_Ref_Mobile2"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center"
+                                    android:layout_weight=".5"
+                                    android:textStyle="bold"
+                                    tools:ignore="HardcodedText" />
+                            </LinearLayout>
+
+                            <include layout="@layout/item_devider1" />
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_margin="@dimen/layoutMarginBottom"
+                                android:orientation="horizontal"
+                                android:weightSum="1">
+
+                                <TextView
+                                    android:id="@+id/Ref_Telephone2"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center"
+                                    android:layout_weight=".5"
+                                    android:text="@string/Telephone_No"
+                                    android:textStyle="bold"
+                                    tools:ignore="HardcodedText" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center"
+                                    android:layout_marginRight="@dimen/layoutMarginBottom"
+                                    android:text=":"
+                                    android:textStyle="bold" />
+
+                                <TextView
+                                    android:id="@+id/d_Ref_Telephone2"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center"
+                                    android:layout_weight=".5"
+                                    android:textStyle="bold"
+                                    tools:ignore="HardcodedText" />
+                            </LinearLayout>
+
+
+                        </LinearLayout>
+
+                        <!-- <LinearLayout
+                             android:layout_width="match_parent"
+                             android:layout_height="wrap_content"
+                             android:orientation="vertical">
+
+                             <TextView
+                                 android:id="@+id/Image_Upload"
+                                 android:layout_width="match_parent"
+                                 android:layout_height="wrap_content"
+                                 android:layout_marginTop="@dimen/layoutMargin"
+                                 android:text="Uploaded Files"
+                                 android:textAlignment="center"
+                                 android:textSize="@dimen/layoutMargin"
+                                 android:textStyle="bold"
+                                 android:textColor="@color/colorAccent"/>
+                             <LinearLayout
+                                 android:layout_width="match_parent"
+                                 android:layout_height="wrap_content"
+                                 android:orientation="horizontal"
+                                 android:layout_margin="2dp"
+                                 android:weightSum="1">
+                                 <TextView
+                                     android:id="@+id/ssc_ms"
+                                     android:layout_width="match_parent"
+                                     android:layout_height="wrap_content"
+                                     android:text="SSC Marksheet :-"
+                                     android:layout_weight=".5"
+                                     android:layout_margin="@dimen/layoutMarginBottom"
+                                     android:layout_gravity="center"
+                                     android:textStyle="bold" />
+                                 <TextView
+                                     android:id="@+id/ssc_marksheet_value"
+                                     android:layout_width="match_parent"
+                                     android:layout_height="wrap_content"
+                                     android:text="SSC Document"
+                                     android:layout_weight=".5"
+                                     android:layout_gravity="center"
+                                     android:textStyle="bold" />
+                             </LinearLayout>
+                             <LinearLayout
+                                 android:layout_width="match_parent"
+                                 android:layout_height="wrap_content"
+                                 android:orientation="horizontal"
+                                 android:layout_margin="2dp"
+                                 android:weightSum="1">
+                                 <TextView
+                                     android:id="@+id/hsc_ms"
+                                     android:layout_width="match_parent"
+                                     android:layout_height="wrap_content"
+                                     android:text="HSC Marksheet :-"
+                                     android:layout_weight=".5"
+                                     android:layout_margin="@dimen/layoutMarginBottom"
+                                     android:layout_gravity="center"
+                                     android:textStyle="bold" />
+                                 <TextView
+                                     android:id="@+id/hsc_marksheet_value"
+                                     android:layout_width="match_parent"
+                                     android:layout_height="wrap_content"
+                                     android:text="HSC Document"
+                                     android:layout_weight=".5"
+                                     android:layout_gravity="center"
+                                     android:textStyle="bold" />
+                             </LinearLayout>
+                             <LinearLayout
+                                 android:layout_width="match_parent"
+                                 android:layout_height="wrap_content"
+                                 android:orientation="horizontal"
+                                 android:layout_margin="2dp"
+                                 android:weightSum="1">
+                                 <TextView
+                                     android:id="@+id/graduation_ms"
+                                     android:layout_width="match_parent"
+                                     android:layout_height="wrap_content"
+                                     android:text="Graduation Marksheet :-"
+                                     android:layout_weight=".5"
+                                     android:layout_margin="@dimen/layoutMarginBottom"
+                                     android:layout_gravity="center"
+                                     android:textStyle="bold"
+                                     tools:ignore="HardcodedText" />
+                                 <TextView
+                                     android:id="@+id/graduation_marksheet_value"
+                                     android:layout_width="match_parent"
+                                     android:layout_height="wrap_content"
+                                     android:text="Graduation Document"
+                                     android:layout_weight=".5"
+                                     android:layout_gravity="center"
+                                     android:textStyle="bold"
+                                     tools:ignore="HardcodedText" />
+                             </LinearLayout>
+                             <LinearLayout
+                                 android:layout_width="match_parent"
+                                 android:layout_height="wrap_content"
+                                 android:orientation="horizontal"
+                                 android:layout_margin="2dp"
+                                 android:weightSum="1">
+                                 <TextView
+                                     android:id="@+id/post_graduation_ms"
+                                     android:layout_width="match_parent"
+                                     android:layout_height="wrap_content"
+                                     android:text="Post Graduation Marksheet :-"
+                                     android:layout_weight=".5"
+                                     android:layout_margin="@dimen/layoutMarginBottom"
+                                     android:layout_gravity="center"
+                                     android:textStyle="bold"
+                                     tools:ignore="HardcodedText" />
+                                 <TextView
+                                     android:id="@+id/pg_marksheet_value"
+                                     android:layout_width="match_parent"
+                                     android:layout_height="wrap_content"
+                                     android:text="Post Graduation Document"
+                                     android:layout_weight=".5"
+                                     android:layout_gravity="center"
+                                     android:textStyle="bold"
+                                     tools:ignore="HardcodedText" />
+                             </LinearLayout>
+                             <LinearLayout
+                                 android:layout_width="match_parent"
+                                 android:layout_height="wrap_content"
+                                 android:orientation="horizontal"
+                                 android:layout_margin="2dp"
+                                 android:weightSum="1">
+                                 <TextView
+                                     android:id="@+id/signature"
+                                     android:layout_width="match_parent"
+                                     android:layout_height="wrap_content"
+                                     android:text="Signature :-"
+                                     android:layout_weight=".5"
+                                     android:layout_margin="@dimen/layoutMarginBottom"
+                                     android:layout_gravity="center"
+                                     android:textStyle="bold"
+                                     tools:ignore="HardcodedText" />
+                                 <TextView
+                                     android:id="@+id/sign_value"
+                                     android:layout_width="match_parent"
+                                     android:layout_height="wrap_content"
+                                     android:text="Signature value"
+                                     android:layout_weight=".5"
+                                     android:layout_gravity="center"
+                                     android:textStyle="bold"
+                                     tools:ignore="HardcodedText" />
+                             </LinearLayout>-->
+                        <!--
+                                    </LinearLayout>-->
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

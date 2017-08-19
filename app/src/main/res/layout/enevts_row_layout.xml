@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+
+    <android.support.v7.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/event_row_cardview_margin">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/event_row_cardview_layout_mar_bottom"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tv_evname"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/layout_margin"
+                android:text="@string/event_row_layout_eventname"
+                android:textSize="@dimen/cont_us_heading_dimen"
+                android:textStyle="bold" />
+
+            <include layout="@layout/item_divider" />
+
+            <TextView
+                android:id="@+id/ev_a_addr"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/layout_margin"
+                android:text="@string/event_row_layout_ev_addr"
+                android:textColor="@color/colorPrimary" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/layout_margin"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:id="@+id/imageView4"
+                    android:layout_width="@dimen/cont_us_logo_width"
+                    android:layout_height="@dimen/cont_us_logo_hight"
+                    android:src="@drawable/ic_location_on" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="@dimen/cont_us_mar_left"
+                    android:text="@string/event_row_layout_ev_loc" />
+
+
+                <TextView
+                    android:layout_width="@dimen/seperator_width"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="@string/seprator"
+                    android:textAlignment="center" />
+
+                <TextView
+                    android:id="@+id/ev_a_loc"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center" />
+            </LinearLayout>
+
+            <include layout="@layout/item_divider" />
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/layout_margin"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:layout_width="@dimen/cont_us_logo_width"
+                    android:layout_height="@dimen/cont_us_logo_hight"
+                    android:src="@drawable/ic_date_range_black_24dp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="@dimen/cont_us_mar_left"
+                    android:text="@string/event_row_layout_ev_date" />
+
+                <TextView
+                    android:layout_width="@dimen/seperator_width"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="@string/seprator"
+                    android:textAlignment="center" />
+
+
+                <TextView
+                    android:id="@+id/evDate"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center" />
+            </LinearLayout>
+
+            <include layout="@layout/item_divider" />
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/layout_margin"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_access_time_black_24dp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="@dimen/cont_us_mar_left"
+                    android:text="@string/event_row_layout_ev_time" />
+
+                <TextView
+                    android:layout_width="@dimen/seperator_width"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="@string/seprator"
+                    android:textAlignment="center" />
+
+                <TextView
+                    android:id="@+id/evTime"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center" />
+            </LinearLayout>
+
+            <include layout="@layout/item_divider" />
+
+
+            <TextView
+                android:id="@+id/evDesc"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/cont_us_mar_left"
+                android:text="@string/event_row_layout_ev_desc" />
+
+            <include layout="@layout/item_divider" />
+
+            <TextView
+                android:id="@+id/evViewMore"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/cont_us_mar_left"
+                android:onClick="goToFullViewEvents"
+                android:text="@string/event_row_layout_viewmore"
+                android:textColor="@color/view_more" />
+
+        </LinearLayout>
+    </android.support.v7.widget.CardView>
+
+</LinearLayout>

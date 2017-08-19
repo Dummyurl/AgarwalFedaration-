@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".matrimony.EducationDetailsActivity">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:orientation="vertical"
+        android:layout_height="match_parent">
+      <!--  <ImageView
+            android:id="@+id/d_person_edudetl_image"
+            android:layout_width="300dp"
+            android:layout_height="250dp"
+            android:src="@drawable/one"
+            android:layout_gravity="center"/>
+       --> <TextView
+            android:id="@+id/tv_edudetail"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="Education Details"
+            android:textAlignment="center"
+            android:textSize="20dp"
+            android:textStyle="bold"
+            android:textColor="@color/colorAccent"/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_margin="2dp"
+            android:weightSum="1">
+            <TextView
+                android:id="@+id/per_eduction"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Gradutaion :-"
+                android:layout_weight=".5"
+                android:layout_margin="10dp"
+                android:layout_gravity="center"
+                android:textStyle="bold" />
+            <TextView
+                android:id="@+id/d_per_educaion"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Graduation"
+                android:layout_weight=".5"
+                android:layout_gravity="center"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+       <!-- <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_margin="2dp"
+            android:weightSum="1">
+            <TextView
+                android:id="@+id/per_postgradin"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Post Graduate :-"
+                android:layout_weight=".5"
+                android:layout_margin="10dp"
+                android:layout_gravity="center"
+                android:textStyle="bold" />
+            <TextView
+                android:id="@+id/d_per_postgrad"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Post Graduation"
+                android:layout_weight=".5"
+                android:layout_gravity="center"
+                android:textStyle="bold" />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_margin="2dp"
+            android:weightSum="1">
+            <TextView
+                android:id="@+id/per_doctrate"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Doctorate :-"
+                android:layout_weight=".5"
+                android:layout_margin="10dp"
+                android:layout_gravity="center"
+                android:textStyle="bold" />
+            <TextView
+                android:id="@+id/d_per_doctrate"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Doctorate"
+                android:layout_weight=".5"
+                android:layout_gravity="center"
+                android:textStyle="bold" />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_margin="2dp"
+            android:weightSum="1">
+            <TextView
+                android:id="@+id/per_cetifcation"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Certification :-"
+                android:layout_weight=".5"
+                android:layout_margin="10dp"
+                android:layout_gravity="center"
+                android:textStyle="bold" />
+            <TextView
+                android:id="@+id/d_per_certfcion"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Certification"
+                android:layout_weight=".5"
+                android:layout_gravity="center"
+                android:textStyle="bold" />
+        </LinearLayout>-->
+    </LinearLayout>
+</LinearLayout>

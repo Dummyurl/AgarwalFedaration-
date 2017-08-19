@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:layout_height="match_parent"
+    tools:context="com.LeelaGroup.AgrawalFedration.matrimony.NeedActivity">
+
+    <include
+        android:id="@+id/toolbar"
+        layout="@layout/toolbar">
+    </include>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/tv_concept"
+        android:text="Need"
+        android:textStyle="bold"
+        android:textAlignment="center"
+        android:textSize="20dp"
+        android:layout_margin="10dp"
+        android:textColor="@color/colorPrimary"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/tv_concept_content"
+        android:textAlignment="center"
+        android:text="It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here,"
+        android:textSize="20dp"
+        android:layout_margin="10dp"/>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:orientation="horizontal"
+        android:weightSum="1"
+        android:layout_marginTop="40dp"
+        android:layout_height="wrap_content">
+        <Button
+            android:layout_width="200dp"
+            android:id="@+id/btn_need_prev"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:layout_gravity="right"
+            android:layout_weight="0.5"
+            android:textColor="#fff"
+            android:onClick="goToConcept"
+            android:background="@color/colorPrimary"
+            android:text="Prev"/>
+        <Button
+            android:layout_width="200dp"
+            android:id="@+id/btn_concept_need"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:layout_gravity="right"
+            android:layout_weight="0.5"
+            android:textColor="#fff"
+            android:onClick="doFinish"
+            android:background="@color/colorPrimary"
+            android:text="Finish"/>
+    </LinearLayout>
+
+</LinearLayout>

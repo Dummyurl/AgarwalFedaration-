@@ -1,0 +1,361 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".matrimony.FormPhysicalAttributeActivity">
+
+    <include
+        android:id="@id/toolbar"
+        layout="@layout/toolbar" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="@dimen/form_layout_margin"
+                android:orientation="vertical">
+                <!--
+
+                        <TextView
+                            android:id="@+id/frm_phyclattr"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="20dp"
+                            android:text="Physical Attribute"
+                            android:textAlignment="center"
+                            android:textSize="20dp"
+                            android:layout_marginBottom="10dp"
+                            android:textStyle="bold"
+                            android:textColor="@color/colorAccent"/>
+                -->
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/form_inner_layout_margin"
+                    android:orientation="horizontal"
+                    android:weightSum="1">
+                    <!--<TextView
+                        android:id="@+id/frm_phyclattr_tv_higt"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Height(cm) :-"
+                        android:layout_weight=".5"
+                        android:layout_margin="10dp"
+                        android:layout_gravity="center"
+                        android:textStyle="bold" />-->
+                    <android.support.design.widget.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <EditText
+                            android:id="@+id/frm_phyclattr_et_higt_ft"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_weight=".5"
+                            android:hint="@string/Heightincm"
+                            android:inputType="number"
+                            android:maxLength="3" />
+                    </android.support.design.widget.TextInputLayout>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/form_inner_layout_margin"
+                    android:orientation="horizontal"
+                    android:weightSum="1">
+                    <!--  <TextView
+                          android:id="@+id/frm_phyclattr_tv_wegt"
+                          android:layout_width="match_parent"
+                          android:layout_height="wrap_content"
+                          android:text="Weight (in kg) :-"
+                          android:layout_weight=".5"
+                          android:layout_margin="10dp"
+                          android:layout_gravity="center"
+                          android:textStyle="bold" />-->
+                    <android.support.design.widget.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <EditText
+                            android:id="@+id/frm_phyclattr_et_wegt"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_weight=".5"
+                            android:digits="0123456789"
+                            android:hint="@string/Weightinkg"
+                            android:inputType="number"
+                            android:maxLength="3" />
+                    </android.support.design.widget.TextInputLayout>
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/frm_phyclattr_tv_bdtype"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="@dimen/form_spinner_layout_margin_top"
+                    android:layout_weight=".5"
+                    android:layout_marginLeft="@dimen/form_spinner_label_mar_left"
+                    android:text="@string/BodyType"
+                    android:textSize="@dimen/form_tv_size" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/form_spinner_layout_margin_top"
+                    android:orientation="horizontal"
+                    android:weightSum="1">
+
+                    <Spinner
+                        android:id="@+id/frm_phyclattr_spr_bdtype"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_weight=".5"
+                        android:entries="@array/body_type" />
+                </LinearLayout>
+
+
+                <TextView
+                    android:id="@+id/frm_phyclattr_tv_bldgrp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="@dimen/form_spinner_layout_margin_top"
+                    android:layout_weight=".5"
+                    android:layout_marginLeft="@dimen/form_spinner_label_mar_left"
+                    android:text="@string/bloodgouup"
+                    android:textSize="@dimen/form_tv_size" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/layout_margin"
+                    android:orientation="horizontal"
+                    android:weightSum="1">
+
+                    <Spinner
+                        android:id="@+id/frm_phyclattr_spr_bldgrp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_weight=".5"
+                        android:entries="@array/blood_group" />
+                </LinearLayout>
+
+
+                <TextView
+                    android:id="@+id/frm_phyclattr_tv_complexn"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="@dimen/form_spinner_layout_margin_top"
+                    android:layout_weight=".5"
+                    android:text="@string/Complexion"
+                    android:layout_marginLeft="@dimen/form_spinner_label_mar_left"
+                    android:textSize="@dimen/form_tv_size"
+                    android:textStyle="bold" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/layout_margin"
+                    android:orientation="horizontal"
+                    android:weightSum="1">
+
+                    <Spinner
+                        android:id="@+id/frm_phyclattr_spr_complxn"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_weight=".5"
+                        android:entries="@array/complexion" />
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/frm_phyclattr_tv_diet"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="@dimen/form_spinner_layout_margin_top"
+                    android:layout_weight=".5"
+                    android:text="@string/Diet"
+                    android:layout_marginLeft="@dimen/form_spinner_label_mar_left"
+                    android:textSize="@dimen/form_tv_size"
+                    android:textStyle="bold" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/layout_margin"
+                    android:orientation="horizontal"
+                    android:weightSum="1">
+
+                    <Spinner
+                        android:id="@+id/frm_phyclattr_spr_diet"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_weight=".5"
+                        android:entries="@array/diet" />
+                </LinearLayout>
+
+
+                <TextView
+                    android:id="@+id/frm_phyclattr_tv_smoke"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="15dp"
+                    android:layout_weight=".5"
+                    android:text="@string/Smoke"
+                    android:textSize="@dimen/form_tv_size" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/layout_margin"
+                    android:orientation="horizontal"
+                    android:weightSum="1">
+
+                    <Spinner
+                        android:id="@+id/frm_phyclattr_spr_smoke"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_weight=".5"
+                        android:entries="@array/smoke" />
+                </LinearLayout>
+
+
+                <TextView
+                    android:id="@+id/frm_phyclattr_tv_drink"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="@dimen/form_spinner_layout_margin_top"
+                    android:layout_weight=".5"
+                    android:text="@string/Drink"
+                    android:textSize="@dimen/form_tv_size"
+                    android:textStyle="bold" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/layout_margin"
+                    android:orientation="horizontal"
+                    android:weightSum="1">
+
+                    <Spinner
+                        android:id="@+id/frm_phyclattr_spr_drink"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_weight=".5"
+                        android:entries="@array/drink" />
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/frm_phyclattr_tv_hndcped"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="@dimen/form_spinner_layout_margin_top"
+                    android:layout_weight=".5"
+                    android:text="@string/YouAreHandicapped"
+                    android:textSize="@dimen/form_tv_size" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/layout_margin"
+                    android:orientation="horizontal"
+                    android:weightSum="1">
+
+                    <RadioGroup
+                        android:id="@+id/frm_phyclattr_rdgrp_hndcped"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight=".5"
+                        android:orientation="horizontal">
+
+                        <RadioButton
+                            android:id="@+id/frm_phyclattr_rdbtn_hndcped_yes"
+                            android:layout_width="@dimen/form_first_radio_bn_width"
+                            android:layout_height="wrap_content"
+                            android:ellipsize="middle"
+                            android:text="@string/Yes" />
+
+                        <RadioButton
+                            android:id="@+id/frm_phyclattr_rdbtn_hndcped_no"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:checked="true"
+                            android:text="@string/No" />
+                    </RadioGroup>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/layout_margin"
+                    android:layout_marginBottom="@dimen/formPartnerPref_button_margin_bottom"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+                    <!-- <ImageView
+                         android:layout_width="50dp"
+                         android:layout_height="50dp"
+                         android:src="@drawable/arrow_left_bold_circle_outline"
+                         android:layout_gravity="start"
+                         android:layout_weight=".5"
+                         android:onClick="goToFamillyDetails"
+                         android:layout_marginRight="10dp"
+                         android:layout_marginTop="10dp"/>-->
+                    <Button
+                        android:id="@+id/imageView2"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:background="@color/circleArrowButton"
+                        android:onClick="goToOtherInfrmation"
+                        android:text="@string/save_next"
+                        android:textColor="@color/buttonTextColor"
+                        android:textStyle="bold" />
+                    <!--  <Button
+                          android:id="@+id/bnsaveupdate"
+                          android:layout_width="50dp"
+                          android:layout_height="50dp"
+                          android:layout_gravity="end"
+                          android:layout_marginTop="10dp"
+                          android:layout_weight=".5"
+                          android:textColor="#fff"
+                          android:textStyle="bold"
+                          android:background="@color/circleArrowButton"
+                          android:onClick="goToFormContactInformation"
+                          android:text="save update"
+                          android:visibility="gone"/>-->
+                </LinearLayout>
+            </LinearLayout>
+    </ScrollView>
+    <!--<ImageButton
+        android:id="@+id/draggable_view"
+        android:background="@drawable/home_icon"
+        android:layout_gravity="bottom|right"
+        android:layout_marginBottom="20dp"
+        android:layout_marginEnd="20dp"
+        android:layout_width="50dp"
+        android:layout_height="50dp"/>
+-->
+</LinearLayout>

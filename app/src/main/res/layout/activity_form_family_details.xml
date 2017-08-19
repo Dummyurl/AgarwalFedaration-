@@ -1,0 +1,440 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".matrimony.FormFamilyDetailsActivity">
+
+    <include
+        android:id="@id/toolbar"
+        layout="@layout/toolbar" />
+
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="@dimen/form_layout_margin"
+                android:orientation="vertical">
+
+                <!--  <TextView
+                      android:id="@+id/frm_tv_fmilydtl"
+                      android:layout_width="match_parent"
+                      android:layout_height="wrap_content"
+                      android:layout_marginBottom="10dp"
+                      android:layout_marginTop="20dp"
+                      android:text="Family Details"
+                      android:textAlignment="center"
+                      android:textColor="@color/colorAccent"
+                      android:textSize="20dp" />-->
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/form_inner_layout_margin"
+                    android:orientation="horizontal"
+                    android:weightSum="1">
+                    <!--
+                                        <TextView
+                                            android:id="@+id/frm_fmilydtl_tv_fthrfllname"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:layout_gravity="center"
+                                            android:layout_margin="10dp"
+                                            android:layout_weight=".5"
+                                            android:text="Father Full Name :-"
+                                            android:textStyle="bold" />-->
+                    <android.support.design.widget.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <EditText
+                            android:id="@+id/frm_fmilydtl_et_fthrfllname"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_weight=".5"
+                            android:hint="@string/FatherFullName"
+                            android:inputType="textCapWords" />
+
+                    </android.support.design.widget.TextInputLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/form_inner_layout_margin"
+                    android:orientation="horizontal"
+                    android:weightSum="1">
+
+                    <!--       <TextView
+                               android:id="@+id/frm_fmilydtl_tv_mthrfllname"
+                               android:layout_width="match_parent"
+                               android:layout_height="wrap_content"
+                               android:layout_gravity="center"
+                               android:layout_margin="10dp"
+                               android:layout_weight=".5"
+                               android:text="Mother Full Name :-"
+                               android:textStyle="bold" />
+       -->
+                    <android.support.design.widget.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <EditText
+                            android:id="@+id/frm_fmilydtl_et_mthrfllname"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_weight=".5"
+                            android:hint="@string/MotherFullName"
+                            android:inputType="textCapWords" />
+
+                    </android.support.design.widget.TextInputLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/form_inner_layout_margin"
+                    android:orientation="horizontal"
+                    android:weightSum="1">
+
+                    <!--  <TextView
+                          android:id="@+id/frm_fmilydtl_tv_fthroccpn"
+                          android:layout_width="match_parent"
+                          android:layout_height="wrap_content"
+                          android:layout_gravity="center"
+                          android:layout_margin="10dp"
+                          android:layout_weight=".5"
+                          android:text="Father's Occupation :-"
+                          android:textStyle="bold" />
+  -->
+                    <android.support.design.widget.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <EditText
+                            android:id="@+id/frm_fmilydtl_et_fthroccpn"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_weight=".5"
+                            android:hint="Father's Occupation"
+                            android:inputType="textCapWords" />
+
+                    </android.support.design.widget.TextInputLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/form_inner_layout_margin"
+                    android:orientation="horizontal"
+                    android:weightSum="1">
+                    <!--
+                                        <TextView
+                                            android:id="@+id/frm_fmilydtl_tv_mthroccptn"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:layout_gravity="center"
+                                            android:layout_margin="10dp"
+                                            android:layout_weight=".5"
+                                            android:text="Mother's Occupations :-"
+                                            android:textStyle="bold" />-->
+
+                    <android.support.design.widget.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <EditText
+                            android:id="@+id/frm_fmilydtl_et_mthroccptn"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="top|left"
+                            android:layout_weight=".5"
+                            android:hint="@string/MotherOccupation"
+                            android:inputType="textMultiLine|textCapWords"
+                            android:scrollbars="vertical" />
+                    </android.support.design.widget.TextInputLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/form_inner_layout_margin"
+                    android:orientation="horizontal"
+                    android:weightSum="1">
+
+                    <!--     <TextView
+                             android:id="@+id/frm_fmilydtl_tv_noofbros"
+                             android:layout_width="match_parent"
+                             android:layout_height="wrap_content"
+                             android:layout_gravity="center"
+                             android:layout_margin="10dp"
+                             android:layout_weight=".5"
+                             android:text="Number Of Brothers :-"
+                             android:textStyle="bold" />-->
+                    <android.support.design.widget.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <EditText
+                            android:id="@+id/frm_fmilydtl_et_noofbros"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_weight=".5"
+                            android:digits="0123456789"
+                            android:hint="@string/NumberOfBrothers"
+                            android:inputType="number"
+                            android:maxLength="1" />
+                    </android.support.design.widget.TextInputLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/form_inner_layout_margin"
+                    android:orientation="horizontal"
+                    android:weightSum="1">
+
+                    <!--    <TextView
+                            android:id="@+id/frm_fmilydtl_tv_noofsis"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_margin="10dp"
+                            android:layout_weight=".5"
+                            android:text="Number Of Sisters :-"
+                            android:textStyle="bold" />
+    -->
+                    <android.support.design.widget.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <EditText
+                            android:id="@+id/frm_fmilydtl_et_noofsis"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_weight=".5"
+                            android:digits="0123456789"
+                            android:hint="@string/NumberOfSisters"
+                            android:inputType="number"
+                            android:maxLength="1" />
+                    </android.support.design.widget.TextInputLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/form_inner_layout_margin"
+                    android:orientation="horizontal"
+                    android:weightSum="1">
+
+                    <!--   <TextView
+                           android:id="@+id/frm_fmilydtl_tv_noofbromaried"
+                           android:layout_width="match_parent"
+                           android:layout_height="wrap_content"
+                           android:layout_gravity="center"
+                           android:layout_margin="10dp"
+                           android:layout_weight=".5"
+                           android:text="Number Of Brothers Married:-"
+                           android:textStyle="bold" />
+   -->
+                    <android.support.design.widget.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <EditText
+                            android:id="@+id/frm_fmilydtl_et_noofbromaried"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_weight=".5"
+                            android:digits="0123456789"
+                            android:hint="@string/NumberOfBrothersMarried"
+                            android:inputType="number"
+                            android:maxLength="1" />
+                    </android.support.design.widget.TextInputLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/form_inner_layout_margin"
+                    android:orientation="horizontal"
+                    android:weightSum="1">
+
+                    <!--  <TextView
+                          android:id="@+id/frm_fmilydtl_tv_noofsismaried"
+                          android:layout_width="match_parent"
+                          android:layout_height="wrap_content"
+                          android:layout_gravity="center"
+                          android:layout_margin="10dp"
+                          android:layout_weight=".5"
+                          android:text="Number Of Sisters Married:-"
+                          android:textStyle="bold" />
+  -->
+                    <android.support.design.widget.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <EditText
+                            android:id="@+id/frm_fmilydtl_et_noofsismaried"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_weight=".5"
+                            android:digits="0123456789"
+                            android:hint="@string/NumberOfSistersMarried"
+                            android:inputType="number"
+                            android:maxLength="1" />
+
+                    </android.support.design.widget.TextInputLayout>
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/frm_fmilydtl_tv_fmlysts"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="@dimen/form_spinner_layout_margin_top"
+                    android:textSize="@dimen/form_tv_size"
+                    android:text="@string/FamilyStatus"
+                     />
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/form_spinner_layout_margin_top"
+                    android:orientation="horizontal"
+                    android:weightSum="1">
+
+                    <Spinner
+                        android:id="@+id/frm_fmilydtl_spr_fmlysts"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_weight=".5"
+                        android:entries="@array/family_status" />
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/frm_fmilydtl_tv_fmlytpe"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="@dimen/form_spinner_layout_margin_top"
+                    android:textSize="@dimen/form_tv_size"
+                    android:text="@string/FamilyType"
+                     />
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/form_spinner_layout_margin_top"
+                    android:orientation="horizontal"
+                    android:weightSum="1">
+
+
+                    <Spinner
+                        android:id="@+id/frm_fmilydtl_spr_fmlytpe"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_weight=".5"
+                        android:entries="@array/family_type" />
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/frm_fmilydtl_tv_fmlyanlincome"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="@dimen/form_spinner_layout_margin_top"
+                    android:text="@string/FamilyAnnualIncome"
+                    android:textStyle="bold" />
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/form_spinner_layout_margin_top"
+                    android:orientation="horizontal"
+                    android:weightSum="1">
+
+
+                    <Spinner
+                        android:id="@+id/frm_fmilydtl_spr_fmlyanlincome"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_weight=".5"
+                        android:entries="@array/income" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/form_spinner_layout_margin_top"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+                    <!--  <ImageView
+                          android:layout_width="50dp"
+                          android:layout_height="50dp"
+                          android:src="@drawable/arrow_left_bold_circle_outline"
+                          android:layout_gravity="start"
+                          android:layout_weight=".5"
+                          android:onClick="goToFormOccupationDetails"
+                          android:layout_marginRight="10dp"
+                          android:layout_marginTop="10dp"/>-->
+                    <Button
+                        android:id="@+id/imageView2"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="end"
+                        android:layout_marginTop="@dimen/button_margin_top"
+                        android:layout_marginBottom="@dimen/button_margin_bottom"
+                        android:background="@color/circleArrowButton"
+                        android:onClick="goToFormPhysicalAttribute"
+                        android:text="@string/save_next"
+                        android:textColor="@color/buttonTextColor"
+                        android:textStyle="bold" />
+                    <!-- <Button
+                         android:id="@+id/bnsaveupdate"
+                         android:layout_width="50dp"
+                         android:layout_height="50dp"
+                         android:layout_gravity="end"
+                         android:layout_marginTop="10dp"
+                         android:layout_weight=".5"
+                         android:textColor="#fff"
+                         android:textStyle="bold"
+                         android:background="@color/circleArrowButton"
+                         android:onClick="goToFormContactInformation"
+                         android:text="save update"
+                         android:visibility="gone"/>-->
+                </LinearLayout>
+            </LinearLayout>
+
+    </ScrollView>
+    <!-- <ImageButton
+         android:id="@+id/draggable_view"
+         android:background="@drawable/home_icon"
+         android:layout_gravity="bottom|left"
+         android:layout_marginBottom="20dp"
+         android:layout_marginEnd="20dp"
+         android:layout_width="50dp"
+         android:layout_height="50dp"/>-->
+
+</LinearLayout>

@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/form_inner_layout_margin"
+                android:orientation="horizontal">
+
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:id="@+id/iv_succsstory"
+                    android:layout_width="@dimen/profile_pic_width"
+                    android:layout_height="match_parent"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/img_succcsstories" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/form_inner_layout_margin"
+                    android:layout_marginLeft="@dimen/successStoriesRowLay_mar_left"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/tv_goroomname"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:drawableLeft="@drawable/ic_person_profile_dp"
+                        android:drawablePadding="@dimen/form_et_drawable_padding"
+                        android:text="@string/GroomName"
+                        android:textSize="@dimen/successStoriesRowLay_textSize" />
+
+                    <include layout="@layout/item_divider" />
+
+                    <TextView
+                        android:id="@+id/bridename"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:drawableLeft="@drawable/ic_person_profile_dp"
+                        android:drawablePadding="@dimen/form_et_drawable_padding"
+                        android:text="@string/BrideName"
+                        android:textSize="@dimen/successStoriesRowLay_textSize" />
+
+                    <include layout="@layout/item_divider" />
+
+
+                    <TextView
+                        android:id="@+id/tv_mrrigdate"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:drawableLeft="@drawable/ic_perm_contact_calendar_black_24dp"
+                        android:drawablePadding="@dimen/form_et_drawable_padding"
+                        android:text="@string/dob_hint"
+                        android:textSize="@dimen/successStoriesRowLay_textSize" />
+
+                    <include layout="@layout/item_divider" />
+
+
+                    <TextView
+                        android:id="@+id/helpid"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:drawableLeft="@drawable/ic_description_black_24dp"
+                        android:drawablePadding="@dimen/form_et_drawable_padding"
+                        android:maxLines="2"
+                        android:text="@string/about_us_desc"
+                        android:textSize="@dimen/successStoriesRowLay_textSize" />
+
+                    <include layout="@layout/item_divider" />
+
+
+                    <TextView
+                        android:id="@+id/tv_viewmore_succsstories"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:onClick="goToFullViewSuccessStories"
+                        android:text="@string/event_row_layout_viewmore"
+                        android:textColor="@color/view_more"
+                        android:textSize="@dimen/successStoriesRowLay_textSize" />
+                </LinearLayout>
+
+            </LinearLayout>
+            <include layout="@layout/item_divider"/>
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

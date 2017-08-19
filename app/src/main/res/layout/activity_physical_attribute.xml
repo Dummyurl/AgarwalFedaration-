@@ -1,0 +1,373 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".matrimony.PhysicalAttributeActivity">
+
+    <include
+        android:id="@id/toolbar"
+        layout="@layout/toolbar" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+                <!--
+                                <TextView
+                                    android:id="@+id/tv_ahycialattr"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="20dp"
+                                    android:text="Physical Attribute"
+                                    android:textAlignment="center"
+                                    android:textColor="@color/colorAccent"
+                                    android:textSize="20dp"
+                                    android:textStyle="bold" />
+                                    -->
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/form_inner_layout_margin"
+                    android:orientation="horizontal"
+                    android:weightSum="1">
+
+                    <TextView
+                        android:id="@+id/per_height"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_margin="@dimen/layout_margin"
+                        android:layout_weight=".5"
+                        android:text="@string/Height"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:layout_width="@dimen/seperator_width"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_margin="@dimen/layout_margin"
+                        android:gravity="center"
+                        android:text="@string/seprator"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/d_per_height"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_weight=".5"
+                        android:textStyle="bold" />
+                </LinearLayout>
+
+                <include layout="@layout/item_divider" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/form_inner_layout_margin"
+                    android:orientation="horizontal"
+                    android:weightSum="1">
+
+                    <TextView
+                        android:id="@+id/per_weight"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_margin="@dimen/layout_margin"
+                        android:layout_weight=".5"
+                        android:text="@string/Weight"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:layout_width="@dimen/seperator_width"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_margin="@dimen/layout_margin"
+                        android:gravity="center"
+                        android:text="@string/seprator"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/d_per_weight"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_weight=".5"
+                        android:textStyle="bold" />
+                </LinearLayout>
+
+                <include layout="@layout/item_divider" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/form_inner_layout_margin"
+                    android:orientation="horizontal"
+                    android:weightSum="1">
+
+                    <TextView
+                        android:id="@+id/per_bdytype"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_margin="@dimen/layout_margin"
+                        android:layout_weight=".5"
+                        android:text="@string/BodyType"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:layout_width="@dimen/seperator_width"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_margin="@dimen/layout_margin"
+                        android:gravity="center"
+                        android:text="@string/seprator"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/d_per_bdyype"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_weight=".5"
+                        android:textStyle="bold" />
+                </LinearLayout>
+
+                <include layout="@layout/item_divider" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/form_inner_layout_margin"
+                    android:orientation="horizontal"
+                    android:weightSum="1">
+
+                    <TextView
+                        android:id="@+id/per_bloodgrp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_margin="@dimen/layout_margin"
+                        android:layout_weight=".5"
+                        android:text="@string/bloodgouup"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:layout_width="@dimen/seperator_width"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_margin="@dimen/layout_margin"
+                        android:gravity="center"
+                        android:text="@string/seprator"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/d_per_bloodgrp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_weight=".5"
+                        android:textStyle="bold" />
+                </LinearLayout>
+
+                <include layout="@layout/item_divider" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/form_inner_layout_margin"
+                    android:orientation="horizontal"
+                    android:weightSum="1">
+
+                    <TextView
+                        android:id="@+id/per_complexion"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_margin="@dimen/layout_margin"
+                        android:layout_weight=".5"
+                        android:text="@string/Complexion"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:layout_width="@dimen/seperator_width"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_margin="@dimen/layout_margin"
+                        android:gravity="center"
+                        android:text="@string/seprator"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/d_per_complexion"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_weight=".5"
+                        android:textStyle="bold" />
+                </LinearLayout>
+
+                <include layout="@layout/item_divider" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/form_inner_layout_margin"
+                    android:orientation="horizontal"
+                    android:weightSum="1">
+
+                    <TextView
+                        android:id="@+id/per_diet"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_margin="@dimen/layout_margin"
+                        android:layout_weight=".5"
+                        android:text="@string/Diet"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:layout_width="@dimen/seperator_width"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_margin="@dimen/layout_margin"
+                        android:gravity="center"
+                        android:text="@string/seprator"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/d_per_dirt"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_weight=".5"
+                        android:textStyle="bold" />
+                </LinearLayout>
+
+                <include layout="@layout/item_divider" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/form_inner_layout_margin"
+                    android:orientation="horizontal"
+                    android:weightSum="1">
+
+                    <TextView
+                        android:id="@+id/per_smoke"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_margin="@dimen/layout_margin"
+                        android:layout_weight=".5"
+                        android:text="@string/Smoke"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:layout_width="@dimen/seperator_width"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_margin="@dimen/layout_margin"
+                        android:gravity="center"
+                        android:text="@string/seprator"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/d_per_smoke"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_weight=".5"
+                        android:textStyle="bold" />
+                </LinearLayout>
+
+                <include layout="@layout/item_divider" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/form_inner_layout_margin"
+                    android:orientation="horizontal"
+                    android:weightSum="1">
+
+                    <TextView
+                        android:id="@+id/per_drink"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_margin="@dimen/layout_margin"
+                        android:layout_weight=".5"
+                        android:text="@string/Drink"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:layout_width="@dimen/seperator_width"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_margin="@dimen/layout_margin"
+                        android:gravity="center"
+                        android:text="@string/seprator"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/d_per_drink"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_weight=".5"
+                        android:textStyle="bold" />
+                </LinearLayout>
+
+                <include layout="@layout/item_divider" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/form_inner_layout_margin"
+                    android:orientation="horizontal"
+                    android:weightSum="1">
+
+                    <TextView
+                        android:id="@+id/per_handicap"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_margin="@dimen/layout_margin"
+                        android:layout_weight=".5"
+                        android:text="@string/YouAreHandicapped"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:layout_width="@dimen/seperator_width"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_margin="@dimen/layout_margin"
+                        android:gravity="center"
+                        android:text="@string/seprator"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/d_per_handicap"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_weight=".5"
+                        android:textStyle="bold" />
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

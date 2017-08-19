@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.LeelaGroup.AgrawalFederation.matrimony.ConceptActivity">
+
+    <include
+        android:id="@+id/toolbar"
+        layout="@layout/toolbar">
+    </include>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/tv_concept"
+        android:text="Concept"
+        android:textStyle="bold"
+        android:textAlignment="center"
+        android:textSize="20dp"
+        android:layout_margin="10dp"
+        android:textColor="@color/colorPrimary"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/tv_concept_content"
+        android:textAlignment="center"
+        android:text="It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop pu"
+        android:textSize="20dp"
+        android:layout_margin="10dp"/>
+<LinearLayout
+    android:layout_width="match_parent"
+    android:orientation="horizontal"
+    android:weightSum="1"
+    android:layout_marginTop="40dp"
+    android:layout_height="wrap_content">
+  <Button
+      android:layout_width="200dp"
+      android:id="@+id/btn_prev"
+      android:layout_height="wrap_content"
+      android:layout_margin="10dp"
+      android:layout_gravity="right"
+      android:layout_weight="0.5"
+      android:textColor="#fff"
+      android:onClick="goToAboutUs"
+      android:background="@color/colorPrimary"
+      android:text="Prev"/>
+    <Button
+        android:layout_width="200dp"
+        android:id="@+id/btn_concept_need"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:layout_gravity="right"
+        android:layout_weight="0.5"
+        android:textColor="#fff"
+        android:onClick="goToNeed"
+        android:background="@color/colorPrimary"
+        android:text="Need"
+        />
+</LinearLayout>
+
+</LinearLayout>

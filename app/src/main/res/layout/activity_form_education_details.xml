@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:layout_height="match_parent"
+    tools:context=".matrimony.FormEducationDetailsActivity">
+
+
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/frm_eductn_tv"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:layout_marginTop="20dp"
+                android:text="Education Details"
+                android:textAlignment="center"
+                android:textColor="@color/colorAccent"
+                android:textSize="20dp"
+                android:textStyle="bold" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="2dp"
+                android:orientation="horizontal"
+                android:weightSum="1">
+
+                <TextView
+                    android:id="@+id/frm_edctndtl_tv_educton"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_margin="10dp"
+                    android:layout_weight=".5"
+                    android:text="Highest Education :-"
+                    android:textStyle="bold" />
+
+                <EditText
+                    android:id="@+id/frm_edctndtl_spr_educton"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight=".5"
+                    android:inputType="textCapWords"
+                    android:entries="@array/education"
+                    android:hint="Highest Education" />
+            </LinearLayout>
+
+          <!--  <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="2dp"
+                android:orientation="horizontal"
+                android:weightSum="1">
+
+                <TextView
+                    android:id="@+id/frm_edctndtl_tv_deplmin"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_margin="10dp"
+                    android:layout_weight=".5"
+                    android:text="Post Graduation :-"
+                    android:textStyle="bold" />
+
+                <EditText
+                    android:id="@+id/frm_edctndtl_et_deplmin"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight=".5"
+                    android:hint="Post Graduation In"
+
+                    />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="2dp"
+                android:orientation="horizontal"
+                android:weightSum="1">
+
+                <TextView
+                    android:id="@+id/frm_edctndtl_tv_dctrate"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_margin="10dp"
+                    android:layout_weight=".5"
+                    android:text="Doctorate :-"
+                    android:textStyle="bold" />
+
+                <EditText
+                    android:id="@+id/frm_edctndtl_et_dctrate"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_weight=".5"
+                    android:hint="Doctorate In"
+                     />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="2dp"
+                android:orientation="horizontal"
+                android:weightSum="1">
+
+                <TextView
+                    android:id="@+id/frm_edctndtl_tv_cetfctn"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_margin="10dp"
+                    android:layout_weight=".5"
+                    android:text="Certification :-"
+                    android:textStyle="bold" />
+
+                <EditText
+                    android:id="@+id/frm_edctndtl_et_cetfctn"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_weight=".5"
+                    android:hint="Your Certification"
+                     />
+            </LinearLayout>
+-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="2dp"
+                android:orientation="horizontal"
+                android:gravity="center"
+                >
+
+               <!-- <ImageView
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:layout_gravity="start"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_weight=".5"
+                    android:onClick="goToFormSocialAttribute"
+                    android:src="@drawable/arrow_left_bold_circle_outline" />-->
+
+                <Button
+                    android:id="@+id/imageView2"
+                    android:layout_width="200dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="10dp"
+                    android:textColor="#fff"
+                    android:textStyle="bold"
+                    android:background="@color/circleArrowButton"
+                    android:onClick="goToFormOccupationDetails"
+                    android:text="save and next" />
+               <!-- <Button
+                    android:id="@+id/bnsaveupdate"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:layout_gravity="end"
+                    android:layout_marginTop="10dp"
+                    android:layout_weight=".5"
+                    android:textColor="#fff"
+                    android:textStyle="bold"
+                    android:background="@color/circleArrowButton"
+                    android:onClick="goToFormContactInformation"
+                    android:text="save update"
+                    android:visibility="gone"/>-->
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+
+ <!--   <ImageButton
+        android:id="@+id/draggable_view"
+        android:background="@drawable/home_icon"
+        android:layout_gravity="bottom|right"
+        android:layout_marginBottom="20dp"
+        android:layout_marginEnd="20dp"
+        android:layout_width="50dp"
+        android:layout_height="50dp"/>-->
+
+</FrameLayout>

@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+
+
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/fab_fb"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/profile"
+        app:backgroundTint="#FFFFFF"
+        android:layout_gravity="bottom|end"
+        android:layout_marginBottom="16dp"
+        android:layout_marginRight="106dp"
+        android:visibility="invisible"
+       />
+
+
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/fab_twitter"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/event_fab"
+        app:backgroundTint="#FFFFFF"
+        android:layout_gravity="bottom|end"
+        android:layout_marginRight="16dp"
+        android:layout_marginBottom="106dp"
+        android:visibility="invisible"
+        />
+
+
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/fab_whatsapp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/sharethis_app"
+        app:backgroundTint="#FFFFFF"
+        android:layout_gravity="bottom|end"
+        android:layout_marginRight="87dp"
+        android:layout_marginBottom="85dp"
+        android:visibility="invisible"
+        />
+
+
+</FrameLayout>

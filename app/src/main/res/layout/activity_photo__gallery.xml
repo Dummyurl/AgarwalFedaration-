@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_photo__gallery"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.LeelaGroup.AgrawalFedration.medical.Photo_Gallery">
+
+
+    <GridView
+        android:id="@+id/MatrimonyImageGallery"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:stretchMode="columnWidth"
+        android:numColumns="2"
+        android:columnWidth="120dp"
+        android:horizontalSpacing="2dp"
+        android:verticalSpacing="4dp" />
+
+
+</LinearLayout>
