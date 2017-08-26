@@ -17,11 +17,11 @@
     <string name="Mobile">Mobile</string>
     <string name="Contact_Code">Contact Code</string>
     <string name="Contact_Number">Landline</string>
-    <string name="Address_Line_1">Address Line 1</string>
+    <string name="Address_Line_1">Address 1</string>
     <string name="Country_1">Country</string>
     <string name="State_1">State </string>
     <string name="City_1">City </string>
-    <string name="Address_Line_2">Address Line 2</string>
+    <string name="Address_Line_2">Address 2</string>
    <string name="Country_2">Country 2</string>
     <string name="State_2">State 2</string>
     <string name="City_2">City 2</string>
@@ -2918,6 +2918,34 @@ First and foremost, I would like to convey my personal thanks to all of you for 
     <string name="Phone">Phone</string>
     <string name="Websites">Website</string>
     <string name="Person">Person</string>
+
+    <!--Fontawsome icons-->
+    <string name="icon">&#xf007;</string>
+    <string name="tag_icon">&#xf292;</string>
+    <string name="email_icon">&#xf0e0;</string>
+    <string name="phone_icon">&#xf10b;</string>
+    <string name="landline_icon">&#xf095;</string>
+    <string name="c_icon">&#xf279;</string>
+    <string name="s_icon">&#xf041;</string>
+    <string name="city_icon">&#xf276;</string>
+    <string name="descrioption_icon">&#xf15b;</string>
+    <string name="lD_icon">&#xf15c;</string>
+    <string name="established">&#xf19c;</string>
+    <string name="website_icon">&#xf0ac;</string>
+    <string name="certificate_icon">&#xf0a3;</string>
+    <string name="licen_icon">&#xf2c3;</string>
+    <string name="payment_method_ic">&#xf283;</string>
+    <string name="lang_icon">&#xf2a3;</string>
+    <string name="catgory_icon">&#xf02c;</string>
+    <string name="sub_categry_icon">&#xf1c0;</string>
+    <string name="locale_icon">&#xf234;</string>
+    <string name="serv_area">&#xf1fe;</string>
+    <string name="working_day_icon">&#xf073;</string>
+    <string name="clock">&#xf017;</string>
+    <string name="logo">&#xf164;</string>
+    <string name="spetiality_icon">&#xf0f2;</string>
+    <string name="business_type_icon">&#xf275;</string>
+    <string name="adevertisement_type_icon">&#xf170;</string>
 
     <!--SearchResult_Medical-->
 
