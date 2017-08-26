@@ -22,7 +22,7 @@
     <string name="State_1">State </string>
     <string name="City_1">City </string>
     <string name="Address_Line_2">Address Line 2</string>
-   <string name="Country_2">Country 2</string>
+    <string name="Country_2">Country 2</string>
     <string name="State_2">State 2</string>
     <string name="City_2">City 2</string>
     <string name="Description">Description</string>
@@ -32,7 +32,7 @@
     <string name="Certification">Certification</string>
     <string name="Licenses">Licenses</string>
     <string name="Payment_Method">Payment Method</string>
-<!--
+    <!--
     <string name="Languages">Languages</string>
 -->
     <string name="Category">Category</string>
@@ -44,7 +44,7 @@
     <string name="Logo">Logo</string>
     <string name="Specialities">Specialities</string>
     <string name="Business_Type">Business Type</string>
-  <!--  <string name="Advertiser_Type">Advertiser Type</string>-->
+    <!--  <string name="Advertiser_Type">Advertiser Type</string>-->
     <string name="Landline">Landline Number</string>
     <string name="Image_title">Image title</string>
     <string name="No._working_days">No. working days</string>
@@ -56,18 +56,18 @@
     <string name="Basic">Basic</string>
     <string name="Premium">Premium</string>
     <string name="Superlisting">Superlisting</string>
-<!--
+    <!--
     <string name="Save">Save</string>
 -->
     <string name="First_name">First Name</string>
     <string name="Last_name"> Last Name</string>
     <string name="Chapter">Chapter</string>
-<!--
+    <!--
     <string name="Gender">Gender</string>
 -->
     <string name="Male">Male</string>
     <string name="Female">Female</string>
-<!--
+    <!--
     <string name="Address">Address</string>
 -->
 
@@ -81,10 +81,8 @@ I would like to call them as combination of a Machine and a Missile for their Vi
 First and foremost, I would like to convey my personal thanks to all of you for giving me the opportunity to once again SERVE the COMMUNITY.
 
 </string>
+
     <string name="Social_News">Social News</string>
-
-
-
 
 
     <string-array name="module">
@@ -348,17 +346,11 @@ First and foremost, I would like to convey my personal thanks to all of you for 
         <item>Business</item>
     </string-array>
     <string-array name="marital_status">
-        <item>Select Marital Status</item>
         <item>Single</item>
-        <item>Divorced</item>
-        <item>Separated</item>
         <item>Married</item>
-        <item>Widowed</item>
-        <item>Awaiting Divorce</item>
     </string-array>
 
     <string-array name="no_of_children">
-        <item>Select</item>
         <item>1</item>
         <item>2</item>
         <item>3</item>
@@ -366,25 +358,36 @@ First and foremost, I would like to convey my personal thanks to all of you for 
     </string-array>
 
     <string-array name="children_living_status">
-        <item>Select Option</item>
-        <item>Living With Me</item>
-        <item>Not Living With Me</item>
+        <item>Live Together</item>
+        <item>Not Live Together</item>
     </string-array>
 
     <string-array name="mother_tongue">
-        <item>Hindi</item>
-        <item>Marathi</item>
-        <item>English</item>
-        <item>Bengali</item>
-        <item>Telugu</item>
-        <item>Tamil</item>
+        <item>Hindi/Delhi</item>
+        <item>Hindi/MP/Bundelkhand/Chattisgarhi</item>
+        <item>Hindi/U.P./Awadhi/Bhojpuri/Garwhali</item>
+        <item>Punjabi</item>
+        <item>Bihari/Maithili/Magahi</item>
+        <item>Rajasthani / Marwari / Malwi / Jaipuri</item>
+        <item>Haryanvi</item>
+        <item>Himachali/Pahari</item>
+        <item>Kashmiri/Dogri</item>
+        <item>Sindhi</item>
         <item>Urdu</item>
+        <item>Marathi</item>
+        <item>Gujarati / Kutchi</item>
+        <item>Konkani</item>
+        <item>Tamil</item>
+        <item>Telugu</item>
         <item>Kannada</item>
-        <item>Gujarati</item>
-        <item>Odia</item>
         <item>Malayalam</item>
-        <item>Gujarati</item>
-        <item>Sanskrit</item>
+        <item>Tulu</item>
+        <item>Urdu</item>
+        <item>Bengali</item>
+        <item>Oriya</item>
+        <item>Assamese</item>
+        <item>>Sikkim/ Nepali/ Lepcha/ Bhutia/ Limbu</item>
+        <item>English</item>
     </string-array>
     <string-array name="country_list">
         <item>India</item>
@@ -455,7 +458,7 @@ First and foremost, I would like to convey my personal thanks to all of you for 
         <item>58</item>
         <item>59</item>
         <item>60</item>
-        <!-- <item>61</item>
+        <item>61</item>
         <item>62</item>
         <item>63</item>
         <item>64</item>
@@ -495,7 +498,6 @@ First and foremost, I would like to convey my personal thanks to all of you for 
         <item>98</item>
         <item>99</item>
         <item>100</item>
-        <item>101</item>-->
     </string-array>
 
     <string-array name="body_type">
@@ -543,10 +545,11 @@ First and foremost, I would like to convey my personal thanks to all of you for 
     </string-array>
 
     <string-array name="profile_created_for">
-        <item>Bride For Friend</item>
-        <item>Groom For Friend</item>
-        <item>Groom For Daughter</item>
-        <item>Bride For Son</item>
+        <item>Self</item>
+        <item>Daughter</item>
+        <item>Son</item>
+        <item>Brother</item>
+        <item>Sister</item>
     </string-array>
 
     <string-array name="interests">
@@ -559,10 +562,10 @@ First and foremost, I would like to convey my personal thanks to all of you for 
 
     <string-array name="religion">
         <item>Hindu</item>
-        <item>Jain</item>
+        <!-- <item>Jain</item>
         <item>Buddhism</item>
         <item>Muslim</item>
-        <item>Christians</item>
+        <item>Christians</item>-->
     </string-array>
     <string-array name="education">
         <item>SSC</item>
@@ -2674,7 +2677,6 @@ First and foremost, I would like to convey my personal thanks to all of you for 
     <string name="splash_title">Agrawal Federation</string>
 
 
-
     <!-- ##########   Matrimony Module  ############# -->
 
     <!-- About us Page -->
@@ -2774,7 +2776,7 @@ First and foremost, I would like to convey my personal thanks to all of you for 
     <string name="SomethingAboutYou">Something About You</string>
     <string name="upload_photo">Upload Photo</string>
     <string name="save_next">save and next</string>
-<!--
+    <!--
     <string name="Address">Address</string>
 -->
     <string name="ResidentialStatus">Residential Status</string>
@@ -2804,7 +2806,7 @@ First and foremost, I would like to convey my personal thanks to all of you for 
     <!--  Form Other details-->
     <string name="WhereDidYouHearUs">Where Did You Hear Us</string>
     <string name="ProfileCreatedBy">Profile Created By</string>
-<!--
+    <!--
     <string name="Hobbies">Hobbies</string>
 -->
     <string name="Reading">Reading</string>
@@ -2819,14 +2821,14 @@ First and foremost, I would like to convey my personal thanks to all of you for 
     <string name="LookingFor">Looking For</string>
     <string name="MinimumAge">Minimum Age</string>
     <string name="MaximumAge">Maximum Age</string>
-<!--    <string name="Country">Country</string>
+    <!--    <string name="Country">Country</string>
     <string name="State">State</string>
     <string name="City">City</string>-->
     <string name="ResidentStatus">Resident Status</string>
     <string name="MinimumHeight">Minimum Height(cm)</string>
     <string name="MaximumHeight">Maximum Height (cm)</string>
     <string name="Complexion">Complexion</string>
-<!--
+    <!--
     <string name="Religion">Religion</string>
 -->
     <string name="Cast">Cast</string>
@@ -2842,7 +2844,7 @@ First and foremost, I would like to convey my personal thanks to all of you for 
     <string name="Smoke">Smoke</string>
     <string name="Drink">Drink</string>
     <string name="YouAreHandicapped">Are You Handicapped</string>
-   <!-- <string name="Yes">Yes</string>
+    <!-- <string name="Yes">Yes</string>
     <string name="No">No</string>
 -->
     <!--  Form Physicasl Attribute details-->
@@ -2853,10 +2855,10 @@ First and foremost, I would like to convey my personal thanks to all of you for 
     <!--  Form Login -->
     <string name="Login">Login</string>
     <string name="Password">Password</string>
-<!--
+    <!--
     <string name="Email">Email</string>
 -->
-<!--
+    <!--
     <string name="NewUser">New User?</string>
 -->
     <string name="ForgotPassword">Forgot Password</string>
@@ -2864,11 +2866,11 @@ First and foremost, I would like to convey my personal thanks to all of you for 
     <!--  Activity Matrimony -->
     <string name="EnterCity">Enter City</string>
     <string name="FindMatch">Find Match</string>
-    <string name="CreateProfile">Create Profile</string>
+    <string name="CreateProfile">Create New Profile</string>
 
     <!--  Form registraion -->
     <string name="ContactNumber">Contact Number</string>
-   <!-- <string name="Male">Male</string>
+    <!-- <string name="Male">Male</string>
     <string name="Female">Female</string>-->
     <string name="Register">Register</string>
 
@@ -2993,12 +2995,12 @@ First and foremost, I would like to convey my personal thanks to all of you for 
     <!--PersonalDetails-->
     <string name="First_Mobile_Number">Mobile Number 1</string>
     <string name="Second_Mobile_Number">Mobile Number 2</string>
-  <!--  <string name="Male">Male</string>
+    <!--  <string name="Male">Male</string>
     <string name="Female">Female</string>
     <string name="Email">Email</string>-->
     <string name="CountryName">Country</string>
     <string name="Fix_Country">India</string>
-<!--
+    <!--
     <string name="Password">Password</string>
 -->
     <!--PersonalDetails-->
@@ -3015,7 +3017,7 @@ First and foremost, I would like to convey my personal thanks to all of you for 
     <string name="Mother_Occupation">Mother Occupation</string>
     <string name="Mother_Telephone_No">Mother Telephone No</string>
     <string name="Mother_Mobile_No">Mother Mobile No</string>
-    <string name="Religion">Religion :-</string>
+    <string name="Religion">Religion</string>
     <string name="Father_Telephone_No">Father Telephone No :-</string>
 
     <!--FamilyDetails-->
@@ -3134,6 +3136,85 @@ First and foremost, I would like to convey my personal thanks to all of you for 
     <string name="Schedule_of_BEAT">Schedule of BEAT</string>
 
     <!--BEAT-->
+
+    <!--Fontawsome icons-->
+    <string name="icon">&#xf007;</string>
+    <string name="tag_icon">&#xf292;</string>
+    <string name="email_icon">&#xf0e0;</string>
+    <string name="phone_icon">&#xf10b;</string>
+    <string name="landline_icon">&#xf095;</string>
+    <string name="c_icon">&#xf279;</string>
+    <string name="s_icon">&#xf041;</string>
+    <string name="city_icon">&#xf276;</string>
+    <string name="descrioption_icon">&#xf15b;</string>
+    <string name="lD_icon">&#xf15c;</string>
+    <string name="established">&#xf19c;</string>
+    <string name="website_icon">&#xf0ac;</string>
+    <string name="certificate_icon">&#xf0a3;</string>
+    <string name="lic_icon">&#xf2c2;</string>
+    <string name="payment_method_ic">&#xf283;</string>
+    <string name="lang_icon">&#xf2a3;</string>
+    <string name="catgory_icon">&#xf02c;</string>
+    <string name="sub_categry_icon">&#xf1c0;</string>
+    <string name="locale_icon">&#xf234;</string>
+    <string name="serv_area">&#xf1fe;</string>
+    <string name="working_day_icon">&#xf073;</string>
+    <string name="clock">&#xf017;</string>
+    <string name="logo">&#xf164;</string>
+    <string name="spetiality_icon">&#xf0f2;</string>
+    <string name="business_type_icon">&#xf275;</string>
+    <string name="adevertisement_type_icon">&#xf170;</string>
+
+<!--  BAsic details Icon -->
+    <string name="map_icon">&#xf041;</string>
+    <string name="clock_icon">&#xf017;</string>
+    <string name="calander_icon">&#xf073;</string>
+    <string name="cake_icon">&#xf1fd;</string>
+    <string name="home_icon">&#xf015;</string>
+    <string name="marital_status_icon">&#xf004;</string>
+    <string name="child_liv_sts_icon">&#xf2c0;</string>
+    <string name="no_of_child_icon">&#xf0c0;</string>
+    <string name="gender_icon">&#xf007;</string>
+    <string name="mother_tong_icon">&#xf1ab;</string>
+    <string name="religion_icon">&#xf0a2;</string>
+    <string name="cast_icon">&#xf25e;</string>
+    <string name="abt_me_icon">&#xf29e;</string>
+
+   <!--  Contact details Icon -->
+    <string name="mobile_icon">&#xf10b;</string>
+    <string name="landlin_icon">&#xf098;</string>
+    <string name="address_icon">&#xf015;</string>
+    <string name="pincode_icon">&#xf276;</string>
+    <string name="res_status_icon">&#xf145;</string>
+    <string name="edu_icon">&#xf19d;</string>
+
+    <string name="occu_icon">&#xf0f2;</string>
+    <string name="group_icon">&#xf0c0;</string>
+    <string name="dollar_icon">&#xf155;</string>
+
+    <string name="industry_icon">&#xf275;</string>
+    <string name="empat_icon">&#xf19c;</string>
+    <string name="money_icon">&#xf0d6;</string>
+    <string name="pencil_icon">&#xf044;</string>
+    <string name="football_icon">&#xf1e3;</string>
+    <string name="thumbsup_icon">&#xf087;</string>
+    <string name="search_icon">&#xf002;</string>
+    <string name="height_icon">&#xf034;</string>
+    <string name="smile_icon">&#xf118;</string>
+    <string name="weight_icon">&#xf24e;</string>
+    <string name="bodytype_icon">&#xf29a;</string>
+    <string name="drop_icon">&#xf043;</string>
+    <string name="diet_icon">&#xf0f5;</string>
+    <string name="smoke_icon">&#xf1b6;</string>
+    <string name="drink_icon">&#xf000;</string>
+    <string name="handicap_icon">&#xf193;</string>
+    <string name="manglik_icon">&#xf222;</string>
+    <string name="horoscope_icon">&#xf005;</string>
+    <string name="gothra_icon">&#xf1e5;</string>
+    <string name="female_icon">&#xf182;</string>
+    <string name="male_icon">&#xf183;</string>
+
+
 
 
 

@@ -8,11 +8,11 @@
         />
     <item
         android:id="@+id/action_myprofile"
-        android:title="My Profile"
+        android:title="My Profiles"
         />
     <item
         android:id="@+id/action_fillprofile"
-        android:title="Fill Profile"
+        android:title="Create New Profile"
         />
  <!--   <item
         android:id="@+id/action_editprofile"

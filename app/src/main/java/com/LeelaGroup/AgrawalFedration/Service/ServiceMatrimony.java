@@ -14,6 +14,8 @@ import com.LeelaGroup.AgrawalFedration.matrimony.models.ImageUploadPojo;
 import com.LeelaGroup.AgrawalFedration.matrimony.models.LoginModel;
 import com.LeelaGroup.AgrawalFedration.matrimony.models.PartnrPrefdetails;
 import com.LeelaGroup.AgrawalFedration.matrimony.models.PhysicalAndOtherDetails;
+import com.LeelaGroup.AgrawalFedration.matrimony.models.ProfileIdPojo;
+import com.LeelaGroup.AgrawalFedration.matrimony.models.ProfileModel;
 import com.LeelaGroup.AgrawalFedration.matrimony.models.RegistrationDetails;
 import com.LeelaGroup.AgrawalFedration.matrimony.models.SocialAndFamilyDetails;
 import com.LeelaGroup.AgrawalFedration.matrimony.models.SussessStoriesPojo;
@@ -254,6 +256,10 @@ public interface ServiceMatrimony {
     @POST("Matrimony/fetchAllDetails.php")
     Call<AllDetails> getAllDetails(@Field("mat_id") String mat_id);
 
+    @FormUrlEncoded
+    @POST("Matrimony/fetchAllDetailsOfProfile.php")
+    Call<AllDetails> getAllProfileDetails(@Field("pid") String pid);
+
     @GET("Matrimony/fetchEventsDetails.php")
     Call<List<EventsDetails>> getEventDetails();
 
@@ -366,6 +372,14 @@ public interface ServiceMatrimony {
     @FormUrlEncoded
     @POST("Matrimony/resetPassword.php")
     Call<ResetPasswordPojo> resetPassword(@Field("mat_id")String userid, @Field("mat_pwd")String pass);
+
+    @FormUrlEncoded
+    @POST("Matrimony/fetchProfileList.php")
+    Call<List<ProfileModel>> getProfileList(@Field("mat_id")String userid);
+
+    @FormUrlEncoded
+    @POST("Matrimony/isProfileIdExist.php")
+    Call<ProfileIdPojo> isPRofileIDExist(@Field("mat_id") String mat_id);
 }
 
 
