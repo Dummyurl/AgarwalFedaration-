@@ -1,5 +1,6 @@
 package com.LeelaGroup.AgrawalFedration.matrimony;
 
+import android.graphics.Typeface;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
@@ -28,6 +29,9 @@ public class PartnerPreferenceActivity extends AppCompatActivity {
     TextView d_per_lookngfor,d_per_contrylvgin,d_per_statelvgin
             ,d_per_citylvgin,d_agefrm,d_ageto,d_per_htfrm,d_perMaxht,d_per_cmplxn,d_per_educton,
             d_per_religion,d_per_cast;
+    TextView i_d_per_lookngfor,i_d_per_contrylvgin,i_d_per_statelvgin
+            ,i_d_per_citylvgin,i_d_agefrm,i_d_ageto,i_d_per_htfrm,i_d_perMaxht,i_d_per_cmplxn,i_d_per_educton,
+            i_d_per_religion,i_d_per_cast;
     ImageView  d_person_ptnerpref_image;
 
     Toolbar toolbar;
@@ -42,6 +46,7 @@ public class PartnerPreferenceActivity extends AppCompatActivity {
         matrimonySession =new MatrimonySession(getApplicationContext());
 
         init();
+        initIcon();
 
         toolbar=(Toolbar)findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
@@ -104,6 +109,38 @@ public class PartnerPreferenceActivity extends AppCompatActivity {
         d_per_educton = (TextView)findViewById(R.id.d_per_educton);
         d_per_religion = (TextView)findViewById(R.id.d_per_religion);
         d_per_cast = (TextView)findViewById(R.id.d_per_cast);
+    }
+
+    public void initIcon()
+    {
+        Typeface icon = Typeface.createFromAsset(getAssets(), "fontawesome-webfont.ttf" );
+        //d_person_ptnerpref_image =(ImageView)findViewById(R.id.d_person_ptnerpref_image);
+        i_d_per_lookngfor = (TextView)findViewById(R.id.per_profl_lookngfor);
+        i_d_per_contrylvgin = (TextView)findViewById(R.id.per_countrylvgin);
+        i_d_per_statelvgin = (TextView)findViewById(R.id.per_statlvgin);
+        i_d_per_citylvgin = (TextView)findViewById(R.id.per_citylvgin);
+        i_d_agefrm = (TextView)findViewById(R.id.per_minage);
+        i_d_ageto = (TextView)findViewById(R.id.per_maxage);
+        i_d_per_htfrm = (TextView)findViewById(R.id.tv_minheight);
+        i_d_perMaxht = (TextView)findViewById(R.id.tv_per_maxht);
+        i_d_per_cmplxn = (TextView)findViewById(R.id.tv_per_complxn);
+        i_d_per_educton = (TextView)findViewById(R.id.tv_per_eduction);
+        i_d_per_religion = (TextView)findViewById(R.id.tv_per_religion);
+        i_d_per_cast = (TextView)findViewById(R.id.tv_per_cast);
+
+        i_d_per_lookngfor.setTypeface(icon);
+        i_d_per_contrylvgin.setTypeface(icon);
+        i_d_per_statelvgin.setTypeface(icon);
+        i_d_per_citylvgin.setTypeface(icon);
+        i_d_agefrm.setTypeface(icon);
+        i_d_ageto.setTypeface(icon);
+        i_d_per_htfrm.setTypeface(icon);
+        i_d_perMaxht.setTypeface(icon);
+        i_d_per_cmplxn.setTypeface(icon);
+        i_d_per_educton.setTypeface(icon);
+        i_d_per_religion.setTypeface(icon);
+        i_d_per_cast.setTypeface(icon);
+
     }
 
     @Override

@@ -2,12 +2,15 @@ package com.LeelaGroup.AgrawalFedration.matrimony;
 
 import android.content.Context;
 import android.content.Intent;
+import android.content.res.AssetManager;
+import android.graphics.Typeface;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import com.LeelaGroup.AgrawalFedration.FontManager;
 import com.LeelaGroup.AgrawalFedration.R;
 import com.LeelaGroup.AgrawalFedration.matrimony.models.EventsDetails;
 
@@ -54,13 +57,28 @@ public class EventActivityAdapter extends RecyclerView.Adapter<EventActivityAdap
 
     public static final class MyViewHolder extends RecyclerView.ViewHolder {
 
+
         TextView evname,evAddress,evLoc,evDate,evTime,evDesc,evViewMore;
+        TextView calanderIcon,mapIcon,clockIcon;
         ArrayList<EventsDetails> eventsDetailses=new ArrayList<EventsDetails>();
         Context ctx;
+
         public MyViewHolder(View itemView, final Context ctx, final ArrayList<EventsDetails> eventsDetailses) {
             super(itemView);
             this.eventsDetailses=eventsDetailses;
             this.ctx=ctx;
+
+
+            Typeface icon = Typeface.createFromAsset(ctx.getAssets(), "fontawesome-webfont.ttf" );
+
+            calanderIcon = (TextView)itemView.findViewById( R.id.calendar_icon);
+            calanderIcon.setTypeface(icon);
+
+            mapIcon = (TextView)itemView.findViewById( R.id.location_icon);
+            mapIcon.setTypeface(icon);
+
+            clockIcon = (TextView)itemView.findViewById( R.id.clock_icon);
+            clockIcon.setTypeface(icon);
 
             evname=(TextView)itemView.findViewById(R.id.tv_evname);
             evAddress=(TextView)itemView.findViewById(R.id.ev_a_addr);
@@ -88,5 +106,7 @@ public class EventActivityAdapter extends RecyclerView.Adapter<EventActivityAdap
                }
            });
         }
+
+
     }
 }

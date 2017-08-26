@@ -1,5 +1,6 @@
 package com.LeelaGroup.AgrawalFedration.matrimony;
 
+import android.graphics.Typeface;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
@@ -23,6 +24,7 @@ public class SocialAttributeActivity extends AppCompatActivity {
     String mat_id;
     Toolbar toolbar;
     TextView mat_reg_manglik, mat_reg_horoscope_match, mat_reg_gothra_self, mat_reg_gothra_mama;
+    TextView i_mat_reg_manglik, i_mat_reg_horoscope_match, i_mat_reg_gothra_self;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -31,6 +33,7 @@ public class SocialAttributeActivity extends AppCompatActivity {
         matrimonySession=new MatrimonySession(getApplicationContext());
 
         init();
+        initIcon();
 
         toolbar=(Toolbar)findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
@@ -75,6 +78,23 @@ public class SocialAttributeActivity extends AppCompatActivity {
         //mat_reg_gothra_mama=(TextView)findViewById(R.id.d_per_gothramama);
 
     }
+
+    private void initIcon() {
+
+        Typeface icon=Typeface.createFromAsset(getAssets(),"fontawesome-webfont.ttf");
+
+        i_mat_reg_manglik=(TextView)findViewById(R.id.per_maglik);
+        i_mat_reg_horoscope_match=(TextView)findViewById(R.id.per_horoscope);
+        i_mat_reg_gothra_self=(TextView)findViewById(R.id.per_gothra);
+        //mat_reg_gothra_mama=(TextView)findViewById(R.id.d_per_gothramama);
+
+        i_mat_reg_manglik.setTypeface(icon);
+        i_mat_reg_horoscope_match.setTypeface(icon);
+        i_mat_reg_gothra_self.setTypeface(icon);
+
+    }
+
+
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
 

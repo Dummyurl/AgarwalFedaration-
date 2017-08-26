@@ -1,5 +1,6 @@
 package com.LeelaGroup.AgrawalFedration.matrimony;
 
+import android.graphics.Typeface;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
@@ -22,7 +23,8 @@ public class OtherActivity extends AppCompatActivity {
     String mat_id;
     ImageView profilepic;
     TextView pcretedby,hobiies,intrest;
-MatrimonySession matrimonySession;
+    TextView i_pcretedby,i_hobiies,i_intrest;
+    MatrimonySession matrimonySession;
     Toolbar toolbar;
 
     @Override
@@ -33,6 +35,7 @@ MatrimonySession matrimonySession;
         matrimonySession =new MatrimonySession(getApplicationContext());
 
         init();
+        initIcon();
 
         toolbar=(Toolbar)findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
@@ -74,6 +77,20 @@ MatrimonySession matrimonySession;
         pcretedby=(TextView)findViewById(R.id.d_per_profilecreatedby);
         hobiies=(TextView)findViewById(R.id.d_per_hobies);
         intrest=(TextView)findViewById(R.id.d_per_intrests);
+
+    }
+    public void initIcon()
+    {
+        Typeface icon=Typeface.createFromAsset(getAssets(),"fontawesome-webfont.ttf");
+
+        //profilepic=(ImageView)findViewById(R.id.d_person_other_image);
+        i_pcretedby=(TextView)findViewById(R.id.per_profl_crtedby);
+        i_hobiies=(TextView)findViewById(R.id.per_hobbies);
+        i_intrest=(TextView)findViewById(R.id.per_interests);
+
+        i_pcretedby.setTypeface(icon);
+        i_hobiies.setTypeface(icon);
+        i_intrest.setTypeface(icon);
 
     }
     @Override

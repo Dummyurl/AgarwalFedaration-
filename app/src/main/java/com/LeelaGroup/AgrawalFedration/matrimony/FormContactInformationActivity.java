@@ -14,6 +14,7 @@ import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.Toast;
 
+import com.LeelaGroup.AgrawalFedration.MainActivityModules;
 import com.LeelaGroup.AgrawalFedration.MatrimonySession;
 import com.LeelaGroup.AgrawalFedration.Network.ApiClient;
 import com.LeelaGroup.AgrawalFedration.R;
@@ -439,7 +440,7 @@ public class FormContactInformationActivity extends AppCompatActivity {
     public void onBackPressed()
     {
         //finish();
-        Intent intent = new Intent(FormContactInformationActivity.this, MatrimonyActivity.class);
+        Intent intent = new Intent(FormContactInformationActivity.this, MainActivityModules.class);
         intent.putExtra("mat_id",mat_id);
         startActivity(intent);
         FormContactInformationActivity.this.finish();

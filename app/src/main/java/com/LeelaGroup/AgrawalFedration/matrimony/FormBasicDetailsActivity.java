@@ -14,6 +14,8 @@ import android.support.v7.widget.Toolbar;
 import android.text.format.DateFormat;
 import android.view.GestureDetector;
 import android.view.GestureDetector.SimpleOnGestureListener;
+import android.view.Menu;
+import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.MotionEvent;
 import android.view.View;
@@ -31,8 +33,11 @@ import android.widget.TextView;
 import android.widget.TimePicker;
 import android.widget.Toast;
 
+import com.LeelaGroup.AgrawalFedration.Business_Medical_Session;
+import com.LeelaGroup.AgrawalFedration.MainActivityModules;
 import com.LeelaGroup.AgrawalFedration.MatrimonySession;
 import com.LeelaGroup.AgrawalFedration.R;
+import com.LeelaGroup.AgrawalFedration.business.Login_Business;
 import com.LeelaGroup.AgrawalFedration.matrimony.models.BasicDetailAndContactInfo;
 import com.LeelaGroup.AgrawalFedration.matrimony.validation.CustomValidator;
 
@@ -40,6 +45,7 @@ import java.io.File;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
+import java.util.HashMap;
 
 import de.hdodenhof.circleimageview.CircleImageView;
 
@@ -90,10 +96,10 @@ public class FormBasicDetailsActivity extends AppCompatActivity {
 
         matrimonySession=new MatrimonySession(getApplication());
 
-        Intent intent=getIntent();
+       /* Intent intent=getIntent();
         Bundle bundle=intent.getExtras();
         mat_id=bundle.getString("mat_id",mat_id);
-
+*/
         init();
 
 
@@ -107,7 +113,12 @@ public class FormBasicDetailsActivity extends AppCompatActivity {
         if(matrimonySession.checkLogin())
             finish();
 
+        HashMap<String, String> user = matrimonySession.getUserDetails();
+
+        String name=user.get(MatrimonySession.KEY_NAME);
+        mat_id=user.get(MatrimonySession.KEY_ID);
         setupSpinners();
+
 
         /*final View dragView = findViewById(R.id.draggable_view);
         gestureDetector = new GestureDetector(this, new SingleTapConfirm());
@@ -550,20 +561,32 @@ public class FormBasicDetailsActivity extends AppCompatActivity {
 
     }
     @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater menuInflater = getMenuInflater();
+        menuInflater.inflate(R.menu.medical_menu, menu);
+        return true;
+    }
+
+
+    @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-
-        switch (item.getItemId()){
-
+        int res_id = item.getItemId();
+        switch (res_id){
+            case R.id.action_med_logout:
+                matrimonySession.logoutUser();
+                finish();
+                break;
             case android.R.id.home:
-
                 onBackPressed();
                 finish();
-
                 return  true;
+
+            default:
         }
 
         return super.onOptionsItemSelected(item);
     }
+
 
 
 //    public void insertReligionFields()
@@ -667,7 +690,7 @@ public class FormBasicDetailsActivity extends AppCompatActivity {
     public void onBackPressed()
     {
         //finish();
-        Intent intent = new Intent(FormBasicDetailsActivity.this, MatrimonyActivity.class);
+        Intent intent = new Intent(FormBasicDetailsActivity.this, MainActivityModules.class);
         intent.putExtra("mat_id",mat_id);
         startActivity(intent);
         FormBasicDetailsActivity.this.finish();

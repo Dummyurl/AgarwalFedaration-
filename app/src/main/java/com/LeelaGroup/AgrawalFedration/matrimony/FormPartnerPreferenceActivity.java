@@ -18,6 +18,7 @@ import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.LeelaGroup.AgrawalFedration.MainActivityModules;
 import com.LeelaGroup.AgrawalFedration.MatrimonySession;
 import com.LeelaGroup.AgrawalFedration.Network.ApiClient;
 import com.LeelaGroup.AgrawalFedration.R;
@@ -433,6 +434,7 @@ public class FormPartnerPreferenceActivity extends AppCompatActivity {
             @Override
             public void onResponse(Call<AllDetails> call, Response<AllDetails> response) {
 
+                matrimonySession.storePid(true);
 
                 Toast.makeText(FormPartnerPreferenceActivity.this, "Success", Toast.LENGTH_SHORT).show();
             }
@@ -601,7 +603,7 @@ public class FormPartnerPreferenceActivity extends AppCompatActivity {
     public void onBackPressed()
     {
         //finish();
-        Intent intent = new Intent(FormPartnerPreferenceActivity.this, MatrimonyActivity.class);
+        Intent intent = new Intent(FormPartnerPreferenceActivity.this, MainActivityModules.class);
         intent.putExtra("mat_id",mat_id);
         startActivity(intent);
         FormPartnerPreferenceActivity.this.finish();

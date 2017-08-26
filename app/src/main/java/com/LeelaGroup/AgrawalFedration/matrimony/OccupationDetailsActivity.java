@@ -1,5 +1,6 @@
 package com.LeelaGroup.AgrawalFedration.matrimony;
 
+import android.graphics.Typeface;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
@@ -23,7 +24,8 @@ public class OccupationDetailsActivity extends AppCompatActivity {
     String mat_id;
     ImageView profilepic;
     TextView occup,industry,buisnemp,pAnlIncm;
-MatrimonySession matrimonySession;
+    TextView i_occup,i_industry,i_buisnemp,i_pAnlIncm;
+    MatrimonySession matrimonySession;
     Toolbar toolbar;
 
     @Override
@@ -34,6 +36,7 @@ MatrimonySession matrimonySession;
         matrimonySession=new MatrimonySession(getApplicationContext());
 
         init();
+        initIcon();
 
         toolbar=(Toolbar)findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
@@ -78,6 +81,22 @@ MatrimonySession matrimonySession;
         pAnlIncm=(TextView)findViewById(R.id.d_per_psnalanulincome);
 
     }
+
+    public void initIcon()
+    {
+        Typeface icon = Typeface.createFromAsset(this.getAssets(), "fontawesome-webfont.ttf" );
+        //profilepic=(ImageView)findViewById(R.id.d_person_occupatn_image);
+        i_occup=(TextView)findViewById(R.id.per_occupatn);
+        i_industry=(TextView)findViewById(R.id.per_industry);
+        i_buisnemp=(TextView)findViewById(R.id.per_bsnsempat);
+        i_pAnlIncm=(TextView)findViewById(R.id.per_psnalanulincome);
+
+        i_occup.setTypeface(icon);
+        i_industry.setTypeface(icon);
+        i_buisnemp.setTypeface(icon);
+        i_pAnlIncm.setTypeface(icon);
+    }
+
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {

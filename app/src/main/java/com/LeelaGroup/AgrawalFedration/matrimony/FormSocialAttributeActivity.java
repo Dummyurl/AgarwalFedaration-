@@ -12,6 +12,7 @@ import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 
+import com.LeelaGroup.AgrawalFedration.MainActivityModules;
 import com.LeelaGroup.AgrawalFedration.MatrimonySession;
 import com.LeelaGroup.AgrawalFedration.R;
 import com.LeelaGroup.AgrawalFedration.matrimony.validation.CustomValidator;
@@ -512,7 +513,7 @@ public class FormSocialAttributeActivity extends AppCompatActivity {
     public void onBackPressed()
     {
         //finish();
-        Intent intent = new Intent(FormSocialAttributeActivity.this, MatrimonyActivity.class);
+        Intent intent = new Intent(FormSocialAttributeActivity.this, MainActivityModules.class);
         intent.putExtra("mat_id",mat_id);
         startActivity(intent);
         FormSocialAttributeActivity.this.finish();
