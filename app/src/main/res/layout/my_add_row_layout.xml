@@ -9,7 +9,7 @@
         android:layout_width="match_parent"
         android:background="#fff"
         android:padding="5dp"
-        android:layout_height="230dp">
+        android:layout_height="@dimen/mywidth_180">
 
 
         <RelativeLayout
@@ -64,73 +64,87 @@
                     />
 
             </LinearLayout>
-            <include layout="@layout/item_divider1"/>
+            <include layout="@layout/item_divider2"/>
 
-            <LinearLayout
+            <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="5dp"
-                android:orientation="horizontal">
+                android:layout_marginTop="10dp"
+          >
 
-                <ImageView
-                    android:layout_width="wrap_content"
+                <TextView
+                    android:layout_width="@dimen/text_view40_height"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="10dp"
-                    android:src="@drawable/ic_local_phone_black_24dp" />
+                    android:id="@+id/u_phone"
+                    android:text="@string/phone_icon"
+                    android:textSize="@dimen/text_size"
+                    android:textColor="@color/colorPrimary"
+                    />
 
                 <TextView
                     android:id="@+id/tv_card_contact_no"
                     android:layout_width="match_parent"
                     android:textColor="@color/black"
                     android:layout_height="wrap_content"
+                    android:layout_toEndOf="@+id/u_phone"
                     android:layout_marginLeft="10dp"
                     android:text="Contact No" />
-            </LinearLayout>
-            <include layout="@layout/item_divider1"/>
+            </RelativeLayout>
+            <include layout="@layout/item_divider2"/>
 
-            <LinearLayout
+            <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="5dp"
-                android:orientation="horizontal">
+                android:layout_marginTop="10dp"
+               >
 
-                <ImageView
-                    android:layout_width="wrap_content"
+                <TextView
+                    android:layout_width="@dimen/text_view40_height"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="10dp"
-                    android:src="@drawable/ic_email_black_24dp" />
+                    android:text="@string/email_icon"
+                    android:id="@+id/email_id"
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="@dimen/text_size_15"
+                 />
 
                 <TextView
                     android:id="@+id/tv_card_email"
                     android:textColor="@color/black"
-
+                android:layout_toEndOf="@+id/email_id"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="10dp"
                     android:text="Email" />
-            </LinearLayout>
-            <include layout="@layout/item_divider1"/>
+            </RelativeLayout>
+            <include layout="@layout/item_divider2"/>
 
-            <LinearLayout
+            <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="5dp"
-                android:orientation="horizontal">
+                android:layout_marginTop="10dp"
+             >
 
-                <ImageView
-                    android:layout_width="wrap_content"
+                <TextView
+                    android:layout_width="@dimen/text_view40_height"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="10dp"
-                    android:src="@drawable/ic_location_on_black_24dp" />
+                    android:text="@string/s_icon"
+                    android:id="@+id/location"
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="@dimen/text_size"
+                    />
 
                 <TextView
                     android:id="@+id/tv_card_location"
                     android:layout_width="match_parent"
                     android:textColor="@color/black"
+                    android:layout_toEndOf="@+id/location"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="10dp"
                     android:text="location" />
-            </LinearLayout>
+            </RelativeLayout>
             <LinearLayout
                 android:layout_marginLeft="6dp"
                 android:layout_marginRight="2dp"
@@ -170,7 +184,7 @@
         </LinearLayout>
 
     </LinearLayout>
-    <include layout="@layout/item_divider1"/>
+    <include layout="@layout/item_divider2"/>
 
 
 </LinearLayout>

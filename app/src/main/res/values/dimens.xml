@@ -119,6 +119,7 @@
     <dimen name="TextInputLayoutMargin_top_bottom">8dp</dimen>
     <dimen name="text_size">18sp</dimen>
     <dimen name="text_Width">120dp</dimen>
+    <dimen name="mywidth_180">180dp</dimen>
 
     <!--***********************************Education*********************************************-->
     <dimen name="education_registration_image">220dp</dimen>
