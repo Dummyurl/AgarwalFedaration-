@@ -1,193 +1,219 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
     tools:context=".matrimony.FormOccupationDetailsActivity">
-<ScrollView
-    android:layout_width="match_parent"
-    android:layout_height="match_parent">
-    <LinearLayout
+
+    <include
+        android:id="@id/toolbar"
+        layout="@layout/toolbar" />
+
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical">
+        android:layout_height="match_parent">
 
-        <TextView
-            android:id="@+id/frm_occupatnon_tv"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="10dp"
-            android:layout_marginTop="20dp"
-            android:text="Occupation Details"
-            android:textAlignment="center"
-            android:textColor="@color/colorAccent"
-            android:textSize="20dp"
-            android:textStyle="bold" />
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="2dp"
-            android:orientation="horizontal"
-            android:weightSum="1">
+            android:layout_height="match_parent"
+            android:layout_margin="@dimen/form_layout_margin"
+            android:orientation="vertical">
 
-            <TextView
-                android:id="@+id/frm_ocuption_tv_cccupation"
+            <!--    <TextView
+                    android:id="@+id/frm_occupatnon_tv"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="10dp"
+                    android:layout_marginTop="20dp"
+                    android:text="Occupation Details"
+                    android:textAlignment="center"
+                    android:textColor="@color/colorAccent"
+                    android:textSize="20dp"
+                    android:textStyle="bold" />
+-->
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:layout_margin="10dp"
-                android:layout_weight=".5"
-                android:text="Occupation :-"
-                android:textStyle="bold" />
+                android:layout_margin="@dimen/form_inner_layout_margin"
+                android:orientation="horizontal"
+                android:weightSum="1">
+                <!--
+                                    <TextView
+                                        android:id="@+id/frm_ocuption_tv_cccupation"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_gravity="center"
+                                        android:layout_margin="10dp"
+                                        android:layout_weight=".5"
+                                        android:text="Occupation :-"
+                                        android:textStyle="bold" />-->
+                <android.support.design.widget.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
 
-            <EditText
-                android:id="@+id/frm_ocuption_spr_cccupation"
+                    <EditText
+                        android:id="@+id/frm_ocuption_spr_cccupation"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_weight=".5"
+                        android:hint="@string/Occupation"
+                        android:inputType="textCapWords"
+
+                        />
+                </android.support.design.widget.TextInputLayout>
+            </LinearLayout>
+
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:layout_weight=".5"
-                android:inputType="textCapWords"
-                android:hint="Your Occupation"
+                android:layout_margin="@dimen/form_inner_layout_margin"
+                android:orientation="horizontal"
+                android:weightSum="1">
 
-                />
-        </LinearLayout>
+                <!--  <TextView
+                      android:id="@+id/frm_ocuption_tv_indusry"
+                      android:layout_width="match_parent"
+                      android:layout_height="wrap_content"
+                      android:layout_gravity="center"
+                      android:layout_margin="10dp"
+                      android:layout_weight=".5"
+                      android:text="Industry :-"
+                      android:textStyle="bold" />-->
+                <android.support.design.widget.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="2dp"
-            android:orientation="horizontal"
-            android:weightSum="1">
+                    <EditText
+                        android:id="@+id/frm_ocuption_spr_indstry"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_weight=".5"
+                        android:hint="@string/Industry"
+                        android:inputType="textCapWords" />
+                </android.support.design.widget.TextInputLayout>
+            </LinearLayout>
 
-            <TextView
-                android:id="@+id/frm_ocuption_tv_indusry"
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:layout_margin="10dp"
-                android:layout_weight=".5"
-                android:text="Industry :-"
-                android:textStyle="bold" />
+                android:layout_margin="@dimen/form_inner_layout_margin"
+                android:orientation="horizontal"
+                android:weightSum="1">
+                <!--
+                                    <TextView
+                                        android:id="@+id/frm_ocuption_tv_bsnsempat"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_gravity="center"
+                                        android:layout_margin="10dp"
+                                        android:layout_weight=".5"
+                                        android:text="Business Employee At :-"
+                                        android:textStyle="bold" />-->
+                <android.support.design.widget.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
 
-            <EditText
-                android:id="@+id/frm_ocuption_spr_indstry"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:layout_weight=".5"
-                android:inputType="textCapWords"
-                android:hint="Industry" />
-        </LinearLayout>
+                    <EditText
+                        android:id="@+id/frm_ocuption_et_bsnsempat"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_weight=".5"
+                        android:hint="@string/WorkField"
+                        android:inputType="textCapWords" />
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="2dp"
-            android:orientation="horizontal"
-            android:weightSum="1">
-
-            <TextView
-                android:id="@+id/frm_ocuption_tv_bsnsempat"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:layout_margin="10dp"
-                android:layout_weight=".5"
-                android:text="Business Employee At :-"
-                android:textStyle="bold" />
-
-            <EditText
-                android:id="@+id/frm_ocuption_et_bsnsempat"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:layout_weight=".5"
-                android:inputType="textCapWords"
-                android:hint="Work Field" />
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="2dp"
-            android:orientation="horizontal"
-            android:weightSum="1">
+                </android.support.design.widget.TextInputLayout>
+            </LinearLayout>
 
             <TextView
                 android:id="@+id/frm_ocuption_tv_psnlanulincome"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:layout_margin="10dp"
-                android:layout_weight=".5"
-                android:text="Personal Annual Income(In LPA) :-"
-                android:textStyle="bold" />
+                android:layout_marginTop="@dimen/form_spinner_layout_margin_top"
+                android:textSize="@dimen/form_tv_size"
+                android:text="Personal Annual Income(In LPA)"
+                />
 
-            <Spinner
-                android:id="@+id/frm_ocuption_et_psnlanulincome"
+
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:layout_weight=".5"
-                android:entries="@array/income"
-                android:hint="Personal Annual Income(In LPA)"/>
-        </LinearLayout>
+                android:layout_marginTop="@dimen/form_spinner_layout_margin_top"
+                android:orientation="horizontal"
+                >
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="2dp"
-            android:orientation="horizontal"
-            android:gravity="center"
-            >
 
-          <!--  <ImageView
-                android:layout_width="50dp"
-                android:layout_height="50dp"
-                android:layout_gravity="start"
-                android:layout_marginRight="10dp"
-                android:layout_marginTop="10dp"
-                android:layout_weight=".5"
-                android:onClick="goToFormEducationDetails"
-                android:src="@drawable/arrow_left_bold_circle_outline" />-->
+                <Spinner
+                    android:id="@+id/frm_ocuption_et_psnlanulincome"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="@dimen/form_spinner_layout_margin_top"
+                    android:layout_marginBottom="@dimen/form_spinner_layout_margin_bottom"
+                    android:entries="@array/income"
+                    />
+            </LinearLayout>
 
-            <Button
-                android:id="@+id/imageView2"
-                android:layout_width="200dp"
+            <LinearLayout
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:layout_marginTop="10dp"
-                android:textColor="#fff"
-                android:textStyle="bold"
-                android:background="@color/circleArrowButton"
-                android:onClick="goToFamillyDetails"
-                android:text="save and next" />
-            <!--<Button
-                android:id="@+id/bnsaveupdate"
-                android:layout_width="50dp"
-                android:layout_height="50dp"
-                android:layout_gravity="end"
-                android:layout_marginTop="10dp"
-                android:layout_weight=".5"
-                android:textColor="#fff"
-                android:textStyle="bold"
-                android:background="@color/circleArrowButton"
-                android:onClick="goToFormContactInformation"
-                android:text="save update"
-                android:visibility="gone"/>-->
+                android:layout_margin="@dimen/form_inner_layout_margin"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <!--  <ImageView
+                      android:layout_width="50dp"
+                      android:layout_height="50dp"
+                      android:layout_gravity="start"
+                      android:layout_marginRight="10dp"
+                      android:layout_marginTop="10dp"
+                      android:layout_weight=".5"
+                      android:onClick="goToFormEducationDetails"
+                      android:src="@drawable/arrow_left_bold_circle_outline" />-->
+
+                <Button
+                    android:id="@+id/imageView2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="@dimen/button_margin_top"
+                    android:layout_marginBottom="@dimen/button_margin_bottom"
+                    android:background="@color/circleArrowButton"
+                    android:onClick="goToFamillyDetails"
+                    android:text="@string/save_next"
+                    android:textColor="@color/buttonTextColor"
+                    android:textStyle="bold" />
+                <!--<Button
+                    android:id="@+id/bnsaveupdate"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:layout_gravity="end"
+                    android:layout_marginTop="10dp"
+                    android:layout_weight=".5"
+                    android:textColor="#fff"
+                    android:textStyle="bold"
+                    android:background="@color/circleArrowButton"
+                    android:onClick="goToFormContactInformation"
+                    android:text="save update"
+                    android:visibility="gone"/>-->
+            </LinearLayout>
         </LinearLayout>
-    </LinearLayout>
-</ScrollView>
-     <!--   <ImageButton
-        android:id="@+id/draggable_view"
-        android:background="@drawable/home_icon"
-        android:layout_gravity="bottom|right"
-        android:layout_marginBottom="20dp"
-        android:layout_marginEnd="20dp"
-        android:layout_width="50dp"
-        android:layout_height="50dp"/>
+
+    </ScrollView>
+    <!--   <ImageButton
+       android:id="@+id/draggable_view"
+       android:background="@drawable/home_icon"
+       android:layout_gravity="bottom|right"
+       android:layout_marginBottom="20dp"
+       android:layout_marginEnd="20dp"
+       android:layout_width="50dp"
+       android:layout_height="50dp"/>
 -->
-</FrameLayout>
+</LinearLayout>

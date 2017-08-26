@@ -37,111 +37,102 @@
                     android:textSize="20dp"
                     android:textStyle="bold" />
 -->
-                <LinearLayout
+                <RelativeLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_margin="@dimen/form_inner_layout_margin"
-                    android:orientation="horizontal"
-                    android:weightSum="1">
+                    android:layout_margin="@dimen/layout_margin"
+                   >
 
                     <TextView
                         android:id="@+id/per_profl_crtedby"
-                        android:layout_width="match_parent"
+                        android:layout_width="@dimen/cont_us_logo_width"
                         android:layout_height="wrap_content"
-                        android:layout_gravity="center"
-                        android:layout_margin="@dimen/layout_margin"
-                        android:layout_weight=".5"
-                        android:text="@string/ProfileCreatedBy"
+                        android:text="@string/pencil_icon"
+                        android:textColor="@color/colorPrimary"
+                        android:textSize="@dimen/form_tv_size"
                         android:textStyle="bold" />
 
-                    <TextView
+                 <!--   <TextView
                         android:layout_width="@dimen/seperator_width"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
                         android:gravity="center"
                         android:text="@string/seprator"
-                        android:textStyle="bold" />
+                        android:textStyle="bold" />-->
 
                     <TextView
                         android:id="@+id/d_per_profilecreatedby"
+                        android:layout_toEndOf="@+id/per_profl_crtedby"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_gravity="center"
-                        android:layout_weight=".5"
-                        android:textStyle="bold" />
-                </LinearLayout>
+                       />
+                </RelativeLayout>
 
-                <include layout="@layout/item_divider"/>
+                <include layout="@layout/item_divider1"/>
 
-                <LinearLayout
+                <RelativeLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_margin="@dimen/form_inner_layout_margin"
-                    android:orientation="horizontal"
-                    android:weightSum="1">
+                    android:layout_margin="@dimen/layout_margin"
+                  >
 
                     <TextView
                         android:id="@+id/per_hobbies"
-                        android:layout_width="match_parent"
+                        android:layout_width="@dimen/cont_us_logo_width"
                         android:layout_height="wrap_content"
-                        android:layout_gravity="center"
-                        android:layout_margin="@dimen/layout_margin"
-                        android:layout_weight=".5"
-                        android:text="@string/Hobbies"
+                        android:text="@string/football_icon"
+                        android:textColor="@color/colorPrimary"
+                        android:textSize="@dimen/form_tv_size"
                         android:textStyle="bold" />
-                    <TextView
+                   <!-- <TextView
                         android:layout_width="@dimen/seperator_width"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
                         android:gravity="center"
                         android:text="@string/seprator"
                         android:textStyle="bold" />
-
+-->
 
                     <TextView
                         android:id="@+id/d_per_hobies"
+                        android:layout_toEndOf="@+id/per_hobbies"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_gravity="center"
-                        android:layout_weight=".5"
-                        android:textStyle="bold" />
-                </LinearLayout>
+                    />
+                </RelativeLayout>
 
-                <include layout="@layout/item_divider"/>
+                <include layout="@layout/item_divider1"/>
 
-                <LinearLayout
+                <RelativeLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_margin="@dimen/form_inner_layout_margin"
-                    android:orientation="horizontal"
-                    android:weightSum="1">
+                    android:layout_margin="@dimen/layout_margin"
+              >
 
                     <TextView
                         android:id="@+id/per_interests"
-                        android:layout_width="match_parent"
+                        android:layout_width="@dimen/cont_us_logo_width"
                         android:layout_height="wrap_content"
-                        android:layout_gravity="center"
-                        android:layout_margin="@dimen/layout_margin"
-                        android:layout_weight=".5"
-                        android:text="@string/Interests"
+                        android:text="@string/thumbsup_icon"
+                        android:textColor="@color/colorPrimary"
+                        android:textSize="@dimen/form_tv_size"
                         android:textStyle="bold" />
-
+<!--
                     <TextView
                         android:layout_width="@dimen/seperator_width"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
                         android:gravity="center"
                         android:text="@string/seprator"
-                        android:textStyle="bold" />
+                        android:textStyle="bold" />-->
 
                     <TextView
                         android:id="@+id/d_per_intrests"
+                        android:layout_toEndOf="@+id/per_interests"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_gravity="center"
-                        android:layout_weight=".5"
-                        android:textStyle="bold" />
-                </LinearLayout>
+                       />
+                </RelativeLayout>
             </LinearLayout>
         </LinearLayout>
     </ScrollView>

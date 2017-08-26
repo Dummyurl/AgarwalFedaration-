@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -38,24 +39,22 @@
                     android:textSize="20dp"
                     android:textStyle="bold" />
 -->
-                <LinearLayout
+                <RelativeLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_margin="@dimen/basic_details_inner_lay_mar"
-                    android:orientation="horizontal"
-                    android:weightSum="1">
+                    android:layout_margin="@dimen/layout_margin"
+                    >
 
                     <TextView
                         android:id="@+id/per_fatherfullfname"
-                        android:layout_width="match_parent"
+                        android:layout_width="@dimen/cont_us_logo_width"
                         android:layout_height="wrap_content"
-                        android:layout_gravity="center"
-                        android:layout_margin="@dimen/layout_margin"
-                        android:layout_weight=".5"
-                        android:text="@string/family_details_layout_father_full_name"
+                        android:text="@string/icon"
+                        android:textSize="@dimen/form_tv_size"
+                        android:textColor="@color/colorPrimary"
                         android:textStyle="bold" />
 
-                    <TextView
+                  <!--  <TextView
                         android:layout_width="@dimen/seperator_width"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
@@ -64,75 +63,69 @@
                         android:text="@string/seprator"
                         android:textStyle="bold" />
 
-
+-->
 
                     <TextView
                         android:id="@+id/d_per_fatherfullname"
+                        android:layout_toEndOf="@+id/per_fatherfullfname"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_gravity="center"
-                        android:layout_weight=".5"
                         android:textStyle="bold" />
-                </LinearLayout>
+                </RelativeLayout>
 
-                <include layout="@layout/item_divider"/>
+                <include layout="@layout/item_divider1"/>
 
-                <LinearLayout
+                <RelativeLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_margin="@dimen/basic_details_inner_lay_mar"
-                    android:orientation="horizontal"
-                    android:weightSum="1">
+                    android:layout_margin="@dimen/layout_margin"
+                    >
 
                     <TextView
                         android:id="@+id/per_motherfullname"
-                        android:layout_width="match_parent"
+                        android:layout_width="@dimen/cont_us_logo_width"
                         android:layout_height="wrap_content"
-                        android:layout_gravity="center"
-                        android:layout_margin="@dimen/layout_margin"
-                        android:layout_weight=".5"
-                        android:text="@string/family_details_layout_mother_full_name"
+                        android:text="@string/icon"
+                        android:textSize="@dimen/form_tv_size"
+                        android:textColor="@color/colorPrimary"
                         android:textStyle="bold" />
 
-                    <TextView
+            <!--        <TextView
                         android:layout_width="@dimen/seperator_width"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
                         android:layout_margin="@dimen/layout_margin"
                         android:gravity="center"
                         android:text="@string/seprator"
-                        android:textStyle="bold" />
+                        android:textStyle="bold" />-->
 
 
                     <TextView
                         android:id="@+id/d_per_motherfullname"
+                        android:layout_toEndOf="@+id/per_motherfullname"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_gravity="center"
-                        android:layout_weight=".5"
                         android:textStyle="bold" />
-                </LinearLayout>
+                </RelativeLayout>
 
-                <include layout="@layout/item_divider"/>
+                <include layout="@layout/item_divider1"/>
 
-                <LinearLayout
+                <RelativeLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_margin="@dimen/basic_details_inner_lay_mar"
-                    android:orientation="horizontal"
-                    android:weightSum="1">
+                    android:layout_margin="@dimen/layout_margin"
+                   >
 
                     <TextView
                         android:id="@+id/per_ftheroccptn"
-                        android:layout_width="match_parent"
+                        android:layout_width="@dimen/cont_us_logo_width"
                         android:layout_height="wrap_content"
-                        android:layout_gravity="center"
-                        android:layout_margin="@dimen/layout_margin"
-                        android:layout_weight=".5"
-                        android:text="@string/family_details_layout_father_occu"
+                        android:text="@string/occu_icon"
+                        android:textSize="@dimen/form_tv_size"
+                        android:textColor="@color/colorPrimary"
                         android:textStyle="bold" />
 
-                    <TextView
+                <!--    <TextView
                         android:layout_width="@dimen/seperator_width"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
@@ -140,37 +133,34 @@
                         android:gravity="center"
                         android:text="@string/seprator"
                         android:textStyle="bold" />
-
+-->
 
                     <TextView
                         android:id="@+id/d_per_ftheroccptn"
+                        android:layout_toEndOf="@+id/per_ftheroccptn"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_gravity="center"
-                        android:layout_weight=".5"
                         android:textStyle="bold" />
-                </LinearLayout>
+                </RelativeLayout>
 
-                <include layout="@layout/item_divider"/>
+                <include layout="@layout/item_divider1"/>
 
-                <LinearLayout
+                <RelativeLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_margin="@dimen/basic_details_inner_lay_mar"
-                    android:orientation="horizontal"
-                    android:weightSum="1">
+                   android:layout_margin="@dimen/layout_margin"
+                    >
 
                     <TextView
                         android:id="@+id/per_mtheroccptn"
-                        android:layout_width="match_parent"
+                        android:layout_width="@dimen/cont_us_logo_width"
                         android:layout_height="wrap_content"
-                        android:layout_gravity="center"
-                        android:layout_margin="@dimen/layout_margin"
-                        android:layout_weight=".5"
-                        android:text="@string/family_details_layout_mother_occu"
+                        android:text="@string/occu_icon"
+                        android:textSize="@dimen/form_tv_size"
+                        android:textColor="@color/colorPrimary"
                         android:textStyle="bold" />
 
-                    <TextView
+                    <!--<TextView
                         android:layout_width="@dimen/seperator_width"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
@@ -178,37 +168,34 @@
                         android:gravity="center"
                         android:text="@string/seprator"
                         android:textStyle="bold" />
-
+-->
 
                     <TextView
                         android:id="@+id/d_per_mtheroccptn"
+                        android:layout_toEndOf="@+id/per_mtheroccptn"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_gravity="center"
-                        android:layout_weight=".5"
+
                         android:textStyle="bold" />
-                </LinearLayout>
+                </RelativeLayout>
 
-                <include layout="@layout/item_divider"/>
+                <include layout="@layout/item_divider1"/>
 
-                <LinearLayout
+                <RelativeLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_margin="@dimen/basic_details_inner_lay_mar"
-                    android:orientation="horizontal"
-                    android:weightSum="1">
+                    android:layout_margin="@dimen/layout_margin">
 
                     <TextView
                         android:id="@+id/per_noofbros"
-                        android:layout_width="match_parent"
+                        android:layout_width="@dimen/cont_us_logo_width"
                         android:layout_height="wrap_content"
-                        android:layout_gravity="center"
-                        android:layout_margin="@dimen/layout_margin"
-                        android:layout_weight=".5"
-                        android:text="@string/family_details_layout_no_of_bros"
+                        android:text="@string/group_icon"
+                        android:textSize="@dimen/form_tv_size"
+                        android:textColor="@color/colorPrimary"
                         android:textStyle="bold" />
 
-                    <TextView
+                <!--    <TextView
                         android:layout_width="@dimen/seperator_width"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
@@ -216,37 +203,34 @@
                         android:gravity="center"
                         android:text="@string/seprator"
                         android:textStyle="bold" />
-
+-->
 
                     <TextView
                         android:id="@+id/d_per_noofbros"
+                        android:layout_toEndOf="@+id/per_noofbros"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_gravity="center"
-                        android:layout_weight=".5"
                         android:textStyle="bold" />
-                </LinearLayout>
+                </RelativeLayout>
 
-                <include layout="@layout/item_divider"/>
+                <include layout="@layout/item_divider1"/>
 
-                <LinearLayout
+                <RelativeLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_margin="@dimen/basic_details_inner_lay_mar"
-                    android:orientation="horizontal"
-                    android:weightSum="1">
+                    android:layout_margin="@dimen/layout_margin"
+                    >
 
                     <TextView
                         android:id="@+id/per_noofsis"
-                        android:layout_width="match_parent"
+                        android:layout_width="@dimen/cont_us_logo_width"
                         android:layout_height="wrap_content"
-                        android:layout_gravity="center"
-                        android:layout_margin="@dimen/layout_margin"
-                        android:layout_weight=".5"
-                        android:text="@string/family_details_layout_no_of_sis"
+                        android:text="@string/group_icon"
+                        android:textSize="@dimen/form_tv_size"
+                        android:textColor="@color/colorPrimary"
                         android:textStyle="bold" />
 
-                    <TextView
+                   <!-- <TextView
                         android:layout_width="@dimen/seperator_width"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
@@ -254,35 +238,32 @@
                         android:gravity="center"
                         android:text="@string/seprator"
                         android:textStyle="bold" />
-
+-->
                     <TextView
                         android:id="@+id/d_per_sister"
+                        android:layout_toEndOf="@id/per_noofsis"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_gravity="center"
-                        android:layout_weight=".5"
                         android:textStyle="bold" />
-                </LinearLayout>
+                </RelativeLayout>
 
-                <include layout="@layout/item_divider"/>
+                <include layout="@layout/item_divider1"/>
 
-                <LinearLayout
+                <RelativeLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_margin="@dimen/basic_details_inner_lay_mar"
-                    android:orientation="horizontal"
-                    android:weightSum="1">
+                    android:layout_margin="@dimen/layout_margin"
+                    >
 
                     <TextView
                         android:id="@+id/per_noofbrosmaried"
-                        android:layout_width="match_parent"
+                        android:layout_width="@dimen/cont_us_logo_width"
                         android:layout_height="wrap_content"
-                        android:layout_gravity="center"
-                        android:layout_margin="@dimen/layout_margin"
-                        android:layout_weight=".5"
-                        android:text="@string/family_details_layout_no_of_bros_mar"
+                        android:text="@string/group_icon"
+                        android:textSize="@dimen/form_tv_size"
+                        android:textColor="@color/colorPrimary"
                         android:textStyle="bold" />
-
+<!--
                     <TextView
                         android:layout_width="@dimen/seperator_width"
                         android:layout_height="wrap_content"
@@ -290,37 +271,35 @@
                         android:layout_margin="@dimen/layout_margin"
                         android:gravity="center"
                         android:text="@string/seprator"
-                        android:textStyle="bold" />
+                        android:textStyle="bold" />-->
 
 
                     <TextView
                         android:id="@+id/d_per_noofbrosmaried"
+                        android:layout_toEndOf="@id/per_noofbrosmaried"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_gravity="center"
-                        android:layout_weight=".5"
                         android:textStyle="bold" />
-                </LinearLayout>
+                </RelativeLayout>
 
-                <include layout="@layout/item_divider"/>
+                <include layout="@layout/item_divider1"/>
 
-                <LinearLayout
+                <RelativeLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_margin="@dimen/basic_details_inner_lay_mar"
-                    android:orientation="horizontal"
-                    android:weightSum="1">
+
+                    android:layout_margin="@dimen/layout_margin"
+                    >
 
                     <TextView
                         android:id="@+id/per_noofsismaried"
-                        android:layout_width="match_parent"
+                        android:layout_width="@dimen/cont_us_logo_width"
                         android:layout_height="wrap_content"
-                        android:layout_gravity="center"
-                        android:layout_margin="@dimen/layout_margin"
-                        android:layout_weight=".5"
-                        android:text="@string/family_details_layout_no_of_sis_mar"
+                        android:text="@string/group_icon"
+                        android:textSize="@dimen/form_tv_size"
+                        android:textColor="@color/colorPrimary"
                         android:textStyle="bold" />
-
+<!--
                     <TextView
                         android:layout_width="@dimen/seperator_width"
                         android:layout_height="wrap_content"
@@ -328,38 +307,34 @@
                         android:layout_margin="@dimen/layout_margin"
                         android:gravity="center"
                         android:text="@string/seprator"
-                        android:textStyle="bold" />
+                        android:textStyle="bold" />-->
 
 
                     <TextView
                         android:id="@+id/d_per_noofsismarried"
+                        android:layout_toEndOf="@+id/per_noofsismaried"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_gravity="center"
-                        android:layout_weight=".5"
                         android:textStyle="bold" />
-                </LinearLayout>
+                </RelativeLayout>
 
-                <include layout="@layout/item_divider"/>
+                <include layout="@layout/item_divider1"/>
 
-                <LinearLayout
+                <RelativeLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_margin="@dimen/basic_details_inner_lay_mar"
-                    android:orientation="horizontal"
-                    android:weightSum="1">
+                    android:layout_margin="@dimen/layout_margin">
 
                     <TextView
                         android:id="@+id/per_familysatus"
-                        android:layout_width="match_parent"
+                        android:layout_width="@dimen/cont_us_logo_width"
                         android:layout_height="wrap_content"
-                        android:layout_gravity="center"
-                        android:layout_margin="@dimen/layout_margin"
-                        android:layout_weight=".5"
-                        android:text="@string/family_details_layout_fam_status"
+                        android:text="@string/dollar_icon"
+                        android:textSize="@dimen/form_tv_size"
+                        android:textColor="@color/colorPrimary"
                         android:textStyle="bold" />
 
-                    <TextView
+              <!--      <TextView
                         android:layout_width="@dimen/seperator_width"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
@@ -367,36 +342,34 @@
                         android:gravity="center"
                         android:text=":"
                         android:textStyle="bold" />
-
+-->
                     <TextView
                         android:id="@+id/d_per_familysatus"
+                        android:layout_toEndOf="@+id/per_familysatus"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_gravity="center"
-                        android:layout_weight=".5"
                         android:textStyle="bold" />
-                </LinearLayout>
+                </RelativeLayout>
 
-                <include layout="@layout/item_divider"/>
+                <include layout="@layout/item_divider1"/>
 
-                <LinearLayout
+                <RelativeLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_margin="@dimen/basic_details_inner_lay_mar"
-                    android:orientation="horizontal"
-                    android:weightSum="1">
+                    android:layout_margin="@dimen/layout_margin"
+                    >
 
                     <TextView
                         android:id="@+id/per_familytype"
-                        android:layout_width="match_parent"
+                        android:layout_width="@dimen/cont_us_logo_width"
                         android:layout_height="wrap_content"
-                        android:layout_gravity="center"
-                        android:layout_margin="@dimen/layout_margin"
-                        android:layout_weight=".5"
-                        android:text="@string/family_details_layout_fam_type"
-                        android:textStyle="bold" />
+                        android:text="@string/dollar_icon"
+                        android:textSize="@dimen/form_tv_size"
+                        android:textColor="@color/colorPrimary"
+                        android:textStyle="bold"
+                      />
 
-                    <TextView
+                   <!-- <TextView
                         android:layout_width="@dimen/seperator_width"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
@@ -404,35 +377,33 @@
                         android:gravity="center"
                         android:text="@string/seprator"
                         android:textStyle="bold" />
-
+-->
                     <TextView
                         android:id="@+id/d_per_familytype"
+                        android:layout_toEndOf="@+id/per_familytype"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
                         android:layout_weight=".5"
                         android:textStyle="bold" />
-                </LinearLayout>
+                </RelativeLayout>
 
-                <include layout="@layout/item_divider"/>
+                <include layout="@layout/item_divider1"/>
 
-                <LinearLayout
+                <RelativeLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_margin="@dimen/basic_details_inner_lay_mar"
-                    android:orientation="horizontal"
-                    android:weightSum="1">
+                   android:layout_margin="@dimen/layout_margin">
 
                     <TextView
                         android:id="@+id/per_fmlyannulincome"
-                        android:layout_width="match_parent"
+                        android:layout_width="@dimen/cont_us_logo_width"
                         android:layout_height="wrap_content"
-                        android:layout_gravity="center"
-                        android:layout_margin="@dimen/layout_margin"
-                        android:layout_weight=".5"
-                        android:text="@string/family_details_layout_fam_income"
+                        android:text="@string/dollar_icon"
+                        android:textSize="@dimen/form_tv_size"
+                        android:textColor="@color/colorPrimary"
                         android:textStyle="bold" />
-
+<!--
                     <TextView
                         android:layout_width="@dimen/seperator_width"
                         android:layout_height="wrap_content"
@@ -440,17 +411,16 @@
                         android:layout_margin="@dimen/layout_margin"
                         android:gravity="center"
                         android:text="@string/seprator"
-                        android:textStyle="bold" />
+                        android:textStyle="bold" />-->
 
 
                     <TextView
                         android:id="@+id/d_per_familyanulincome"
+                        android:layout_toEndOf="@+id/per_fmlyannulincome"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_gravity="center"
-                        android:layout_weight=".5"
                         android:textStyle="bold" />
-                </LinearLayout>
+                </RelativeLayout>
             </LinearLayout>
         </LinearLayout>
     </ScrollView>

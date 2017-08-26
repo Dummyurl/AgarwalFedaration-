@@ -36,53 +36,106 @@
                     android:layout_marginLeft="@dimen/successStoriesRowLay_mar_left"
                     android:orientation="vertical">
 
-                    <TextView
-                        android:id="@+id/tv_goroomname"
+                    <RelativeLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_gravity="center"
-                        android:drawableLeft="@drawable/ic_person_profile_dp"
-                        android:drawablePadding="@dimen/form_et_drawable_padding"
-                        android:text="@string/GroomName"
-                        android:textSize="@dimen/successStoriesRowLay_textSize" />
+                        android:layout_margin="@dimen/form_inner_layout_margin"
+                        android:padding="1dp">
 
-                    <include layout="@layout/item_divider" />
+                        <TextView
+                            android:id="@+id/ssrl_grrom"
+                            android:layout_width="@dimen/cont_us_logo_width"
+                            android:layout_height="wrap_content"
+                            android:textColor="@color/colorPrimary"
+                            android:textSize="@dimen/successStoriesRowLay_textSize"
+                            android:text="@string/male_icon" />
 
-                    <TextView
-                        android:id="@+id/bridename"
+                        <TextView
+                            android:id="@+id/tv_goroomname"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_toEndOf="@+id/ssrl_grrom"
+                            android:textSize="@dimen/successStoriesRowLay_textSize" />
+                    </RelativeLayout>
+
+
+                    <include layout="@layout/item_divider1" />
+
+                    <RelativeLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:drawableLeft="@drawable/ic_person_profile_dp"
-                        android:drawablePadding="@dimen/form_et_drawable_padding"
-                        android:text="@string/BrideName"
-                        android:textSize="@dimen/successStoriesRowLay_textSize" />
+                        android:layout_margin="@dimen/form_inner_layout_margin"
+                        android:padding="1dp">
 
-                    <include layout="@layout/item_divider" />
+                        <TextView
+                            android:id="@+id/ssrl_bride"
+                            android:layout_width="@dimen/cont_us_logo_width"
+                            android:layout_height="wrap_content"
+                            android:text="@string/female_icon"
+                            android:textColor="@color/colorPrimary"
+                            android:textSize="@dimen/successStoriesRowLay_textSize"
+                            />
 
+                        <TextView
+                            android:id="@+id/bridename"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_toEndOf="@+id/ssrl_bride"
+                            android:textSize="@dimen/successStoriesRowLay_textSize" />
+                    </RelativeLayout>
 
-                    <TextView
-                        android:id="@+id/tv_mrrigdate"
+                    <include layout="@layout/item_divider1" />
+
+                    <RelativeLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:drawableLeft="@drawable/ic_perm_contact_calendar_black_24dp"
-                        android:drawablePadding="@dimen/form_et_drawable_padding"
-                        android:text="@string/dob_hint"
-                        android:textSize="@dimen/successStoriesRowLay_textSize" />
+                        android:layout_margin="@dimen/form_inner_layout_margin"
+                        android:padding="1dp">
 
-                    <include layout="@layout/item_divider" />
+                        <TextView
+                            android:id="@+id/ssrl_date"
+                            android:layout_width="@dimen/cont_us_logo_width"
+                            android:layout_height="wrap_content"
+                            android:text="@string/calander_icon"
+                            android:textColor="@color/colorPrimary"
+                            android:textSize="@dimen/successStoriesRowLay_textSize"
+                            />
 
+                        <TextView
+                            android:id="@+id/tv_mrrigdate"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_toEndOf="@+id/ssrl_date"
+                            android:textSize="@dimen/successStoriesRowLay_textSize" />
+                    </RelativeLayout>
 
-                    <TextView
-                        android:id="@+id/helpid"
+                    <include layout="@layout/item_divider1" />
+
+                    <RelativeLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:drawableLeft="@drawable/ic_description_black_24dp"
-                        android:drawablePadding="@dimen/form_et_drawable_padding"
-                        android:maxLines="2"
-                        android:text="@string/about_us_desc"
-                        android:textSize="@dimen/successStoriesRowLay_textSize" />
+                        android:layout_margin="@dimen/form_inner_layout_margin"
+                        android:padding="1dp">
 
-                    <include layout="@layout/item_divider" />
+                        <TextView
+                            android:id="@+id/ssrl_desc"
+                            android:layout_width="@dimen/cont_us_logo_width"
+                            android:layout_height="wrap_content"
+                            android:text="@string/descrioption_icon"
+                            android:textColor="@color/colorPrimary"
+                            android:textSize="@dimen/successStoriesRowLay_textSize"
+                            />
+
+                        <TextView
+                            android:id="@+id/helpid"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_toEndOf="@+id/ssrl_desc"
+                            android:maxLines="2"
+                            android:textSize="@dimen/successStoriesRowLay_textSize" />
+                    </RelativeLayout>
+
+                    <include layout="@layout/item_divider1" />
 
 
                     <TextView
@@ -96,7 +149,8 @@
                 </LinearLayout>
 
             </LinearLayout>
-            <include layout="@layout/item_divider"/>
+
+            <include layout="@layout/item_divider1" />
         </LinearLayout>
     </ScrollView>
 </LinearLayout>

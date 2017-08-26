@@ -26,7 +26,6 @@
             android:layout_margin="@dimen/form_login_main_lay_margin"
             android:orientation="vertical">
 
-
             <TextView
                 android:id="@+id/textView8"
                 android:layout_width="match_parent"
@@ -36,6 +35,7 @@
                 android:textAlignment="center"
                 android:textColor="@color/colorPrimary"
                 android:textSize="@dimen/form_login_tv_login_size" />
+
 
             <android.support.design.widget.TextInputLayout
                 android:layout_width="match_parent"
@@ -47,7 +47,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:drawableLeft="@drawable/ic_email_black_24dp"
-                    android:drawablePadding="@dimen/form_et_drawable_padding"
+                    android:drawablePadding="10dp"
                     android:hint="@string/Email"
                     android:inputType="textEmailAddress" />
             </android.support.design.widget.TextInputLayout>

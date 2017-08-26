@@ -5,13 +5,18 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".matrimony.EventsActivity">
+    tools:context=".matrimony.MyCreatedProfiles"
+    >
+
+
     <include layout="@layout/toolbar"
         android:id="@+id/toolbar"/>
+
     <android.support.v7.widget.RecyclerView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:id="@+id/ev_recyclerview">
+        android:id="@+id/mcp_recyclerview">
+
     </android.support.v7.widget.RecyclerView>
 
 </LinearLayout>
