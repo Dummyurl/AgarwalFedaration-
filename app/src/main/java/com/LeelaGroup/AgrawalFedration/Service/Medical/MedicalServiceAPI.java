@@ -26,7 +26,7 @@ public interface MedicalServiceAPI {
     @FormUrlEncoded
     @POST("Medical/med_log.php")
     Call<Medical_Registration> getLogin(@Field("user_email") String user_email,
-                                              @Field("user_pwd") String user_pwd);
+                                        @Field("user_pwd") String user_pwd);
 
     @Multipart
     @POST("Medical/insert_Service.php")
@@ -49,7 +49,8 @@ public interface MedicalServiceAPI {
                                       @Part("med_cont_phone") RequestBody med_cont_phone,
                                       @Part("med_cont_email") RequestBody med_cont_email,
                                       @Part("med_cont_desig") RequestBody med_cont_desig,
-                                      @Part("med_cont_detail") RequestBody med_cont_detail);
+                                      @Part("med_cont_detail") RequestBody med_cont_detail ,
+                                      @Part("user_id") RequestBody user_id);
 
     @FormUrlEncoded
     @POST("Medical/insert_contact_perosn.php")
@@ -65,15 +66,17 @@ public interface MedicalServiceAPI {
                                                 @Field("user_email") String user_email,
                                                 @Field("user_phone") String user_phone,
                                                 @Field("user_pwd") String user_pwd);
+    @FormUrlEncoded
+    @POST("Medical/medical_fetch.php")
+    Call<List<Medical>> getImageMedical(@Field("user_id") String user_id);
 
-    @GET("Medical/medical_fetch.php")
-    Call<List<Medical>> getImageMedical();
+    @FormUrlEncoded
+    @POST("Medical/doctor_fetch.php")
+    Call<List<Medical>> getImageDoctor(@Field("user_id") String user_id);
 
-    @GET("Medical/doctor_fetch.php")
-    Call<List<Medical>> getImageDoctor();
-
-    @GET("Medical/hospital_fetch.php")
-    Call<List<Medical>> getImageHospital();
+    @FormUrlEncoded
+    @POST("Medical/hospital_fetch.php")
+    Call<List<Medical>> getImageHospital(@Field("user_id") String user_id);
 
     @GET("Medical/getCity.php")
     Call<List<Medical>> getCity();

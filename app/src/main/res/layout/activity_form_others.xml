@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -7,94 +8,113 @@
     android:orientation="vertical"
     tools:context=".matrimony.FormOthersActivity">
 
+    <include
+        android:id="@id/toolbar"
+        layout="@layout/toolbar" />
+
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent">
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical">
 
-        <TextView
-            android:id="@+id/frm_other_tv_other"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="10dp"
-            android:layout_marginTop="20dp"
-            android:text="Other Information"
-            android:textAlignment="center"
-            android:textColor="@color/colorAccent"
-            android:textSize="20dp"
-            android:textStyle="bold" />
+
+
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="2dp"
-            android:orientation="horizontal"
-            android:weightSum="1">
+            android:layout_height="match_parent"
+            android:layout_margin="@dimen/layout_bottom_margin"
+            android:orientation="vertical">
+            <!--
+                            <TextView
+                                android:id="@+id/frm_other_tv_other"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="10dp"
+                                android:layout_marginTop="20dp"
+                                android:text="Other Information"
+                                android:textAlignment="center"
+                                android:textColor="@color/colorAccent"
+                                android:textSize="20dp"
+                                 />-->
 
             <TextView
                 android:id="@+id/frm_other_tv_whreuhereus"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:layout_margin="10dp"
+                android:layout_marginLeft="@dimen/form_spinner_label_mar_left"
                 android:layout_weight=".5"
-                android:text="Where Did You Hear Us :-"
-                android:textStyle="bold" />
+                android:textSize="@dimen/form_tv_size"
+                android:textColor="@color/black"
+                android:text="@string/WhereDidYouHearUs"
+                />
 
-            <Spinner
-                android:id="@+id/frm_other_spr_whreuhereus"
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:layout_weight=".5"
-                android:entries="@array/where_u_hear" />
-        </LinearLayout>
+                android:layout_margin="@dimen/form_inner_layout_margin"
+                android:orientation="horizontal"
+                android:weightSum="1">
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="2dp"
-            android:orientation="horizontal"
-            android:weightSum="1">
+
+                <Spinner
+                    android:id="@+id/frm_other_spr_whreuhereus"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/form_spinner_layout_margin_top"
+                    android:layout_marginBottom="@dimen/form_spinner_layout_margin_bottom"
+                    android:layout_gravity="center"
+                    android:layout_weight=".5"
+                    android:entries="@array/where_u_hear" />
+            </LinearLayout>
 
             <TextView
                 android:id="@+id/frm_other_tv_prflcrteby"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:layout_margin="10dp"
+                android:layout_marginLeft="@dimen/form_spinner_label_mar_left"
                 android:layout_weight=".5"
-                android:text="Profile Created By :-"
-                android:textStyle="bold" />
+                android:textSize="@dimen/form_tv_size"
+                android:textColor="@color/black"
+                android:text="@string/ProfileCreatedBy"
+                />
 
-            <Spinner
-                android:id="@+id/frm_other_spr_prflcrteby"
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:layout_weight=".5"
-                android:entries="@array/profile_created_for" />
-        </LinearLayout>
+                android:layout_margin="@dimen/form_inner_layout_margin"
+                android:orientation="horizontal"
+                android:weightSum="1">
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="2dp"
-            android:orientation="horizontal"
-            android:weightSum="1">
+
+
+                <Spinner
+                    android:id="@+id/frm_other_spr_prflcrteby"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="@dimen/form_spinner_layout_margin_top"
+                    android:layout_marginBottom="@dimen/form_spinner_layout_margin_bottom"
+                    android:layout_weight=".5"
+                    android:entries="@array/profile_created_for" />
+            </LinearLayout>
+
 
             <TextView
                 android:id="@+id/frm_other_tv_hobbies"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:layout_margin="10dp"
+                android:layout_marginLeft="@dimen/form_spinner_label_mar_left"
+                android:layout_marginBottom="@dimen/form_spinner_layout_margin_bottom"
                 android:layout_weight=".5"
-                android:text="Hobbies :-"
-                android:textStyle="bold" />
+                android:text="@string/Hobbies"
+                android:textSize="18sp"
+                android:textColor="@color/black"
+                />
+            <include layout="@layout/item_divider2"/>
+
 
             <CheckBox
                 android:id="@+id/frm_other_ckbx_hobbies_reading"
@@ -102,70 +122,20 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:layout_weight=".5"
-                android:text="Reading" />
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="2dp"
-            android:orientation="horizontal"
-            android:weightSum="1">
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:layout_margin="10dp"
-                android:layout_weight=".5"
-                android:text="" />
-
+                android:text="@string/Reading" />
             <CheckBox
                 android:id="@+id/frm_other_ckbx_hobbies_dancing"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:text="Dancing" />
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="2dp"
-            android:orientation="horizontal"
-            android:weightSum="1">
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:layout_margin="10dp"
-                android:layout_weight=".5"
-                android:text="" />
-
+                android:text="@string/Dancing" />
             <CheckBox
                 android:id="@+id/frm_other_ckbx_hobbies_playing"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:layout_weight=".5"
-                android:text="Playing" />
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="2dp"
-            android:orientation="horizontal"
-            android:weightSum="1">
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:layout_margin="10dp"
-                android:layout_weight=".5"
-                android:text="" />
+                android:text="@string/Playing" />
 
             <CheckBox
                 android:id="@+id/frm_other_ckbx_hobbies_listinigsongs"
@@ -173,23 +143,7 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="top|left"
                 android:layout_weight=".5"
-                android:text="Listing Songs " />
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="2dp"
-            android:orientation="horizontal"
-            android:weightSum="1">
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:layout_margin="10dp"
-                android:layout_weight=".5"
-                android:text="" />
+                android:text="@string/ListingSongs" />
 
             <CheckBox
                 android:id="@+id/frm_other_ckbx_hobbies_acting"
@@ -198,35 +152,88 @@
                 android:layout_gravity="center"
                 android:layout_weight=".5"
                 android:text="Acting" />
-        </LinearLayout>
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="2dp"
-            android:orientation="horizontal"
-            android:weightSum="1">
+            <android.support.design.widget.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
 
-            <TextView
+                <EditText
+                    android:id="@+id/frm_other_et_hobbies"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_weight=".5"
+                    android:hint="@string/OtherHobbies"
+                    android:inputType="textCapWords" />
+            </android.support.design.widget.TextInputLayout>
+
+            <android.support.design.widget.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+
+                <EditText
+                    android:id="@+id/frm_other_et_interst"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_weight=".5"
+                    android:hint="@string/Interests"
+                    android:inputType="textCapSentences" />
+            </android.support.design.widget.TextInputLayout>
+
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:layout_margin="10dp"
-                android:layout_weight=".5"
-                android:text="" />
+                android:gravity="center"
+                android:layout_marginBottom="@dimen/form_spinner_layout_margin_bottom"
+                android:orientation="horizontal">
 
-            <EditText
-                android:id="@+id/frm_other_et_hobbies"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:layout_weight=".5"
-                android:inputType="textCapWords"
-                android:hint="Other Hobbies" />
+                <!--   <ImageView
+                       android:layout_width="50dp"
+                       android:layout_height="50dp"
+                       android:layout_gravity="start"
+                       android:layout_marginRight="10dp"
+                       android:layout_marginTop="10dp"
+                       android:layout_weight=".5"
+                       android:onClick="goToFormPhysicalAttribute"
+                       android:src="@drawable/arrow_left_bold_circle_outline" />-->
+
+                <Button
+                    android:id="@+id/imageView2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:background="@color/circleArrowButton"
+                    android:onClick="goToFormPartnerPreference"
+                    android:text="@string/save_next"
+                    android:layout_marginBottom="@dimen/button_margin_bottom"
+                    android:textSize="@dimen/text_size"
+                    android:textAllCaps="false"
+                    android:textColor="@color/buttonTextColor"
+                    android:layout_marginTop="@dimen/layout_margin"
+                    />
+                <!--  <Button
+                      android:id="@+id/bnsaveupdate"
+                      android:layout_width="50dp"
+                      android:layout_height="50dp"
+                      android:layout_gravity="end"
+                      android:layout_marginTop="10dp"
+                      android:layout_weight=".5"
+                      android:textColor="#fff"
+                      
+                      android:background="@color/circleArrowButton"
+                      android:onClick="goToFormContactInformation"
+                      android:text="save update"
+                      android:visibility="gone"/>-->
+            </LinearLayout>
+
+
         </LinearLayout>
 
 
-        <LinearLayout
+
+        <!--<LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="2dp"
@@ -241,16 +248,9 @@
                 android:layout_margin="10dp"
                 android:layout_weight=".5"
                 android:text="Interests :-"
-                android:textStyle="bold" />
+                 />
 
-            <EditText
-                android:id="@+id/frm_other_et_interst"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:layout_weight=".5"
-                android:inputType="textCapSentences"
-                android:hint="Interests" />
+
         </LinearLayout>
 
 
@@ -269,16 +269,9 @@
                 android:layout_margin="10dp"
                 android:layout_weight=".5"
                 android:text="Password :-"
-                android:textStyle="bold" />
+                 />
 
-            <EditText
-                android:id="@+id/frm_other_et_pass"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:layout_weight=".5"
-                android:hint="Password"
-                android:inputType="textPassword" />
+
         </LinearLayout>
 
         <LinearLayout
@@ -296,7 +289,7 @@
                 android:layout_margin="10dp"
                 android:layout_weight=".5"
                 android:text="Confirm Password :-"
-                android:textStyle="bold" />
+                 />
 
             <EditText
                 android:id="@+id/frm_other_et_cnfpssword"
@@ -306,60 +299,17 @@
                 android:layout_weight=".5"
                 android:hint="Confirm Password"
                 android:inputType="textPassword" />
-        </LinearLayout>
+        </LinearLayout>-->
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="2dp"
-            android:orientation="horizontal"
-            android:gravity="center"
-            >
 
-         <!--   <ImageView
-                android:layout_width="50dp"
-                android:layout_height="50dp"
-                android:layout_gravity="start"
-                android:layout_marginRight="10dp"
-                android:layout_marginTop="10dp"
-                android:layout_weight=".5"
-                android:onClick="goToFormPhysicalAttribute"
-                android:src="@drawable/arrow_left_bold_circle_outline" />-->
-
-            <Button
-                android:id="@+id/imageView2"
-                android:layout_width="200dp"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:layout_marginTop="10dp"
-                android:textColor="#fff"
-                android:textStyle="bold"
-                android:background="@color/circleArrowButton"
-                android:onClick="goToFormPartnerPreference"
-                android:text="save and next" />
-          <!--  <Button
-                android:id="@+id/bnsaveupdate"
-                android:layout_width="50dp"
-                android:layout_height="50dp"
-                android:layout_gravity="end"
-                android:layout_marginTop="10dp"
-                android:layout_weight=".5"
-                android:textColor="#fff"
-                android:textStyle="bold"
-                android:background="@color/circleArrowButton"
-                android:onClick="goToFormContactInformation"
-                android:text="save update"
-                android:visibility="gone"/>-->
-        </LinearLayout>
-    </LinearLayout>
     </ScrollView>
- <!--   <ImageButton
-        android:id="@+id/draggable_view"
-        android:background="@drawable/home_icon"
-        android:layout_gravity="bottom|right"
-        android:layout_marginBottom="20dp"
-        android:layout_marginEnd="20dp"
-        android:layout_width="50dp"
-        android:layout_height="50dp"/>-->
+    <!--   <ImageButton
+           android:id="@+id/draggable_view"
+           android:background="@drawable/home_icon"
+           android:layout_gravity="bottom|right"
+           android:layout_marginBottom="20dp"
+           android:layout_marginEnd="20dp"
+           android:layout_width="50dp"
+           android:layout_height="50dp"/>-->
 
-</FrameLayout>
+</LinearLayout>

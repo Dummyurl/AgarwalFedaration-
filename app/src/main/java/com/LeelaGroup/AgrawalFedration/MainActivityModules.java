@@ -21,7 +21,6 @@ public class MainActivityModules extends AppCompatActivity {
     ArrayList personImages = new ArrayList<>(Arrays.asList(R.drawable.medical, R.drawable.matri, R.drawable.bus,
             R.drawable.edu, R.drawable.socialrefurn));
 
-  //  ArrayList ItemNames = new ArrayList<>(Arrays.asList("Medical", "Matrimony", "Business", "Education", "Social Refurn"));
 
 
     @Override
@@ -62,14 +61,18 @@ public class MainActivityModules extends AppCompatActivity {
         int res_id = item.getItemId();
         switch (res_id){
             case R.id.action_med_logout:
-                Intent intent = new Intent(MainActivityModules.this, Login_Business.class);
+
                 Business_Medical_Session business_medical_session = new Business_Medical_Session(getApplicationContext());
+                MatrimonySession matrimonySession=new MatrimonySession(getApplicationContext());
+                EducationSessionManager educationSessionManager=new EducationSessionManager(getApplicationContext());
                 business_medical_session.logoutUser();
-                startActivity(intent);
+                matrimonySession.logoutFromMain();
+                educationSessionManager.logoutFromMain();
                 finish();
                 break;
             case android.R.id.home:
                  onBackPressed();
+
                  finish();
                  return  true;
 
@@ -78,7 +81,5 @@ public class MainActivityModules extends AppCompatActivity {
 
         return super.onOptionsItemSelected(item);
     }
-
-
 }
 

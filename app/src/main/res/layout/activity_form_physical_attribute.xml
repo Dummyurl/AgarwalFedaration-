@@ -19,7 +19,7 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_margin="@dimen/form_layout_margin"
+                android:layout_margin="@dimen/layout_bottom_margin"
                 android:orientation="vertical">
                 <!--
 
@@ -32,7 +32,7 @@
                             android:textAlignment="center"
                             android:textSize="20dp"
                             android:layout_marginBottom="10dp"
-                            android:textStyle="bold"
+                            
                             android:textColor="@color/colorAccent"/>
                 -->
 
@@ -107,6 +107,7 @@
                     android:layout_gravity="center"
                     android:layout_marginTop="@dimen/form_spinner_layout_margin_top"
                     android:layout_weight=".5"
+                    android:textColor="@color/black"
                     android:layout_marginLeft="@dimen/form_spinner_label_mar_left"
                     android:text="@string/BodyType"
                     android:textSize="@dimen/form_tv_size" />
@@ -124,6 +125,8 @@
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
                         android:layout_weight=".5"
+                        android:layout_marginTop="@dimen/button_margin_top"
+                        android:layout_marginBottom="@dimen/button_margin_top"
                         android:entries="@array/body_type" />
                 </LinearLayout>
 
@@ -137,6 +140,7 @@
                     android:layout_weight=".5"
                     android:layout_marginLeft="@dimen/form_spinner_label_mar_left"
                     android:text="@string/bloodgouup"
+                    android:textColor="@color/black"
                     android:textSize="@dimen/form_tv_size" />
 
                 <LinearLayout
@@ -152,6 +156,7 @@
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
                         android:layout_weight=".5"
+
                         android:entries="@array/blood_group" />
                 </LinearLayout>
 
@@ -166,7 +171,8 @@
                     android:text="@string/Complexion"
                     android:layout_marginLeft="@dimen/form_spinner_label_mar_left"
                     android:textSize="@dimen/form_tv_size"
-                    android:textStyle="bold" />
+                    android:textColor="@color/black"
+                    />
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -192,9 +198,10 @@
                     android:layout_marginTop="@dimen/form_spinner_layout_margin_top"
                     android:layout_weight=".5"
                     android:text="@string/Diet"
+                    android:textColor="@color/black"
                     android:layout_marginLeft="@dimen/form_spinner_label_mar_left"
                     android:textSize="@dimen/form_tv_size"
-                    android:textStyle="bold" />
+                     />
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -221,6 +228,8 @@
                     android:layout_marginTop="15dp"
                     android:layout_weight=".5"
                     android:text="@string/Smoke"
+                    android:layout_marginLeft="@dimen/form_spinner_label_mar_left"
+                    android:textColor="@color/black"
                     android:textSize="@dimen/form_tv_size" />
 
                 <LinearLayout
@@ -248,8 +257,10 @@
                     android:layout_marginTop="@dimen/form_spinner_layout_margin_top"
                     android:layout_weight=".5"
                     android:text="@string/Drink"
+                    android:layout_marginLeft="@dimen/form_spinner_label_mar_left"
                     android:textSize="@dimen/form_tv_size"
-                    android:textStyle="bold" />
+                    android:textColor="@color/black"
+                     />
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -272,10 +283,12 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
+                    android:layout_marginLeft="@dimen/form_spinner_label_mar_left"
                     android:layout_marginTop="@dimen/form_spinner_layout_margin_top"
                     android:layout_weight=".5"
                     android:text="@string/YouAreHandicapped"
-                    android:textSize="@dimen/form_tv_size" />
+                    android:textSize="@dimen/form_tv_size"
+                    android:textColor="@color/black"/>
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -311,7 +324,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="@dimen/layout_margin"
-                    android:layout_marginBottom="@dimen/formPartnerPref_button_margin_bottom"
+                    android:layout_marginBottom="@dimen/form_spinner_layout_margin_bottom"
                     android:gravity="center"
                     android:orientation="horizontal">
                     <!-- <ImageView
@@ -331,6 +344,7 @@
                         android:background="@color/circleArrowButton"
                         android:onClick="goToOtherInfrmation"
                         android:text="@string/save_next"
+                        android:textAllCaps="false"
                         android:textColor="@color/buttonTextColor"
                         android:textStyle="bold" />
                     <!--  <Button

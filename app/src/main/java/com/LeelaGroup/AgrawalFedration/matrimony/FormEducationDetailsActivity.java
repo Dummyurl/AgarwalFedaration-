@@ -10,6 +10,7 @@ import android.view.MotionEvent;
 import android.view.View;
 import android.widget.EditText;
 
+import com.LeelaGroup.AgrawalFedration.MainActivityModules;
 import com.LeelaGroup.AgrawalFedration.MatrimonySession;
 import com.LeelaGroup.AgrawalFedration.R;
 import com.LeelaGroup.AgrawalFedration.matrimony.validation.CustomValidator;
@@ -290,7 +291,7 @@ MatrimonySession matrimonySession;
     public void onBackPressed()
     {
         //finish();
-        Intent intent = new Intent(FormEducationDetailsActivity.this, MatrimonyActivity.class);
+        Intent intent = new Intent(FormEducationDetailsActivity.this, MainActivityModules.class);
         intent.putExtra("mat_id",mat_id);
         startActivity(intent);
         FormEducationDetailsActivity.this.finish();

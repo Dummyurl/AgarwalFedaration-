@@ -1,21 +1,17 @@
 package com.LeelaGroup.AgrawalFedration.Social_Refurn;
 
 import android.app.Activity;
-import android.content.Context;
 import android.content.Intent;
-import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.os.Handler;
-import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.ImageView;
 
 import com.LeelaGroup.AgrawalFedration.Business_Medical_Session;
-import com.LeelaGroup.AgrawalFedration.MainActivityModules;
+import com.LeelaGroup.AgrawalFedration.Home;
 import com.LeelaGroup.AgrawalFedration.R;
-import com.LeelaGroup.AgrawalFedration.business.Login_Business;
 import com.LeelaGroup.AgrawalFedration.medical.SplashScreenActivity;
 
 /**
@@ -43,12 +39,9 @@ public class SplashScreen extends Activity {
         goTomain();
 
 
+       /* Business_Medical_Session business_medical_session=new Business_Medical_Session(getApplicationContext());
+        business_medical_session.goTomain();*/
     }
-
-
-
-
-
 
     private void goTomain() {
 
@@ -61,19 +54,19 @@ public class SplashScreen extends Activity {
 
                 if (!business_medical_session.checkLogin()) {
 
-                    Intent loginIntent = new Intent(SplashScreen.this, MainActivityModules.class);
+                    Intent loginIntent = new Intent(SplashScreen.this, Home.class);
                     startActivity(loginIntent);
                     finish();
 
                 } else {
 
-                    Intent loginIntent = new Intent(SplashScreen.this, Login_Business.class);
-                    startActivity(loginIntent);
+                  /*  Intent loginIntent = new Intent(SplashScreen.this, Login_Business.class);
+                    startActivity(loginIntent);*/
                     finish();
                 }
 
             }
-        }, 2000);
+        }, 4000);
     }
 
 

@@ -8,12 +8,6 @@ import com.google.gson.annotations.SerializedName;
  */
 
 public class BusinessCardPojo {
-    @SerializedName("success")
-    @Expose
-    private Boolean success;
-    @SerializedName("message")
-    @Expose
-    private String message;
     @SerializedName("city_name")
     @Expose
     private String cityName;
@@ -29,22 +23,15 @@ public class BusinessCardPojo {
     @SerializedName("email")
     @Expose
     private String email;
-
-    public Boolean getSuccess() {
-        return success;
-    }
-
-    public void setSuccess(Boolean success) {
-        this.success = success;
-    }
-
-    public String getMessage() {
-        return message;
-    }
-
-    public void setMessage(String message) {
-        this.message = message;
-    }
+    @SerializedName("Address1")
+    @Expose
+    private String address1;
+    @SerializedName("cat_name")
+    @Expose
+    private String catName;
+    @SerializedName("Website")
+    @Expose
+    private String website;
 
     public String getCityName() {
         return cityName;
@@ -84,6 +71,30 @@ public class BusinessCardPojo {
 
     public void setEmail(String email) {
         this.email = email;
+    }
+
+    public String getAddress1() {
+        return address1;
+    }
+
+    public void setAddress1(String address1) {
+        this.address1 = address1;
+    }
+
+    public String getCatName() {
+        return catName;
+    }
+
+    public void setCatName(String catName) {
+        this.catName = catName;
+    }
+
+    public String getWebsite() {
+        return website;
+    }
+
+    public void setWebsite(String website) {
+        this.website = website;
     }
 
 }

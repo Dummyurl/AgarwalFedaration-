@@ -6,6 +6,7 @@ import android.content.SharedPreferences;
 import android.os.Handler;
 
 import com.LeelaGroup.AgrawalFedration.business.Login_Business;
+import com.LeelaGroup.AgrawalFedration.matrimony.FormBasicDetailsActivity;
 import com.LeelaGroup.AgrawalFedration.matrimony.LoginMatrimony;
 import com.LeelaGroup.AgrawalFedration.matrimony.MatrimonyActivity;
 
@@ -22,6 +23,8 @@ public class MatrimonySession {
     // Editor reference for Shared preferences
     SharedPreferences.Editor editor;
 
+    private boolean cpid=false;
+
     // Context
     Context _context;
 
@@ -36,6 +39,7 @@ public class MatrimonySession {
 
     // User name (make variable public to access from outside)
     public static final String KEY_ID = "id";
+    public static final String PROFILE_ID = "pid";
 
     // Email address (make variable public to access from outside)
     public static final String KEY_NAME= "email";
@@ -48,7 +52,7 @@ public class MatrimonySession {
     }
 
     //Create login session
-    public void createUserLoginSession(String id, String email){
+    public void createUserLoginSession(String id, String pid){
         // Storing login value as TRUE
         editor.putBoolean(IS_USER_LOGIN, true);
 
@@ -56,9 +60,17 @@ public class MatrimonySession {
         editor.putString(KEY_ID, id);
 
         // Storing email in pref
-        editor.putString(KEY_NAME, email);
+        editor.putString(PROFILE_ID, pid);
 
         // commit changes
+        editor.commit();
+    }
+
+
+    public void storePid(boolean pid)
+    {
+        cpid=pid;
+        editor.putBoolean(PROFILE_ID,cpid)  ;
         editor.commit();
     }
 
@@ -101,6 +113,8 @@ public class MatrimonySession {
         // user name
         user.put(KEY_ID, pref.getString(KEY_ID, null));
 
+        //user.put(PROFILE_ID,pref.getString(PROFILE_ID,null));
+
         // user email id
         user.put(KEY_NAME, pref.getString(KEY_NAME, null));
 
@@ -129,6 +143,13 @@ public class MatrimonySession {
         // Staring Login Activity
         _context.startActivity(i);
     }
+    public void logoutFromMain(){
+
+        // Clearing all user data from Shared Preferences
+        editor.clear();
+        editor.commit();
+
+    }
 
 
     // Check for login
@@ -137,14 +158,24 @@ public class MatrimonySession {
         return pref.getBoolean(IS_USER_LOGIN, false);
     }
 
+
     public void goTomain() {
 
 
                 if (pref.contains(KEY_ID)) {
 
-                    Intent loginIntent = new Intent(_context, MatrimonyActivity.class);
-                    _context.startActivity(loginIntent);
-                    //finish();
+                   boolean profID=pref.getBoolean(PROFILE_ID,false);
+                    if (profID)
+                    {
+                        Intent loginIntent = new Intent(_context, MatrimonyActivity.class);
+                        _context.startActivity(loginIntent);
+                        //finish();
+                    }else {
+                        Intent loginIntent = new Intent(_context, FormBasicDetailsActivity.class);
+                        _context.startActivity(loginIntent);
+                        //finish();
+                  }
+
 
                 } else {
 

@@ -1,5 +1,6 @@
 package com.LeelaGroup.AgrawalFedration.matrimony;
 
+import android.graphics.Typeface;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
@@ -22,6 +23,7 @@ public class EducationDetailsActivity extends AppCompatActivity {
     String mat_id;
     ImageView d_person_edudetl_image;
     TextView grad,pstgtrad,dctrate,cetfn;
+    TextView i_grad;
 
     Toolbar toolbar;
     MatrimonySession matrimonySession;
@@ -39,6 +41,7 @@ public class EducationDetailsActivity extends AppCompatActivity {
         getSupportActionBar().setDisplayShowHomeEnabled(true);
         getSupportActionBar().setTitle("Education Details");
 
+        initIcon();
         if(matrimonySession.checkLogin())
             finish();
 
@@ -93,6 +96,15 @@ public class EducationDetailsActivity extends AppCompatActivity {
         }
 
         return super.onOptionsItemSelected(item);
+    }
+    public void initIcon(){
+        Typeface icon = Typeface.createFromAsset(this.getAssets(), "fontawesome-webfont.ttf" );
+
+        i_grad = (TextView) findViewById(R.id.per_eduction);
+        i_grad.setTypeface(icon);
+
+
+
     }
 
 }

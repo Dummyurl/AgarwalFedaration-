@@ -2,6 +2,7 @@ package com.LeelaGroup.AgrawalFedration.matrimony;
 
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.Typeface;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -57,6 +58,7 @@ public class SuccessStoriesAdapter extends RecyclerView.Adapter<SuccessStoriesAd
     public static final class MyViewHolder extends RecyclerView.ViewHolder
     {
         TextView brideName,groomName,date,help,viewMore;
+        TextView i_brideName,i_groomName,i_date,i_help;
         ImageView wedPic;
         ArrayList<SussessStoriesPojo> storiesPojos;
         Context ctx;
@@ -73,6 +75,18 @@ public class SuccessStoriesAdapter extends RecyclerView.Adapter<SuccessStoriesAd
             help=(TextView)itemView.findViewById(R.id.helpid);
             viewMore=(TextView)itemView.findViewById(R.id.tv_viewmore_succsstories);
             wedPic=(ImageView)itemView.findViewById(R.id.iv_succsstory);
+
+            Typeface icon=Typeface.createFromAsset(ctx.getAssets(),"fontawesome-webfont.ttf");
+
+            i_groomName=(TextView)itemView.findViewById(R.id.ssrl_grrom);
+            i_brideName=(TextView)itemView.findViewById(R.id.ssrl_bride);
+            i_date=(TextView)itemView.findViewById(R.id.ssrl_date);
+            i_help=(TextView)itemView.findViewById(R.id.ssrl_desc);
+
+            i_groomName.setTypeface(icon);
+            i_brideName.setTypeface(icon);
+            i_date.setTypeface(icon);
+            i_help.setTypeface(icon);
 
             viewMore.setOnClickListener(new View.OnClickListener() {
                 @Override
@@ -93,5 +107,7 @@ public class SuccessStoriesAdapter extends RecyclerView.Adapter<SuccessStoriesAd
             });
 
         }
+
+
     }
 }

@@ -14,6 +14,7 @@ import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.Toast;
 
+import com.LeelaGroup.AgrawalFedration.MainActivityModules;
 import com.LeelaGroup.AgrawalFedration.MatrimonySession;
 import com.LeelaGroup.AgrawalFedration.Network.ApiClient;
 import com.LeelaGroup.AgrawalFedration.R;
@@ -82,42 +83,6 @@ public class FormContactInformationActivity extends AppCompatActivity {
         getstate();
         catchBasicDetails();
 
-       /* final View dragView=findViewById(R.id.draggable_view);
-        gestureDetector = new GestureDetector(this, new SingleTapConfirm());
-        dragView.setOnTouchListener(new View.OnTouchListener() {
-            @Override
-            public boolean onTouch(View view, MotionEvent event) {
-                if (gestureDetector.onTouchEvent(event)) {
-                    // single tap
-                    startActivity(new Intent(FormContactInformationActivity.this,MatrimonyActivity.class));
-
-                    return true;
-                } else {
-
-                    // your code for move and drag
-
-                    switch(event.getActionMasked()){
-                        case MotionEvent.ACTION_DOWN:
-                            dX = view.getX() - event.getRawX();
-                            dY = view.getY() - event.getRawY();
-                            lastAction = MotionEvent.ACTION_DOWN;
-                            break;
-                        case MotionEvent.ACTION_MOVE:
-                            view.setY(event.getRawY() + dY);
-                            view.setX(event.getRawX() + dX);
-                            lastAction = MotionEvent.ACTION_MOVE;
-                            break;
-                        case MotionEvent.ACTION_UP:
-
-                            break;
-                        default:
-                            return true;
-                    }
-
-                }
-                return false;
-            }
-        });*/
     }
     private class SingleTapConfirm extends GestureDetector.SimpleOnGestureListener {
 
@@ -139,12 +104,7 @@ public class FormContactInformationActivity extends AppCompatActivity {
             return false;
         }
         etMobNo.setError(null);
-        /*final String landline=etLandline.getText().toString();
-        if(!validator.isValidNumber(landline)){
-            etLandline.requestFocus();
-            etLandline.setError("Please Enter Valid Number");
-            return false;
-        }*/
+
         final String email=etEmail.getText().toString();
         if(!validator.isValidEmail(email)){
             etEmail.requestFocus();
@@ -250,57 +210,6 @@ public class FormContactInformationActivity extends AppCompatActivity {
         }
     }
 
-//    public void setContactDetails()
-//    {
-//        mreg_landline=etLandline.getText().toString();
-//        mreg_phone=etMobNo.getText().toString();
-//        mreg_email=etEmail.getText().toString();
-//        mreg_addr=etAddress.getText().toString();
-//        mreg_country=sprCountry.getText().toString();
-//        mreg_state=sprState.getText().toString();
-//        mreg_city=etCity.getText().toString();
-//        mreg_pincode=etPin.getText().toString();
-//        mreg_resid_status=sprResdStats.getSelectedItem().toString();
-//        Matsess = mreg_email;
-//
-//        ServiceMatrimony serviceMatrimony= ApiClient.getRetrofit().create(ServiceMatrimony.class);
-//
-//        Call<BasicDetailAndContactInfo> contactInfoCall=serviceMatrimony.setContactDetails(mreg_landline,mreg_phone,mreg_email,mreg_addr,mreg_country,mreg_state,mreg_city,mreg_pincode,mreg_resid_status);
-//
-//        contactInfoCall.enqueue(new Callback<BasicDetailAndContactInfo>() {
-//            @Override
-//            public void onResponse(Call<BasicDetailAndContactInfo> call, Response<BasicDetailAndContactInfo> response) {
-//                BasicDetailAndContactInfo serverResponse = response.body();
-//                if (serverResponse != null) {
-//                    if (serverResponse.getSuccess()) {
-//                        id= serverResponse.getMat_basic_cont_id();
-//                        Intent intent = new Intent(getApplicationContext(), FormSocialAttributeActivity.class);
-//                        intent.putExtra("mat_id",id);
-//                        startActivity(intent);
-//                        //Toast.makeText(getApplicationContext(), id, Toast.LENGTH_SHORT).show();
-//                       /* AlertDialog.Builder alert = new AlertDialog.Builder(FormContactInformationActivity.this);
-//                        alert.setTitle(id);
-//                        alert.setMessage(id);
-//                        alert.show();*/
-//                    } else {
-//                        Toast.makeText(getApplicationContext(), serverResponse.getMessage(), Toast.LENGTH_SHORT).show();
-//                    }
-//                } else {
-//                    assert serverResponse != null;
-//                    Log.v("Response", serverResponse.toString());
-//                }
-//
-//
-//
-//            }
-//
-//            @Override
-//            public void onFailure(Call<BasicDetailAndContactInfo> call, Throwable t) {
-//                Toast.makeText(FormContactInformationActivity.this, t.getMessage(), Toast.LENGTH_SHORT).show();
-//
-//            }
-//        });
-//    }
 
   public void getcity()
   {
@@ -385,6 +294,7 @@ public class FormContactInformationActivity extends AppCompatActivity {
         // basic details data
         mat_id=getIntent().getStringExtra("mat_id");
         imageFile=(File)getIntent().getExtras().get("imageFile");
+      //  double size=imageFile.length();
         mreg_am=getIntent().getStringExtra("mreg_am");
         mreg_fname=getIntent().getStringExtra("mreg_fname");
         mreg_mname=getIntent().getStringExtra("mreg_mname");
@@ -439,7 +349,7 @@ public class FormContactInformationActivity extends AppCompatActivity {
     public void onBackPressed()
     {
         //finish();
-        Intent intent = new Intent(FormContactInformationActivity.this, MatrimonyActivity.class);
+        Intent intent = new Intent(FormContactInformationActivity.this, MainActivityModules.class);
         intent.putExtra("mat_id",mat_id);
         startActivity(intent);
         FormContactInformationActivity.this.finish();

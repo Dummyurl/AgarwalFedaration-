@@ -3,6 +3,8 @@ package com.LeelaGroup.AgrawalFedration.Social_Refurn;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.Toolbar;
+import android.view.MenuItem;
 import android.widget.TextView;
 
 import com.LeelaGroup.AgrawalFedration.R;
@@ -21,9 +23,15 @@ public class Social_Refurn extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_social__refurn);
+
+
+        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setTitle("Social News");
         imageCarousel = (CarouselPicker) findViewById(R.id.imageCarousel);
      //   tvSelected = (TextView)findViewById(R.id.tvSelectedItem);
-        socialText = (TextView)findViewById(R.id.social_heading);
+      //  socialText = (TextView)findViewById(R.id.social_heading);
         leela_info = (TextView)findViewById(R.id.leela_info);
         List<CarouselPicker.PickerItem> imageItems = new ArrayList<>();
         imageItems.add(new CarouselPicker.DrawableItem(R.drawable.logo_leela));
@@ -60,4 +68,19 @@ public class Social_Refurn extends AppCompatActivity {
         });
 
     }
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+
+        switch (item.getItemId()) {
+
+            case android.R.id.home:
+
+                onBackPressed();
+
+                return true;
+        }
+
+        return super.onOptionsItemSelected(item);
+    }
+
 }

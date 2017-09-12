@@ -1,5 +1,6 @@
 package com.LeelaGroup.AgrawalFedration.matrimony;
 
+import android.graphics.Typeface;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
@@ -23,6 +24,7 @@ public class FamilyDetailsActivity extends AppCompatActivity {
     String mat_id;
     ImageView d_person_famildtl_image;
     TextView ftrname, mthrname, mocco, foccu, nob, nos, nobm, nosm, famstat, famtype, famincm;
+    TextView i_ftrname, i_mthrname, i_mocco, i_foccu, i_nob, i_nos, i_nobm, i_nosm, i_famstat, i_famtype, i_famincm;
     MatrimonySession matrimonySession;
     Toolbar toolbar;
 
@@ -31,7 +33,9 @@ public class FamilyDetailsActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_mat_family_details);
         matrimonySession=new MatrimonySession(getApplicationContext());
+
         init();
+        initIcon();
 
         toolbar=(Toolbar)findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
@@ -92,6 +96,36 @@ public class FamilyDetailsActivity extends AppCompatActivity {
         famincm = (TextView) findViewById(R.id.d_per_familyanulincome);
 
     }
+    public void initIcon() {
+        //d_person_famildtl_image=(ImageView)findViewById(R.id.d_person_edudetl_image);
+        Typeface icon = Typeface.createFromAsset(this.getAssets(), "fontawesome-webfont.ttf" );
+
+        i_ftrname = (TextView) findViewById(R.id.per_fatherfullfname);
+        i_mthrname = (TextView) findViewById(R.id.per_motherfullname);
+        i_mocco = (TextView) findViewById(R.id.per_mtheroccptn);
+        i_foccu = (TextView) findViewById(R.id.per_ftheroccptn);
+        i_nob = (TextView) findViewById(R.id.per_noofbros);
+        i_nos = (TextView) findViewById(R.id.per_noofsis);
+        i_nobm = (TextView) findViewById(R.id.per_noofbrosmaried);
+        i_nosm = (TextView) findViewById(R.id.per_noofsismaried);
+        i_famstat = (TextView) findViewById(R.id.per_familysatus);
+        i_famtype = (TextView) findViewById(R.id.per_familytype);
+        i_famincm = (TextView) findViewById(R.id.per_fmlyannulincome);
+
+        i_ftrname.setTypeface(icon);
+        i_mthrname.setTypeface(icon);
+        i_mocco.setTypeface(icon);
+        i_foccu.setTypeface(icon);
+        i_nob.setTypeface(icon);
+        i_nos.setTypeface(icon);
+        i_nobm.setTypeface(icon);
+        i_nosm.setTypeface(icon);
+        i_famstat.setTypeface(icon);
+        i_famtype.setTypeface(icon);
+        i_famincm.setTypeface(icon);
+
+    }
+
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {

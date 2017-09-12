@@ -31,7 +31,8 @@
         android:layout_height="wrap_content"
         android:id="@+id/npd"
         android:text="@string/Go_To_Form"
-        android:textColor="#ffffff"
+        android:textAllCaps="false"
+        android:textColor="@color/white"
         android:background="@color/buttons"
         android:layout_marginTop="@dimen/marginButton1"/>
     </LinearLayout>

@@ -12,12 +12,14 @@ import android.view.ViewGroup;
 import android.widget.Toast;
 
 import com.LeelaGroup.AgrawalFedration.Business_Medical_Session;
+import com.LeelaGroup.AgrawalFedration.MatrimonySession;
 import com.LeelaGroup.AgrawalFedration.Medical_Pojos.Medical;
 import com.LeelaGroup.AgrawalFedration.Medical_Session;
 import com.LeelaGroup.AgrawalFedration.Network.ApiClient;
 import com.LeelaGroup.AgrawalFedration.R;
 import com.LeelaGroup.AgrawalFedration.Service.Medical.MedicalServiceAPI;
 
+import java.util.HashMap;
 import java.util.List;
 
 import retrofit2.Call;
@@ -32,11 +34,17 @@ public class Medical_Fetch extends Fragment {
     List<Medical> list;
     MedicalAdapter adapter;
     View rootView;
+    String user_id;
+    Business_Medical_Session business_medical_session;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
+
+        business_medical_session=new Business_Medical_Session(getContext());
+        HashMap<String, String> user = business_medical_session.getUserDetails();
+        user_id = user.get(MatrimonySession.KEY_ID);
         // Initialize dataset, this data would usually come from a local content provider or
         // remote server.
         getImageData();
@@ -44,15 +52,18 @@ public class Medical_Fetch extends Fragment {
 
     private void getImageData() {
         MedicalServiceAPI service = ApiClient.getRetrofit().create(MedicalServiceAPI.class);
-        Call<List<Medical>> call = service.getImageMedical();
+        Call<List<Medical>> call = service.getImageMedical(user_id);
         call.enqueue(new Callback<List<Medical>>() {
 
             @Override
             public void onResponse(Call<List<Medical>> call, Response<List<Medical>> response) {
-                list = response.body();
-                adapter = new MedicalAdapter(list, getActivity());
-                recyclerView.setAdapter(adapter);
+                try {
+                    list = response.body();
+                    adapter = new MedicalAdapter(list, getActivity());
+                    recyclerView.setAdapter(adapter);
+                }catch (NullPointerException e){
 
+                }
             }
 
             @Override

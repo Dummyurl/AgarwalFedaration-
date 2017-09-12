@@ -16,12 +16,12 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="@dimen/layoutMargin"
             android:orientation="vertical">
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_margin="@dimen/layoutMargin"
                 android:orientation="vertical">
 
                 <!-- <TextView
@@ -44,12 +44,12 @@
                     android:layout_marginTop="@dimen/layoutMarginBottom"
                     android:text="@string/About_BEAT"
                     android:textAppearance="@style/TextAppearance.AppCompat.Title"
-                    android:textColor="#000000" />
+                    android:textColor="@color/black" />
 
                 <View
                     android:layout_width="150dp"
                     android:layout_height="2dp"
-                    android:background="#ff0000" />
+                    android:background="@color/colorPrimary" />
 
                 <TextView
                     android:id="@+id/About_CET"
@@ -59,7 +59,7 @@
                     android:layout_marginTop="@dimen/layoutMarginBottom"
                     android:text="@string/Availed"
                     android:textAppearance="@style/TextAppearance.AppCompat.Title"
-                    android:textColor="#000000"
+                    android:textColor="@color/black"
                     android:textSize="@dimen/text_size" />
 
                 <RadioGroup
@@ -96,7 +96,7 @@
                     android:layout_marginTop="@dimen/layoutMarginBottom"
                     android:text="@string/Form"
                     android:textAppearance="@style/TextAppearance.AppCompat.Title"
-                    android:textColor="#000000"
+                    android:textColor="@color/black"
                     android:textSize="@dimen/text_size" />
 
                 <LinearLayout
@@ -185,7 +185,7 @@
                     android:layout_marginTop="@dimen/layoutMarginBottom"
                     android:text="@string/Language_Medium_of_BEAT"
                     android:textAppearance="@style/TextAppearance.AppCompat.Title"
-                    android:textColor="#000000"
+                    android:textColor="@color/black"
                     android:textSize="@dimen/text_size" />
 
                 <RadioGroup
@@ -222,7 +222,7 @@
                     android:layout_marginTop="@dimen/layoutMarginBottom"
                     android:text="Examination_Center_of_BEAT"
                     android:textAppearance="@style/TextAppearance.AppCompat.Title"
-                    android:textColor="#000000"
+                    android:textColor="@color/black"
                     android:textSize="@dimen/text_size" />
 
                 <Spinner
@@ -241,7 +241,7 @@
                     android:layout_marginTop="@dimen/layoutMarginBottom"
                     android:text="@string/Schedule_of_BEAT"
                     android:textAppearance="@style/TextAppearance.AppCompat.Title"
-                    android:textColor="#000000"
+                    android:textColor="@color/black"
                     android:textSize="@dimen/text_size" />
 
                 <Spinner
@@ -264,7 +264,6 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
-                    android:layout_margin="@dimen/button_margin"
                     android:layout_weight="1"
                     android:gravity="center"
                     android:orientation="horizontal">
@@ -280,8 +279,8 @@
                         android:gravity="center"
                         android:layout_weight="1"
                         android:layout_margin="@dimen/marginButton1"
-    
-    
+
+
                         />-->
 
                     <Button
@@ -289,12 +288,13 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
-                        android:layout_margin="@dimen/marginButton1"
+                        android:layout_marginTop="@dimen/button_margin_top"
                         android:layout_weight="1"
-                        android:background="#ef5350"
+                        android:background="@color/colorPrimary"
                         android:gravity="center"
                         android:onClick="startNext"
-                        android:text="Next"
+                        android:text="@string/Next"
+                        android:textAllCaps="false"
                         android:textColor="#ffffff" />
                 </LinearLayout>
             </LinearLayout>

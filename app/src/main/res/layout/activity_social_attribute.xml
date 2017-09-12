@@ -37,24 +37,22 @@
                          android:textSize="20dp"
                          android:textStyle="bold" />
      -->
-                <LinearLayout
+                <RelativeLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_margin="@dimen/form_inner_layout_margin"
-                    android:orientation="horizontal"
-                    android:weightSum="1">
+                    android:layout_margin="@dimen/layout_margin"
+                  >
 
                     <TextView
                         android:id="@+id/per_maglik"
-                        android:layout_width="match_parent"
+                        android:layout_width="@dimen/cont_us_logo_width"
                         android:layout_height="wrap_content"
-                        android:layout_gravity="center"
-                        android:layout_margin="@dimen/layout_margin"
-                        android:layout_weight=".5"
-                        android:text="@string/IsManglik"
-                        android:textStyle="bold" />
+                        android:text="@string/manglik_icon"
+                        android:textColor="@color/colorPrimary"
+                        android:textSize="@dimen/form_tv_size"
+                         />
 
-                    <TextView
+                  <!--  <TextView
                         android:layout_width="@dimen/seperator_width"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
@@ -62,34 +60,32 @@
                         android:gravity="center"
                         android:text="@string/seprator"
                         android:textStyle="bold" />
-
+-->
                     <TextView
                         android:id="@+id/d_per_manglik"
+                        android:layout_toEndOf="@+id/per_maglik"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_gravity="center"
-                        android:layout_weight=".5"
-                        android:textStyle="bold" />
-                </LinearLayout>
+                       />
+                </RelativeLayout>
 
-                <include layout="@layout/item_divider" />
+                <include layout="@layout/item_divider1" />
 
-                <LinearLayout
+                <RelativeLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_margin="@dimen/form_inner_layout_margin"
-                    android:orientation="horizontal"
-                    android:weightSum="1">
+                    android:layout_margin="@dimen/layout_margin"
+                    >
 
                     <TextView
                         android:id="@+id/per_horoscope"
-                        android:layout_width="match_parent"
+                        android:layout_width="@dimen/cont_us_logo_width"
                         android:layout_height="wrap_content"
-                        android:layout_gravity="center"
-                        android:layout_margin="@dimen/layout_margin"
-                        android:layout_weight=".5"
-                        android:text="@string/Horoscope"
-                        android:textStyle="bold" />
+                        android:text="@string/horoscope_icon"
+                        android:textColor="@color/colorPrimary"
+                        android:textSize="@dimen/form_tv_size"
+                         />
+<!--
 
                     <TextView
                         android:layout_width="@dimen/seperator_width"
@@ -99,52 +95,49 @@
                         android:gravity="center"
                         android:text="@string/seprator"
                         android:textStyle="bold" />
+-->
 
                     <TextView
                         android:id="@+id/d_per_horoscope"
+                        android:layout_toEndOf="@+id/per_horoscope"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_gravity="center"
-                        android:layout_weight=".5"
-                        android:textStyle="bold" />
-                </LinearLayout>
+                         />
+                </RelativeLayout>
 
-                <include layout="@layout/item_divider" />
+                <include layout="@layout/item_divider1" />
 
-                <LinearLayout
+                <RelativeLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_margin="@dimen/form_inner_layout_margin"
-                    android:orientation="horizontal"
-                    android:weightSum="1">
+                    android:layout_margin="@dimen/layout_margin"
+                    >
 
                     <TextView
                         android:id="@+id/per_gothra"
-                        android:layout_width="match_parent"
+                        android:layout_width="@dimen/cont_us_logo_width"
                         android:layout_height="wrap_content"
-                        android:layout_gravity="center"
-                        android:layout_margin="@dimen/layout_margin"
-                        android:layout_weight=".5"
-                        android:text="@string/Gothra"
-                        android:textStyle="bold" />
+                        android:text="@string/gothra_icon"
+                        android:textColor="@color/colorPrimary"
+                        android:textSize="@dimen/form_tv_size"
+                         />
 
-                    <TextView
+                   <!-- <TextView
                         android:layout_width="@dimen/seperator_width"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
                         android:layout_margin="@dimen/layout_margin"
                         android:gravity="center"
                         android:text="@string/seprator"
-                        android:textStyle="bold" />
+                        android:textStyle="bold" />-->
 
                     <TextView
                         android:id="@+id/d_per_gothraself"
+                        android:layout_toEndOf="@+id/per_gothra"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_gravity="center"
-                        android:layout_weight=".5"
-                        android:textStyle="bold" />
-                </LinearLayout>
+                      />
+                </RelativeLayout>
                 <!-- <LinearLayout
                      android:layout_width="match_parent"
                      android:layout_height="wrap_content"

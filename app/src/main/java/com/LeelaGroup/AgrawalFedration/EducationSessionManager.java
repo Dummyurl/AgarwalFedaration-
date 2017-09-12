@@ -4,6 +4,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 
+import com.LeelaGroup.AgrawalFedration.business.Login_Business;
 import com.LeelaGroup.AgrawalFedration.education.Education;
 import com.LeelaGroup.AgrawalFedration.education.Profile;
 import com.LeelaGroup.AgrawalFedration.education.login_education;
@@ -131,6 +132,14 @@ public class EducationSessionManager {
         // Staring Login Activity
         _context.startActivity(i);
     }
+    public void logoutFromMain(){
+
+        // Clearing all user data from Shared Preferences
+        editor.clear();
+        editor.commit();
+
+    }
+
 
 
     // Check for login

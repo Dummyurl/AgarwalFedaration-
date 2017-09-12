@@ -1,16 +1,22 @@
 package com.LeelaGroup.AgrawalFedration.business;
 
+import android.Manifest;
+import android.annotation.TargetApi;
 import android.app.ProgressDialog;
 import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.database.Cursor;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.Drawable;
 import android.net.Uri;
+import android.os.Build;
 import android.os.Bundle;
+import android.provider.DocumentsContract;
 import android.provider.MediaStore;
 import android.support.design.widget.TextInputLayout;
+import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.text.Editable;
@@ -33,12 +39,16 @@ import com.LeelaGroup.AgrawalFedration.Business_Pojo.BusinessGetCategoryDataPOJO
 import com.LeelaGroup.AgrawalFedration.Business_Pojo.BusinessGetSet;
 import com.LeelaGroup.AgrawalFedration.Business_Pojo.C_S_C_Pojo;
 import com.LeelaGroup.AgrawalFedration.Business_Medical_Session;
+import com.LeelaGroup.AgrawalFedration.Compressor;
 import com.LeelaGroup.AgrawalFedration.Network.ApiClient;
 import com.LeelaGroup.AgrawalFedration.R;
 import com.LeelaGroup.AgrawalFedration.RoundedImageView;
 import com.LeelaGroup.AgrawalFedration.Service.Medical.Business_ServiceAPI;
+import com.bumptech.glide.Glide;
 
 import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.IOException;
 import java.util.HashMap;
 import java.util.List;
 
@@ -52,8 +62,10 @@ import retrofit2.Response;
 
 public class BusinessAddAdvertized extends AppCompatActivity implements View.OnClickListener {
 
+
+    public static final int MY_PERMISSIONS_REQUEST_READ_EXTERNAL_STORAGE = 23;
     public static int RESULT_LOAD_IMAGE_Logo = 1;
-    private static final int SELECTED_PICTURE = 1;
+    private static final int SELECTED_PICTURE = 2;
     String filePath;
 
 
@@ -142,7 +154,7 @@ public class BusinessAddAdvertized extends AppCompatActivity implements View.OnC
 
         iv_Logo = (CircleImageView) findViewById(R.id.iv_logo);
         ImageTitle = (TextView) findViewById(R.id.tv_imageTitle);
-        btnChooseImage = (CircleImageView) findViewById(R.id.bn_chooselogo);
+        // btnChooseImage = (CircleImageView) findViewById(R.id.bn_chooselogo);
 
         ck_tender = (CheckBox) findViewById(R.id.ck_tender);
         ck_manufacture = (CheckBox) findViewById(R.id.ck_manufacture);
@@ -220,13 +232,29 @@ public class BusinessAddAdvertized extends AppCompatActivity implements View.OnC
 
 
         bt_submit.setOnClickListener(this);
-        btnChooseImage.setOnClickListener(this);
+       /* btnChooseImage.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent();
+                // Show only images, no videos or anything else
+                intent.setType("image*//*");
+                intent.setAction(Intent.ACTION_GET_CONTENT);
+                // Always show the chooser (if there are multiple options available)
+                startActivityForResult(Intent.createChooser(intent, "Select Picture"), 2);
+            }
+        });*/
         iv_Logo.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i = new Intent(Intent.ACTION_PICK, android.provider.MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
+               /* Intent i = new Intent(Intent.ACTION_PICK, android.provider.MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
                 startActivityForResult(i, RESULT_LOAD_IMAGE_Logo);
-
+*/
+                Intent intent = new Intent();
+                // Show only images, no videos or anything else
+                intent.setType("image/*");
+                intent.setAction(Intent.ACTION_GET_CONTENT);
+                // Always show the chooser (if there are multiple options available)
+                startActivityForResult(Intent.createChooser(intent, "Select Picture"), 2);
             }
         });
 
@@ -239,30 +267,36 @@ public class BusinessAddAdvertized extends AppCompatActivity implements View.OnC
         call.enqueue(new Callback<List<C_S_C_Pojo>>() {
             @Override
             public void onResponse(Call<List<C_S_C_Pojo>> call, Response<List<C_S_C_Pojo>> response) {
+
                 countrydata = response.body();
-                nameListcountry = new String[countrydata.size()];
-                for (int i = 0; i < countrydata.size(); i++) {
-                    nameListcountry[i] = countrydata.get(i).getCname();
+                try {
+                    if (countrydata != null) {
+                        nameListcountry = new String[countrydata.size()];
+                        for (int i = 0; i < countrydata.size(); i++) {
+                            nameListcountry[i] = countrydata.get(i).getCname();
 
+                        }
+
+                        dataAdaptercountry = new ArrayAdapter<String>(BusinessAddAdvertized.this, android.R.layout.simple_list_item_1, nameListcountry);
+                        dataAdaptercountry.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+                        sp_country.setAdapter(dataAdaptercountry);
+                        sp_country.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+                            @Override
+                            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                                Country1 = sp_country.getSelectedItem().toString();
+                                getState();
+                            }
+
+                            @Override
+                            public void onNothingSelected(AdapterView<?> parent) {
+
+                            }
+                        });
+
+                    }
+                } catch (Exception e) {
+                    e.printStackTrace();
                 }
-
-                dataAdaptercountry = new ArrayAdapter<String>(BusinessAddAdvertized.this, android.R.layout.simple_list_item_1, nameListcountry);
-                dataAdaptercountry.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-                sp_country.setAdapter(dataAdaptercountry);
-                sp_country.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
-                    @Override
-                    public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                        Country1 = sp_country.getSelectedItem().toString();
-                        getState();
-                    }
-
-                    @Override
-                    public void onNothingSelected(AdapterView<?> parent) {
-
-                    }
-                });
-
-
             }
 
             @Override
@@ -281,28 +315,33 @@ public class BusinessAddAdvertized extends AppCompatActivity implements View.OnC
             @Override
             public void onResponse(Call<List<C_S_C_Pojo>> call, Response<List<C_S_C_Pojo>> response) {
                 s_countrydata = response.body();
-                s_nameListcountry = new String[s_countrydata.size()];
-                for (int i = 0; i < s_countrydata.size(); i++) {
-                    s_nameListcountry[i] = s_countrydata.get(i).getCname();
+                try {
+                    if (s_countrydata != null) {
+                        s_nameListcountry = new String[s_countrydata.size()];
+                        for (int i = 0; i < s_countrydata.size(); i++) {
+                            s_nameListcountry[i] = s_countrydata.get(i).getCname();
 
+                        }
+
+                        s_dataAdaptercountry = new ArrayAdapter<String>(BusinessAddAdvertized.this, android.R.layout.simple_list_item_1, s_nameListcountry);
+                        s_dataAdaptercountry.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+                        sp_country2.setAdapter(s_dataAdaptercountry);
+                        sp_country2.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+                            @Override
+                            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                                Country2 = sp_country2.getSelectedItem().toString();
+                                s_getState();
+                            }
+
+                            @Override
+                            public void onNothingSelected(AdapterView<?> parent) {
+
+                            }
+                        });
+                    }
+                } catch (Exception e) {
+                    e.printStackTrace();
                 }
-
-                s_dataAdaptercountry = new ArrayAdapter<String>(BusinessAddAdvertized.this, android.R.layout.simple_list_item_1, s_nameListcountry);
-                s_dataAdaptercountry.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-                sp_country2.setAdapter(s_dataAdaptercountry);
-                sp_country2.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
-                    @Override
-                    public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                        Country2 = sp_country2.getSelectedItem().toString();
-                        s_getState();
-                    }
-
-                    @Override
-                    public void onNothingSelected(AdapterView<?> parent) {
-
-                    }
-                });
-
 
             }
 
@@ -323,30 +362,34 @@ public class BusinessAddAdvertized extends AppCompatActivity implements View.OnC
             @Override
             public void onResponse(Call<List<C_S_C_Pojo>> call, Response<List<C_S_C_Pojo>> response) {
                 statedata = response.body();
+                try {
+                    if (statedata != null) {
+                        nameListstate = new String[statedata.size()];
 
-                nameListstate = new String[statedata.size()];
+                        for (int i = 0; i < statedata.size(); i++) {
+                            nameListstate[i] = statedata.get(i).getSname();
 
-                for (int i = 0; i < statedata.size(); i++) {
-                    nameListstate[i] = statedata.get(i).getSname();
+                        }
+                        dataAdapterstate = new ArrayAdapter<String>(BusinessAddAdvertized.this, android.R.layout.simple_list_item_1, nameListstate);
+                        dataAdapterstate.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+                        sp_state.setAdapter(dataAdapterstate);
+                        sp_state.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+                            @Override
+                            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                                State1 = sp_state.getSelectedItem().toString();
+                                getCity();
+                            }
 
+                            @Override
+                            public void onNothingSelected(AdapterView<?> parent) {
+
+                            }
+                        });
+                        //  sp_state2.setAdapter(dataAdapterstate);
+                    }
+                } catch (Exception e) {
+                    e.printStackTrace();
                 }
-                dataAdapterstate = new ArrayAdapter<String>(BusinessAddAdvertized.this, android.R.layout.simple_list_item_1, nameListstate);
-                dataAdapterstate.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-                sp_state.setAdapter(dataAdapterstate);
-                sp_state.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
-                    @Override
-                    public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                        State1 = sp_state.getSelectedItem().toString();
-                        getCity();
-                    }
-
-                    @Override
-                    public void onNothingSelected(AdapterView<?> parent) {
-
-                    }
-                });
-                //  sp_state2.setAdapter(dataAdapterstate);
-
             }
 
             @Override
@@ -363,28 +406,33 @@ public class BusinessAddAdvertized extends AppCompatActivity implements View.OnC
             @Override
             public void onResponse(Call<List<C_S_C_Pojo>> call, Response<List<C_S_C_Pojo>> response) {
                 s_statedata = response.body();
+                try {
+                    if (s_statedata != null) {
+                        s_nameListstate = new String[s_statedata.size()];
 
-                s_nameListstate = new String[s_statedata.size()];
+                        for (int i = 0; i < s_statedata.size(); i++) {
+                            s_nameListstate[i] = s_statedata.get(i).getSname();
 
-                for (int i = 0; i < s_statedata.size(); i++) {
-                    s_nameListstate[i] = s_statedata.get(i).getSname();
+                        }
+                        s_dataAdapterstate = new ArrayAdapter<String>(BusinessAddAdvertized.this, android.R.layout.simple_list_item_1, s_nameListstate);
+                        s_dataAdapterstate.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+                        sp_state2.setAdapter(s_dataAdapterstate);
+                        sp_state2.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+                            @Override
+                            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                                State2 = sp_state2.getSelectedItem().toString();
+                                s_getcity();
+                            }
 
+                            @Override
+                            public void onNothingSelected(AdapterView<?> parent) {
+
+                            }
+                        });
+                    }
+                } catch (Exception e) {
+                    e.printStackTrace();
                 }
-                dataAdapterstate = new ArrayAdapter<String>(BusinessAddAdvertized.this, android.R.layout.simple_list_item_1, s_nameListstate);
-                dataAdapterstate.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-                sp_state2.setAdapter(dataAdapterstate);
-                sp_state2.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
-                    @Override
-                    public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                        State2 = sp_state2.getSelectedItem().toString();
-                        s_getcity();
-                    }
-
-                    @Override
-                    public void onNothingSelected(AdapterView<?> parent) {
-
-                    }
-                });
             }
 
             @Override
@@ -403,15 +451,23 @@ public class BusinessAddAdvertized extends AppCompatActivity implements View.OnC
         call.enqueue(new Callback<List<C_S_C_Pojo>>() {
             @Override
             public void onResponse(Call<List<C_S_C_Pojo>> call, Response<List<C_S_C_Pojo>> response) {
-                citydata = response.body();
-                nameListcity = new String[citydata.size()];
 
-                for (int i = 0; i < citydata.size(); i++) {
-                    nameListcity[i] = citydata.get(i).getCity_name();
+                citydata = response.body();
+
+                try {
+                    if (citydata != null) {
+                        nameListcity = new String[citydata.size()];
+
+                        for (int i = 0; i < citydata.size(); i++) {
+                            nameListcity[i] = citydata.get(i).getCity_name();
+                        }
+                        dataAdaptercity = new ArrayAdapter<String>(BusinessAddAdvertized.this, android.R.layout.simple_list_item_1, nameListcity);
+                        dataAdaptercity.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+                        sp_city.setAdapter(dataAdaptercity);
+                    }
+                } catch (Exception e) {
+                    e.printStackTrace();
                 }
-                dataAdaptercity = new ArrayAdapter<String>(BusinessAddAdvertized.this, android.R.layout.simple_list_item_1, nameListcity);
-                dataAdapterstate.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-                sp_city.setAdapter(dataAdaptercity);
             }
 
             @Override
@@ -428,16 +484,21 @@ public class BusinessAddAdvertized extends AppCompatActivity implements View.OnC
             @Override
             public void onResponse(Call<List<C_S_C_Pojo>> call, Response<List<C_S_C_Pojo>> response) {
                 s_citydata = response.body();
-                s_nameListcity = new String[s_citydata.size()];
+                try {
+                    if (s_citydata != null) {
+                        s_nameListcity = new String[s_citydata.size()];
 
-                for (int i = 0; i < s_citydata.size(); i++) {
-                    s_nameListcity[i] = s_citydata.get(i).getCity_name();
+                        for (int i = 0; i < s_citydata.size(); i++) {
+                            s_nameListcity[i] = s_citydata.get(i).getCity_name();
+                        }
+                        s_dataAdaptercity = new ArrayAdapter<String>(BusinessAddAdvertized.this, android.R.layout.simple_list_item_1, s_nameListcity);
+                        s_dataAdaptercity.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+                        sp_city2.setAdapter(dataAdaptercity);
+                        City2 = sp_city2.getSelectedItem().toString();
+                    }
+                } catch (Exception e) {
+                    e.printStackTrace();
                 }
-                s_dataAdaptercity = new ArrayAdapter<String>(BusinessAddAdvertized.this, android.R.layout.simple_list_item_1, s_nameListcity);
-                s_dataAdaptercity.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-                sp_city2.setAdapter(dataAdaptercity);
-                // City2 = sp_city2.getSelectedItem().toString();
-
             }
 
             @Override
@@ -453,19 +514,25 @@ public class BusinessAddAdvertized extends AppCompatActivity implements View.OnC
         call.enqueue(new Callback<List<BusinessGetCategoryDataPOJO>>() {
             @Override
             public void onResponse(Call<List<BusinessGetCategoryDataPOJO>> call, Response<List<BusinessGetCategoryDataPOJO>> response) {
+
                 List<BusinessGetCategoryDataPOJO> pojo = response.body();
-                String[] categoryList = new String[pojo.size()];
+                try {
+                    if (pojo != null) {
+                        String[] categoryList = new String[pojo.size()];
 
-                for (int i = 0; i < pojo.size(); i++) {
-                    categoryList[i] = pojo.get(i).getCatName(); //create array of name
+                        for (int i = 0; i < pojo.size(); i++) {
+                            categoryList[i] = pojo.get(i).getCatName(); //create array of name
+                        }
+
+                        ArrayAdapter<String> dataAdapter = new ArrayAdapter<String>(BusinessAddAdvertized.this, android.R.layout.simple_spinner_dropdown_item, categoryList);
+                        //drop down layout style - list view with radio button
+                        dataAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+                        //attaching data adapter to spinner
+                        sp_category.setAdapter(dataAdapter);
+                    }
+                } catch (Exception e) {
+                    e.printStackTrace();
                 }
-
-                ArrayAdapter<String> dataAdapter = new ArrayAdapter<String>(BusinessAddAdvertized.this, android.R.layout.simple_spinner_dropdown_item, categoryList);
-                //drop down layout style - list view with radio button
-                dataAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-                //attaching data adapter to spinner
-                sp_category.setAdapter(dataAdapter);
-
             }
 
             @Override
@@ -556,7 +623,7 @@ public class BusinessAddAdvertized extends AppCompatActivity implements View.OnC
                 break;
             case R.id.bn_chooselogo:
 
-                Intent i = new Intent(Intent.ACTION_PICK, android.provider.MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
+                Intent i = new Intent(Intent.ACTION_PICK, MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
                 startActivityForResult(i, RESULT_LOAD_IMAGE_Logo);
                 break;
         }
@@ -564,7 +631,7 @@ public class BusinessAddAdvertized extends AppCompatActivity implements View.OnC
     }
 
 
-    @Override
+   /* @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
         switch (requestCode) {
@@ -574,6 +641,7 @@ public class BusinessAddAdvertized extends AppCompatActivity implements View.OnC
                     if (data != null) {
                         Uri uri = data.getData();
                         String[] projection = {MediaStore.Images.Media.DATA};
+
 
 
                         Cursor cursor = getContentResolver().query(uri, projection, null, null, null);
@@ -597,7 +665,7 @@ public class BusinessAddAdvertized extends AppCompatActivity implements View.OnC
         }
 
     }
-
+*/
 
     private void addAddvertised() {
 
@@ -635,7 +703,13 @@ public class BusinessAddAdvertized extends AppCompatActivity implements View.OnC
         Working_days = sp_working_days.getSelectedItem().toString();
         Hours_of_Operation = sp_hour_operation.getSelectedItem().toString();
 
-        file = new File(filePath);
+        File aFile=new File(filePath);
+        try {
+            file = new Compressor(this).compressToFile(aFile);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
         RequestBody requestBody = RequestBody.create(MediaType.parse("*/*"), file);
         MultipartBody.Part fileToUpload = MultipartBody.Part.createFormData("file", file.getName(), requestBody);
 
@@ -680,12 +754,14 @@ public class BusinessAddAdvertized extends AppCompatActivity implements View.OnC
             @Override
             public void onResponse(Call<BusinessGetSet> call, Response<BusinessGetSet> response) {
                 hidepDialog();
-                BusinessGetSet businessGetSet = response.body();
-                Toast.makeText(BusinessAddAdvertized.this, businessGetSet.getMessage(), Toast.LENGTH_SHORT).show();
-                Intent intent =new Intent(BusinessAddAdvertized.this,BusinessActivity.class);
-                intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-                startActivity(intent);
 
+                BusinessGetSet businessGetSet = response.body();
+                if (businessGetSet != null) {
+                    Toast.makeText(BusinessAddAdvertized.this, businessGetSet.getMessage(), Toast.LENGTH_SHORT).show();
+                    Intent intent = new Intent(BusinessAddAdvertized.this, BusinessActivity.class);
+                    intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                    startActivity(intent);
+                }
             }
 
             @Override
@@ -917,5 +993,75 @@ public class BusinessAddAdvertized extends AppCompatActivity implements View.OnC
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    @TargetApi(Build.VERSION_CODES.M)
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+
+        if (requestCode == 2 && resultCode == RESULT_OK && null != data) {
+
+            super.onActivityResult(requestCode, resultCode, data);
+
+            Uri uri = data.getData();
+            String[] filePathColumn = {MediaStore.Images.Media.DATA};
+
+            Cursor cursor;
+            if (Build.VERSION.SDK_INT > 19) {
+                if (ContextCompat.checkSelfPermission(this, Manifest.permission.READ_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED) {
+                    requestPermissions(new String[]{Manifest.permission.READ_EXTERNAL_STORAGE}, MY_PERMISSIONS_REQUEST_READ_EXTERNAL_STORAGE);
+
+                }
+                // Will return "image:x*"
+                String wholeID = DocumentsContract.getDocumentId(uri);
+                // Split at colon, use second item in the array
+                String id = wholeID.split(":")[1];
+                // where id is equal to
+                String sel = MediaStore.Images.Media._ID + "=?";
+
+                cursor = getContentResolver().query(MediaStore.Images.Media.EXTERNAL_CONTENT_URI,
+                        filePathColumn, sel, new String[]{id}, null);
+            } else {
+                cursor = getContentResolver().query(uri, filePathColumn, null, null, null);
+            }
+            filePath = null;
+            try {
+                int column_index = cursor.getColumnIndex(MediaStore.Images.Media.DATA);
+                cursor.moveToFirst();
+                filePath = cursor.getString(column_index);
+                cursor.close();
+
+                //Bitmap bitmap = MediaStore.Images.Media.getBitmap(getContentResolver(), uri);
+                //iv_Logo.setImageBitmap(bitmap);
+                Glide.with(this).load(uri).into(iv_Logo);
+                isImageAdded = true;
+                // btnChooseImage.setVisibility(View.GONE);
+
+
+            } catch (NullPointerException e) {
+
+            }/* catch (FileNotFoundException e) {
+                e.printStackTrace();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }*/
+
+        }
+    }
+
+
+    @Override
+    public void onRequestPermissionsResult(int requestCode, String[] permissions, int[] grantResults) {
+        switch (requestCode) {
+            case MY_PERMISSIONS_REQUEST_READ_EXTERNAL_STORAGE: {
+                // If request is cancelled, the result arrays are empty.
+                if (grantResults.length > 0
+                        && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+
+                } else {
+
+                }
+                return;
+            }
+        }
     }
 }

@@ -27,417 +27,262 @@
                 android:layout_height="wrap_content"
                 android:orientation="vertical">
 
-                <LinearLayout
+                <RelativeLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_margin="@dimen/layoutMarginBottom"
-                    android:orientation="horizontal"
-                    android:weightSum="1">
+                    android:layout_margin="@dimen/layoutMargin">
 
                     <TextView
                         android:id="@+id/fname"
-                        android:layout_width="match_parent"
+                        android:layout_width="@dimen/radio_button_height"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
-                        android:layout_weight=".5"
-                        android:text="@string/First_Name"
-                        android:textStyle="bold" />
+                        android:text="@string/person_ic"
+                        android:textSize="@dimen/text_size"
+                        android:textColor="@color/colorPrimary" />
 
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center"
-                        android:text=":"
-                        android:textStyle="bold" />
 
                     <TextView
                         android:id="@+id/d_fname"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_gravity="center"
-                        android:layout_marginLeft="@dimen/layoutMarginBottom"
-                        android:layout_weight=".5"
-                        android:textStyle="bold" />
-                </LinearLayout>
+                        android:layout_toEndOf="@+id/fname"
 
-                <include layout="@layout/item_devider1" />
+                        />
+                </RelativeLayout>
 
-                <LinearLayout
+                <include layout="@layout/item_divider" />
+
+                <RelativeLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_margin="@dimen/layoutMarginBottom"
-                    android:orientation="horizontal"
-                    android:weightSum="1">
+                    android:layout_margin="@dimen/layoutMargin">
 
                     <TextView
                         android:id="@+id/per_lname"
-                        android:layout_width="match_parent"
+                        android:layout_width="@dimen/radio_button_height"
                         android:layout_height="wrap_content"
-                        android:layout_gravity="center"
-                        android:layout_weight=".5"
-                        android:text="@string/Last_Name"
-                        android:textStyle="bold" />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center"
-                        android:text=":"
-                        android:textStyle="bold"
-
-
-                        />
+                        android:text="@string/person_ic"
+                        android:textSize="@dimen/text_size"
+                        android:textColor="@color/colorPrimary" />
 
                     <TextView
                         android:id="@+id/d_per_lname"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_gravity="center"
-                        android:layout_marginLeft="@dimen/layoutMarginBottom"
-                        android:layout_weight=".5"
-                        android:textStyle="bold" />
-                </LinearLayout>
+                        android:layout_toEndOf="@+id/per_lname"
 
-                <include layout="@layout/item_devider1" />
+                        />
+                </RelativeLayout>
 
-                <LinearLayout
+                <include layout="@layout/item_divider" />
+
+                <RelativeLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_margin="@dimen/layoutMarginBottom"
-                    android:orientation="horizontal"
-                    android:weightSum="1">
+                    android:layout_margin="@dimen/layoutMargin">
 
                     <TextView
                         android:id="@+id/per_dob"
-                        android:layout_width="match_parent"
+                        android:layout_width="@dimen/radio_button_height"
                         android:layout_height="wrap_content"
-                        android:layout_gravity="center"
-                        android:layout_weight=".5"
-                        android:text="@string/DOB"
-                        android:textStyle="bold" />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center"
-                        android:text=":"
-                        android:textStyle="bold"
-
-                        />
+                        android:text="@string/dob_ic"
+                        android:textSize="@dimen/text_size"
+                        android:textColor="@color/colorPrimary" />
 
                     <TextView
                         android:id="@+id/d_per_dob"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_gravity="center"
-                        android:layout_marginLeft="@dimen/layoutMarginBottom"
-                        android:layout_weight=".5"
-                        android:textStyle="bold" />
-                </LinearLayout>
+                        android:layout_toEndOf="@+id/per_dob" />
+                </RelativeLayout>
 
-                <include layout="@layout/item_devider1" />
+                <include layout="@layout/item_divider" />
 
-                <LinearLayout
+                <RelativeLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_margin="@dimen/layoutMarginBottom"
-                    android:orientation="horizontal"
-                    android:weightSum="1">
+                    android:layout_margin="@dimen/layoutMargin">
 
                     <TextView
                         android:id="@+id/per_fathername"
-                        android:layout_width="match_parent"
+                        android:layout_width="@dimen/radio_button_height"
                         android:layout_height="wrap_content"
-                        android:layout_gravity="center"
-                        android:layout_weight=".5"
-                        android:text="@string/Father_Name"
-                        android:textStyle="bold" />
+                        android:text="@string/person_ic"
+                        android:textSize="@dimen/text_size"
+                        android:textColor="@color/colorPrimary" />
 
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center"
-                        android:text=":"
-                        android:textStyle="bold"
-
-                        />
 
                     <TextView
                         android:id="@+id/d_per_fathername"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_gravity="center"
-                        android:layout_marginLeft="@dimen/layoutMarginBottom"
-                        android:layout_weight=".5"
-                        android:textStyle="bold" />
-                </LinearLayout>
+                        android:layout_toEndOf="@+id/per_fathername" />
+                </RelativeLayout>
 
-                <include layout="@layout/item_devider1" />
+                <include layout="@layout/item_divider" />
 
-                <LinearLayout
+                <RelativeLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_margin="@dimen/layoutMarginBottom"
-                    android:orientation="horizontal"
-                    android:weightSum="1">
+                    android:layout_margin="@dimen/layoutMargin">
 
                     <TextView
                         android:id="@+id/per_Mothername"
-                        android:layout_width="match_parent"
+                        android:layout_width="@dimen/radio_button_height"
                         android:layout_height="wrap_content"
-                        android:layout_gravity="center"
-                        android:layout_weight=".5"
-                        android:text="@string/Mother_Name"
-                        android:textStyle="bold" />
+                        android:text="@string/person_ic"
+                        android:textSize="@dimen/text_size"
+                        android:textColor="@color/colorPrimary" />
 
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center"
-                        android:text=":"
-                        android:textStyle="bold"
-
-                        />
 
                     <TextView
                         android:id="@+id/d_per_Mothername"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_gravity="center"
-                        android:layout_marginLeft="@dimen/layoutMarginBottom"
-                        android:layout_weight=".5"
-                        android:textStyle="bold" />
-                </LinearLayout>
+                        android:layout_toEndOf="@+id/per_Mothername" />
+                </RelativeLayout>
 
-                <include layout="@layout/item_devider1" />
+                <include layout="@layout/item_divider" />
 
-                <LinearLayout
+                <RelativeLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_margin="@dimen/layoutMarginBottom"
-                    android:orientation="horizontal"
-                    android:weightSum="1">
+                    android:layout_margin="@dimen/layoutMargin">
 
                     <TextView
                         android:id="@+id/per_gender"
-                        android:layout_width="match_parent"
+                        android:layout_width="@dimen/radio_button_height"
                         android:layout_height="wrap_content"
-                        android:layout_gravity="center"
-                        android:layout_weight=".5"
-                        android:text="@string/Gender"
-                        android:textStyle="bold" />
+                        android:text="@string/gender_ic"
+                        android:textSize="@dimen/text_size"
+                        android:textColor="@color/colorPrimary" />
 
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center"
-                        android:text=":"
-                        android:textStyle="bold"
-
-                        />
 
                     <TextView
                         android:id="@+id/d_per_gender"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_gravity="center"
-                        android:layout_marginLeft="@dimen/layoutMarginBottom"
-                        android:layout_weight=".5"
-                        android:textStyle="bold" />
-                </LinearLayout>
+                        android:layout_toEndOf="@+id/per_gender" />
+                </RelativeLayout>
 
-                <include layout="@layout/item_devider1" />
+                <include layout="@layout/item_divider" />
 
-                <LinearLayout
+                <RelativeLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_margin="@dimen/layoutMarginBottom"
-                    android:orientation="horizontal"
-                    android:weightSum="1">
+                    android:layout_margin="@dimen/layoutMargin">
 
                     <TextView
                         android:id="@+id/country1"
-                        android:layout_width="match_parent"
+                        android:layout_width="@dimen/radio_button_height"
                         android:layout_height="wrap_content"
-                        android:layout_gravity="center"
-                        android:layout_weight=".5"
-                        android:text="@string/Country"
-                        android:textStyle="bold" />
+                        android:text="@string/country_ic"
+                        android:textSize="@dimen/text_size"
+                        android:textColor="@color/colorPrimary" />
 
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center"
-                        android:text=":"
-                        android:textStyle="bold"
-
-                        />
 
                     <TextView
                         android:id="@+id/per_country1"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_gravity="center"
-                        android:layout_marginLeft="@dimen/layoutMarginBottom"
-                        android:layout_weight=".5"
-                        android:textStyle="bold" />
-                </LinearLayout>
+                        android:layout_toEndOf="@+id/country1" />
+                </RelativeLayout>
 
-                <include layout="@layout/item_devider1" />
+                <include layout="@layout/item_divider" />
 
-                <LinearLayout
+                <RelativeLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_margin="@dimen/layoutMarginBottom"
-                    android:orientation="horizontal"
-                    android:weightSum="1">
+                    android:layout_margin="@dimen/layoutMargin">
 
                     <TextView
                         android:id="@+id/state1"
-                        android:layout_width="match_parent"
+                        android:layout_width="@dimen/radio_button_height"
                         android:layout_height="wrap_content"
-                        android:layout_gravity="center"
-                        android:layout_weight=".5"
-                        android:text="@string/State"
-                        android:textStyle="bold" />
+                        android:text="@string/state_ic"
+                        android:textSize="@dimen/text_size"
+                        android:textColor="@color/colorPrimary" />
 
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center"
-                        android:text=":"
-                        android:textStyle="bold"
-
-                        />
 
                     <TextView
                         android:id="@+id/d_per_state1"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_gravity="center"
-                        android:layout_marginLeft="@dimen/layoutMarginBottom"
-                        android:layout_weight=".5"
-                        android:textStyle="bold" />
-                </LinearLayout>
+                        android:layout_toEndOf="@id/state1" />
+                </RelativeLayout>
 
-                <include layout="@layout/item_devider1" />
+                <include layout="@layout/item_divider" />
 
-                <LinearLayout
+                <RelativeLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_margin="@dimen/layoutMarginBottom"
-                    android:orientation="horizontal"
-                    android:weightSum="1">
+                    android:layout_margin="@dimen/layoutMargin">
 
                     <TextView
                         android:id="@+id/city1"
-                        android:layout_width="match_parent"
+                        android:layout_width="@dimen/radio_button_height"
                         android:layout_height="wrap_content"
-                        android:layout_gravity="center"
-                        android:layout_weight=".5"
-                        android:text="@string/City"
-                        android:textStyle="bold" />
+                        android:text="@string/city_ic"
+                        android:textSize="@dimen/text_size"
+                        android:textColor="@color/colorPrimary" />
 
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center"
-                        android:text=":"
-                        android:textStyle="bold"
-
-                        />
 
                     <TextView
                         android:id="@+id/d_per_city1"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_gravity="center"
-                        android:layout_marginLeft="@dimen/layoutMarginBottom"
-                        android:layout_weight=".5"
-                        android:textStyle="bold" />
-                </LinearLayout>
+                        android:layout_toEndOf="@+id/city1" />
+                </RelativeLayout>
 
-                <include layout="@layout/item_devider1" />
+                <include layout="@layout/item_divider" />
 
-                <LinearLayout
+                <RelativeLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_margin="@dimen/layoutMarginBottom"
-                    android:orientation="horizontal"
-                    android:weightSum="1">
+                    android:layout_margin="@dimen/layoutMargin">
 
                     <TextView
                         android:id="@+id/address1"
-                        android:layout_width="match_parent"
+                        android:layout_width="@dimen/radio_button_height"
                         android:layout_height="wrap_content"
-                        android:layout_gravity="center"
-                        android:layout_weight=".5"
-                        android:text="@string/Address"
-                        android:textStyle="bold" />
+                        android:text="@string/add_ic"
+                        android:textSize="@dimen/text_size"
+                        android:textColor="@color/colorPrimary" />
 
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center"
-                        android:text=":"
-                        android:textStyle="bold"
-
-                        />
 
                     <TextView
                         android:id="@+id/d_per_address1"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_gravity="center"
-                        android:layout_marginLeft="@dimen/layoutMarginBottom"
-                        android:layout_weight=".5"
-                        android:textStyle="bold" />
-                </LinearLayout>
+                        android:layout_toEndOf="@+id/address1" />
+                </RelativeLayout>
 
-                <include layout="@layout/item_devider1" />
+                <include layout="@layout/item_divider" />
 
-                <LinearLayout
+                <RelativeLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_margin="@dimen/layoutMarginBottom"
-                    android:orientation="horizontal"
-                    android:weightSum="1">
+                    android:layout_margin="@dimen/layoutMargin">
 
                     <TextView
                         android:id="@+id/pincode1"
-                        android:layout_width="match_parent"
+                        android:layout_width="@dimen/radio_button_height"
                         android:layout_height="wrap_content"
-                        android:layout_gravity="center"
-                        android:layout_weight=".5"
-                        android:text="@string/Pincode"
-                        android:textStyle="bold" />
+                        android:text="@string/pincode_ic"
+                        android:textSize="@dimen/text_size"
+                        android:textColor="@color/colorPrimary"/>
 
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center"
-                        android:text=":"
-                        android:textStyle="bold"
-
-                        />
 
                     <TextView
                         android:id="@+id/d_per_pincode1"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_gravity="center"
-                        android:layout_marginLeft="@dimen/layoutMarginBottom"
-                        android:layout_weight=".5"
-                        android:textStyle="bold" />
-                </LinearLayout>
+                        android:layout_toEndOf="@+id/pincode1" />
+                </RelativeLayout>
 
 
             </LinearLayout>
         </LinearLayout>
-
     </ScrollView>
-
-
-
-
 </LinearLayout>

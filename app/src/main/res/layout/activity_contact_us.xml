@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -29,7 +30,7 @@
                     android:textAlignment="center"
                     android:textColor="@color/colorPrimary"
                     android:textSize="20dp"
-                    android:textStyle="bold" />-->
+                     />-->
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -44,32 +45,34 @@
                         android:layout_marginLeft="@dimen/cont_us_mar_left"
                         android:textColor="@color/colorPrimary"
                         android:textSize="@dimen/cont_us_heading_dimen"
-                        android:textStyle="bold" />
+                         />
 
 
 
-                    <LinearLayout
+                    <RelativeLayout
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:layout_marginTop="@dimen/cont_us_mar_top"
-                        android:orientation="horizontal">
-
-                        <ImageView
-                            android:layout_width="@dimen/cont_us_logo_hight"
-                            android:layout_height="@dimen/cont_us_logo_width"
-                            android:layout_margin="@dimen/layout_margin"
-                            android:src="@drawable/ic_location_on" />
+                        android:layout_margin="@dimen/layout_margin"
+                        >
 
                         <TextView
+                            android:id="@+id/con_addr_icon"
+                            android:layout_width="@dimen/cont_us_logo_hight"
+                            android:layout_height="wrap_content"
+                            android:textSize="@dimen/form_tv_size"
+                            android:text="@string/home_icon"
+                            android:textColor="@color/colorPrimary" />
+
+                        <TextView
+                            android:layout_toEndOf="@+id/con_addr_icon"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:layout_margin="@dimen/layout_margin"
                             android:text="@string/contact_us_address"
                             android:textColor="@color/cardview_dark_background"
                             android:textSize="@dimen/cont_us_textsize" />
 
-                    </LinearLayout>
-                    <include layout="@layout/item_divider"/>
+                    </RelativeLayout>
+                    <include layout="@layout/item_divider1"/>
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
@@ -78,30 +81,30 @@
                         android:text="@string/contact_us_cont_number_head"
                         android:textColor="@color/colorPrimary"
                         android:textSize="@dimen/cont_us_heading_dimen"
-                        android:textStyle="bold" />
+                         />
 
-                    <LinearLayout
+                    <RelativeLayout
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:layout_marginTop="@dimen/cont_us_mar_top"
-                        android:orientation="horizontal">
-
-                        <ImageView
-                            android:layout_width="@dimen/cont_us_logo_width"
-                            android:layout_height="@dimen/cont_us_logo_hight"
-                            android:layout_margin="@dimen/layout_margin"
-                            android:src="@drawable/ic_phone_in_talk_black_24dp" />
+                        android:layout_margin="@dimen/layout_margin"
+                        >
 
                         <TextView
+                            android:id="@+id/con_contact_icon"
+                            android:layout_width="@dimen/cont_us_logo_hight"
+                            android:layout_height="wrap_content"
+                            android:textSize="@dimen/form_tv_size"
+                            android:text="@string/landlin_icon"
+                            android:textColor="@color/colorPrimary" />
+                        <TextView
+                            android:layout_toEndOf="@+id/con_contact_icon"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:layout_gravity="center"
-                            android:layout_margin="@dimen/layout_margin"
                             android:text="@string/contact_us_cont_number"
                             android:textColor="@color/cardview_dark_background"
                             android:textSize="@dimen/cont_us_textsize" />
-                    </LinearLayout>
-                    <include layout="@layout/item_divider"/>
+                    </RelativeLayout>
+                    <include layout="@layout/item_divider1"/>
 
                     <TextView
                         android:layout_width="match_parent"
@@ -111,29 +114,29 @@
                         android:text="@string/contact_us_email_head"
                         android:textColor="@color/colorPrimary"
                         android:textSize="@dimen/about_us_heading_dimen"
-                        android:textStyle="bold" />
+                         />
 
-                    <LinearLayout
+                    <RelativeLayout
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:layout_marginTop="@dimen/cont_us_mar_top"
-                        android:orientation="horizontal">
+                        android:layout_margin="@dimen/layout_margin"
 
-                        <ImageView
-                            android:layout_width="@dimen/cont_us_logo_width"
-                            android:layout_height="@dimen/cont_us_logo_hight"
-                            android:layout_margin="@dimen/layout_margin"
-                            android:src="@drawable/ic_email_black_24dp" />
-
+                        >
                         <TextView
+                            android:id="@+id/con_email_icon"
+                            android:layout_width="@dimen/cont_us_logo_hight"
+                            android:layout_height="wrap_content"
+                            android:textSize="@dimen/form_tv_size"
+                            android:text="@string/email_icon"
+                            android:textColor="@color/colorPrimary" />
+                        <TextView
+                            android:layout_toEndOf="@+id/con_email_icon"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:layout_gravity="center"
-                            android:layout_margin="@dimen/layout_margin"
                             android:text="info@theleelagroup.com"
                             android:textColor="@color/cardview_dark_background"
                             android:textSize="@dimen/cont_us_textsize" />
-                    </LinearLayout>
+                    </RelativeLayout>
                 </LinearLayout>
             </LinearLayout>
     </ScrollView>

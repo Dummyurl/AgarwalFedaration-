@@ -18,6 +18,7 @@ import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.LeelaGroup.AgrawalFedration.MainActivityModules;
 import com.LeelaGroup.AgrawalFedration.MatrimonySession;
 import com.LeelaGroup.AgrawalFedration.Network.ApiClient;
 import com.LeelaGroup.AgrawalFedration.R;
@@ -124,174 +125,8 @@ public class FormPartnerPreferenceActivity extends AppCompatActivity {
         getcity();
         catchBasicContactSocialEducationOccupationFamilyPhysicalOtherDetails();
 
-
-
-
-
-        /*Intent intent=getIntent();
-        Bundle bundle=intent.getExtras();
-        mat_id=bundle.getString("mat_id",mat_id);
-*/
-       /* final View dragView=findViewById(R.id.draggable_view);
-        gestureDetector = new GestureDetector(this, new SingleTapConfirm());
-        dragView.setOnTouchListener(new View.OnTouchListener() {
-            @Override
-            public boolean onTouch(View view, MotionEvent event) {
-                if (gestureDetector.onTouchEvent(event)) {
-                    // single tap
-                    startActivity(new Intent(FormPartnerPreferenceActivity.this,MatrimonyActivity.class));
-
-                    return true;
-                } else {
-
-                    // your code for move and drag
-
-                    switch(event.getActionMasked()){
-                        case MotionEvent.ACTION_DOWN:
-                            dX = view.getX() - event.getRawX();
-                            dY = view.getY() - event.getRawY();
-                            lastAction = MotionEvent.ACTION_DOWN;
-                            break;
-                        case MotionEvent.ACTION_MOVE:
-                            view.setY(event.getRawY() + dY);
-                            view.setX(event.getRawX() + dX);
-                            lastAction = MotionEvent.ACTION_MOVE;
-                            break;
-                        case MotionEvent.ACTION_UP:
-
-                            break;
-                        default:
-                            return true;
-                    }
-
-                }
-                return false;
-            }
-        });*/
-    }
-    private class SingleTapConfirm extends GestureDetector.SimpleOnGestureListener {
-
-        @Override
-        public boolean onSingleTapUp(MotionEvent event) {
-            return true;
-        }
-    }
-    public boolean validateFirst(){
-
-
-        CustomValidator validator=new CustomValidator();
-
-        final String lkgfor=sprLkgFor.getSelectedItem().toString();
-        if(!validator.isEmptyField(lkgfor)){
-            return false;
-        }
-        final String country=sprCountry.getText().toString();
-        if(!validator.isValidName(country)){
-            sprCountry.requestFocus();
-            sprCountry.setError("Please Enter Valid Country");
-            return false;
-        }
-        sprCountry.setError(null);
-
-        final String state=sprState.getText().toString();
-        if(!validator.isValidName(state)){
-            sprState.requestFocus();
-            sprState.setError("Please Enter Valid State");
-            return false;
-        }
-        sprState.setError(null);
-
-        final String city=etCity.getText().toString();
-        if(!validator.isValidName(city)){
-            etCity.requestFocus();
-            etCity.setError("Please Enter Valid State");
-            return false;
-        }
-        etCity.setError(null);
-
-        final String height=etMinHt.getText().toString();
-        if(!validator.isEmptyField(height)){
-            etMinHt.requestFocus();
-            etMinHt.setError("Please Enter Valid State");
-            return false;
-        }
-        etMinHt.setError(null);
-
-
-        final String weight=etMaxht.getText().toString();
-        if(!validator.isEmptyField(weight)){
-            etMaxht.requestFocus();
-            etMaxht.setError("Please Fill This Field");
-            return false;
-        }
-        etMaxht.setError(null);
-
-        /*final String eduction=etEductn.getText().toString();
-        if(!validator.isEmptyField(eduction)){
-            etEductn.requestFocus();
-            etEductn.setError("Please Fill This Field");
-            return false;
-        }
-        etEductn.setError(null);*/
-
-
-        /*final String cast=etCast.getText().toString();
-        if(!validator.isValidName(cast)){
-            etCast.requestFocus();
-            etCast.setError("Please Fill This Field With Alphabets Only");
-            return false;
-        }
-        etCast.setError(null);*/
-
-        cbTermsCondtn.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
-            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-                if ( isChecked ) {
-                    cbTermsCondtn.setError(null);
-                } else {
-                    cbTermsCondtn.requestFocus();
-                    cbTermsCondtn.setError("Please Accept Terms And Conditions");
-                }
-            }
-        });
-        if (!cbTermsCondtn.isChecked()){
-            termAndCond.requestFocus();
-            termAndCond.setError("Please Accept Terms And Conditions");
-            Toast.makeText(this, "Please Accept Terms And Conditions", Toast.LENGTH_SHORT).show();
-            return false;
-        }
-        return true;
     }
 
-  /*  public void setPartnerPrefDetails(){
-        mreg_looking_for=sprLkgFor.getSelectedItem().toString();
-        mreg_reg_between=sprAgeFrom.getSelectedItem().toString();
-        mreg_country_leaving=sprCountry.getText().toString();
-        mreg_state_leaving=sprState.getText().toString();
-        mreg_city_leaving=etCity.getText().toString();
-        mreg_residential_status=sprResdSts.getSelectedItem().toString();
-        mreg_ht=getEtHgtto.getText().toString();
-        mreg_wt=etWgtFrom.getText().toString();
-        mreg_groom_complexion=sprCoplexion.getSelectedItem().toString();
-        mreg_educ=etEductn.getText().toString();
-        mreg_religion=sprRlgn.getSelectedItem().toString();
-        mreg_caste=etCast.getText().toString();
-
-        ServiceMatrimony serviceMatrimony= ApiClient.getRetrofit().create(ServiceMatrimony.class);
-        Call<PartnrPrefdetails> partnrPrefdetailsCall=serviceMatrimony.setPartPrefDetails(mreg_looking_for,mreg_reg_between,mreg_country_leaving,mreg_state_leaving,mreg_city_leaving,mreg_residential_status,mreg_ht,mreg_wt,mreg_groom_complexion,mreg_educ,mreg_religion,mreg_caste,id);
-        partnrPrefdetailsCall.enqueue(new Callback<PartnrPrefdetails>() {
-            @Override
-            public void onResponse(Call<PartnrPrefdetails> call, Response<PartnrPrefdetails> response) {
-                Toast.makeText(FormPartnerPreferenceActivity.this, "success", Toast.LENGTH_SHORT).show();
-            }
-
-            @Override
-            public void onFailure(Call<PartnrPrefdetails> call, Throwable t) {
-                Toast.makeText(FormPartnerPreferenceActivity.this, "Failed", Toast.LENGTH_SHORT).show();
-            }
-        });
-
-
-    }*/
 
     public void getcity()
     {
@@ -385,11 +220,9 @@ public class FormPartnerPreferenceActivity extends AppCompatActivity {
         sprAgeTo=(Spinner)findViewById(R.id.frm_prtnrpref_et_maxagefrom);
         // sprAgeTo=(Spinner)findViewById(R.id.frm_prtnrpref_et_ageto);
 
-
         etCity=(AutoCompleteTextView)findViewById(R.id.frm_prtnrpref_spr_city);
         sprCountry=(AutoCompleteTextView)findViewById(R.id.frm_prtnrpref_spr_cntry);
         sprState=(AutoCompleteTextView)findViewById(R.id.frm_prtnrpref_spr_state);
-
 
         sprResdSts=(Spinner)findViewById(R.id.frm_prtnrpref_spr_resdntrstts);
         sprCoplexion=(Spinner)findViewById(R.id.frm_prtnrpref_spr_complexion);
@@ -403,12 +236,7 @@ public class FormPartnerPreferenceActivity extends AppCompatActivity {
         if(validateFirst()){
             setPartnerPrefDetails();
             insertImage();
-            Intent intent=new Intent(FormPartnerPreferenceActivity.this,MatrimonyActivity.class);
-            intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-            intent.putExtra(mat_id,"mat_id");
-           // intent.putExtra("mat_fname",mat_fname);
-            startActivity(intent);
-            this.finish();
+
             //startActivity(new Intent(this,MatrimonyActivity.class));
         }
     }
@@ -432,8 +260,15 @@ public class FormPartnerPreferenceActivity extends AppCompatActivity {
         call.enqueue(new Callback<AllDetails>() {
             @Override
             public void onResponse(Call<AllDetails> call, Response<AllDetails> response) {
+                hidepDialog();
+                matrimonySession.storePid(true);
 
-
+                Intent intent=new Intent(FormPartnerPreferenceActivity.this,MatrimonyActivity.class);
+                // intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                // intent.putExtra(mat_id,"mat_id");
+                // intent.putExtra("mat_fname",mat_fname);
+                startActivity(intent);
+                finish();
                 Toast.makeText(FormPartnerPreferenceActivity.this, "Success", Toast.LENGTH_SHORT).show();
             }
 
@@ -458,9 +293,10 @@ public class FormPartnerPreferenceActivity extends AppCompatActivity {
             @Override
             public void onResponse(Call<ImageUploadPojo> call, Response<ImageUploadPojo> response)
             {
-
                 ImageUploadPojo imageUploadPojo=response.body();
+
                 imageName=imageUploadPojo.getImageName();
+
                 if (imageUploadPojo!=null)
                 {
                     //boolean r=imageUploadPojo.getSuccess();
@@ -476,9 +312,9 @@ public class FormPartnerPreferenceActivity extends AppCompatActivity {
                 } else {
                     //assert serverResponse != null;
                     //Log.v("Response", serverResponse.toString());
-
+                    hidepDialog();
                 }
-                hidepDialog();
+
 
             }
 
@@ -597,11 +433,80 @@ public class FormPartnerPreferenceActivity extends AppCompatActivity {
         mreg_caste=etCast.getText().toString();
 
     }
+
+    public boolean validateFirst(){
+        CustomValidator validator=new CustomValidator();
+
+        final String lkgfor=sprLkgFor.getSelectedItem().toString();
+        if(!validator.isEmptyField(lkgfor)){
+            return false;
+        }
+        final String country=sprCountry.getText().toString();
+        if(!validator.isValidName(country)){
+            sprCountry.requestFocus();
+            sprCountry.setError("Please Enter Valid Country");
+            return false;
+        }
+        sprCountry.setError(null);
+
+        final String state=sprState.getText().toString();
+        if(!validator.isValidName(state)){
+            sprState.requestFocus();
+            sprState.setError("Please Enter Valid State");
+            return false;
+        }
+        sprState.setError(null);
+
+        final String city=etCity.getText().toString();
+        if(!validator.isValidName(city)){
+            etCity.requestFocus();
+            etCity.setError("Please Enter Valid State");
+            return false;
+        }
+        etCity.setError(null);
+
+        final String height=etMinHt.getText().toString();
+        if(!validator.isEmptyField(height)){
+            etMinHt.requestFocus();
+            etMinHt.setError("Please Enter Valid State");
+            return false;
+        }
+        etMinHt.setError(null);
+
+
+        final String weight=etMaxht.getText().toString();
+        if(!validator.isEmptyField(weight)){
+            etMaxht.requestFocus();
+            etMaxht.setError("Please Fill This Field");
+            return false;
+        }
+        etMaxht.setError(null);
+
+
+        cbTermsCondtn.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if ( isChecked ) {
+                    cbTermsCondtn.setError(null);
+                } else {
+                    cbTermsCondtn.requestFocus();
+                    cbTermsCondtn.setError("Please Accept Terms And Conditions");
+                }
+            }
+        });
+        if (!cbTermsCondtn.isChecked()){
+            termAndCond.requestFocus();
+            termAndCond.setError("Please Accept Terms And Conditions");
+            Toast.makeText(this, "Please Accept Terms And Conditions", Toast.LENGTH_SHORT).show();
+            return false;
+        }
+        return true;
+    }
+
     @Override
     public void onBackPressed()
     {
         //finish();
-        Intent intent = new Intent(FormPartnerPreferenceActivity.this, MatrimonyActivity.class);
+        Intent intent = new Intent(FormPartnerPreferenceActivity.this, MainActivityModules.class);
         intent.putExtra("mat_id",mat_id);
         startActivity(intent);
         FormPartnerPreferenceActivity.this.finish();
@@ -622,12 +527,8 @@ public class FormPartnerPreferenceActivity extends AppCompatActivity {
 
         return super.onOptionsItemSelected(item);
     }
-
-
-
-
     private void showpDialog() {
-        if (!pDialog.isShowing())
+        if (pDialog !=null && !pDialog.isShowing())
             pDialog.show();
     }
 

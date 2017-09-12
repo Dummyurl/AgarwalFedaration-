@@ -27,18 +27,18 @@ public class Medical_browse extends AppCompatActivity {
         //Create a new Tab named "First"
         TabLayout.Tab firstTab = tabLayout.newTab();
         firstTab.setText("Top Medical"); // set the Text for the first Tab
-        firstTab.setIcon(R.drawable.ic_menu_camera); // set an icon for the
+        firstTab.setIcon(R.drawable.ic_camera); // set an icon for the
         // first tab
         tabLayout.addTab(firstTab); // add  the tab at in the TabLayout
         // Create a new Tab named "Second"
         TabLayout.Tab secondTab = tabLayout.newTab();
         secondTab.setText("Top Hospital"); // set the Text for the second Tab
-        secondTab.setIcon(R.drawable.ic_menu_gallery); // set an icon for the second tab
+        secondTab.setIcon(R.drawable.ic_gallery); // set an icon for the second tab
         tabLayout.addTab(secondTab); // add  the tab  in the TabLayout
 //         Create a new Tab named "Third"
         TabLayout.Tab thirdTab = tabLayout.newTab();
         thirdTab.setText("Top Doctor"); // set the Text for the first Tab
-        thirdTab.setIcon(R.drawable.ic_menu_send); // set an icon for the first tab
+        thirdTab.setIcon(R.drawable.ic_send); // set an icon for the first tab
         tabLayout.addTab(thirdTab); // add  the tab at in the TabLayout
 
 

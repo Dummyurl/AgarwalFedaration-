@@ -1,5 +1,6 @@
 package com.LeelaGroup.AgrawalFedration.matrimony;
 
+import android.graphics.Typeface;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
@@ -16,6 +17,7 @@ import de.hdodenhof.circleimageview.CircleImageView;
 public class EventFullViewActivity extends AppCompatActivity {
 
 TextView evName,evAddr,evDate,evTime,evLoc,evDesc;
+TextView i_evName,i_evAddr,i_evDate,i_evTime,i_evLoc,i_evDesc;
     ImageView evPatrika;
     ImageView evPic;
 String name,addr,date,time,loc,desc,pic,patrika;
@@ -44,6 +46,7 @@ String name,addr,date,time,loc,desc,pic,patrika;
         patrika=getIntent().getStringExtra("ecpatri");
 
         init();
+        initIcon();
 
         if(matrimonySession.checkLogin())
             finish();
@@ -80,15 +83,29 @@ String name,addr,date,time,loc,desc,pic,patrika;
         switch (item.getItemId()){
 
             case android.R.id.home:
-
                 onBackPressed();
                 finish();
-
                 return  true;
         }
 
         return super.onOptionsItemSelected(item);
     }
 
+    public void initIcon(){
+        Typeface icon = Typeface.createFromAsset(this.getAssets(), "fontawesome-webfont.ttf" );
+
+        i_evLoc = (TextView) findViewById(R.id.address_icon);
+        i_evLoc.setTypeface(icon);
+
+        i_evAddr = (TextView) findViewById(R.id.addr_icon);
+        i_evAddr.setTypeface(icon);
+
+        i_evDate = (TextView) findViewById(R.id.calandr_icon);
+        i_evDate.setTypeface(icon);
+
+        i_evTime = (TextView) findViewById(R.id.clock_icon);
+        i_evTime.setTypeface(icon);
+
+    }
 
 }

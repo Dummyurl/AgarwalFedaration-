@@ -11,11 +11,11 @@
     <item android:id="@+id/action_update_marksheet"
         android:title="view uploaded document"> </item>
 
-    <item android:id="@+id/education_logout"
-        android:title="Logout"
-        app:showAsAction="always"> </item>
-
     <item android:id="@+id/scholarships"
         android:title="Other Schemes"
+        > </item>
+
+    <item android:id="@+id/education_logout"
+        android:title="Logout"
         > </item>
 </menu>

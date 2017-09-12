@@ -48,13 +48,14 @@
                 <ImageView
                     android:id="@+id/ssc_Result"
                     android:layout_width="match_parent"
-                    android:layout_height="@dimen/button_margin_three"
+                    android:layout_height="@dimen/cont_us_logo_hight"
                     android:layout_weight="0.3"
                     android:adjustViewBounds="true"
                     android:onClick="onClick"
                     android:scaleType="fitXY"
                     android:src="@drawable/file_upload"
-                    android:visibility="gone" />
+                    android:visibility="gone"
+                    />
 
                 <Button
                     android:id="@+id/browse_ssc"
@@ -62,17 +63,22 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="0.3"
                     android:background="@color/colorPrimary"
-                    android:text="@string/Browse" />
+                    android:text="@string/Browse"
+                    android:textAllCaps="false"
+                    android:textColor="@color/white"
+                    />
 
                 <ImageView
                     android:id="@+id/ssc_btn_Result"
                     android:layout_width="match_parent"
-                    android:layout_height="@dimen/button_margin_three"
+                    android:layout_height="@dimen/cont_us_logo_hight"
                     android:layout_marginLeft="@dimen/layoutMargin"
                     android:layout_weight="0.4"
                     android:src="@drawable/file_upload"
                     android:textColor="#fff" />
             </LinearLayout>
+
+            <include layout="@layout/item_devider5"/>
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -92,7 +98,7 @@
                 <ImageView
                     android:id="@+id/hsc_Result"
                     android:layout_width="match_parent"
-                    android:layout_height="@dimen/button_margin_three"
+                    android:layout_height="@dimen/cont_us_logo_hight"
                     android:layout_weight="0.3"
                     android:adjustViewBounds="true"
                     android:onClick="onClick"
@@ -106,19 +112,23 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="0.3"
                     android:background="@color/colorPrimary"
-                    android:text="@string/Browse" />
+                    android:text="@string/Browse"
+                    android:textAllCaps="false"
+                    android:textColor="@color/white"
+                    />
 
 
                 <ImageView
                     android:id="@+id/hsc_btn_Result"
                     android:layout_width="match_parent"
-                    android:layout_height="@dimen/button_margin_three"
+                    android:layout_height="@dimen/cont_us_logo_hight"
                     android:layout_marginLeft="@dimen/layoutMargin"
                     android:layout_weight="0.4"
                     android:src="@drawable/file_upload"
                     android:textColor="#fff" />
 
             </LinearLayout>
+            <include layout="@layout/item_devider5"/>
 
 
             <LinearLayout
@@ -140,7 +150,7 @@
                 <ImageView
                     android:id="@+id/graduation_Result"
                     android:layout_width="match_parent"
-                    android:layout_height="@dimen/button_margin_three"
+                    android:layout_height="@dimen/cont_us_logo_hight"
                     android:layout_weight="0.3"
                     android:adjustViewBounds="true"
                     android:onClick="onClick"
@@ -155,17 +165,21 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="0.3"
                     android:background="@color/colorPrimary"
-                    android:text="@string/Browse" />
+                    android:text="@string/Browse"
+                    android:textAllCaps="false"
+                    android:textColor="@color/white"
+                    />
 
                 <ImageView
                     android:id="@+id/grad_btn_Result"
                     android:layout_width="match_parent"
-                    android:layout_height="@dimen/button_margin_three"
+                    android:layout_height="@dimen/cont_us_logo_hight"
                     android:layout_marginLeft="@dimen/layoutMargin"
                     android:layout_weight="0.4"
                     android:src="@drawable/file_upload"
                     android:textColor="#fff" />
             </LinearLayout>
+            <include layout="@layout/item_devider5"/>
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -186,7 +200,7 @@
                 <ImageView
                     android:id="@+id/post_graduate_Result"
                     android:layout_width="match_parent"
-                    android:layout_height="@dimen/button_margin_three"
+                    android:layout_height="@dimen/cont_us_logo_hight"
                     android:layout_weight="0.3"
                     android:adjustViewBounds="true"
                     android:onClick="onClick"
@@ -200,18 +214,21 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="0.3"
                     android:background="@color/colorPrimary"
-                    android:text="@string/Browse" />
+                    android:text="@string/Browse"
+                    android:textAllCaps="false"
+                    android:textColor="@color/white"/>
 
                 <ImageView
                     android:id="@+id/post_grad_btn_Result"
                     android:layout_width="match_parent"
-                    android:layout_height="@dimen/button_margin_three"
+                    android:layout_height="@dimen/cont_us_logo_hight"
                     android:layout_marginLeft="@dimen/layoutMargin"
                     android:layout_weight="0.4"
                     android:src="@drawable/file_upload"
                     android:textColor="#fff" />
 
             </LinearLayout>
+            <include layout="@layout/item_devider5"/>
 
 
             <LinearLayout
@@ -232,7 +249,7 @@
                 <ImageView
                     android:id="@+id/other_Certificate"
                     android:layout_width="match_parent"
-                    android:layout_height="@dimen/button_margin_three"
+                    android:layout_height="@dimen/cont_us_logo_hight"
                     android:layout_weight="0.3"
                     android:adjustViewBounds="true"
                     android:onClick="onClick"
@@ -247,17 +264,21 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="0.3"
                     android:background="@color/colorPrimary"
-                    android:text="@string/Browse" />
+                    android:text="@string/Browse"
+                    android:textAllCaps="false"
+                    android:textColor="@color/white"
+                    />
 
                 <ImageView
                     android:id="@+id/Profile_btn_Result"
                     android:layout_width="match_parent"
-                    android:layout_height="@dimen/button_margin_three"
+                    android:layout_height="@dimen/cont_us_logo_hight"
                     android:layout_marginLeft="@dimen/layoutMargin"
                     android:layout_weight="0.4"
                     android:src="@drawable/file_upload"
-                    android:textColor="#fff" />
+                    android:textColor="@color/white" />
             </LinearLayout>
+            <include layout="@layout/item_devider5"/>
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -277,7 +298,7 @@
                 <ImageView
                     android:id="@+id/other_Result"
                     android:layout_width="match_parent"
-                    android:layout_height="@dimen/button_margin_three"
+                    android:layout_height="@dimen/cont_us_logo_hight"
                     android:layout_weight="0.3"
                     android:adjustViewBounds="true"
                     android:onClick="onClick"
@@ -291,16 +312,18 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="0.3"
                     android:background="@color/colorPrimary"
-                    android:text="@string/Browse" />
+                    android:text="@string/Browse"
+                    android:textAllCaps="false"
+                    android:textColor="@color/white"/>
 
                 <ImageView
                     android:id="@+id/sign_btn_Result"
                     android:layout_width="match_parent"
-                    android:layout_height="@dimen/button_margin_three"
+                    android:layout_height="@dimen/cont_us_logo_hight"
                     android:layout_marginLeft="@dimen/layoutMargin"
                     android:layout_weight="0.4"
                     android:src="@drawable/file_upload"
-                    android:textColor="#fff" />
+                    android:textColor="@color/white" />
 
             </LinearLayout>
 

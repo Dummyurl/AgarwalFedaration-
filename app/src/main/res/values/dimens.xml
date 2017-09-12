@@ -1,12 +1,7 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
-    <!-- Default screen margins, per the Android Design guidelines. -->
-    <dimen name="nav_header_vertical_spacing">16dp</dimen>
-    <dimen name="nav_header_height">190dp</dimen>
-    <!-- Default screen margins, per the Android Design guidelines. -->
-    <dimen name="activity_horizontal_margin">16dp</dimen>
-    <dimen name="activity_vertical_margin">16dp</dimen>
-    <dimen name="fab_margin">16dp</dimen>
-    <dimen name="navigation_view" tools:override="true">40dp</dimen>
+<!--user profile-->
+    <dimen name="Iconsize">50dp</dimen>
+    <dimen name="socialIcon">30sp</dimen>
 
 
     <!--************************************Search card dimension*********************************-->
@@ -30,9 +25,8 @@
     <dimen name="text_size_40">40sp</dimen>
 
 
-
     <!--  matrimony  Dimention -->
-<!--
+    <!--
     <dimen name="layout_margin">10dp</dimen>
 -->
     <dimen name="form_layout_margin">20dp</dimen>
@@ -47,8 +41,8 @@
     <dimen name="cont_us_mar_left">5dp</dimen>
     <dimen name="cont_us_mar_top">10dp</dimen>
     <dimen name="cont_us_heading_dimen">18sp</dimen>
-    <dimen name="cont_us_logo_hight">30dp</dimen>
-    <dimen name="cont_us_logo_width">30dp</dimen>
+    <dimen name="cont_us_logo_hight">40dp</dimen>
+    <dimen name="cont_us_logo_width">40dp</dimen>
     <dimen name="cont_us_textsize">18sp</dimen>
 
     <dimen name="event_row_cardview_margin">8dp</dimen>
@@ -69,15 +63,17 @@
     <dimen name="form_et_drawable_padding">5dp</dimen>
     <dimen name="button_margin_top">10dp</dimen>
     <dimen name="button_margin_bottom">20dp</dimen>
+    <dimen name="button_margin_bottom_frm_basicdetails">30dp</dimen>
     <dimen name="formPartnerPref_button_margin_bottom">30dp</dimen>
     <dimen name="button_padding">10dp</dimen>
 
     <dimen name="form_tv_size">18sp</dimen>
+    <dimen name="login_form_tv_size">15sp</dimen>
     <dimen name="form_inner_layout_margin">2dp</dimen>
     <dimen name="form_first_radio_bn_width">200dp</dimen>
 
     <dimen name="form_spinner_layout_margin_top">15dp</dimen>
-    <dimen name="form_spinner_layout_margin_bottom">10dp</dimen>
+    <dimen name="form_spinner_layout_margin_bottom">15dp</dimen>
     <dimen name="form_tv_religiondetl_margin_top">20dp</dimen>
     <dimen name="form_tv_religiondetl_margin_bottom">10dp</dimen>
     <dimen name="form_tv_propic_padding">2dp</dimen>
@@ -88,7 +84,7 @@
     <dimen name="form_login_tv_mar_top">10dp</dimen>
     <dimen name="form_login_tv_login_size">30dp</dimen>
     <dimen name="form_login_til_mar_top">10dp</dimen>
-    <dimen name="form_login_tv_forgotpass_width">110dp</dimen>
+    <dimen name="form_login_tv_forgotpass_width">100dp</dimen>
     <dimen name="form_login_tv_forgotpass_padding">5dp</dimen>
 
     <dimen name="createProfile_textSize">15sp</dimen>
@@ -130,13 +126,12 @@
     <dimen name="button_margin_two">18dp</dimen>
     <dimen name="button_margin_three">18dp</dimen>
     <dimen name="main_module_top_margin">100dp</dimen>
-
-
-
-
-
-
-
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="activity_vertical_margin">16dp</dimen>
+    <dimen name="nav_header_vertical_spacing">16dp</dimen>
+    <dimen name="nav_header_height">160dp</dimen>
+    <dimen name="fab_margin">16dp</dimen>
 
 
 </resources>

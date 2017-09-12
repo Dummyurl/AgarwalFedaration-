@@ -1,19 +1,29 @@
 package com.LeelaGroup.AgrawalFedration.matrimony;
 
+import android.Manifest;
 import android.app.DatePickerDialog;
 import android.app.ProgressDialog;
 import android.app.TimePickerDialog;
 import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.database.Cursor;
+import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.net.Uri;
+import android.os.Build;
 import android.os.Bundle;
+import android.os.Environment;
+import android.provider.DocumentsContract;
 import android.provider.MediaStore;
+import android.support.annotation.RequiresApi;
+import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.text.format.DateFormat;
 import android.view.GestureDetector;
 import android.view.GestureDetector.SimpleOnGestureListener;
+import android.view.Menu;
+import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.MotionEvent;
 import android.view.View;
@@ -31,15 +41,24 @@ import android.widget.TextView;
 import android.widget.TimePicker;
 import android.widget.Toast;
 
+import com.LeelaGroup.AgrawalFedration.Business_Medical_Session;
+import com.LeelaGroup.AgrawalFedration.Compressor;
+import com.LeelaGroup.AgrawalFedration.MainActivityModules;
 import com.LeelaGroup.AgrawalFedration.MatrimonySession;
 import com.LeelaGroup.AgrawalFedration.R;
+import com.LeelaGroup.AgrawalFedration.business.Login_Business;
 import com.LeelaGroup.AgrawalFedration.matrimony.models.BasicDetailAndContactInfo;
 import com.LeelaGroup.AgrawalFedration.matrimony.validation.CustomValidator;
+import com.bumptech.glide.Glide;
 
 import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
+import java.util.HashMap;
 
 import de.hdodenhof.circleimageview.CircleImageView;
 
@@ -50,6 +69,7 @@ public class FormBasicDetailsActivity extends AppCompatActivity {
     private GestureDetector gestureDetector;
     static int hour, min;
     private static int RESULT_LOAD_IMAGE = 1;
+    public static final int MY_PERMISSIONS_REQUEST_READ_EXTERNAL_STORAGE = 23;
     Toolbar toolbar;
     TextView imageTitle;
     EditText etDate, etTime, etName, etMidName, etLastName,
@@ -83,6 +103,7 @@ public class FormBasicDetailsActivity extends AppCompatActivity {
 
      MatrimonySession matrimonySession;
 
+    @RequiresApi(api = Build.VERSION_CODES.M)
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -90,10 +111,10 @@ public class FormBasicDetailsActivity extends AppCompatActivity {
 
         matrimonySession=new MatrimonySession(getApplication());
 
-        Intent intent=getIntent();
+       /* Intent intent=getIntent();
         Bundle bundle=intent.getExtras();
         mat_id=bundle.getString("mat_id",mat_id);
-
+*/
         init();
 
 
@@ -107,44 +128,11 @@ public class FormBasicDetailsActivity extends AppCompatActivity {
         if(matrimonySession.checkLogin())
             finish();
 
-        setupSpinners();
+        HashMap<String, String> user = matrimonySession.getUserDetails();
 
-        /*final View dragView = findViewById(R.id.draggable_view);
-        gestureDetector = new GestureDetector(this, new SingleTapConfirm());
-        dragView.setOnTouchListener(new View.OnTouchListener() {
-            @Override
-            public boolean onTouch(View view, MotionEvent event) {
-                if (gestureDetector.onTouchEvent(event)) {
-                    // single tap
-                    startActivity(new Intent(FormBasicDetailsActivity.this, MatrimonyActivity.class));
+        String name=user.get(MatrimonySession.KEY_NAME);
+        mat_id=user.get(MatrimonySession.KEY_ID);
 
-                    return true;
-                } else {
-
-                    // your code for move and drag
-
-                    switch (event.getActionMasked()) {
-                        case MotionEvent.ACTION_DOWN:
-                            dX = view.getX() - event.getRawX();
-                            dY = view.getY() - event.getRawY();
-                            lastAction = MotionEvent.ACTION_DOWN;
-                            break;
-                        case MotionEvent.ACTION_MOVE:
-                            view.setY(event.getRawY() + dY);
-                            view.setX(event.getRawX() + dX);
-                            lastAction = MotionEvent.ACTION_MOVE;
-                            break;
-                        case MotionEvent.ACTION_UP:
-                            break;
-                        default:
-                            return true;
-                    }
-
-                }
-                return false;
-            }
-        });
-*/
         c = Calendar.getInstance();
         hour = c.get(Calendar.HOUR_OF_DAY);
         min = c.get(Calendar.MINUTE);
@@ -156,8 +144,6 @@ public class FormBasicDetailsActivity extends AppCompatActivity {
         etDate = (EditText) findViewById(R.id.frm_d_per_dob);
         etTime = (EditText) findViewById(R.id.frm_d_per_tob);
 
-//        ibDatePicker = (ImageButton) findViewById(R.id.frm_d_per_ibdob);
-//        ibTimePicker = (ImageButton) findViewById(R.id.frm_d_per_ibtob);
 
         etDate.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -234,13 +220,20 @@ public class FormBasicDetailsActivity extends AppCompatActivity {
         browseImage.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i = new Intent(
-                        Intent.ACTION_PICK, MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
-                startActivityForResult(i, RESULT_LOAD_IMAGE);
+                Intent intent = new Intent();
+                // Show only images, no videos or anything else
+                intent.setType("image/*");
+                intent.setAction(Intent.ACTION_GET_CONTENT);
+                // Always show the chooser (if there are multiple options available)
+                startActivityForResult(Intent.createChooser(intent, "Select Picture"), RESULT_LOAD_IMAGE);
 
             }
         });
 
+        if (ContextCompat.checkSelfPermission(this, Manifest.permission.READ_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED) {
+            requestPermissions(new String[]{Manifest.permission.READ_EXTERNAL_STORAGE}, MY_PERMISSIONS_REQUEST_READ_EXTERNAL_STORAGE);
+
+        }
 
     }// onCreate()---end ---
 
@@ -264,46 +257,73 @@ public class FormBasicDetailsActivity extends AppCompatActivity {
         return ageS;
     }
 
+   protected void onActivityResult(int requestCode, int resultCode, Intent data) {
 
-    @Override
-    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
-        super.onActivityResult(requestCode, resultCode, data);
-        try {
-            // When an Image is picked
-            if (requestCode == RESULT_LOAD_IMAGE && resultCode == RESULT_OK && null != data) {
+       if (requestCode == RESULT_LOAD_IMAGE && resultCode == RESULT_OK && null != data)
+       {
+           super.onActivityResult(requestCode, resultCode, data);
 
-                // Get the Image from data
+           Uri uri = data.getData();
+           String[] filePathColumn = {MediaStore.Images.Media.DATA};
 
-                if (data != null) {
-                    Uri selectedImage = data.getData();
-                    String[] filePathColumn = {MediaStore.Images.Media.DATA};
+           Cursor cursor;
+           if(Build.VERSION.SDK_INT >19)
+           {
 
-                    Cursor cursor = getContentResolver().query(selectedImage, filePathColumn, null, null, null);
-                    assert cursor != null;
-                    cursor.moveToFirst();
+               // Will return "image:x*"
+               String wholeID = DocumentsContract.getDocumentId(uri);
+               // Split at colon, use second item in the array
+               String id = wholeID.split(":")[1];
+               // where id is equal to
+               String sel = MediaStore.Images.Media._ID + "=?";
 
-                    int columnIndex = cursor.getColumnIndex(filePathColumn[0]);
-                    mediaPath = cursor.getString(columnIndex);
-                     imageFile= new File(mediaPath);
-                    String imageName = imageFile.getName();
-                    personImage.setImageBitmap(BitmapFactory.decodeFile(mediaPath));
-                    // Set the Image in ImageView for Previewing the Media
-                    personImage.setVisibility(View.VISIBLE);
-                    imageTitle.setVisibility(View.VISIBLE);
-                    imageTitle.setText(imageName);
-                    isImageAdded = true;
-                    cursor.close();
-                }
+               cursor = getContentResolver().query(MediaStore.Images.Media.EXTERNAL_CONTENT_URI,
+                       filePathColumn, sel, new String[]{ id }, null);
+           }
+           else
+           {
+               cursor = getContentResolver().query(uri, filePathColumn, null, null, null);
+           }
+           mediaPath = null;
+           try
+           {
+               int column_index = cursor.getColumnIndex(MediaStore.Images.Media.DATA);
+               cursor.moveToFirst();
+               mediaPath = cursor.getString(column_index);
+               File aimageFile=new File(mediaPath);
+               //double size =aimageFile.length();
+               double bytes = aimageFile.length();
+               double kilobytes = (bytes / 1024);
+               double megabytes = (kilobytes / 1024);
 
-            } else {
-                Toast.makeText(this, "You Have Not Picked Image", Toast.LENGTH_LONG).show();
-            }
-        } catch (Exception e) {
-            Toast.makeText(this, "Something Went Wrong", Toast.LENGTH_LONG).show();
-        }
+               imageFile=new Compressor(this).compressToFile(aimageFile);
 
-    }
+               double cbytes = imageFile.length();
+               double ckilobytes = (cbytes / 1024);
+               double cmegabytes = (ckilobytes / 1024);
 
+               String imageName = imageFile.getName();
+               cursor.close();
+               //Bitmap bitmap = MediaStore.Images.Media.getBitmap(getContentResolver(), uri);
+               Glide.with(this).load(uri).into(personImage);
+               personImage.setVisibility(View.VISIBLE);
+               imageTitle.setVisibility(View.VISIBLE);
+               imageTitle.setText(imageName);
+               isImageAdded = true;
+              // personImage.setImageBitmap(bitmap);
+           }
+           catch(NullPointerException e) {
+
+           } /*catch (FileNotFoundException e) {
+               e.printStackTrace();
+           } catch (IOException e) {
+               e.printStackTrace();
+           }*/ catch (IOException e) {
+               e.printStackTrace();
+           }
+
+       }
+   }
 
     public boolean validateFirst() {
 
@@ -441,30 +461,12 @@ public class FormBasicDetailsActivity extends AppCompatActivity {
             intent.putExtra("mat_reg_caste",mat_reg_caste);
             intent.putExtra("mat_reg_subcaste",mat_reg_subcaste);
             startActivity(intent);
-            FormBasicDetailsActivity.this.finish();
-            //insertBasicFields();
-            //insertReligionFields();
-
-
-
-           // startActivity(new Intent(this, FormContactInformationActivity.class));
-        }
-
-
-    }
-
-
-    private class SingleTapConfirm extends SimpleOnGestureListener {
-
-        @Override
-        public boolean onSingleTapUp(MotionEvent event) {
-            return true;
+            finish();
         }
     }
+
     public void getGenderAndBrideORGroom()
-    {
-
-        rdgrpBrideGroom = (RadioGroup) findViewById(R.id.rdogrplkgfor);
+    {   rdgrpBrideGroom = (RadioGroup) findViewById(R.id.rdogrplkgfor);
         rdgrpMaleFemale = (RadioGroup) findViewById(R.id.frm_rdogrp_gender);
         int selectedIdBrideGroom = rdgrpBrideGroom.getCheckedRadioButtonId();
         brideORGroom = (RadioButton) findViewById(selectedIdBrideGroom);
@@ -522,152 +524,40 @@ public class FormBasicDetailsActivity extends AppCompatActivity {
     }
 
 
-    void setupSpinners() {
 
-        sprMartlStatus.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
-
-            @Override
-            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                if (position == 2 || position == 3 || position == 6) {
-                    LL_Child_Living.setVisibility(View.VISIBLE);
-                    LL_No_OF_Childs.setVisibility(View.VISIBLE);
-                } else if(position==0)
-                {
-                    //Toast.makeText(FormBasicDetailsActivity.this, "Please Select Marital Status", Toast.LENGTH_SHORT).show();
-                }
-                else
-                {
-                    LL_Child_Living.setVisibility(View.GONE);
-                    LL_No_OF_Childs.setVisibility(View.GONE);
-                }
-            }
-
-            @Override
-            public void onNothingSelected(AdapterView<?> parent){
-                                //Toast.makeText(FormBasicDetailsActivity.this, "Please Select Marital Status", Toast.LENGTH_SHORT).show();
-            }
-        });
-
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater menuInflater = getMenuInflater();
+        menuInflater.inflate(R.menu.medical_menu, menu);
+        return true;
     }
+
+
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-
-        switch (item.getItemId()){
-
+        int res_id = item.getItemId();
+        switch (res_id){
+            case R.id.action_med_logout:
+                matrimonySession.logoutUser();
+                finish();
+                break;
             case android.R.id.home:
-
                 onBackPressed();
                 finish();
-
                 return  true;
+
+            default:
         }
 
         return super.onOptionsItemSelected(item);
     }
 
 
-//    public void insertReligionFields()
-//    {
-//        mat_reg_religion=sprReligion.getSelectedItem().toString();
-//        mat_reg_caste=etCast.getText().toString();
-//        mat_reg_subcaste=etSubCast.getText().toString();
-//
-//        ServiceMatrimony serviceMatrimony=ApiClient.getRetrofit().create(ServiceMatrimony.class);
-//        Call<BasicDetailAndContactInfo> socialDetailCall=serviceMatrimony.setReligionDetails(mat_reg_religion,mat_reg_caste,mat_reg_subcaste);
-//
-//        socialDetailCall.enqueue(new Callback<BasicDetailAndContactInfo>() {
-//            @Override
-//            public void onResponse(Call<BasicDetailAndContactInfo> call, Response<BasicDetailAndContactInfo> response) {
-//                Toast.makeText(FormBasicDetailsActivity.this, "success", Toast.LENGTH_SHORT).show();
-//            }
-//
-//            @Override
-//            public void onFailure(Call<BasicDetailAndContactInfo> call, Throwable t) {
-//
-//                Toast.makeText(FormBasicDetailsActivity.this, "Failed", Toast.LENGTH_SHORT).show();
-//            }
-//        });
-//
-//
-//    }
-
-//    public void insertBasicFields()
-//    {
-//        /*mat_sess, mreg_prof_pic, , , , , , , , , mreg_age, , , , , ,*/
-//
-//        File file=new File(mediaPath);
-//        mreg_am=brideORGroom.getText().toString();
-//        mreg_fname=etName.getText().toString();
-//        mreg_mname=etMidName.getText().toString();
-//        mreg_lname=etLastName.getText().toString();
-//        mreg_birth_place=etBirthPlace.getText().toString();
-//        mreg_dob=etDate.getText().toString();
-//        mreg_birth_time=etTime.getText().toString();
-//        mreg_native_place=etNativePlace.getText().toString();
-//        mreg_marital_status=sprMartlStatus.getSelectedItem().toString();
-//        mreg_mother_tongue=sprMotherTong.getSelectedItem().toString();
-//        mreg_no_child=sprNoOfChild.getSelectedItem().toString();
-//        mreg_child_leave_status=sprChildLiveingStatus.getSelectedItem().toString();
-//        mreg_gender=maleORFemale.getText().toString();
-//        mreg_about_me=etAbtMe.getText().toString();
-//
-//
-//
-//       /* religion=sprReligion.getSelectedItem().toString();
-//        cast=etCast.getText().toString();
-//        subcast=etSubCast.getText().toString();*/
-//
-//        RequestBody requestBody = RequestBody.create(MediaType.parse("*/*"), file);
-//        MultipartBody.Part fileToUpload = MultipartBody.Part.createFormData("file", file.getName(), requestBody);
-//
-//
-//        RequestBody Matsess=RequestBody.create(MediaType.parse("text/plain"),mat_id);
-//
-//        RequestBody Brideorgroom=RequestBody.create(MediaType.parse("text/plain"),mreg_am);
-//        RequestBody Fname=RequestBody.create(MediaType.parse("text/plain"),mreg_fname);
-//        RequestBody Mname=RequestBody.create(MediaType.parse("text/plain"),mreg_mname);
-//        RequestBody Lname=RequestBody.create(MediaType.parse("text/plain"),mreg_lname);
-//        RequestBody BirthPlace=RequestBody.create(MediaType.parse("text/plain"),mreg_birth_place);
-//        RequestBody BirthDate=RequestBody.create(MediaType.parse("text/plain"),mreg_dob);
-//        RequestBody BirthTime=RequestBody.create(MediaType.parse("text/plain"),mreg_birth_time);
-//        RequestBody NativePlace=RequestBody.create(MediaType.parse("text/plain"),mreg_native_place);
-//        RequestBody MaritalStatus=RequestBody.create(MediaType.parse("text/plain"),mreg_marital_status);
-//        RequestBody MotherToung=RequestBody.create(MediaType.parse("text/plain"),mreg_mother_tongue);
-//        RequestBody NoOfChilds= RequestBody.create(MediaType.parse("text/plain"),mreg_no_child);
-//        RequestBody ChildLivinStaus= RequestBody.create(MediaType.parse("text/plain"),mreg_child_leave_status);
-//        RequestBody MaleFemale= RequestBody.create(MediaType.parse("text/plain"),mreg_gender);
-//        RequestBody AboutMe= RequestBody.create(MediaType.parse("text/plain"),mreg_about_me);
-//        RequestBody Age=RequestBody.create(MediaType.parse("text/plain"),mreg_age);
-//
-//
-////       RequestBody Religion=RequestBody.create(MediaType.parse("text/plain"),religion);
-////        RequestBody Cast=RequestBody.create(MediaType.parse("text/plain"),cast);
-////        RequestBody SubCast=RequestBody.create(MediaType.parse("text/plain"),subcast);
-//
-//       ServiceMatrimony serviceMatrimony=ApiClient.getRetrofit().create(ServiceMatrimony.class);
-//        Call<BasicDetailAndContactInfo> basicDetailCall=serviceMatrimony.setBasicDetail(Matsess,fileToUpload,Brideorgroom,Fname,Mname,Lname,BirthPlace,BirthTime,NativePlace,BirthDate,Age,MaritalStatus,MaleFemale,NoOfChilds,ChildLivinStaus,MotherToung,AboutMe);
-//
-//
-//        basicDetailCall.enqueue(new Callback<BasicDetailAndContactInfo>() {
-//            @Override
-//            public void onResponse(Call<BasicDetailAndContactInfo> call, Response<BasicDetailAndContactInfo> response) {
-//                Toast.makeText(FormBasicDetailsActivity.this, "Success", Toast.LENGTH_SHORT).show();
-//            }
-//
-//
-//            @Override
-//            public void onFailure(Call<BasicDetailAndContactInfo> call, Throwable t) {
-//
-//               Toast.makeText(FormBasicDetailsActivity.this, t.getMessage(), Toast.LENGTH_LONG).show();
-//            }
-//        });
-//    }
-
     @Override
     public void onBackPressed()
     {
         //finish();
-        Intent intent = new Intent(FormBasicDetailsActivity.this, MatrimonyActivity.class);
+        Intent intent = new Intent(FormBasicDetailsActivity.this, MainActivityModules.class);
         intent.putExtra("mat_id",mat_id);
         startActivity(intent);
         FormBasicDetailsActivity.this.finish();

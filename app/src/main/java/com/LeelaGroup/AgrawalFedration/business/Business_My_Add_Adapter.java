@@ -3,6 +3,7 @@ package com.LeelaGroup.AgrawalFedration.business;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.graphics.Typeface;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -76,6 +77,19 @@ public class Business_My_Add_Adapter extends RecyclerView.Adapter<Business_My_Ad
 
             this.arrayList = arrayList;
             this.context = context;
+
+            Typeface font = Typeface.createFromAsset( context.getAssets(), "fontawesome-webfont.ttf" );
+            TextView button = (TextView) itemView.findViewById( R.id.u_phone );
+            TextView t1 = (TextView) itemView.findViewById( R.id.email_id );
+            TextView t2 = (TextView) itemView.findViewById( R.id.location );
+
+
+            button.setTypeface(font);
+            t1.setTypeface(font);
+            t2.setTypeface(font);
+
+
+
 
             imageView = (ImageView) itemView.findViewById(R.id.img_card);
 

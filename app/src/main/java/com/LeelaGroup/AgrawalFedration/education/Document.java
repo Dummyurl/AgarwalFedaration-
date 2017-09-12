@@ -68,12 +68,12 @@ public class Document extends AppCompatActivity {
 
                 String img= ifp.getEdProfOtherCert();
 
-                Glide.with(Document.this).load(ifp.getEdProfOtherCert()).placeholder(R.drawable.image_load).into(profile_doc);
-                Glide.with(Document.this).load(ifp.getEdProfSscMarksheet()).placeholder(R.drawable.image_load).into(ssc_doc);
-                Glide.with(Document.this).load(ifp.getEdProfHscMarksheet()).placeholder(R.drawable.image_load).into(hsc_doc);
-                Glide.with(Document.this).load(ifp.getEdProfGdMarksheet()).placeholder(R.drawable.image_load).into(grad_doc);
-                Glide.with(Document.this).load(ifp.getEdProfPgMarksheet()).placeholder(R.drawable.image_load).into(post_grad_doc);
-                Glide.with(Document.this).load(ifp.getEdProfScanSign()).placeholder(R.drawable.image_load).into(sign_doc);
+                Glide.with(Document.this).load(ifp.getEdProfOtherCert()).into(profile_doc);
+                Glide.with(Document.this).load(ifp.getEdProfSscMarksheet()).into(ssc_doc);
+                Glide.with(Document.this).load(ifp.getEdProfHscMarksheet()).into(hsc_doc);
+                Glide.with(Document.this).load(ifp.getEdProfGdMarksheet()).into(grad_doc);
+                Glide.with(Document.this).load(ifp.getEdProfPgMarksheet()).into(post_grad_doc);
+                Glide.with(Document.this).load(ifp.getEdProfScanSign()).into(sign_doc);
 
                 /*AlertDialog.Builder alert = new AlertDialog.Builder(Document.this);
 

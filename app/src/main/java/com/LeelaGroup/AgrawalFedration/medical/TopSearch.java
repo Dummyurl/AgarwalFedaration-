@@ -74,11 +74,14 @@ public class TopSearch extends AppCompatActivity {
 
             @Override
             public void onResponse(Call<List<Medical>> call, Response<List<Medical>> response) {
-                list = response.body();
-                adapter = new TopSearchAdapter(list, TopSearch.this);
-                recyclerView.setAdapter(adapter);
+
 
                 try {
+
+                    list = response.body();
+                    adapter = new TopSearchAdapter(list, TopSearch.this);
+                    recyclerView.setAdapter(adapter);
+
                     if (list.isEmpty()) {
                         final AlertDialog.Builder builder = new AlertDialog.Builder(TopSearch.this);
 

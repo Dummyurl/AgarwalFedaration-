@@ -62,7 +62,6 @@
                 android:layout_margin="@dimen/layout_margin"
                 android:textSize="@dimen/about_us_heading_dimen"
                 android:textAlignment="textStart"
-                android:textStyle="bold"
                 />
             <TextView
                 android:id="@+id/tv_abtus_content"

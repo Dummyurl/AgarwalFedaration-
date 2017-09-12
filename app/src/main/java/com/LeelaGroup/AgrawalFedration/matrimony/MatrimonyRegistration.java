@@ -97,8 +97,6 @@ public class MatrimonyRegistration extends AppCompatActivity implements View.OnC
         }
     }
     public boolean validateFirst() {
-
-
         CustomValidator validator = new CustomValidator();
 
         final String fanme = editTextfName.getText().toString();

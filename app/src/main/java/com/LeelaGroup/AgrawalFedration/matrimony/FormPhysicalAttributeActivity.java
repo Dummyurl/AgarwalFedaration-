@@ -13,6 +13,7 @@ import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.Spinner;
 
+import com.LeelaGroup.AgrawalFedration.MainActivityModules;
 import com.LeelaGroup.AgrawalFedration.MatrimonySession;
 import com.LeelaGroup.AgrawalFedration.R;
 import com.LeelaGroup.AgrawalFedration.matrimony.validation.CustomValidator;
@@ -413,7 +414,7 @@ public class FormPhysicalAttributeActivity extends AppCompatActivity {
     public void onBackPressed()
     {
         //finish();
-        Intent intent = new Intent(FormPhysicalAttributeActivity.this, MatrimonyActivity.class);
+        Intent intent = new Intent(FormPhysicalAttributeActivity.this, MainActivityModules.class);
         intent.putExtra("mat_id",mat_id);
         startActivity(intent);
         FormPhysicalAttributeActivity.this.finish();

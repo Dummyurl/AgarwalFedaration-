@@ -76,6 +76,7 @@ public class Business_My_Add extends AppCompatActivity {
                     arrayList = (ArrayList<My_Add_Card_Pojo>) response.body();
                     adapter = new Business_My_Add_Adapter(arrayList, Business_My_Add.this);
                     recyclerView.setAdapter(adapter);
+                    //Toast.makeText(Business_My_Add.this, "success", Toast.LENGTH_SHORT).show();
                 }
             }
 

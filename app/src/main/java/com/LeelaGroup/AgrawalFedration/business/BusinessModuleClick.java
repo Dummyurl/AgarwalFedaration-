@@ -1,8 +1,10 @@
 package com.LeelaGroup.AgrawalFedration.business;
 
 import android.app.ProgressDialog;
+import android.content.DialogInterface;
 import android.os.Bundle;
 import android.support.v4.view.MenuItemCompat;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -31,8 +33,9 @@ public class BusinessModuleClick extends AppCompatActivity implements SearchView
     RecyclerView.LayoutManager layoutManager;
     ArrayList<BusinessCardPojo> arrayList;
     BusinessModuleClickAdapter adapter;
-    String cat_id;
+    String cat_id,cat_name;
     private ProgressDialog pDialog;
+    AlertDialog alert;
 
     Business_Medical_Session business_Medical_session;
 
@@ -49,18 +52,19 @@ public class BusinessModuleClick extends AppCompatActivity implements SearchView
 
         showpDialog();
 
+        cat_id = getIntent().getStringExtra("cat_id");
+        cat_name = getIntent().getStringExtra("category_name");
 
         Toolbar toolbar  = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        getSupportActionBar().setDisplayShowHomeEnabled(true);
-        getSupportActionBar().setTitle("Details");
+        if(toolbar!=null) {
+            getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+            getSupportActionBar().setDisplayShowHomeEnabled(true);
+            getSupportActionBar().setTitle(cat_name);
+        }
 
 
 
-
-
-        cat_id = getIntent().getStringExtra("cat_id");
         recyclerView = (RecyclerView) findViewById(R.id.recyclerView);
         layoutManager = new LinearLayoutManager(this);
         recyclerView.setLayoutManager(layoutManager);
@@ -77,12 +81,29 @@ public class BusinessModuleClick extends AppCompatActivity implements SearchView
             public void onResponse(Call<List<BusinessCardPojo>> call, Response<List<BusinessCardPojo>> response) {
                 hidepDialog();
 
-                if (response.isSuccessful()) {
-                    arrayList = (ArrayList<BusinessCardPojo>) response.body();
-                    adapter = new BusinessModuleClickAdapter(arrayList, BusinessModuleClick.this);
-                    recyclerView.setAdapter(adapter);
-                } else if (response.code() == 401) {
-                    Toast.makeText(BusinessModuleClick.this, "data is not found", Toast.LENGTH_SHORT).show();
+                try {
+
+                        arrayList = (ArrayList<BusinessCardPojo>) response.body();
+                        adapter = new BusinessModuleClickAdapter(arrayList, BusinessModuleClick.this);
+                        recyclerView.setAdapter(adapter);
+                    if (arrayList.isEmpty())
+                    {
+                        final AlertDialog.Builder builder = new AlertDialog.Builder(BusinessModuleClick.this);
+                        builder.setMessage("No Result Found")
+                                .setTitle("Result")
+                                .setCancelable(false)
+                                .setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                                    public void onClick(DialogInterface dialog, int id) {
+                                        alert.dismiss();
+                                        finish();
+                                    }
+                                });
+                        alert = builder.create();
+                        alert.show();
+                    }
+
+                } catch (Exception e) {
+                    e.printStackTrace();
                 }
             }
 

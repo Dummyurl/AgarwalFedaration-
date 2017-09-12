@@ -1,8 +1,10 @@
 package com.LeelaGroup.AgrawalFedration.matrimony;
 
 import android.app.ProgressDialog;
+import android.content.DialogInterface;
 import android.os.Bundle;
 import android.support.v4.view.MenuItemCompat;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -16,6 +18,7 @@ import com.LeelaGroup.AgrawalFedration.MatrimonySession;
 import com.LeelaGroup.AgrawalFedration.Network.ApiClient;
 import com.LeelaGroup.AgrawalFedration.R;
 import com.LeelaGroup.AgrawalFedration.Service.ServiceMatrimony;
+import com.LeelaGroup.AgrawalFedration.business.BusinessModuleClick;
 import com.LeelaGroup.AgrawalFedration.matrimony.models.FetchFilterDetail;
 
 import java.util.ArrayList;
@@ -32,7 +35,7 @@ public class FindMatchActivity extends AppCompatActivity implements SearchView.O
     RecyclerView.LayoutManager layoutManager;
     ArrayList<FetchFilterDetail> list=new ArrayList<FetchFilterDetail>();
     private ProgressDialog pDialog;
-
+    AlertDialog alert;
     MatrimonySession matrimonySession;
 
     String lookingFor,city,cast;
@@ -78,11 +81,31 @@ public class FindMatchActivity extends AppCompatActivity implements SearchView.O
             @Override
             public void onResponse(Call<List<FetchFilterDetail>> call, Response<List<FetchFilterDetail>> response) {
                // hidepDialog();
-                list=(ArrayList<FetchFilterDetail>)response.body();
-                adapter=new PersonDetailsAdapter(list,FindMatchActivity.this);
-                recyclerView.setAdapter(adapter);
-                Toast.makeText(FindMatchActivity.this, "Success", Toast.LENGTH_SHORT).show();
-                hidepDialog();
+
+                try {
+
+                    list=(ArrayList<FetchFilterDetail>)response.body();
+                    adapter=new PersonDetailsAdapter(list,FindMatchActivity.this);
+                    recyclerView.setAdapter(adapter);
+                    hidepDialog();
+                    if (list.isEmpty())
+                    {
+                        final AlertDialog.Builder builder = new AlertDialog.Builder(FindMatchActivity.this);
+                        builder.setMessage("No Result Found")
+                                .setTitle("Result")
+                                .setCancelable(false)
+                                .setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                                    public void onClick(DialogInterface dialog, int id) {
+                                        alert.dismiss();
+                                        finish();
+                                    }
+                                });
+                        alert = builder.create();
+                        alert.show();
+                    }
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
             }
 
             @Override

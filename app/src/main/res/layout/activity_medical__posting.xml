@@ -40,7 +40,9 @@
                         android:layout_gravity="center"
                         android:layout_marginTop="@dimen/layoutMarginBottom"
                         android:adjustViewBounds="true"
-                        android:visibility="gone" />
+                        android:src="@drawable/ic_camera_alt_black_24dp"
+                        />
+<!--
 
                     <ImageView
                         android:id="@+id/btnBrowse"
@@ -52,6 +54,7 @@
                         android:onClick="browse_btn"
                         android:src="@drawable/ic_camera_alt_black_24dp"
                         android:text="Upload Image" />
+-->
 
                 </LinearLayout>
 
@@ -259,7 +262,7 @@
                             android:padding="@dimen/layoutMarginBottom"
                             android:textColor="#090"
                             android:textSize="20sp"
-                            android:textStyle="bold" />
+                             />
                     </android.support.design.widget.TextInputLayout>
 
                     <android.support.design.widget.TextInputLayout
@@ -277,7 +280,7 @@
                             android:padding="@dimen/layoutMarginBottom"
                             android:textColor="#090"
                             android:textSize="20sp"
-                            android:textStyle="bold" />
+                             />
                     </android.support.design.widget.TextInputLayout>
 
                 </LinearLayout>
@@ -458,7 +461,6 @@
                                 android:text="Hide"
                                 android:textSize="@dimen/layoutMargin" />
 
-
                         </RadioGroup>
 
                     </LinearLayout>
@@ -471,7 +473,9 @@
                         android:layout_marginTop="@dimen/layoutMarginBottom"
                         android:background="@color/colorPrimary"
                         android:gravity="center"
-                        android:text="Save" />
+                        android:text="Save"
+                        android:textAllCaps="false"
+                        android:textColor="@color/white"/>
 
                 </LinearLayout>
             </LinearLayout>

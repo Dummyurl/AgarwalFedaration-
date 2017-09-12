@@ -24,7 +24,7 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_margin="@dimen/form_layout_margin"
+                android:layout_margin="@dimen/layout_bottom_margin"
                 android:orientation="vertical">
                 <!--
                         <TextView
@@ -36,7 +36,7 @@
                             android:textAlignment="center"
                             android:textSize="20dp"
                             android:layout_marginBottom="10dp"
-                            android:textStyle="bold"
+                            
                             android:textColor="@color/colorAccent"/>-->
 
 
@@ -45,9 +45,10 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
-                    android:layout_margin="@dimen/layout_margin"
+                    android:layout_margin="@dimen/form_spinner_label_mar_left"
                     android:layout_weight=".5"
                     android:text="@string/Manglik"
+                    android:textColor="@color/black"
                     android:textSize="@dimen/form_tv_size" />
 
                 <LinearLayout
@@ -163,8 +164,10 @@
                         android:layout_marginBottom="@dimen/button_margin_bottom"
                         android:onClick="goToFormEducationDetails"
                         android:text="@string/save_next"
+                        android:textSize="@dimen/text_size"
+                        android:textAllCaps="false"
                         android:textColor="@color/buttonTextColor"
-                        android:textStyle="bold" />
+                        />
                     <!-- <Button
                          android:id="@+id/bnsaveupdate"
                          android:layout_width="50dp"

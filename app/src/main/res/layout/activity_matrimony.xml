@@ -7,6 +7,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:weightSum="1"
+    android:background="@drawable/bk_metro"
     tools:context=".matrimony.MatrimonyActivity">
 
     <LinearLayout
@@ -18,73 +19,16 @@
             android:id="@+id/toolbar"
             layout="@layout/toolbar" />
 
+
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:layout_margin="@dimen/layout_margin"
+            android:layout_margin="@dimen/MarginTopCardField"
             android:gravity="center"
             android:orientation="vertical">
 
-            <!--    <RelativeLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent">
 
-                    &lt;!&ndash;  <ImageView
-                          android:id="@+id/imageView"
-                          android:layout_width="match_parent"
-                          android:layout_height="250dp"
-                          android:layout_alignParentEnd="true"
-                          android:layout_weight="0.09"
-                          android:scaleType="fitXY"
-                          android:src="@drawable/img_matri_firstpg" />
-            &ndash;&gt;
-                    &lt;!&ndash; <de.hdodenhof.circleimageview.CircleImageView
-                         android:layout_width="60dp"
-                         android:layout_height="60dp"
-                         android:id="@+id/profilepiuc"
-                         android:layout_gravity="left"
-                         android:layout_marginTop="167dp"
-                         android:layout_marginLeft="10dp"
-                         android:src="@drawable/one"
-                         android:text="Create Profile"
-                         android:textStyle="bold" />&ndash;&gt;
-
-                    &lt;!&ndash; <TextView
-                         android:id="@+id/fname"
-                         android:layout_width="wrap_content"
-                         android:layout_height="wrap_content"
-                         android:background="#3322"
-                         android:padding="2dp"
-                         android:textSize="15dp"
-                         android:scaleType="fitXY"
-                         android:src="@drawable/one"
-                         android:text="First Name"
-                         android:textAlignment="center"
-                         android:layout_marginLeft="10dp"
-                         android:textColor="#fff"
-                         android:textStyle="bold"
-                         android:layout_below="@+id/profilepiuc"
-                         android:layout_alignStart="@+id/profilepiuc" />
-           &ndash;&gt;
-                    &lt;!&ndash; <Button
-                         android:id="@+id/button"
-                         android:layout_width="129dp"
-                         android:layout_height="34dp"
-                         android:layout_alignBottom="@+id/imageView"
-                         android:layout_alignParentEnd="true"
-                         android:layout_gravity="right"
-                         android:layout_marginBottom="5dp"
-                         android:layout_marginEnd="22dp"
-                         android:layout_marginTop="-55dp"
-                         android:background="@color/colorPrimary"
-                         android:onClick="goToFormBasicDetailsActivity"
-                         android:text="Create Profile"
-                         android:textColor="#ffffff"
-                         android:textStyle="bold" />
-           &ndash;&gt;
-                </RelativeLayout>
-    -->
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -96,6 +40,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:padding="@dimen/form_text_input_layout_padding">
+
                     <AutoCompleteTextView
                         android:id="@+id/spr_locatedin"
                         android:layout_width="match_parent"
@@ -109,9 +54,10 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/layout_margin"
                 android:orientation="horizontal"
-                android:layout_marginTop="@dimen/form_spinner_layout_margin_top"
                 android:weightSum="1">
+
                 <Spinner
                     android:id="@+id/spr_lookingfor"
                     android:layout_width="match_parent"
@@ -124,7 +70,7 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/form_spinner_layout_margin_top"
+                android:layout_marginTop="@dimen/layout_margin"
                 android:orientation="horizontal"
                 android:weightSum="1">
 
@@ -136,12 +82,20 @@
                     android:entries="@array/cast" />
             </LinearLayout>
 
-            <LinearLayout
+            <Button
+                android:id="@+id/bt_findmatch"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:gravity="center"
-                android:orientation="horizontal"
-                android:weightSum="1">
+                android:layout_marginTop="30dp"
+                android:background="@color/colorPrimary"
+                android:onClick="goToFindMatchActivity"
+                android:text="@string/FindMatch"
+                android:textAllCaps="false"
+                android:textColor="@color/white"
+                android:textSize="@dimen/text_size" />
+
+
+            <!--
 
                 <Button
                     android:id="@+id/bt_findmatch"
@@ -150,23 +104,63 @@
                     android:layout_weight=".5"
                     android:background="@color/colorPrimary"
                     android:onClick="goToFindMatchActivity"
-                    android:layout_marginTop="@dimen/button_margin_top"
+                    android:layout_marginTop="@dimen/layout_margin"
                     android:text="@string/FindMatch"
+                    android:textAllCaps="false"
+                    android:textSize="@dimen/text_size"
                     android:textColor="@color/buttonTextColor"
-                    android:textStyle="bold" />
+                    />
+-->
 
-            </LinearLayout>
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_margin="@dimen/layout_margin"
-                android:gravity="end"
+                android:gravity="start"
+                android:layout_marginTop="@dimen/top_margin_15"
                 android:onClick="goToFormBasicDetailsActivity"
-                android:text="@string/CreateProfile"
-                android:textColor="@color/createProfileColor"
-                android:textSize="@dimen/createProfile_textSize"
-                android:textStyle="bold" />
+                android:layout_marginBottom="@dimen/text_layout_margin"
+                android:text="@string/successstories"
+                android:textColor="@color/colorPrimary"
+                android:textSize="@dimen/text_size" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/text_layout_margin">
+
+                <com.LeelaGroup.AgrawalFedration.matrimony.AutoScrollViewPager
+                    android:id="@+id/view_pager"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@null">
+                </com.LeelaGroup.AgrawalFedration.matrimony.AutoScrollViewPager>
+
+
+                <ImageView
+                    android:id="@+id/btn_next"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:background="@null"
+                    android:src="@drawable/ic_next"
+                    android:textColor="@android:color/white"
+
+                    />
+
+                <ImageView
+                    android:id="@+id/btn_preev"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_alignParentLeft="true"
+                    android:layout_centerVertical="true"
+                    android:background="@null"
+                    android:src="@drawable/ic_prev"
+                    android:textColor="@android:color/white" />
+            </RelativeLayout>
+
         </LinearLayout>
+
     </LinearLayout>
 </LinearLayout>

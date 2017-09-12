@@ -26,6 +26,8 @@ import com.LeelaGroup.AgrawalFedration.R;
 import com.LeelaGroup.AgrawalFedration.Service.Medical.MedicalServiceAPI;
 import com.LeelaGroup.AgrawalFedration.Service.Medical.ServiceAPIEducation;
 import com.LeelaGroup.AgrawalFedration.business.Login_Business;
+import com.LeelaGroup.AgrawalFedration.matrimony.ForgotPasswordActivity;
+import com.LeelaGroup.AgrawalFedration.matrimony.LoginMatrimony;
 import com.LeelaGroup.AgrawalFedration.matrimony.validation.CustomValidator;
 import com.LeelaGroup.AgrawalFedration.medical.Login_Medical;
 
@@ -89,7 +91,10 @@ public class login_education extends AppCompatActivity
         forgotPass.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                    forgotPass();                
+//                    forgotPass();
+                Intent intent =new Intent(login_education.this,ForgotPassEdu.class);
+                startActivity(intent);
+                finish();
             }
         });
 
@@ -252,7 +257,7 @@ public class login_education extends AppCompatActivity
         });
     }
 
-    // code for Forgot PAssword 
+    // code for Forgot PAssword
     private void forgotPass() {
         AlertDialog.Builder fpalertDailog = new AlertDialog.Builder(this);
         fpalertDailog.setTitle("Forgot Password");

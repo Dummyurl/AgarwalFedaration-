@@ -1,8 +1,8 @@
 <component name="libraryTable">
   <library name="fillableloaders-1.02">
     <CLASSES>
-      <root url="jar://$PROJECT_DIR$/app/build/intermediates/exploded-aar/com.github.jorgecastilloprz/fillableloaders/1.02/jars/classes.jar!/" />
-      <root url="file://$PROJECT_DIR$/app/build/intermediates/exploded-aar/com.github.jorgecastilloprz/fillableloaders/1.02/res" />
+      <root url="jar://$USER_HOME$/.android/build-cache/af9aee31aa26b9960dbc0d2095b91f323ae1aa9b/output/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.android/build-cache/af9aee31aa26b9960dbc0d2095b91f323ae1aa9b/output/res" />
     </CLASSES>
     <JAVADOC />
     <SOURCES>

@@ -12,7 +12,7 @@ android:layout_height="wrap_content">
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        android:padding="10dp"
+        android:padding="@dimen/personDetailRowLay_main_lay_inr_padding"
         android:weightSum="1">
         <LinearLayout
             android:layout_width="match_parent"
@@ -28,54 +28,41 @@ android:layout_height="wrap_content">
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            android:layout_marginLeft="20dp"
+            android:padding="@dimen/personDetailRowLay_main_lay_inr_padding"
             android:layout_weight="0.4">
-
             <TextView
                 android:id="@+id/person_id"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_alignParentTop="true"
-                android:layout_marginLeft="20dp"
                 android:layout_marginTop="15dp"
-                android:layout_toRightOf="@+id/person_image"
+                android:padding="1dp"
                 android:text="ID007"
-                android:textSize="18dp"
-                android:textStyle="bold" />
-
+                android:textSize="@dimen/form_tv_size"
+                 />
 
             <TextView
                 android:id="@+id/person_name"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_below="@+id/person_age"
-                android:layout_marginLeft="20dp"
                 android:layout_marginTop="5dp"
-                android:textSize="18dp"
-                android:textStyle="bold"
-                android:layout_toRightOf="@+id/person_image"
+                android:padding="1dp"
+                android:textSize="@dimen/form_tv_size"
                 android:text="Name"/>
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_toRightOf="@+id/person_image"
-                android:layout_below="@+id/person_height"
                 android:text="IT Engineer"
-                android:textSize="18dp"
-                android:textStyle="bold"
-                android:layout_marginLeft="20dp"
+                android:textSize="@dimen/form_tv_size"
                 android:layout_marginTop="5dp"
+                android:padding="1dp"
                 android:id="@+id/person_designation"/>
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_toRightOf="@+id/person_image"
-                android:layout_below="@+id/person_id"
                 android:text="25"
-                android:textSize="18dp"
-                android:textStyle="bold"
-                android:layout_marginLeft="20dp"
+                android:padding="1dp"
+                android:textSize="@dimen/form_tv_size"
                 android:layout_marginTop="5dp"
                 android:id="@+id/person_age"/>
 

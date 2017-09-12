@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     package="com.LeelaGroup.AgrawalFedration">
+
+    <uses-sdk tools:overrideLibrary="com.eqot.fontawesome" />
 
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.INTERNET" />
@@ -15,15 +18,11 @@
 
     <application
         android:allowBackup="true"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@drawable/logosplash"
         android:label="@string/app_name"
         android:largeHeap="true"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity
-            android:name=".medical.Navigation_drawer"
-            android:label="@string/app_name"
-            android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".Social_Refurn.SplashScreen"
             android:theme="@style/AppTheme.NoActionBar">
@@ -35,7 +34,9 @@
         </activity>
         <!-- <activity android:name=".medical.MainActivityModules"/> -->
         <activity android:name=".MainActivityModules" />
-
+        <activity android:name=".ForgotPasswordAll" />
+        <activity android:name=".SendOtpAll" />
+        <activity android:name=".ResetPasswordAll" />
         <activity android:name=".medical.Medical_Module" />
         <activity android:name=".medical.SearchResult_Medical" />
         <activity android:name=".medical.Share_App" />
@@ -79,7 +80,10 @@
         <activity android:name=".education.ViewFlipperEducation" />
         <activity android:name=".education.BEAT" />
         <activity android:name=".education.B_OtherDetail" />
-        <activity android:name=".education.B_Refference"></activity>
+        <activity android:name=".education.B_Refference" />
+        <activity android:name=".education.ForgotPassEdu" />
+        <activity android:name=".education.SendOtpEdu" />
+        <activity android:name=".education.ResetPassEdu" />
 
         <!-- <activity android:name=".Event"/> -->
 
@@ -97,7 +101,6 @@
         <activity android:name=".matrimony.FamilyDetailsActivity" />
         <activity android:name=".matrimony.FeedbackActivity" />
         <activity android:name=".matrimony.FindMatchActivity" />
-        <activity android:name=".matrimony.FloatingButton" />
         <activity android:name=".matrimony.FormBasicDetailsActivity" />
         <activity android:name=".matrimony.FormContactInformationActivity" />
         <activity android:name=".matrimony.FormEducationDetailsActivity" />
@@ -121,6 +124,10 @@
         <activity android:name=".matrimony.SocialAttributeActivity" />
         <activity android:name=".matrimony.SuccessStoriesActivity" />
         <activity android:name=".matrimony.SuccessStoriesFullViewActivity" />
+        <activity android:name=".matrimony.MyCreatedProfiles" />
+        <activity android:name=".matrimony.ForgotPasswordActivity" />
+        <activity android:name=".matrimony.SendOtpActivity" />
+        <activity android:name=".matrimony.ResetPasswordActivity" />
         ********************************End Matrimony Module**********************
 
 
@@ -135,7 +142,13 @@
         <activity android:name=".business.Businees_Edit_My_Add" />
         <activity android:name=".business.Business_My_Add" />
         <activity android:name=".business.Business_registration" />
-        <activity android:name=".Social_Refurn.Social_Refurn"/>
+        <activity android:name=".Social_Refurn.Social_Refurn" />
+        <activity android:name=".medical.TopSearchItemClick" />
+        <activity android:name=".business.BusinessCardClick" />
+        <activity
+            android:name=".Home"
+            android:label="@string/title_activity_main_drawer"
+            android:theme="@style/AppTheme"></activity>
     </application>
 
 </manifest>

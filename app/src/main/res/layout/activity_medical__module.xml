@@ -6,6 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:background="@drawable/med_back4"
     tools:context="com.LeelaGroup.AgrawalFedration.medical.Medical_Module">
 
     <include
@@ -41,7 +42,8 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="@dimen/layoutMargin"
-                    android:hint="@string/Location" />
+                    android:hint="@string/Location"
+                    />
             </android.support.design.widget.TextInputLayout>
         </LinearLayout>
 
@@ -54,15 +56,15 @@
             android:orientation="horizontal">
 -->
 
-            <Spinner
-                android:layout_margin="@dimen/layoutMargin"
-                android:id="@+id/simpleSpinner"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:entries="@array/search_type" />
-<!--
-        </LinearLayout>
--->
+        <Spinner
+            android:id="@+id/simpleSpinner"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/layoutMargin"
+            android:entries="@array/search_type" />
+        <!--
+                </LinearLayout>
+        -->
 
 
         <Button
@@ -73,7 +75,10 @@
             android:layout_marginRight="@dimen/layoutMargin"
             android:layout_marginTop="@dimen/layoutMargin"
             android:background="@color/buttons"
-            android:text="@string/Top_Search" />
+            android:text="@string/Top_Search"
+            android:textAllCaps="false"
+            android:textColor="@color/white"
+            />
 
 
         <LinearLayout
@@ -92,7 +97,9 @@
                 android:layout_margin="@dimen/marginButton1"
                 android:layout_weight="0.5"
                 android:background="@color/buttons"
-                android:text="@string/View_Add" />
+                android:text="@string/View_Add"
+                android:textAllCaps="false"
+                android:textColor="@color/white" />
 
 
             <Button
@@ -102,7 +109,9 @@
                 android:layout_margin="@dimen/marginButton1"
                 android:layout_weight="0.5"
                 android:background="@color/buttons"
-                android:text="@string/Add_your_services" />
+                android:text="@string/Add_your_services"
+                android:textAllCaps="false"
+                android:textColor="@color/white" />
         </LinearLayout>
 
     </LinearLayout>

@@ -10,9 +10,6 @@
     tools:context="com.LeelaGroup.AgrawalFedration.MainActivityModules">
 
 
-    <include layout="@layout/toolbar"
-        android:id="@+id/toolbar"/>
-
 
     <android.support.v7.widget.RecyclerView
         android:id="@+id/recyclerView"

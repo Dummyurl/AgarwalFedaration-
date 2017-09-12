@@ -75,7 +75,7 @@ public class BusinessActivity extends AppCompatActivity {
         inflater.inflate(R.menu.menu_item_business, menu);
         return super.onCreateOptionsMenu(menu);
     }
-
+@Override
     public boolean onOptionsItemSelected(MenuItem item) {
 
         super.onOptionsItemSelected(item);
@@ -104,8 +104,6 @@ public class BusinessActivity extends AppCompatActivity {
                 return true;
 
 
-                //return super.onOptionsItemSelected(item);
-
             /*case R.id.item_logout:
                 business_Medical_session.logoutUser();
                 finish();
@@ -114,7 +112,7 @@ public class BusinessActivity extends AppCompatActivity {
 
 
         }
-        return true;
+    return super.onOptionsItemSelected(item);
     }
 
 
@@ -126,13 +124,15 @@ public class BusinessActivity extends AppCompatActivity {
         call.enqueue(new Callback<List<BusinessImage>>() {
             @Override
             public void onResponse(Call<List<BusinessImage>> call, Response<List<BusinessImage>> response) {
-                  hidepDialog();
-                if (response.isSuccessful()) {
-                    arrayList = (ArrayList<BusinessImage>) response.body();
-                    adapter = new BusinessModuleAdapter(arrayList, BusinessActivity.this);
-                    recyclerView.setAdapter(adapter);
-                } else if (response.code() == 401) {
-                    Toast.makeText(BusinessActivity.this, "Data is not found", Toast.LENGTH_SHORT).show();
+                hidepDialog();
+                try {
+                    if (response.isSuccessful()) {
+                        arrayList = (ArrayList<BusinessImage>) response.body();
+                        adapter = new BusinessModuleAdapter(arrayList, BusinessActivity.this);
+                        recyclerView.setAdapter(adapter);
+                    }
+                } catch (Exception e) {
+                    e.printStackTrace();
                 }
             }
 

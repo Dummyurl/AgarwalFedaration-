@@ -11,8 +11,7 @@
 
     <item
         android:id="@+id/item_add_addvertized"
-        android:title="@string/add_addvertized"
-        />
+        android:title="@string/add_addvertized" />
     <item
         android:id="@+id/item_my_add"
         android:title="@string/my_add"

@@ -2,16 +2,20 @@ package com.LeelaGroup.AgrawalFedration.business;
 
 import android.app.ProgressDialog;
 import android.content.Intent;
+import android.graphics.Typeface;
 import android.support.design.widget.TextInputLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.Toolbar;
 import android.text.Editable;
 import android.text.TextUtils;
 import android.text.TextWatcher;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.LeelaGroup.AgrawalFedration.Business_Pojo.Business_Registration_Pojo;
@@ -42,6 +46,10 @@ public class Business_registration extends AppCompatActivity implements View.OnC
         pDialog.setMessage("Please wait...");
         pDialog.setCancelable(false);
 
+        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setTitle("Register");
         layout_name = (TextInputLayout) findViewById(R.id.layout_name);
         layout_email = (TextInputLayout) findViewById(R.id.layout_email);
         layout_mobile = (TextInputLayout) findViewById(R.id.layout_uesrname);
@@ -71,7 +79,7 @@ public class Business_registration extends AppCompatActivity implements View.OnC
             }
         });
 
-        go_to_login.setOnClickListener(new View.OnClickListener() {
+        /*go_to_login.setOnClickListener(new View.OnClickListener() {
 
             @Override
             public void onClick(View v) {
@@ -79,7 +87,21 @@ public class Business_registration extends AppCompatActivity implements View.OnC
                 intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                 startActivity(intent);
             }
-        });
+        });*/
+    }
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+
+        switch (item.getItemId()) {
+
+            case android.R.id.home:
+
+                onBackPressed();
+
+                return true;
+        }
+
+        return super.onOptionsItemSelected(item);
     }
 
     @Override
@@ -221,8 +243,10 @@ public class Business_registration extends AppCompatActivity implements View.OnC
                     Intent intent = new Intent(Business_registration.this, Login_Business.class);
                     intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                     startActivity(intent);
+                }else{
+
+                    Toast.makeText(Business_registration.this, pojo.getMessage(), Toast.LENGTH_SHORT).show();
                 }
-                Toast.makeText(Business_registration.this, pojo.getMessage(), Toast.LENGTH_SHORT).show();
 
             }
 

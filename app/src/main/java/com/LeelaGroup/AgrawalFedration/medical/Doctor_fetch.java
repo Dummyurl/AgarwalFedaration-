@@ -11,12 +11,15 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Toast;
 
+import com.LeelaGroup.AgrawalFedration.Business_Medical_Session;
+import com.LeelaGroup.AgrawalFedration.MatrimonySession;
 import com.LeelaGroup.AgrawalFedration.Medical_Pojos.Medical;
 import com.LeelaGroup.AgrawalFedration.Medical_Session;
 import com.LeelaGroup.AgrawalFedration.Network.ApiClient;
 import com.LeelaGroup.AgrawalFedration.R;
 import com.LeelaGroup.AgrawalFedration.Service.Medical.MedicalServiceAPI;
 
+import java.util.HashMap;
 import java.util.List;
 
 import retrofit2.Call;
@@ -29,12 +32,17 @@ public class Doctor_fetch extends Fragment {
     View rootView;
      RecyclerView recyclerView;
      RecyclerView.LayoutManager layoutManager;
-     List<Medical> list;
+    List<Medical> list;
     MedicalAdapter adapter;
-
+    String user_id;
+    Business_Medical_Session business_medical_session;
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        business_medical_session=new Business_Medical_Session(getContext());
+        HashMap<String, String> user = business_medical_session.getUserDetails();
+        user_id = user.get(MatrimonySession.KEY_ID);
 
         // Initialize dataset, this data would usually come from a local content provider or
         // remote server.
@@ -43,7 +51,7 @@ public class Doctor_fetch extends Fragment {
 
     private void getImageData() {
         MedicalServiceAPI service= ApiClient.getRetrofit().create(MedicalServiceAPI.class);
-        Call<List<Medical>> call=service.getImageDoctor();
+        Call<List<Medical>> call=service.getImageDoctor(user_id);
         call.enqueue(new Callback<List<Medical>>() {
 
             @Override

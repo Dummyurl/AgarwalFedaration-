@@ -94,7 +94,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/Register"
-                android:background="#ef5350"/>
+                android:textAllCaps="false"
+                android:background="@color/colorPrimary"/>
 
 
     </LinearLayout>

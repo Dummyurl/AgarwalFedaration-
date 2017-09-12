@@ -1,5 +1,6 @@
 package com.LeelaGroup.AgrawalFedration.matrimony;
 
+import android.graphics.Typeface;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
@@ -24,6 +25,7 @@ public class ContactInformationActivity extends AppCompatActivity {
     ImageView profilepic;
     Toolbar toolbar;
     TextView mob,lndline,email,addr,cntry,state,city,pincode,resstae;
+    TextView i_mob,i_lndline,i_email,i_addr,i_cntry,i_state,i_city,i_pincode,i_resstae;
 
     MatrimonySession matrimonySession;
     @Override
@@ -33,7 +35,7 @@ public class ContactInformationActivity extends AppCompatActivity {
         matrimonySession=new MatrimonySession(getApplicationContext());
 
         init();
-
+        initIcon();
 
         toolbar=(Toolbar)findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
@@ -90,6 +92,37 @@ public class ContactInformationActivity extends AppCompatActivity {
         city=(TextView)findViewById(R.id.d_per_city);
         pincode=(TextView)findViewById(R.id.d_per_pincode);
         resstae=(TextView)findViewById(R.id.d_per_residential_sttus);
+
+    }
+    public void initIcon(){
+        Typeface icon = Typeface.createFromAsset(this.getAssets(), "fontawesome-webfont.ttf" );
+
+        i_mob = (TextView) findViewById(R.id.per_mobile_no);
+        i_mob.setTypeface(icon);
+
+        i_lndline = (TextView) findViewById(R.id.per_landline_no);
+        i_lndline.setTypeface(icon);
+
+        i_email = (TextView) findViewById(R.id.per_email);
+        i_email.setTypeface(icon);
+
+        i_addr = (TextView) findViewById(R.id.per_address);
+        i_addr.setTypeface(icon);
+
+        i_cntry = (TextView) findViewById(R.id.per_country);
+        i_cntry.setTypeface(icon);
+
+        i_state = (TextView) findViewById(R.id.per_state);
+        i_state.setTypeface(icon);
+
+        i_city = (TextView) findViewById(R.id.per_city);
+        i_city.setTypeface(icon);
+
+        i_pincode = (TextView) findViewById(R.id.per_pincode);
+        i_pincode.setTypeface(icon);
+
+        i_resstae = (TextView) findViewById(R.id.per_residential_sttus);
+        i_resstae.setTypeface(icon);
 
     }
 

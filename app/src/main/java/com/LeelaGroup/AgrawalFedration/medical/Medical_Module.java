@@ -152,15 +152,20 @@ public class Medical_Module extends AppCompatActivity implements SearchView.OnQu
         call.enqueue(new Callback<List<Medical>>() {
             @Override
             public void onResponse(Call<List<Medical>> call, Response<List<Medical>> response) {
-                citydata = response.body();
 
-                nameList = new String[citydata.size()];
 
-                for (int i = 0; i < citydata.size(); i++) {
-                    nameList[i] = citydata.get(i).getCity_name();
+                try {
+                    citydata = response.body();
+                    nameList = new String[citydata.size()];
+
+                    for (int i = 0; i < citydata.size(); i++) {
+                        nameList[i] = citydata.get(i).getCity_name();
+                    }
+                    dataAdapter1 = new ArrayAdapter<String>(Medical_Module.this, android.R.layout.simple_list_item_1, nameList);
+                    autoCompleteTextView.setAdapter(dataAdapter1);
+                } catch (Exception e) {
+
                 }
-                dataAdapter1 = new ArrayAdapter<String>(Medical_Module.this, android.R.layout.simple_list_item_1, nameList);
-                autoCompleteTextView.setAdapter(dataAdapter1);
 
 
             }

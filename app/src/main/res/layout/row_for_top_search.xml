@@ -2,9 +2,8 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:orientation="vertical">
-
-
+    android:orientation="vertical"
+    android:layout_marginBottom="10dp">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -17,8 +16,8 @@
 
             <ImageView
                 android:id="@id/imageView"
-                android:layout_width="100dp"
-                android:layout_height="156dp"
+                android:layout_width="120dp"
+                android:layout_height="130dp"
                 android:scaleType="fitXY" />
 
         </LinearLayout>
@@ -29,79 +28,86 @@
             android:layout_marginLeft="15dp"
             android:orientation="vertical">
 
-            <LinearLayout
+            <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:layout_marginTop="10dp">
+                 android:layout_margin="10dp">
 
-                <ImageView
-                    android:layout_width="wrap_content"
+                <TextView
+                    android:id="@+id/name"
+                    android:layout_width="@dimen/radio_button_height"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="10dp"
-                    android:src="@drawable/ic_home_black_24dp" />
+                    android:text="@string/person_ic"
+                    android:textSize="@dimen/text_size"
+                    android:textColor="@color/colorPrimary"
+                     />
 
                 <TextView
                     android:id="@+id/Service_name"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="10dp"
-                    android:padding="5dp"
-                    android:text="Name" />
-            </LinearLayout>
+                    android:text="Name"
+                    android:layout_toEndOf="@+id/name"/>
+            </RelativeLayout>
 
-            <include layout="@layout/item_devider1" />
+            <include layout="@layout/item_divider" />
 
-            <LinearLayout
+            <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                >
 
-                android:orientation="horizontal">
-
-                <ImageView
-                    android:layout_width="wrap_content"
+                <TextView
+                    android:id="@+id/contact"
+                    android:layout_width="@dimen/radio_button_height"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="10dp"
-                    android:src="@drawable/ic_local_phone_black_24dp" />
+                    android:text="@string/mobile_ic"
+                    android:textSize="@dimen/text_size"
+                    android:textColor="@color/colorPrimary"
+                     />
 
                 <TextView
                     android:id="@+id/Service_contact"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="10dp"
-                    android:padding="5dp"
-                    android:text="Contact" />
-            </LinearLayout>
+                    android:text="Contact"
+                    android:layout_toEndOf="@+id/contact"/>
+            </RelativeLayout>
 
-            <include layout="@layout/item_devider1"
+            <include layout="@layout/item_divider"
 
                 />
 
-            <LinearLayout
+            <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal">
+                android:layout_margin="10dp"
+                >
 
-                <ImageView
-                    android:layout_width="wrap_content"
+                <TextView
+                    android:id="@+id/Address"
+                    android:layout_width="@dimen/radio_button_height"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="10dp"
-                    android:src="@drawable/ic_location_on_black_24dp" />
+                    android:text="@string/add_ic"
+                    android:textSize="@dimen/text_size"
+                    android:textColor="@color/colorPrimary"
+                    />
 
                 <TextView
                     android:id="@+id/Service_Address"
                     android:layout_width="match_parent"
-                    android:layout_height="55dp"
-                    android:layout_marginLeft="10dp"
-                    android:padding="5dp"
-                    android:text="Address" />
-            </LinearLayout>
+                    android:layout_height="wrap_content"
+                    android:text="Address"
+                    android:lines="3"
+                    android:layout_toEndOf="@+id/Address"/>
+            </RelativeLayout>
 
         </LinearLayout>
 
 
     </LinearLayout>
-    <include layout="@layout/item_devider1" />
+    <include layout="@layout/item_divider" />
 
 
 </LinearLayout>

@@ -74,30 +74,11 @@ public class ForgotPasswordActivity extends AppCompatActivity {
                 {
                     userid= forgotPasswordPojo.getUserid();
                     otp= forgotPasswordPojo.getOTP();
-
-
-                   /* //extra code for testing
-                    AlertDialog.Builder builder = new AlertDialog.Builder(ForgotPasswordActivity.this);
-                    builder.setTitle("Message");
-                    builder.setMessage(forgotPasswordPojo.getOTP());
-                    builder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
-                        @Override
-                        public void onClick(DialogInterface dialog, int which) {
-                            dialog.cancel();
-                        }
-                    });
-*/
-
-
                     Intent intent=new Intent(new Intent(ForgotPasswordActivity.this,SendOtpActivity.class));
                     intent.putExtra("otp",otp);
                     intent.putExtra("userid",userid);
                     startActivity(intent);
                     finish();
-                    //matchOtp();
-
-
-
                 }
                 else {
                     AlertDialog.Builder builder = new AlertDialog.Builder(ForgotPasswordActivity.this);

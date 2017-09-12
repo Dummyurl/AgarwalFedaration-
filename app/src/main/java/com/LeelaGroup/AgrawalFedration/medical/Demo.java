@@ -26,7 +26,7 @@ public class Demo extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_demo);
 
-         Toolbar toolbar=(Toolbar)findViewById(R.id.toolbar_matrimony);
+        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar_matrimony);
         setSupportActionBar(toolbar);
 
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
@@ -35,12 +35,10 @@ public class Demo extends AppCompatActivity {
         setTitle("Advertises");
 
 
-
         simpleViewPager = (ViewPager) findViewById(R.id.simpleViewPager);
         tabLayout = (TabLayout) findViewById(R.id.simpleTabLayout);
 
         tabLayout.setupWithViewPager(simpleViewPager);
-
 
 
         TabLayout.Tab firstTab = tabLayout.newTab();
@@ -66,14 +64,14 @@ public class Demo extends AppCompatActivity {
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
 
-        switch (item.getItemId()){
+        switch (item.getItemId()) {
 
             case android.R.id.home:
 
                 onBackPressed();
                 finish();
 
-                return  true;
+                return true;
         }
 
         return super.onOptionsItemSelected(item);

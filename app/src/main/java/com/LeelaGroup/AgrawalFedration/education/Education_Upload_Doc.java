@@ -1,13 +1,20 @@
 package com.LeelaGroup.AgrawalFedration.education;
 
+import android.Manifest;
 import android.app.ProgressDialog;
 import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.database.Cursor;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.net.Uri;
+import android.os.Build;
+import android.os.Environment;
+import android.provider.DocumentsContract;
 import android.provider.MediaStore;
 import android.provider.OpenableColumns;
+import android.support.annotation.RequiresApi;
+import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -22,14 +29,22 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.LeelaGroup.AgrawalFedration.Compressor;
 import com.LeelaGroup.AgrawalFedration.EducationSessionManager;
 import com.LeelaGroup.AgrawalFedration.Education_Pojos.ServerResponse;
 import com.LeelaGroup.AgrawalFedration.Network.ApiClient;
 import com.LeelaGroup.AgrawalFedration.R;
 import com.LeelaGroup.AgrawalFedration.Service.Medical.ServiceAPIEducation;
+import com.LeelaGroup.AgrawalFedration.matrimony.ScalingUtilities;
+import com.bumptech.glide.Glide;
 
+import java.io.ByteArrayInputStream;
+import java.io.ByteArrayOutputStream;
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.InputStream;
 
 import okhttp3.MediaType;
 import okhttp3.MultipartBody;
@@ -40,30 +55,31 @@ import retrofit2.Response;
 
 public class Education_Upload_Doc extends AppCompatActivity implements View.OnClickListener {
 
-    static final int SELECTED_PICTURE_SSC= 1;
-    static final int SELECTED_PICTURE_HSC= 5;
-    static final int SELECTED_PICTURE_GRAD= 2;
-    static final int SELECTED_PICTURE_POST= 3;
-    static final int SELECTED_PICTURE_EXTRA= 7;
-    static final int SELECTED_PICTURE_CERTIFICATE= 8;
+    static final int SELECTED_PICTURE_SSC = 1;
+    static final int SELECTED_PICTURE_HSC = 5;
+    static final int SELECTED_PICTURE_GRAD = 2;
+    static final int SELECTED_PICTURE_POST = 3;
+    static final int SELECTED_PICTURE_EXTRA = 7;
+    static final int SELECTED_PICTURE_CERTIFICATE = 8;
+    public static final int MY_PERMISSIONS_REQUEST_READ_EXTERNAL_STORAGE = 23;
 
     ProgressDialog progressDialog;
 
-    ImageView ssc_btn_Result,hsc_btn_Result,grad_btn_Result,post_grad_btn_Result,Profile_btn_Result,Sign_btn_Result;
+    ImageView ssc_btn_Result, hsc_btn_Result, grad_btn_Result, post_grad_btn_Result, Profile_btn_Result, Sign_btn_Result;
 
     Toolbar toolbar;
 
     String email;
 
-    String filePath,filePath1,filePath2,filePath3,filePath5,filePath6;
+    String filePath, filePath1, filePath2, filePath3, filePath5, filePath6;
     EducationSessionManager educationSessionManager;
-    Button bt_ssc_bws,bt_hsc_bws,bt_ug_bws,bt_pg_bws,bt_pass_bws,bt_sign_bws;
-    ImageView ssc_Result, hsc_Result,graduation_Result,post_graduate_Result,other_Certificate,other_Result;
+    Button bt_ssc_bws, bt_hsc_bws, bt_ug_bws, bt_pg_bws, bt_pass_bws, bt_sign_bws;
+    ImageView ssc_Result, hsc_Result, graduation_Result, post_graduate_Result, other_Certificate, other_Result;
 
-    TextView ssc_Result_name,hsc_Result_name,graduate_text,post_graduation_text,other_activity,extra_Activity;
+    TextView ssc_Result_name, hsc_Result_name, graduate_text, post_graduation_text, other_activity, extra_Activity;
 
 
-
+    @RequiresApi(api = Build.VERSION_CODES.M)
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -91,28 +107,28 @@ public class Education_Upload_Doc extends AppCompatActivity implements View.OnCl
 
         setTitle("Upload Documents");
 
-        bt_ssc_bws=(Button)findViewById(R.id.browse_ssc);
-        bt_hsc_bws=(Button)findViewById(R.id.browse_hsc);
-        bt_ug_bws=(Button)findViewById(R.id.browse_UG);
-        bt_pg_bws=(Button)findViewById(R.id.browse_PG);
-        bt_pass_bws=(Button)findViewById(R.id.browse_pass);
-        bt_sign_bws=(Button)findViewById(R.id.browse_sign);
+        bt_ssc_bws = (Button) findViewById(R.id.browse_ssc);
+        bt_hsc_bws = (Button) findViewById(R.id.browse_hsc);
+        bt_ug_bws = (Button) findViewById(R.id.browse_UG);
+        bt_pg_bws = (Button) findViewById(R.id.browse_PG);
+        bt_pass_bws = (Button) findViewById(R.id.browse_pass);
+        bt_sign_bws = (Button) findViewById(R.id.browse_sign);
 
-        ssc_Result = (ImageView)findViewById(R.id.ssc_Result);
-        hsc_Result = (ImageView)findViewById(R.id.hsc_Result);
-        graduation_Result = (ImageView)findViewById(R.id.graduation_Result);
-        post_graduate_Result = (ImageView)findViewById(R.id.post_graduate_Result);
-        other_Certificate = (ImageView)findViewById(R.id.other_Certificate);
-        other_Result = (ImageView)findViewById(R.id.other_Result);
+        ssc_Result = (ImageView) findViewById(R.id.ssc_Result);
+        hsc_Result = (ImageView) findViewById(R.id.hsc_Result);
+        graduation_Result = (ImageView) findViewById(R.id.graduation_Result);
+        post_graduate_Result = (ImageView) findViewById(R.id.post_graduate_Result);
+        other_Certificate = (ImageView) findViewById(R.id.other_Certificate);
+        other_Result = (ImageView) findViewById(R.id.other_Result);
 
-       // ssc_btn_Result = (Button)findViewById(R.id.ssc_btn_Result);
+        // ssc_btn_Result = (Button)findViewById(R.id.ssc_btn_Result);
         /*hsc_btn_Result = (Button)findViewById(R.id.hsc_btn_Result);*/
-        ssc_Result_name =(TextView)findViewById(R.id.ten_ssc);
-        hsc_Result_name =(TextView)findViewById(R.id.twelve_hsc);
-        graduate_text =(TextView)findViewById(R.id.graduate_text);
-        post_graduation_text =(TextView)findViewById(R.id.post_graduation_text);
-        other_activity =(TextView)findViewById(R.id.other_activity);
-        extra_Activity =(TextView)findViewById(R.id.extra_Activity);
+        ssc_Result_name = (TextView) findViewById(R.id.ten_ssc);
+        hsc_Result_name = (TextView) findViewById(R.id.twelve_hsc);
+        graduate_text = (TextView) findViewById(R.id.graduate_text);
+        post_graduation_text = (TextView) findViewById(R.id.post_graduation_text);
+        other_activity = (TextView) findViewById(R.id.other_activity);
+        extra_Activity = (TextView) findViewById(R.id.extra_Activity);
 
         //upload_image = (Button) findViewById(R.id.upload_image);
         ssc_btn_Result = (ImageView) findViewById(R.id.ssc_btn_Result);
@@ -134,44 +150,72 @@ public class Education_Upload_Doc extends AppCompatActivity implements View.OnCl
             @Override
             public void onClick(View v) {
                 Intent i = new Intent(Intent.ACTION_PICK, MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
-                i.setType("*/*");
-                i.setAction(i.ACTION_GET_CONTENT);
-                startActivityForResult(i.createChooser(i,"select image"), SELECTED_PICTURE_SSC);
+                Intent intent = new Intent();
+                // Show only images, no videos or anything else
+                intent.setType("image/*");
+                intent.setAction(Intent.ACTION_GET_CONTENT);
+                // Always show the chooser (if there are multiple options available)
+                startActivityForResult(Intent.createChooser(intent, "Select Picture"), SELECTED_PICTURE_SSC);
+
             }
         });
         bt_hsc_bws.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent j = new Intent(Intent.ACTION_PICK, MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
-                startActivityForResult(j, SELECTED_PICTURE_HSC);
+                Intent intent1 = new Intent();
+                // Show only images, no videos or anything else
+                intent1.setType("image/*");
+                intent1.setAction(Intent.ACTION_GET_CONTENT);
+                // Always show the chooser (if there are multiple options available)
+                startActivityForResult(Intent.createChooser(intent1, "Select Picture"), SELECTED_PICTURE_HSC);
+
             }
         });
         bt_ug_bws.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent k = new Intent(Intent.ACTION_PICK, MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
-                startActivityForResult(k, SELECTED_PICTURE_GRAD);
+                Intent intent2 = new Intent();
+                // Show only images, no videos or anything else
+                intent2.setType("image/*");
+                intent2.setAction(Intent.ACTION_GET_CONTENT);
+                // Always show the chooser (if there are multiple options available)
+                startActivityForResult(Intent.createChooser(intent2, "Select Picture"), SELECTED_PICTURE_GRAD);
+
             }
         });
         bt_pg_bws.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent l = new Intent(Intent.ACTION_PICK, MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
-                startActivityForResult(l, SELECTED_PICTURE_POST);
+                Intent intent3 = new Intent();
+                // Show only images, no videos or anything else
+                intent3.setType("image/*");
+                intent3.setAction(Intent.ACTION_GET_CONTENT);
+                // Always show the chooser (if there are multiple options available)
+                startActivityForResult(Intent.createChooser(intent3, "Select Picture"), SELECTED_PICTURE_POST);
+
             }
         });
         bt_pass_bws.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent m = new Intent(Intent.ACTION_PICK, MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
-                startActivityForResult(m, SELECTED_PICTURE_EXTRA);
+                Intent intent4 = new Intent();
+                // Show only images, no videos or anything else
+                intent4.setType("image/*");
+                intent4.setAction(Intent.ACTION_GET_CONTENT);
+                // Always show the chooser (if there are multiple options available)
+                startActivityForResult(Intent.createChooser(intent4, "Select Picture"), SELECTED_PICTURE_EXTRA);
             }
         });
         bt_sign_bws.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent n = new Intent(Intent.ACTION_PICK, MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
-                startActivityForResult(n, SELECTED_PICTURE_CERTIFICATE);
+                Intent intent5 = new Intent();
+                // Show only images, no videos or anything else
+                intent5.setType("image/*");
+                intent5.setAction(Intent.ACTION_GET_CONTENT);
+                // Always show the chooser (if there are multiple options available)
+                startActivityForResult(Intent.createChooser(intent5, "Select Picture"), SELECTED_PICTURE_CERTIFICATE);
+
             }
         });
         /*upload_image.setOnClickListener(new View.OnClickListener() {
@@ -231,7 +275,10 @@ public class Education_Upload_Doc extends AppCompatActivity implements View.OnCl
             }
         });
 
+        if (ContextCompat.checkSelfPermission(this, Manifest.permission.READ_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED) {
+            requestPermissions(new String[]{Manifest.permission.READ_EXTERNAL_STORAGE}, MY_PERMISSIONS_REQUEST_READ_EXTERNAL_STORAGE);
 
+        }
 
     }
 
@@ -245,217 +292,371 @@ public class Education_Upload_Doc extends AppCompatActivity implements View.OnCl
     }*/
 
 
-
-
     @Override
-    public void onClick(View v)
-    {
+    public void onClick(View v) {
 
-        switch (v.getId())
-        {
+        switch (v.getId()) {
             case R.id.ssc_Result:
-               // Toast.makeText(Education_Upload_Doc.this, "10th Result", Toast.LENGTH_LONG).show();
-                Intent i = new Intent(Intent.ACTION_PICK, MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
-                i.setType("*/*");
-                i.setAction(i.ACTION_GET_CONTENT);
-                startActivityForResult(i.createChooser(i,"select image"), SELECTED_PICTURE_SSC);
+                // Toast.makeText(Education_Upload_Doc.this, "10th Result", Toast.LENGTH_LONG).show();
+//                Intent i = new Intent(Intent.ACTION_PICK, MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
+//                i.setType("*/*");
+//                i.setAction(i.ACTION_GET_CONTENT);
+//                startActivityForResult(i.createChooser(i,"select image"), SELECTED_PICTURE_SSC);
+                Intent intent = new Intent();
+                // Show only images, no videos or anything else
+                intent.setType("image/*");
+                intent.setAction(Intent.ACTION_GET_CONTENT);
+                // Always show the chooser (if there are multiple options available)
+                startActivityForResult(Intent.createChooser(intent, "Select Picture"), SELECTED_PICTURE_SSC);
+
                 break;
 
 
             case R.id.hsc_Result:
-               // Toast.makeText(Education_Upload_Doc.this, "12th Result", Toast.LENGTH_SHORT).show();
-                Intent j = new Intent(Intent.ACTION_PICK, MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
-                startActivityForResult(j, SELECTED_PICTURE_HSC);
+                // Toast.makeText(Education_Upload_Doc.this, "12th Result", Toast.LENGTH_SHORT).show();
+//                Intent j = new Intent(Intent.ACTION_PICK, MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
+//                startActivityForResult(j, SELECTED_PICTURE_HSC);
+                Intent intent1 = new Intent();
+                // Show only images, no videos or anything else
+                intent1.setType("image/*");
+                intent1.setAction(Intent.ACTION_GET_CONTENT);
+                // Always show the chooser (if there are multiple options available)
+                startActivityForResult(Intent.createChooser(intent1, "Select Picture"), SELECTED_PICTURE_HSC);
                 break;
 
             case R.id.graduation_Result:
-               // Toast.makeText(Education_Upload_Doc.this, "Graduation Result", Toast.LENGTH_SHORT).show();
-                Intent k = new Intent(Intent.ACTION_PICK, MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
-                startActivityForResult(k, SELECTED_PICTURE_GRAD);
+                // Toast.makeText(Education_Upload_Doc.this, "Graduation Result", Toast.LENGTH_SHORT).show();
+               /* Intent k = new Intent(Intent.ACTION_PICK, MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
+                startActivityForResult(k, SELECTED_PICTURE_GRAD);*/
+                Intent intent2 = new Intent();
+                // Show only images, no videos or anything else
+                intent2.setType("image/*");
+                intent2.setAction(Intent.ACTION_GET_CONTENT);
+                // Always show the chooser (if there are multiple options available)
+                startActivityForResult(Intent.createChooser(intent2, "Select Picture"), SELECTED_PICTURE_GRAD);
                 break;
 
             case R.id.post_graduate_Result:
                 //Toast.makeText(Education_Upload_Doc.this, "Post Graduation Result", Toast.LENGTH_SHORT).show();
-                Intent l = new Intent(Intent.ACTION_PICK, MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
-                startActivityForResult(l, SELECTED_PICTURE_POST);
+//                Intent l = new Intent(Intent.ACTION_PICK, MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
+//                startActivityForResult(l, SELECTED_PICTURE_POST);
+                Intent intent3 = new Intent();
+                // Show only images, no videos or anything else
+                intent3.setType("image/*");
+                intent3.setAction(Intent.ACTION_GET_CONTENT);
+                // Always show the chooser (if there are multiple options available)
+                startActivityForResult(Intent.createChooser(intent3, "Select Picture"), SELECTED_PICTURE_POST);
                 break;
 
             case R.id.other_Certificate:
-               // Toast.makeText(Education_Upload_Doc.this, "Extra Activity Result", Toast.LENGTH_SHORT).show();
-                Intent m = new Intent(Intent.ACTION_PICK, MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
-                startActivityForResult(m, SELECTED_PICTURE_EXTRA);
+                // Toast.makeText(Education_Upload_Doc.this, "Extra Activity Result", Toast.LENGTH_SHORT).show();
+//                Intent m = new Intent(Intent.ACTION_PICK, MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
+//                startActivityForResult(m, SELECTED_PICTURE_EXTRA);
+                Intent intent4 = new Intent();
+                // Show only images, no videos or anything else
+                intent4.setType("image/*");
+                intent4.setAction(Intent.ACTION_GET_CONTENT);
+                // Always show the chooser (if there are multiple options available)
+                startActivityForResult(Intent.createChooser(intent4, "Select Picture"), SELECTED_PICTURE_EXTRA);
                 break;
 
             case R.id.other_Result:
-               // Toast.makeText(Education_Upload_Doc.this, "Extra Activity Result", Toast.LENGTH_SHORT).show();
-                Intent n = new Intent(Intent.ACTION_PICK, MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
-                startActivityForResult(n, SELECTED_PICTURE_CERTIFICATE);
+                // Toast.makeText(Education_Upload_Doc.this, "Extra Activity Result", Toast.LENGTH_SHORT).show();
+               /* Intent n = new Intent(Intent.ACTION_PICK, MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
+                startActivityForResult(n, SELECTED_PICTURE_CERTIFICATE);*/
+                Intent intent5 = new Intent();
+                // Show only images, no videos or anything else
+                intent5.setType("image/*");
+                intent5.setAction(Intent.ACTION_GET_CONTENT);
+                // Always show the chooser (if there are multiple options available)
+                startActivityForResult(Intent.createChooser(intent5, "Select Picture"), SELECTED_PICTURE_CERTIFICATE);
                 break;
 
         }
 
     }
 
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        if (requestCode == SELECTED_PICTURE_SSC && resultCode == RESULT_OK && null != data) {
+            Uri uri = data.getData();
+            String[] filePathColumn = {MediaStore.Images.Media.DATA};
 
+            Cursor cursor;
+            if (Build.VERSION.SDK_INT > 19) {
 
+                // Will return "image:x*"
+                String wholeID = DocumentsContract.getDocumentId(uri);
+                // Split at colon, use second item in the array
+                String id = wholeID.split(":")[1];
+                // where id is equal to
+                String sel = MediaStore.Images.Media._ID + "=?";
 
+                cursor = getContentResolver().query(MediaStore.Images.Media.EXTERNAL_CONTENT_URI,
+                        filePathColumn, sel, new String[]{id}, null);
+            } else {
+                cursor = getContentResolver().query(uri, filePathColumn, null, null, null);
+            }
+            filePath = null;
+            try {
+                int column_index = cursor.getColumnIndex(MediaStore.Images.Media.DATA);
+                cursor.moveToFirst();
+                filePath = cursor.getString(column_index);
+                cursor.close();
+                // Uri of the picture
+                //Bitmap bitmap = MediaStore.Images.Media.getBitmap(getContentResolver(), uri);
+               // ssc_Result.setImageBitmap(bitmap);
+                Glide.with(this).load(uri).into(ssc_Result);
+                bt_ssc_bws.setVisibility(View.GONE);
+                ssc_Result.setVisibility(View.VISIBLE);
+
+            } catch (NullPointerException e) {
+
+            } /*catch (FileNotFoundException e) {
+                e.printStackTrace();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }*/
+
+        } else if (requestCode == SELECTED_PICTURE_HSC && resultCode == RESULT_OK && null != data) {
+            Uri uri1 = data.getData();
+            String[] filePathColumn = {MediaStore.Images.Media.DATA};
+
+            Cursor cursor;
+            if (Build.VERSION.SDK_INT > 19) {
+
+                // Will return "image:x*"
+                String wholeID = DocumentsContract.getDocumentId(uri1);
+                // Split at colon, use second item in the array
+                String id = wholeID.split(":")[1];
+                // where id is equal to
+                String sel = MediaStore.Images.Media._ID + "=?";
+
+                cursor = getContentResolver().query(MediaStore.Images.Media.EXTERNAL_CONTENT_URI,
+                        filePathColumn, sel, new String[]{id}, null);
+            } else {
+                cursor = getContentResolver().query(uri1, filePathColumn, null, null, null);
+            }
+            filePath1 = null;
+            try {
+                int column_index = cursor.getColumnIndex(MediaStore.Images.Media.DATA);
+                cursor.moveToFirst();
+                filePath1 = cursor.getString(column_index);
+                cursor.close();
+                //Bitmap bitmap = MediaStore.Images.Media.getBitmap(getContentResolver(), uri1);
+                //hsc_Result.setImageBitmap(bitmap);
+                Glide.with(this).load(uri1).into(hsc_Result);
+                hsc_Result.setVisibility(View.VISIBLE);
+                bt_hsc_bws.setVisibility(View.GONE);
+            } catch (NullPointerException e) {
+
+            }/* catch (FileNotFoundException e) {
+                e.printStackTrace();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }*/
+        } else if (requestCode == SELECTED_PICTURE_GRAD && resultCode == RESULT_OK && null != data) {
+            Uri uri = data.getData();
+            String[] filePathColumn = {MediaStore.Images.Media.DATA};
+
+            Cursor cursor;
+            if (Build.VERSION.SDK_INT > 19) {
+
+                // Will return "image:x*"
+                String wholeID = DocumentsContract.getDocumentId(uri);
+                // Split at colon, use second item in the array
+                String id = wholeID.split(":")[1];
+                // where id is equal to
+                String sel = MediaStore.Images.Media._ID + "=?";
+
+                cursor = getContentResolver().query(MediaStore.Images.Media.EXTERNAL_CONTENT_URI,
+                        filePathColumn, sel, new String[]{id}, null);
+            } else {
+                cursor = getContentResolver().query(uri, filePathColumn, null, null, null);
+            }
+            filePath2 = null;
+            try {
+                int column_index = cursor.getColumnIndex(MediaStore.Images.Media.DATA);
+                cursor.moveToFirst();
+                filePath2 = cursor.getString(column_index);
+                cursor.close();
+               // Bitmap bitmap = MediaStore.Images.Media.getBitmap(getContentResolver(), uri);
+                //graduation_Result.setImageBitmap(bitmap);
+                Glide.with(this).load(uri).into(graduation_Result);
+                graduation_Result.setVisibility(View.VISIBLE);
+                bt_ug_bws.setVisibility(View.GONE);
+            } catch (NullPointerException e) {
+
+            } /*catch (FileNotFoundException e) {
+                e.printStackTrace();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }*/
+        } else if (requestCode == SELECTED_PICTURE_POST && resultCode == RESULT_OK && null != data) {
+            Uri uri = data.getData();
+            String[] filePathColumn = {MediaStore.Images.Media.DATA};
+
+            Cursor cursor;
+            if (Build.VERSION.SDK_INT > 19) {
+
+                // Will return "image:x*"
+                String wholeID = DocumentsContract.getDocumentId(uri);
+                // Split at colon, use second item in the array
+                String id = wholeID.split(":")[1];
+                // where id is equal to
+                String sel = MediaStore.Images.Media._ID + "=?";
+
+                cursor = getContentResolver().query(MediaStore.Images.Media.EXTERNAL_CONTENT_URI,
+                        filePathColumn, sel, new String[]{id}, null);
+            } else {
+                cursor = getContentResolver().query(uri, filePathColumn, null, null, null);
+            }
+            filePath3 = null;
+            try {
+                int column_index = cursor.getColumnIndex(MediaStore.Images.Media.DATA);
+                cursor.moveToFirst();
+                filePath3 = cursor.getString(column_index);
+                cursor.close();
+
+                //Bitmap bitmap = MediaStore.Images.Media.getBitmap(getContentResolver(), uri);
+                //post_graduate_Result.setImageBitmap(bitmap);
+                Glide.with(this).load(uri).into(post_graduate_Result);
+                post_graduate_Result.setVisibility(View.VISIBLE);
+                bt_pg_bws.setVisibility(View.GONE);
+            } catch (NullPointerException e) {
+
+            } /*catch (FileNotFoundException e) {
+                e.printStackTrace();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }*/
+        } else if (requestCode == SELECTED_PICTURE_EXTRA && resultCode == RESULT_OK && null != data) {
+            Uri uri = data.getData();
+            String[] filePathColumn = {MediaStore.Images.Media.DATA};
+
+            Cursor cursor;
+            if (Build.VERSION.SDK_INT > 19) {
+
+                // Will return "image:x*"
+                String wholeID = DocumentsContract.getDocumentId(uri);
+                // Split at colon, use second item in the array
+                String id = wholeID.split(":")[1];
+                // where id is equal to
+                String sel = MediaStore.Images.Media._ID + "=?";
+
+                cursor = getContentResolver().query(MediaStore.Images.Media.EXTERNAL_CONTENT_URI,
+                        filePathColumn, sel, new String[]{id}, null);
+            } else {
+                cursor = getContentResolver().query(uri, filePathColumn, null, null, null);
+            }
+            filePath5 = null;
+            try {
+                int column_index = cursor.getColumnIndex(MediaStore.Images.Media.DATA);
+                cursor.moveToFirst();
+                filePath5 = cursor.getString(column_index);
+                cursor.close();
+                //Bitmap bitmap = MediaStore.Images.Media.getBitmap(getContentResolver(), uri);
+               // other_Certificate.setImageBitmap(bitmap);
+                Glide.with(this).load(uri).into(other_Certificate);
+                other_Certificate.setVisibility(View.VISIBLE);
+                bt_pass_bws.setVisibility(View.GONE);
+            } catch (NullPointerException e) {
+
+            }/* catch (FileNotFoundException e) {
+                e.printStackTrace();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }*/
+        } else if (requestCode == SELECTED_PICTURE_CERTIFICATE && resultCode == RESULT_OK && null != data) {
+            Uri uri = data.getData();
+            String[] filePathColumn = {MediaStore.Images.Media.DATA};
+
+            Cursor cursor;
+            if (Build.VERSION.SDK_INT > 19) {
+
+                // Will return "image:x*"
+                String wholeID = DocumentsContract.getDocumentId(uri);
+                // Split at colon, use second item in the array
+                String id = wholeID.split(":")[1];
+                // where id is equal to
+                String sel = MediaStore.Images.Media._ID + "=?";
+
+                cursor = getContentResolver().query(MediaStore.Images.Media.EXTERNAL_CONTENT_URI,
+                        filePathColumn, sel, new String[]{id}, null);
+            } else {
+                cursor = getContentResolver().query(uri, filePathColumn, null, null, null);
+            }
+            filePath6 = null;
+            try {
+                int column_index = cursor.getColumnIndex(MediaStore.Images.Media.DATA);
+                cursor.moveToFirst();
+                filePath6 = cursor.getString(column_index);
+                cursor.close();
+               // Bitmap bitmap = MediaStore.Images.Media.getBitmap(getContentResolver(), uri);
+               // other_Result.setImageBitmap(bitmap);
+                Glide.with(this).load(uri).into(other_Result);
+                other_Result.setVisibility(View.VISIBLE);
+                bt_sign_bws.setVisibility(View.GONE);
+            } catch (NullPointerException e) {
+
+            } /*catch (FileNotFoundException e) {
+                e.printStackTrace();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }*/
+        }
+    }
 
     @Override
-    protected void onActivityResult(int requestCode, int resultCode, Intent data)
-    {
-        super.onActivityResult(requestCode, resultCode, data);
+    public void onRequestPermissionsResult(int requestCode, String[] permissions, int[] grantResults) {
         switch (requestCode) {
-            case SELECTED_PICTURE_SSC:
-                if (resultCode == RESULT_OK && data != null && data.getData() != null) {
-                    Uri uri = data.getData();
-                    String[] projection = {MediaStore.Images.Media.DATA};
-                    Cursor cursor = getContentResolver().query(uri, projection, null, null, null);
-                    cursor.moveToFirst();
-                    int columnIndex = cursor.getColumnIndex(projection[0]);
-                    filePath = cursor.getString(columnIndex);
-                  //  ssc_Result_name.setText(filePath);
-                    cursor.close();
-                    Bitmap yourSelectedImageSSC = BitmapFactory.decodeFile(filePath);
+            case MY_PERMISSIONS_REQUEST_READ_EXTERNAL_STORAGE: {
+                // If request is cancelled, the result arrays are empty.
+                if (grantResults.length > 0
+                        && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
 
-                    ssc_Result.setImageBitmap(yourSelectedImageSSC);
-                    ssc_Result.setVisibility(View.VISIBLE);
-                    bt_ssc_bws.setVisibility(View.GONE);
-                    ssc_Result.setScaleType(ImageView.ScaleType.CENTER_CROP);
-                    ssc_Result.getAdjustViewBounds();
-                }
-                break;
-            case SELECTED_PICTURE_HSC:
-                if (resultCode == RESULT_OK && data !=  null && data.getData() != null)
-                {
-                    Uri uri1 = data.getData();
-                    String[] projection1 = {MediaStore.Images.Media.DATA};
-                    Cursor cursor1 = getContentResolver().query(uri1, projection1, null, null, null);
-                    cursor1.moveToFirst();
-                    int columnIndex1 = cursor1.getColumnIndex(projection1[0]);
-                    filePath1 = cursor1.getString(columnIndex1);
-                   // hsc_Result_name.setText(filePath1);
-                    cursor1.close();
-                    Bitmap yourSelectedImageHSC = BitmapFactory.decodeFile(filePath1);
-                    hsc_Result.setImageBitmap(yourSelectedImageHSC);
-                    hsc_Result.setVisibility(View.VISIBLE);
-                    bt_hsc_bws.setVisibility(View.GONE);
-                    hsc_Result.setScaleType(ImageView.ScaleType.CENTER_CROP);
-                    hsc_Result.getAdjustViewBounds();
-                }
-                break;
+                } else {
 
-
-            case SELECTED_PICTURE_GRAD:
-                if (resultCode == RESULT_OK && data !=  null && data.getData() != null)
-                {
-                    Uri uri2 = data.getData();
-                    String[] projection2 = {MediaStore.Images.Media.DATA};
-                    Cursor cursor2 = getContentResolver().query(uri2, projection2, null, null, null);
-                    cursor2.moveToFirst();
-                    int columnIndex2 = cursor2.getColumnIndex(projection2[0]);
-                    filePath2 = cursor2.getString(columnIndex2);
-                  //  graduate_text.setText(filePath2);
-                    cursor2.close();
-                    Bitmap yourSelectedImageGraduation = BitmapFactory.decodeFile(filePath2);
-                    graduation_Result.setImageBitmap(yourSelectedImageGraduation);
-                    graduation_Result.setVisibility(View.VISIBLE);
-                    bt_ug_bws.setVisibility(View.GONE);
-                    graduation_Result.setScaleType(ImageView.ScaleType.CENTER_CROP);
-                    graduation_Result.getAdjustViewBounds();
                 }
-                break;
-
-            case SELECTED_PICTURE_POST:
-                if (resultCode == RESULT_OK && data !=  null && data.getData() != null)
-                {
-                    Uri uri3 = data.getData();
-                    String[] projection3 = {MediaStore.Images.Media.DATA};
-                    Cursor cursor3 = getContentResolver().query(uri3, projection3, null, null, null);
-                    cursor3.moveToFirst();
-                    int columnIndex3 = cursor3.getColumnIndex(projection3[0]);
-                    filePath3 = cursor3.getString(columnIndex3);
-                  //  post_graduation_text.setText(filePath3);
-                    cursor3.close();
-                    Bitmap yourSelectedImageCPostGraduation= BitmapFactory.decodeFile(filePath3);
-                    post_graduate_Result.setImageBitmap(yourSelectedImageCPostGraduation);
-                    post_graduate_Result.setVisibility(View.VISIBLE);
-                    bt_pg_bws.setVisibility(View.GONE);
-                    post_graduate_Result.setScaleType(ImageView.ScaleType.CENTER_CROP);
-                    post_graduate_Result.getAdjustViewBounds();
-                }
-                break;
-
-            case SELECTED_PICTURE_EXTRA:
-                if (resultCode == RESULT_OK && data !=  null)
-                {
-                    Uri uri5 = data.getData();
-                    String[] projection5 = {MediaStore.Images.Media.DATA};
-                    Cursor cursor5 = getContentResolver().query(uri5, projection5, null, null, null);
-                    cursor5.moveToFirst();
-                    int columnIndex5 = cursor5.getColumnIndex(projection5[0]);
-                    filePath5 = cursor5.getString(columnIndex5);
-                   // other_activity.setText(filePath5);
-                    cursor5.close();
-                    Bitmap yourSelectedImageCertificate = BitmapFactory.decodeFile(filePath5);
-                    other_Certificate.setImageBitmap(yourSelectedImageCertificate);
-                    other_Certificate.setVisibility(View.VISIBLE);
-                    bt_pass_bws.setVisibility(View.GONE);
-                    other_Certificate.setScaleType(ImageView.ScaleType.CENTER_CROP);
-                    other_Certificate.getAdjustViewBounds();
-                }
-                break;
-
-            case SELECTED_PICTURE_CERTIFICATE:
-                if (resultCode == RESULT_OK && data !=  null)
-                {
-                    Uri uri6 = data.getData();
-                    String[] projection6 = {MediaStore.Images.Media.DATA};
-                    Cursor cursor6 = getContentResolver().query(uri6, projection6, null, null, null);
-                    cursor6.moveToFirst();
-                    int columnIndex6 = cursor6.getColumnIndex(projection6[0]);
-                    filePath6 = cursor6.getString(columnIndex6);
-                    //extra_Activity.setText(filePath6);
-                    cursor6.close();
-                    Bitmap yourSelectedImageExtra = BitmapFactory.decodeFile(filePath6);
-                    other_Result.setImageBitmap(yourSelectedImageExtra);
-                    other_Result.setVisibility(View.VISIBLE);
-                    bt_sign_bws.setVisibility(View.GONE);
-                    other_Result.setScaleType(ImageView.ScaleType.CENTER_CROP);
-                    other_Result.getAdjustViewBounds();
-                }
-                break;
+                return;
+            }
         }
-
     }
 
-    public void sscResult()
-    {
+   // Compressor compressor=new Compressor(getApplicationContext());
+    public void sscResult() {
         progressDialog.show();
 
-        File file = null;
+        File file,cfile = null;
 
-        if(filePath!= null && !filePath.equals("null")) {
+        if (filePath != null && !filePath.equals("null")) {
 
              file = new File(filePath);
 
+            try {
+                  cfile=new Compressor(getApplicationContext()).compressToFile(file);
+
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+
         }
 
-        RequestBody requestBody1=null;
-        if(file!= null && !file.equals("null")) {
-            requestBody1 = RequestBody.create(MediaType.parse("*/*"), file);
+        RequestBody requestBody1 = null;
+        if (cfile != null && !cfile.equals("null")) {
+            requestBody1 = RequestBody.create(MediaType.parse("*/*"), cfile);
 
         }
         RequestBody sess = RequestBody.create(MediaType.parse("text/plain"), email);
 
-        MultipartBody.Part fileToUpload1 =null;
-        if(file!=null && !file.equals("null")) {
-            fileToUpload1 = MultipartBody.Part.createFormData("file1", file.getName(), requestBody1);
+        MultipartBody.Part fileToUpload1 = null;
+        if (cfile != null && !cfile.equals("null")) {
+            fileToUpload1 = MultipartBody.Part.createFormData("file1", cfile.getName(), requestBody1);
 
         }
 
         ServiceAPIEducation service = ApiClient.getRetrofit().create(ServiceAPIEducation.class);
 
-        Call<ServerResponse> ssc = service.SSCPicture(sess,fileToUpload1);
+        Call<ServerResponse> ssc = service.SSCPicture(sess, fileToUpload1);
 
         ssc.enqueue(new Callback<ServerResponse>() {
             @Override
@@ -508,36 +709,42 @@ public class Education_Upload_Doc extends AppCompatActivity implements View.OnCl
         });
     }
 
-    public void hscResult()
-    {
+    public void hscResult() {
         progressDialog.show();
 
-        File file1 = null;
+        File file1 ,cfile1 = null;
 
-        if(filePath1!= null && !filePath1.equals("null")) {
+        if (filePath1 != null && !filePath1.equals("null")) {
 
             file1 = new File(filePath1);
+            try {
+                cfile1=new Compressor(getApplicationContext()).compressToFile(file1);
+
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+
 
         }
 
-        RequestBody requestBody2=null;
-        if(file1!= null && !file1.equals("null")) {
-            requestBody2 = RequestBody.create(MediaType.parse("*/*"), file1);
+        RequestBody requestBody2 = null;
+        if (cfile1 != null && !cfile1.equals("null")) {
+            requestBody2 = RequestBody.create(MediaType.parse("*/*"), cfile1);
 
         }
         RequestBody sess = RequestBody.create(MediaType.parse("text/plain"), email);
 
-        MultipartBody.Part fileToUpload2 =null;
+        MultipartBody.Part fileToUpload2 = null;
 
-        if(file1!=null && !file1.equals("null")) {
+        if (cfile1 != null && !cfile1.equals("null")) {
 
-          fileToUpload2 = MultipartBody.Part.createFormData("file2", file1.getName(), requestBody2);
+            fileToUpload2 = MultipartBody.Part.createFormData("file2", cfile1.getName(), requestBody2);
 
         }
 
         ServiceAPIEducation service = ApiClient.getRetrofit().create(ServiceAPIEducation.class);
 
-        Call<ServerResponse> hsc = service.HSCPicture(sess,fileToUpload2);
+        Call<ServerResponse> hsc = service.HSCPicture(sess, fileToUpload2);
 
         hsc.enqueue(new Callback<ServerResponse>() {
             @Override
@@ -590,34 +797,40 @@ public class Education_Upload_Doc extends AppCompatActivity implements View.OnCl
         });
     }
 
-    public void gradResult()
-    {
+    public void gradResult() {
         progressDialog.show();
 
-        File file2 = null;
+        File file2,cfile2 = null;
 
-        if(filePath2!= null && !filePath2.equals("null")) {
+        if (filePath2 != null && !filePath2.equals("null")) {
             file2 = new File(filePath2);
+            try {
+                cfile2=new Compressor(getApplicationContext()).compressToFile(file2);
+
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+
         }
 
-        RequestBody requestBody3=null;
-        if(file2!= null && !file2.equals("null")) {
-          requestBody3 = RequestBody.create(MediaType.parse("*/*"), file2);
+        RequestBody requestBody3 = null;
+        if (cfile2 != null && !cfile2.equals("null")) {
+            requestBody3 = RequestBody.create(MediaType.parse("*/*"), cfile2);
         }
 
         RequestBody sess = RequestBody.create(MediaType.parse("text/plain"), email);
 
-        MultipartBody.Part fileToUpload3 =null;
+        MultipartBody.Part fileToUpload3 = null;
 
-        if(file2!=null && !file2.equals("null")) {
+        if (cfile2 != null && !cfile2.equals("null")) {
 
-         fileToUpload3 = MultipartBody.Part.createFormData("file3", file2.getName(), requestBody3);
+            fileToUpload3 = MultipartBody.Part.createFormData("file3", cfile2.getName(), requestBody3);
 
         }
 
         ServiceAPIEducation service = ApiClient.getRetrofit().create(ServiceAPIEducation.class);
 
-        Call<ServerResponse> grad = service.GradPicture(sess,fileToUpload3);
+        Call<ServerResponse> grad = service.GradPicture(sess, fileToUpload3);
 
         grad.enqueue(new Callback<ServerResponse>() {
             @Override
@@ -627,13 +840,6 @@ public class Education_Upload_Doc extends AppCompatActivity implements View.OnCl
                 if (grad != null) {
                     if (grad.isSuccess()) {
                         Toast.makeText(getApplicationContext(), grad.getMessage(), Toast.LENGTH_SHORT).show();
-
-                        /*AlertDialog.Builder alert = new AlertDialog.Builder(Education_Upload_Doc.this);
-
-                        alert.setTitle("MSG");
-                        alert.setMessage(grad.getMessage());
-
-                        alert.show();*/
 
                     } else {
                         /*Toast.makeText(getApplicationContext(), ssc.getMessage(), Toast.LENGTH_SHORT).show();*/
@@ -670,38 +876,43 @@ public class Education_Upload_Doc extends AppCompatActivity implements View.OnCl
 
     }
 
-    public void pgResult()
-    {
+    public void pgResult() {
         progressDialog.show();
 
-        File file3 = null;
+        File file3,cfile3 = null;
 
-        if(filePath3!= null && !filePath3.equals("null")) {
+        if (filePath3 != null && !filePath3.equals("null")) {
 
             file3 = new File(filePath3);
+            try {
+                cfile3=new Compressor(getApplicationContext()).compressToFile(file3);
+
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
 
         }
 
-        RequestBody requestBody4=null;
-        if(file3!= null && !file3.equals("null")) {
+        RequestBody requestBody4 = null;
+        if (cfile3 != null && !cfile3.equals("null")) {
 
-            requestBody4 = RequestBody.create(MediaType.parse("*/*"), file3);
+            requestBody4 = RequestBody.create(MediaType.parse("*/*"), cfile3);
 
         }
 
         RequestBody sess = RequestBody.create(MediaType.parse("text/plain"), email);
 
-        MultipartBody.Part fileToUpload4 =null;
+        MultipartBody.Part fileToUpload4 = null;
 
-        if(file3!=null && !file3.equals("null")) {
+        if (cfile3 != null && !cfile3.equals("null")) {
 
-            fileToUpload4 = MultipartBody.Part.createFormData("file4", file3.getName(), requestBody4);
+            fileToUpload4 = MultipartBody.Part.createFormData("file4", cfile3.getName(), requestBody4);
 
         }
 
         ServiceAPIEducation service = ApiClient.getRetrofit().create(ServiceAPIEducation.class);
 
-        Call<ServerResponse> pg = service.PostGradPicture(sess,fileToUpload4);
+        Call<ServerResponse> pg = service.PostGradPicture(sess, fileToUpload4);
 
         pg.enqueue(new Callback<ServerResponse>() {
             @Override
@@ -712,13 +923,6 @@ public class Education_Upload_Doc extends AppCompatActivity implements View.OnCl
                 if (pg != null) {
                     if (pg.isSuccess()) {
                         Toast.makeText(getApplicationContext(), pg.getMessage(), Toast.LENGTH_SHORT).show();
-
-                        /*AlertDialog.Builder alert = new AlertDialog.Builder(Education_Upload_Doc.this);
-
-                        alert.setTitle("MSG");
-                        alert.setMessage(pg.getMessage());
-
-                        alert.show();*/
 
                     } else {
                         /*Toast.makeText(getApplicationContext(), ssc.getMessage(), Toast.LENGTH_SHORT).show();*/
@@ -753,40 +957,44 @@ public class Education_Upload_Doc extends AppCompatActivity implements View.OnCl
         });
 
 
-
     }
 
-    public void ProfileResult()
-    {
+    public void ProfileResult() {
         progressDialog.show();
 
-        File file4 = null;
+        File file4,cfile4 = null;
 
-        if(filePath5!= null && !filePath5.equals("null")) {
+        if (filePath5 != null && !filePath5.equals("null")) {
 
             file4 = new File(filePath5);
+            try {
+                cfile4=new Compressor(getApplicationContext()).compressToFile(file4);
+
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
 
         }
 
-        RequestBody requestBody5=null;
-        if(file4!= null && !file4.equals("null")) {
+        RequestBody requestBody5 = null;
+        if (cfile4 != null && !cfile4.equals("null")) {
 
-            requestBody5 = RequestBody.create(MediaType.parse("*/*"), file4);
+            requestBody5 = RequestBody.create(MediaType.parse("*/*"), cfile4);
         }
 
         RequestBody sess = RequestBody.create(MediaType.parse("text/plain"), email);
 
-        MultipartBody.Part fileToUpload5 =null;
+        MultipartBody.Part fileToUpload5 = null;
 
-        if(file4!=null && !file4.equals("null")) {
+        if (cfile4 != null && !cfile4.equals("null")) {
 
-            fileToUpload5 = MultipartBody.Part.createFormData("file5", file4.getName(), requestBody5);
+            fileToUpload5 = MultipartBody.Part.createFormData("file5", cfile4.getName(), requestBody5);
 
         }
 
         ServiceAPIEducation service = ApiClient.getRetrofit().create(ServiceAPIEducation.class);
 
-        Call<ServerResponse> profile = service.ProfilePicture(sess,fileToUpload5);
+        Call<ServerResponse> profile = service.ProfilePicture(sess, fileToUpload5);
 
         profile.enqueue(new Callback<ServerResponse>() {
             @Override
@@ -828,35 +1036,40 @@ public class Education_Upload_Doc extends AppCompatActivity implements View.OnCl
 
     }
 
-    public void sign()
-    {
+    public void sign() {
         progressDialog.show();
-        File file5 =null;
+        File file5,cfile5 = null;
 
-        if(filePath6!= null && !filePath6.equals("null")) {
+        if (filePath6 != null && !filePath6.equals("null")) {
 
             file5 = new File(filePath6);
+            try {
+                cfile5=new Compressor(getApplicationContext()).compressToFile(file5);
+
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
 
         }
 
-        RequestBody requestBody6=null;
-        if(file5!= null && !file5.equals("null")) {
-            requestBody6 = RequestBody.create(MediaType.parse("*/*"), file5);
+        RequestBody requestBody6 = null;
+        if (cfile5 != null && !cfile5.equals("null")) {
+            requestBody6 = RequestBody.create(MediaType.parse("*/*"), cfile5);
         }
 
         RequestBody sess = RequestBody.create(MediaType.parse("text/plain"), email);
 
-        MultipartBody.Part fileToUpload6 =null;
+        MultipartBody.Part fileToUpload6 = null;
 
-        if(file5!=null && !file5.equals("null")) {
+        if (cfile5 != null && !cfile5.equals("null")) {
 
-            fileToUpload6 = MultipartBody.Part.createFormData("file6", file5.getName(), requestBody6);
+            fileToUpload6 = MultipartBody.Part.createFormData("file6", cfile5.getName(), requestBody6);
 
         }
 
         ServiceAPIEducation service = ApiClient.getRetrofit().create(ServiceAPIEducation.class);
 
-        Call<ServerResponse> sign = service.SignPicture(sess,fileToUpload6);
+        Call<ServerResponse> sign = service.SignPicture(sess, fileToUpload6);
 
         sign.enqueue(new Callback<ServerResponse>() {
             @Override
@@ -909,17 +1122,16 @@ public class Education_Upload_Doc extends AppCompatActivity implements View.OnCl
         });
     }
 
-    private void uploadMultipleFiles()
-    {
+    private void uploadMultipleFiles() {
         progressDialog.show();
 
-        File file5 =null;
+        File file5 = null;
         File file = new File(filePath);
         File file1 = new File(filePath1);
         File file2 = new File(filePath2);
         File file3 = new File(filePath3);
         File file4 = new File(filePath5);
-        if(filePath6!= null && !filePath6.equals("null")) {
+        if (filePath6 != null && !filePath6.equals("null")) {
             file5 = new File(filePath6);
         }
         RequestBody requestBody1 = RequestBody.create(MediaType.parse("*/*"), file);
@@ -927,26 +1139,26 @@ public class Education_Upload_Doc extends AppCompatActivity implements View.OnCl
         RequestBody requestBody3 = RequestBody.create(MediaType.parse("*/*"), file2);
         RequestBody requestBody4 = RequestBody.create(MediaType.parse("*/*"), file3);
         RequestBody requestBody5 = RequestBody.create(MediaType.parse("*/*"), file4);
-        RequestBody requestBody6=null;
-        if(file5!= null && !file5.equals("null")) {
-             requestBody6 = RequestBody.create(MediaType.parse("*/*"), file5);
+        RequestBody requestBody6 = null;
+        if (file5 != null && !file5.equals("null")) {
+            requestBody6 = RequestBody.create(MediaType.parse("*/*"), file5);
         }
         RequestBody sess = RequestBody.create(MediaType.parse("text/plain"), email);
-        MultipartBody.Part fileToUpload6 =null;
+        MultipartBody.Part fileToUpload6 = null;
         MultipartBody.Part fileToUpload1 = MultipartBody.Part.createFormData("file1", file.getName(), requestBody1);
         MultipartBody.Part fileToUpload2 = MultipartBody.Part.createFormData("file2", file1.getName(), requestBody2);
         MultipartBody.Part fileToUpload3 = MultipartBody.Part.createFormData("file3", file2.getName(), requestBody3);
         MultipartBody.Part fileToUpload4 = MultipartBody.Part.createFormData("file4", file3.getName(), requestBody4);
 
         MultipartBody.Part fileToUpload5 = MultipartBody.Part.createFormData("file5", file4.getName(), requestBody5);
-        if(file5!=null && !file5.equals("null")) {
-             fileToUpload6 = MultipartBody.Part.createFormData("file6", file5.getName(), requestBody6);
+        if (file5 != null && !file5.equals("null")) {
+            fileToUpload6 = MultipartBody.Part.createFormData("file6", file5.getName(), requestBody6);
         }
 
         ServiceAPIEducation service = ApiClient.getRetrofit().create(ServiceAPIEducation.class);
 
         Call<ServerResponse> call = service.uploadMulFile
-                (sess,fileToUpload1, fileToUpload2 , fileToUpload3 ,fileToUpload4 , fileToUpload5 ,fileToUpload6);
+                (sess, fileToUpload1, fileToUpload2, fileToUpload3, fileToUpload4, fileToUpload5, fileToUpload6);
 
         call.enqueue(new Callback<ServerResponse>() {
             @Override
@@ -1016,14 +1228,14 @@ public class Education_Upload_Doc extends AppCompatActivity implements View.OnCl
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
 
-        switch (item.getItemId()){
+        switch (item.getItemId()) {
 
             case android.R.id.home:
 
                 onBackPressed();
                 finish();
 
-                return  true;
+                return true;
         }
 
         return super.onOptionsItemSelected(item);

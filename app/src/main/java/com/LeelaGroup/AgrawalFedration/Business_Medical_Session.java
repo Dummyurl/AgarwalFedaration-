@@ -6,7 +6,6 @@ import android.content.SharedPreferences;
 import android.os.Handler;
 
 import com.LeelaGroup.AgrawalFedration.business.Login_Business;
-import com.LeelaGroup.AgrawalFedration.medical.Login_Medical;
 
 import java.util.HashMap;
 
@@ -152,7 +151,7 @@ public class Business_Medical_Session {
 
                 if (pref.contains(KEY_ID)) {
 
-                    Intent loginIntent = new Intent(_context, MainActivityModules.class);
+                    Intent loginIntent = new Intent(_context, Home.class);
                     _context.startActivity(loginIntent);
                     //finish();
 
@@ -164,7 +163,18 @@ public class Business_Medical_Session {
                 }
 
             }
-        }, 2000);
+        }, 4000);
+    }
+
+    public boolean isIdStore()
+    {
+        if (pref.contains(KEY_ID))
+        {
+            return true;
+        }
+        else{
+            return false;
+        }
     }
 
 }

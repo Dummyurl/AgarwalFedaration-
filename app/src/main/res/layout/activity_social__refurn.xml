@@ -7,7 +7,41 @@
     android:orientation="vertical"
     tools:context="com.LeelaGroup.AgrawalFedration.Social_Refurn.Social_Refurn">
 
-    <TextView
+    <include layout="@layout/toolbar"/>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_gravity="center"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <in.goodiebag.carouselpicker.CarouselPicker
+                android:id="@+id/imageCarousel"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/ddark_grey"
+                app:items_visible="three" />
+            <include layout="@layout/item_divider2"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:padding="5dp"
+                android:textSize="15sp"
+                android:textColor="@color/black"
+                android:layout_margin="20dp"
+                android:id="@+id/leela_info"
+                android:layout_height="wrap_content"
+                android:text="@string/social_text"></TextView>
+
+
+        </LinearLayout>
+    </ScrollView>
+
+   <!-- <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/Social_News"
@@ -33,5 +67,5 @@
         android:layout_margin="20dp"
         android:id="@+id/leela_info"
         android:layout_height="wrap_content"
-        android:text="@string/social_text"></TextView>
+        android:text="@string/social_text"></TextView>-->
 </LinearLayout>

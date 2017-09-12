@@ -71,6 +71,7 @@ public class BusinessModuleAdapter extends RecyclerView.Adapter<BusinessModuleAd
             BusinessImage businessImage=this.arrayList.get(position);
             Intent intent=new Intent(this.context,BusinessModuleClick.class);
             intent.putExtra("cat_id",businessImage.getCat_id());
+            intent.putExtra("category_name",businessImage.getCat_name());
             this.context.startActivity(intent);
         }
     }

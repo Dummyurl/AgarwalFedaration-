@@ -16,13 +16,14 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="@dimen/layoutMargin"
             android:orientation="vertical">
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="vertical">
+                android:orientation="vertical"
+                android:layout_margin="@dimen/layoutMargin"
+                >
 
                 <TextView
                     android:id="@+id/EducationDetails"
@@ -45,7 +46,7 @@
                     android:layout_marginTop="@dimen/layoutMarginBottom"
                     android:text="@string/Exam_Name"
                     android:textAppearance="@style/TextAppearance.AppCompat.Title"
-                    android:textColor="#000000"
+                    android:textColor="@color/black"
                     android:textSize="16dp" />
 
                 <LinearLayout
@@ -86,12 +87,12 @@
                         android:layout_marginTop="@dimen/button_margin"
                         android:text="UPSC :-"
                         android:textAppearance="@style/TextAppearance.AppCompat.Title"
-                        android:textColor="#000000" />
+                        android:textColor="@color/black" />
 
                     <View
                         android:layout_width="70dp"
                         android:layout_height="2dp"
-                        android:background="#ff0000" />
+                        android:background="@color/colorPrimary" />
 
                     <LinearLayout
                         android:layout_width="match_parent"
@@ -149,7 +150,7 @@
                             android:layout_weight="0.5"
                             android:text="@string/UPSC_Preliminary"
                             android:textAppearance="@style/TextAppearance.AppCompat.Title"
-                            android:textColor="#000000"
+                            android:textColor="@color/black"
                             android:textSize="16dp" />
 
                         <Spinner
@@ -171,7 +172,7 @@
                         android:layout_marginTop="@dimen/layoutMarginBottom"
                         android:text="@string/Details_Optional_Subject"
                         android:textAppearance="@style/TextAppearance.AppCompat.Title"
-                        android:textColor="#000000"
+                        android:textColor="@color/black"
                         android:textSize="16dp" />
 
                     <EditText
@@ -192,7 +193,7 @@
                         android:layout_marginTop="@dimen/layoutMarginBottom"
                         android:text="@string/Details_Optional_Subject"
                         android:textAppearance="@style/TextAppearance.AppCompat.Title"
-                        android:textColor="#000000"
+                        android:textColor="@color/black"
                         android:textSize="16dp" />
 
                     <EditText
@@ -213,7 +214,7 @@
                         android:layout_marginTop="@dimen/layoutMarginBottom"
                         android:text="@string/Language_Medium_of_CET"
                         android:textAppearance="@style/TextAppearance.AppCompat.Title"
-                        android:textColor="#000000"
+                        android:textColor="@color/black"
                         android:textSize="16dp" />
 
                     <RadioGroup
@@ -257,12 +258,12 @@
                         android:layout_marginTop="@dimen/button_margin"
                         android:text="@string/STATE"
                         android:textAppearance="@style/TextAppearance.AppCompat.Title"
-                        android:textColor="#000000" />
+                        android:textColor="@color/black" />
 
                     <View
                         android:layout_width="70dp"
                         android:layout_height="2dp"
-                        android:background="#ff0000" />
+                        android:background="@color/colorPrimary" />
 
                     <LinearLayout
                         android:layout_width="match_parent"
@@ -310,7 +311,7 @@
                         android:layout_weight="0.5"
                         android:text="@string/State_Preliminary"
                         android:textAppearance="@style/TextAppearance.AppCompat.Title"
-                        android:textColor="#000000"
+                        android:textColor="@color/black"
                         android:textSize="16dp" />
 
                     <LinearLayout
@@ -348,7 +349,7 @@
                         android:layout_marginTop="@dimen/layoutMarginBottom"
                         android:text="@string/Details_Optional_Subject"
                         android:textAppearance="@style/TextAppearance.AppCompat.Title"
-                        android:textColor="#000000"
+                        android:textColor="@color/black"
                         android:textSize="16dp" />
 
                     <EditText
@@ -369,7 +370,7 @@
                         android:layout_marginTop="@dimen/layoutMarginBottom"
                         android:text="@string/Details_Optional_Subject"
                         android:textAppearance="@style/TextAppearance.AppCompat.Title"
-                        android:textColor="#000000"
+                        android:textColor="@color/black"
                         android:textSize="16dp" />
 
                     <EditText
@@ -390,7 +391,7 @@
                         android:layout_marginTop="@dimen/layoutMarginBottom"
                         android:text="@string/LanguageMediumofExamination"
                         android:textAppearance="@style/TextAppearance.AppCompat.Title"
-                        android:textColor="#000000"
+                        android:textColor="@color/black"
                         android:textSize="16dp" />
 
                     <RadioGroup
@@ -431,12 +432,12 @@
                         android:layout_marginTop="@dimen/button_margin"
                         android:text="@string/Past_Detail_for_UPSC"
                         android:textAppearance="@style/TextAppearance.AppCompat.Title"
-                        android:textColor="#000000" />
+                        android:textColor="@color/black" />
 
                     <View
                         android:layout_width="190dp"
                         android:layout_height="2dp"
-                        android:background="#ff0000" />
+                        android:background="@color/colorPrimary" />
 
                     <android.support.design.widget.TextInputLayout
                         android:id="@+id/layout_SchoolName"
@@ -490,14 +491,14 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_alignTop="@+id/bt_Prev"
-                        android:layout_margin="@dimen/button_margin_one"
-                        android:layout_marginTop="@dimen/layoutMargin"
+                        android:layout_marginTop="@dimen/button_margin_top"
                         android:layout_toEndOf="@+id/bt_Prev"
                         android:layout_toRightOf="@+id/bt_Prev"
-                        android:background="#ef5350"
+                        android:background="@color/colorPrimary"
                         android:onClick="startNext"
                         android:text="@string/Next"
-                        android:textColor="#ffffff" />
+                        android:textAllCaps="false"
+                        android:textColor="@color/white" />
                 </LinearLayout>
 
             </LinearLayout>

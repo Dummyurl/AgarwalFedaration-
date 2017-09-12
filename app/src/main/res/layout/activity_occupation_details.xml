@@ -37,58 +37,54 @@
                     android:textSize="20dp"
                     android:textStyle="bold" />-->
 
-                <LinearLayout
+                <RelativeLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_margin="@dimen/form_inner_layout_margin"
-                    android:orientation="horizontal"
-                    android:weightSum="1">
+                    android:layout_margin="@dimen/layout_margin"
+               >
 
                     <TextView
                         android:id="@+id/per_occupatn"
-                        android:layout_width="match_parent"
+                        android:layout_width="@dimen/cont_us_logo_width"
                         android:layout_height="wrap_content"
-                        android:layout_gravity="center"
-                        android:layout_margin="@dimen/layout_margin"
-                        android:layout_weight=".5"
-                        android:text="@string/Occupation"
-                        android:textStyle="bold" />
+                        android:text="@string/occu_icon"
+                        android:textColor="@color/colorPrimary"
+                        android:textSize="@dimen/form_tv_size"
+                         />
 
-                    <TextView
+                  <!--  <TextView
                         android:layout_width="@dimen/seperator_width"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
                         android:gravity="center"
                         android:text="@string/seprator"
                         android:textStyle="bold" />
-
+-->
                     <TextView
                         android:id="@+id/d_per_occupation"
+                        android:layout_toEndOf="@+id/per_occupatn"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_gravity="center"
-                        android:layout_weight=".5"
-                        android:textStyle="bold" />
-                </LinearLayout>
+                     />
+                </RelativeLayout>
 
-                <include layout="@layout/item_divider"/>
+                <include layout="@layout/item_divider1"/>
 
-                <LinearLayout
+                <RelativeLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_margin="@dimen/form_inner_layout_margin"
-                    android:orientation="horizontal"
-                    android:weightSum="1">
+                   android:layout_margin="@dimen/layout_margin"
+                    >
 
                     <TextView
                         android:id="@+id/per_industry"
-                        android:layout_width="match_parent"
+                        android:layout_width="@dimen/cont_us_logo_width"
                         android:layout_height="wrap_content"
-                        android:layout_gravity="center"
-                        android:layout_margin="@dimen/layout_margin"
-                        android:layout_weight=".5"
-                        android:text="@string/Industry"
-                        android:textStyle="bold" />
+                        android:textColor="@color/colorPrimary"
+                        android:text="@string/industry_icon"
+                        android:textSize="@dimen/form_tv_size"
+                         />
+<!--
 
                     <TextView
                         android:layout_width="@dimen/seperator_width"
@@ -97,87 +93,81 @@
                         android:gravity="center"
                         android:text="@string/seprator"
                         android:textStyle="bold" />
+-->
 
                     <TextView
                         android:id="@+id/d_per_industry"
+                        android:layout_toEndOf="@+id/per_industry"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_gravity="center"
-                        android:layout_weight=".5"
-                        android:textStyle="bold" />
-                </LinearLayout>
+                        />
+                </RelativeLayout>
 
-                <include layout="@layout/item_divider"/>
+                <include layout="@layout/item_divider1"/>
 
-                <LinearLayout
+                <RelativeLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_margin="@dimen/form_inner_layout_margin"
-                    android:orientation="horizontal"
-                    android:weightSum="1">
+                    android:layout_margin="@dimen/layout_margin"
+                   >
 
                     <TextView
                         android:id="@+id/per_bsnsempat"
-                        android:layout_width="match_parent"
+                        android:layout_width="@dimen/cont_us_logo_width"
                         android:layout_height="wrap_content"
-                        android:layout_gravity="center"
-                        android:layout_margin="10dp"
-                        android:layout_weight=".5"
-                        android:text="@string/BusinessEmployeeAt"
-                        android:textStyle="bold" />
+                        android:textColor="@color/colorPrimary"
+                        android:textSize="@dimen/form_tv_size"
+                        android:text="@string/empat_icon"
+                         />
 
-                    <TextView
+                 <!--   <TextView
                         android:layout_width="@dimen/seperator_width"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
                         android:gravity="center"
                         android:text="@string/seprator"
-                        android:textStyle="bold" />
+                        android:textStyle="bold" />-->
 
                     <TextView
                         android:id="@+id/d_per_bsnsempat"
+                        android:layout_toEndOf="@+id/per_bsnsempat"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_gravity="center"
-                        android:layout_weight=".5"
-                        android:textStyle="bold" />
-                </LinearLayout>
+                        />
+                </RelativeLayout>
 
-                <include layout="@layout/item_divider"/>
+                <include layout="@layout/item_divider1"/>
 
-                <LinearLayout
+                <RelativeLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_margin="5dp"
-                    android:orientation="horizontal"
-                    android:weightSum="1">
+                    android:layout_margin="@dimen/layout_margin"
+                    >
 
                     <TextView
                         android:id="@+id/per_psnalanulincome"
-                        android:layout_width="match_parent"
+                        android:layout_width="@dimen/cont_us_logo_width"
                         android:layout_height="wrap_content"
-                        android:layout_gravity="center"
-                        android:layout_margin="@dimen/layout_margin"
-                        android:layout_weight=".5"
-                        android:text="@string/PersonalAnnualIncome"
-                        android:textStyle="bold" />
+                        android:textColor="@color/colorPrimary"
+                        android:textSize="@dimen/layout_margin"
+                        android:text="@string/dollar_icon"
+                         />
 
-                    <TextView
+               <!--     <TextView
                         android:layout_width="@dimen/seperator_width"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
                         android:gravity="center"
                         android:text="@string/seprator"
-                        android:textStyle="bold" />
+                        android:textStyle="bold" />-->
 
                     <TextView
                         android:id="@+id/d_per_psnalanulincome"
+                        android:layout_toEndOf="@+id/per_psnalanulincome"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_gravity="center"
-                        android:layout_weight=".5"
-                        android:textStyle="bold" />
-                </LinearLayout>
+                        />
+                </RelativeLayout>
             </LinearLayout>
         </LinearLayout>
     </ScrollView>

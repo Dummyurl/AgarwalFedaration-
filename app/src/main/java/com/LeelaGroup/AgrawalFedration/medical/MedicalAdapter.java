@@ -79,6 +79,8 @@ public class MedicalAdapter extends Adapter<MedicalAdapter.MyViewHolderMedical> 
             intent.putExtra("med_cont_desig",medical.getMed_cont_desig());
             intent.putExtra("med_cont_email",medical.getMed_cont_email());
             intent.putExtra("med_image",medical.getMed_logo());
+            intent.putExtra("med_name",medical.getBusinessName1());
+            intent.putExtra("flagstaus",medical.getFlagstatus());
 
             this.context.startActivity(intent);
         }

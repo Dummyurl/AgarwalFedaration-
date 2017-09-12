@@ -21,7 +21,7 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_margin="@dimen/form_layout_margin"
+                android:layout_margin="@dimen/layout_bottom_margin"
                 android:orientation="vertical">
 
                 <!--  <TextView
@@ -50,7 +50,7 @@
                                             android:layout_margin="10dp"
                                             android:layout_weight=".5"
                                             android:text="Father Full Name :-"
-                                            android:textStyle="bold" />-->
+                                             />-->
                     <android.support.design.widget.TextInputLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content">
@@ -82,7 +82,7 @@
                                android:layout_margin="10dp"
                                android:layout_weight=".5"
                                android:text="Mother Full Name :-"
-                               android:textStyle="bold" />
+                                />
        -->
                     <android.support.design.widget.TextInputLayout
                         android:layout_width="match_parent"
@@ -115,7 +115,7 @@
                           android:layout_margin="10dp"
                           android:layout_weight=".5"
                           android:text="Father's Occupation :-"
-                          android:textStyle="bold" />
+                           />
   -->
                     <android.support.design.widget.TextInputLayout
                         android:layout_width="match_parent"
@@ -148,7 +148,7 @@
                                             android:layout_margin="10dp"
                                             android:layout_weight=".5"
                                             android:text="Mother's Occupations :-"
-                                            android:textStyle="bold" />-->
+                                             />-->
 
                     <android.support.design.widget.TextInputLayout
                         android:layout_width="match_parent"
@@ -181,7 +181,7 @@
                              android:layout_margin="10dp"
                              android:layout_weight=".5"
                              android:text="Number Of Brothers :-"
-                             android:textStyle="bold" />-->
+                              />-->
                     <android.support.design.widget.TextInputLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content">
@@ -214,7 +214,7 @@
                             android:layout_margin="10dp"
                             android:layout_weight=".5"
                             android:text="Number Of Sisters :-"
-                            android:textStyle="bold" />
+                             />
     -->
                     <android.support.design.widget.TextInputLayout
                         android:layout_width="match_parent"
@@ -248,7 +248,7 @@
                            android:layout_margin="10dp"
                            android:layout_weight=".5"
                            android:text="Number Of Brothers Married:-"
-                           android:textStyle="bold" />
+                            />
    -->
                     <android.support.design.widget.TextInputLayout
                         android:layout_width="match_parent"
@@ -282,7 +282,7 @@
                           android:layout_margin="10dp"
                           android:layout_weight=".5"
                           android:text="Number Of Sisters Married:-"
-                          android:textStyle="bold" />
+                           />
   -->
                     <android.support.design.widget.TextInputLayout
                         android:layout_width="match_parent"
@@ -309,6 +309,8 @@
                     android:layout_gravity="center"
                     android:layout_marginTop="@dimen/form_spinner_layout_margin_top"
                     android:textSize="@dimen/form_tv_size"
+                    android:layout_marginLeft="@dimen/form_spinner_label_mar_left"
+                    android:textColor="@color/black"
                     android:text="@string/FamilyStatus"
                      />
 
@@ -336,6 +338,8 @@
                     android:layout_gravity="center"
                     android:layout_marginTop="@dimen/form_spinner_layout_margin_top"
                     android:textSize="@dimen/form_tv_size"
+                    android:layout_marginLeft="@dimen/form_spinner_label_mar_left"
+                    android:textColor="@color/black"
                     android:text="@string/FamilyType"
                      />
 
@@ -362,9 +366,12 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
+                    android:textSize="@dimen/form_tv_size"
+                    android:layout_marginLeft="@dimen/form_spinner_label_mar_left"
+                    android:textColor="@color/black"
                     android:layout_marginTop="@dimen/form_spinner_layout_margin_top"
                     android:text="@string/FamilyAnnualIncome"
-                    android:textStyle="bold" />
+                     />
 
 
                 <LinearLayout
@@ -405,12 +412,13 @@
                         android:layout_height="wrap_content"
                         android:layout_gravity="end"
                         android:layout_marginTop="@dimen/button_margin_top"
-                        android:layout_marginBottom="@dimen/button_margin_bottom"
+                        android:layout_marginBottom="@dimen/button_margin_top"
                         android:background="@color/circleArrowButton"
                         android:onClick="goToFormPhysicalAttribute"
                         android:text="@string/save_next"
+                        android:textAllCaps="false"
                         android:textColor="@color/buttonTextColor"
-                        android:textStyle="bold" />
+                         />
                     <!-- <Button
                          android:id="@+id/bnsaveupdate"
                          android:layout_width="50dp"
@@ -419,7 +427,7 @@
                          android:layout_marginTop="10dp"
                          android:layout_weight=".5"
                          android:textColor="#fff"
-                         android:textStyle="bold"
+                         
                          android:background="@color/circleArrowButton"
                          android:onClick="goToFormContactInformation"
                          android:text="save update"

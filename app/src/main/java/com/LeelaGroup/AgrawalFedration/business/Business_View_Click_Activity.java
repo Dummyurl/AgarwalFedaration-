@@ -1,11 +1,13 @@
 package com.LeelaGroup.AgrawalFedration.business;
 
+import android.graphics.Typeface;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.LeelaGroup.AgrawalFedration.Business_Pojo.Business_ViewFull_Add_POJO;
 import com.LeelaGroup.AgrawalFedration.Business_Medical_Session;
@@ -36,14 +38,74 @@ CircleImageView imageView;
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_bisiness_view_click);
 
+        Typeface font = Typeface.createFromAsset( getAssets(), "fontawesome-webfont.ttf" );
+        TextView button = (TextView) findViewById( R.id.na );
+        TextView textView=(TextView)findViewById(R.id.tag_icon);
+        TextView email_icon=(TextView)findViewById(R.id.email_icon);
+        TextView jjj=(TextView)findViewById(R.id.m_icon);
+        TextView land=(TextView)findViewById(R.id.landline_icon);
+        TextView country=(TextView)findViewById(R.id.cun);
+        TextView state=(TextView)findViewById(R.id.s_icon);
+        TextView city=(TextView)findViewById(R.id.city_icon);
+        TextView cuntry1=(TextView)findViewById(R.id.c1);
+        TextView s1=(TextView)findViewById(R.id.s1);
+        TextView c1=(TextView)findViewById(R.id.c2);
+        TextView established=(TextView)findViewById(R.id.established);
+        TextView description=(TextView)findViewById(R.id.dec_icon);
+        TextView l_description=(TextView)findViewById(R.id.lD_icon);
+        TextView web=(TextView)findViewById(R.id.web);
+        TextView certificate=(TextView)findViewById(R.id.cer);
+        TextView payment=(TextView)findViewById(R.id.payment);
+       TextView locale_icon=(TextView)findViewById(R.id.locale_icon);
+        TextView wor=(TextView)findViewById(R.id.working);
+        TextView logo=(TextView)findViewById(R.id.logo);
+        TextView spec=(TextView)findViewById(R.id.spec);
+        TextView business=(TextView)findViewById(R.id.business);
+        TextView add=(TextView)findViewById(R.id.add);
+        TextView t9=(TextView)findViewById(R.id.textView9);
+        TextView categry=(TextView)findViewById(R.id.categry);
+        TextView sub_c=(TextView)findViewById(R.id.sub_c);
+        TextView serve_area=(TextView)findViewById(R.id.serve_area);
+        TextView clock=(TextView)findViewById(R.id.clock);
+        TextView license=(TextView)findViewById(R.id.lic_icon);
+
+        button.setTypeface(font);
+        textView.setTypeface(font);
+        email_icon.setTypeface(font);
+        jjj.setTypeface(font);
+        land.setTypeface(font);
+        country.setTypeface(font);
+        state.setTypeface(font);
+        city.setTypeface(font);
+        cuntry1.setTypeface(font);
+        s1.setTypeface(font);
+        c1.setTypeface(font);
+        established.setTypeface(font);
+        description.setTypeface(font);
+        l_description.setTypeface(font);
+        web.setTypeface(font);
+        certificate.setTypeface(font);
+        license.setTypeface(font);
+        payment.setTypeface(font);
+        locale_icon.setTypeface(font);
+        wor.setTypeface(font);
+        logo.setTypeface(font);
+        spec.setTypeface(font);
+        business.setTypeface(font);
+        add.setTypeface(font);
+        t9.setTypeface(font);
+        categry.setTypeface(font);
+        sub_c.setTypeface(font);
+        serve_area.setTypeface(font);
+        clock.setTypeface(font);
+
+
         business_Medical_session =new Business_Medical_Session(getApplicationContext());
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setTitle("Business Details");
-
-
 
         arid = getIntent().getStringExtra("ar_id");
 
@@ -129,12 +191,14 @@ CircleImageView imageView;
                 tv_business_type.setText(pojo.getBusinessType());
                 tv_advertiser_type.setText(pojo.getAdvertiserType());
 
+                Toast.makeText(Business_View_Click_Activity.this, "success", Toast.LENGTH_SHORT).show();
 
             }
 
             @Override
             public void onFailure(Call<Business_ViewFull_Add_POJO> call, Throwable t) {
 
+                Toast.makeText(Business_View_Click_Activity.this, t.getMessage(), Toast.LENGTH_SHORT).show();
             }
         });
     }

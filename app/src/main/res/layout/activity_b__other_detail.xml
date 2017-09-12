@@ -142,7 +142,9 @@
                 android:layout_gravity="center"
                 android:gravity="center"
                 android:weightSum="1"
-                android:layout_margin="@dimen/button_margin">
+                android:layout_marginBottom="@dimen/button_margin_bottom"
+                android:layout_marginTop="@dimen/button_margin_top"
+                >
 
                 <!--<Button
                     android:id="@+id/O_Prev"
@@ -160,13 +162,13 @@
                     android:id="@+id/O_Next"
                     android:onClick="startNext"
                     android:layout_width="wrap_content"
-                    android:layout_marginTop="@dimen/layoutMargin"
                     android:layout_height="wrap_content"
                     android:layout_alignTop="@+id/bt_Prev"
-                    android:background="#ef5350"
-                    android:textColor="#ffffff"
+                    android:background="@color/colorPrimary"
+                    android:textColor="@color/white"
                     android:layout_gravity="center"
                     android:gravity="center"
+                    android:textAllCaps="false"
                     android:layout_weight="1"
                     android:text="@string/Next"
                     />

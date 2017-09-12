@@ -3,27 +3,51 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <item
-        android:id="@+id/action_aboutus"
-        android:title="About Us"
+        android:id="@+id/action_fillprofile"
+        android:title="Create New Profile"
         />
     <item
         android:id="@+id/action_myprofile"
-        android:title="My Profile"
+        android:title="My Profiles"
+        />
+
+    <item
+        android:id="@+id/action_succsstories"
+        android:title="Success Stories"
+        />
+
+    <item
+        android:id="@+id/action_events"
+        android:title="Events"
+        />
+
+    <item
+        android:id="@+id/action_aboutus"
+        android:title="About Us"
+        />
+
+    <item
+        android:id="@+id/action_contactus"
+        android:title="Contact Us"
         />
     <item
-        android:id="@+id/action_fillprofile"
-        android:title="Fill Profile"
+        android:id="@+id/action_logout"
+        android:title="Logout"
         />
- <!--   <item
-        android:id="@+id/action_editprofile"
-        android:title="Edit Profile"
-        />-->
-   <!-- <item
-        android:id="@+id/action_profsearch"
-        android:title="Profile Search"
-        android:icon="@drawable/search_ic_search_black_24dp"
-        app:showAsAction="always"
-        />-->
+    <item
+        android:id="@+id/main"
+        android:title="Logout"
+        />
+    <!--   <item
+       android:id="@+id/action_editprofile"
+       android:title="Edit Profile"
+       />-->
+    <!-- <item
+         android:id="@+id/action_profsearch"
+         android:title="Profile Search"
+         android:icon="@drawable/search_ic_search_black_24dp"
+         app:showAsAction="always"
+         />-->
 
     <!--<item
         android:id="@+id/action_login"
@@ -38,26 +62,10 @@
         app:showAsAction="always"
         />-->
 
-    <item
-        android:id="@+id/action_succsstories"
-        android:title="Success Stories"
-        />
-    <item
-        android:id="@+id/action_events"
-        android:title="Events"
-        />
-    <item
-        android:id="@+id/action_contactus"
-        android:title="Contact Us"
-        />
-    <item
-        android:id="@+id/action_logout"
-        android:title="Logout"
-        />
-   <!-- <item
-        android:id="@+id/action_feedback"
-        android:title="Feedback"
-        />-->
+    <!-- <item
+         android:id="@+id/action_feedback"
+         android:title="Feedback"
+         />-->
     <!--<item
         android:id="@+id/matri_action_search"
         android:title="Search"

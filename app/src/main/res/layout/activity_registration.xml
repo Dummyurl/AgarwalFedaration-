@@ -39,8 +39,10 @@
                     android:layout_height="@dimen/radio_button_height"
                     android:layout_gravity="center"
                     android:layout_margin="@dimen/button_margin"
-                    android:background="#ef5350"
+                    android:background="@color/colorPrimary"
                     android:onClick="startSecond"
+                    android:textColor="@color/white"
+                    android:textAllCaps="false"
                     android:text="@string/CET_Button" />
 
                 <ImageView
@@ -56,8 +58,10 @@
                     android:layout_height="@dimen/radio_button_height"
                     android:layout_gravity="center"
                     android:layout_margin="@dimen/button_margin"
-                    android:background="#ef5350"
+                    android:background="@color/colorPrimary"
                     android:onClick="startSecond"
+                    android:textColor="@color/white"
+                    android:textAllCaps="false"
                     android:text="@string/BEAT_Button" />
             </LinearLayout>
         </LinearLayout>

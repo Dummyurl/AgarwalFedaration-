@@ -1,17 +1,24 @@
 package com.LeelaGroup.AgrawalFedration.medical;
 
+import android.Manifest;
+import android.annotation.TargetApi;
 import android.app.ProgressDialog;
 import android.app.TimePickerDialog;
 import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.database.Cursor;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.Drawable;
 import android.net.Uri;
+import android.os.Build;
 import android.os.Bundle;
+import android.provider.DocumentsContract;
 import android.provider.MediaStore;
+import android.support.annotation.RequiresApi;
 import android.support.design.widget.TextInputLayout;
+import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
@@ -29,15 +36,21 @@ import android.widget.TimePicker;
 import android.widget.Toast;
 
 import com.LeelaGroup.AgrawalFedration.Business_Medical_Session;
+import com.LeelaGroup.AgrawalFedration.Compressor;
+import com.LeelaGroup.AgrawalFedration.MatrimonySession;
 import com.LeelaGroup.AgrawalFedration.Medical_Pojos.Medical;
 import com.LeelaGroup.AgrawalFedration.Medical_Session;
 import com.LeelaGroup.AgrawalFedration.Network.ApiClient;
 import com.LeelaGroup.AgrawalFedration.R;
 import com.LeelaGroup.AgrawalFedration.Service.Medical.MedicalServiceAPI;
 import com.LeelaGroup.AgrawalFedration.matrimony.validation.CustomValidator;
+import com.bumptech.glide.Glide;
 
 import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.IOException;
 import java.util.Calendar;
+import java.util.HashMap;
 import java.util.List;
 
 import okhttp3.MediaType;
@@ -46,6 +59,8 @@ import okhttp3.RequestBody;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
+
+import static com.LeelaGroup.AgrawalFedration.business.BusinessAddAdvertized.MY_PERMISSIONS_REQUEST_READ_EXTERNAL_STORAGE;
 
 
 public class Medical_Posting extends AppCompatActivity {
@@ -57,7 +72,7 @@ public class Medical_Posting extends AppCompatActivity {
     TextView time, businessCloseTime;
 
     Button save;
-    ImageView businessBrowseImage;
+    //ImageView businessBrowseImage;
     Spinner ac_state, ac_country, ac_city;
     TextInputLayout layout_BusinessName, layout_BusinessAddress, layout_BusinessPincode, layout_BusinessContact,
             layout_BusinessQualification, layout_BusinessEmail, layout_AboutBusiness, layout_personName, layout_personNumber, layout_personDesig, layout_personMail;
@@ -77,7 +92,7 @@ public class Medical_Posting extends AppCompatActivity {
     String state, country, city, CloseTime, openTime, Category, businessName1,
             businessAddress1, businessPincode1, businessContact1, businessQualification1, aboutBusiness1, businessWebsite1;
 
-    String c_name, c_mobile, c_desc, c_email, c_contact;
+    String c_name, c_mobile, c_desc, c_email, c_contact,user_id;
     ProgressDialog progressDialog;
 
     List<Medical> citydata;
@@ -93,6 +108,7 @@ public class Medical_Posting extends AppCompatActivity {
     ArrayAdapter<String> dataAdaptercountry;
 
 
+    @RequiresApi(api = Build.VERSION_CODES.M)
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -100,6 +116,8 @@ public class Medical_Posting extends AppCompatActivity {
 
         medical__session = new Business_Medical_Session(getApplicationContext());
 
+        HashMap<String, String> user = medical__session.getUserDetails();
+        user_id = user.get(MatrimonySession.KEY_ID);
 //        if (medical__session.checkLogin())
 //            finish();
 
@@ -127,7 +145,7 @@ public class Medical_Posting extends AppCompatActivity {
         layout_personMail = (TextInputLayout) findViewById(R.id.layout_personMail);
 
 
-        businessBrowseImage = (ImageView) findViewById(R.id.btnBrowse);
+        //businessBrowseImage = (ImageView) findViewById(R.id.btnBrowse);
         businessName = (EditText) findViewById(R.id.Id_Name);
         businessAddress = (EditText) findViewById(R.id.Id_add);
         businessPincode = (EditText) findViewById(R.id.Id_pin);
@@ -209,12 +227,19 @@ public class Medical_Posting extends AppCompatActivity {
         iv.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i = new Intent(Intent.ACTION_PICK, MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
-                startActivityForResult(i, SELECTED_PICTURE);
+                /*Intent i = new Intent(Intent.ACTION_PICK, MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
+                startActivityForResult(i, SELECTED_PICTURE);*/
+                Intent intent = new Intent();
+                // Show only images, no videos or anything else
+                intent.setType("image/*");
+                intent.setAction(Intent.ACTION_GET_CONTENT);
+                // Always show the chooser (if there are multiple options available)
+                startActivityForResult(Intent.createChooser(intent, "Select Picture"), SELECTED_PICTURE);
             }
         });
     }
 
+    @RequiresApi(api = Build.VERSION_CODES.M)
     private void getCountryData() {
 
         final MedicalServiceAPI service = ApiClient.getRetrofit().create(MedicalServiceAPI.class);
@@ -224,35 +249,41 @@ public class Medical_Posting extends AppCompatActivity {
             public void onResponse(Call<List<Medical>> call, Response<List<Medical>> response) {
                 countrydata = response.body();
 
-                nameListcountry = new String[countrydata.size()];
+                if (countrydata != null) {
+                    nameListcountry = new String[countrydata.size()];
 
-                for (int i = 0; i < countrydata.size(); i++) {
-                    nameListcountry[i] = countrydata.get(i).getCname();
+                    for (int i = 0; i < countrydata.size(); i++) {
+                        nameListcountry[i] = countrydata.get(i).getCname();
+                    }
+                    dataAdaptercountry = new ArrayAdapter<String>(Medical_Posting.this, android.R.layout.simple_list_item_1, nameListcountry);
+                    dataAdaptercountry.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+                    ac_country.setAdapter(dataAdaptercountry);
+                    ac_country.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+                        @Override
+                        public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                            country = ac_country.getSelectedItem().toString();
+                            getStateData();
+                        }
+
+                        @Override
+                        public void onNothingSelected(AdapterView<?> parent) {
+
+                        }
+                    });
+
+                    country = ac_country.getSelectedItem().toString();
                 }
-                dataAdaptercountry = new ArrayAdapter<String>(Medical_Posting.this, android.R.layout.simple_list_item_1, nameListcountry);
-                dataAdaptercountry.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-                ac_country.setAdapter(dataAdaptercountry);
-                ac_country.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
-                    @Override
-                    public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                        country = ac_country.getSelectedItem().toString();
-                        getStateData();
-                    }
-
-                    @Override
-                    public void onNothingSelected(AdapterView<?> parent) {
-
-                    }
-                });
-
-                country = ac_country.getSelectedItem().toString();
             }
-
             @Override
             public void onFailure(Call<List<Medical>> call, Throwable t) {
 
             }
         });
+
+        if (ContextCompat.checkSelfPermission(this, Manifest.permission.READ_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED) {
+            requestPermissions(new String[]{Manifest.permission.READ_EXTERNAL_STORAGE}, MY_PERMISSIONS_REQUEST_READ_EXTERNAL_STORAGE);
+
+        }
 
     }
 
@@ -265,35 +296,36 @@ public class Medical_Posting extends AppCompatActivity {
             public void onResponse(Call<List<Medical>> call, Response<List<Medical>> response) {
                 statedata = response.body();
 
-                nameListstate = new String[statedata.size()];
+                if (statedata != null) {
+                    nameListstate = new String[statedata.size()];
 
-                for (int i = 0; i < statedata.size(); i++) {
-                    nameListstate[i] = statedata.get(i).getSname();
+                    for (int i = 0; i < statedata.size(); i++) {
+                        nameListstate[i] = statedata.get(i).getSname();
 
+                    }
+                    dataAdapterstate = new ArrayAdapter<String>(Medical_Posting.this, android.R.layout.simple_list_item_1, nameListstate);
+                    dataAdapterstate.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+                    ac_state.setAdapter(dataAdapterstate);
+
+                    state = ac_state.getSelectedItem().toString();
+                    getCityData();
+
+                    ac_state.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+                        @Override
+                        public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                            state = ac_state.getSelectedItem().toString();
+                            getCityData();
+                        }
+
+                        @Override
+                        public void onNothingSelected(AdapterView<?> parent) {
+
+                        }
+                    });
+
+                    state = ac_state.getSelectedItem().toString();
                 }
-                dataAdapterstate = new ArrayAdapter<String>(Medical_Posting.this, android.R.layout.simple_list_item_1, nameListstate);
-                dataAdapterstate.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-                ac_state.setAdapter(dataAdapterstate);
-
-                state = ac_state.getSelectedItem().toString();
-                getCityData();
-
-                ac_state.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
-                    @Override
-                    public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                        state = ac_state.getSelectedItem().toString();
-                        getCityData();
-                    }
-
-                    @Override
-                    public void onNothingSelected(AdapterView<?> parent) {
-
-                    }
-                });
-
-                state = ac_state.getSelectedItem().toString();
             }
-
             @Override
             public void onFailure(Call<List<Medical>> call, Throwable t) {
 
@@ -312,29 +344,30 @@ public class Medical_Posting extends AppCompatActivity {
             @Override
             public void onResponse(Call<List<Medical>> call, Response<List<Medical>> response) {
                 citydata = response.body();
+               if(citydata!=null) {
+                   nameListcity = new String[citydata.size()];
 
-                nameListcity = new String[citydata.size()];
+                   for (int i = 0; i < citydata.size(); i++) {
+                       nameListcity[i] = citydata.get(i).getCity_name();
+                   }
+                   dataAdaptercity = new ArrayAdapter<String>(Medical_Posting.this, android.R.layout.simple_list_item_1, nameListcity);
+                   dataAdaptercity.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+                   ac_city.setAdapter(dataAdaptercity);
 
-                for (int i = 0; i < citydata.size(); i++) {
-                    nameListcity[i] = citydata.get(i).getCity_name();
-                }
-                dataAdaptercity = new ArrayAdapter<String>(Medical_Posting.this, android.R.layout.simple_list_item_1, nameListcity);
-                dataAdaptercity.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-                ac_city.setAdapter(dataAdaptercity);
+                   ac_city.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+                       @Override
+                       public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                           city = ac_city.getSelectedItem().toString();
 
-                ac_city.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
-                    @Override
-                    public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                        city = ac_city.getSelectedItem().toString();
-                    }
+                       }
 
-                    @Override
-                    public void onNothingSelected(AdapterView<?> parent) {
+                       @Override
+                       public void onNothingSelected(AdapterView<?> parent) {
 
-                    }
-                });
-                city = ac_city.getSelectedItem().toString();
-
+                       }
+                   });
+                   city = ac_city.getSelectedItem().toString();
+               }
             }
 
             @Override
@@ -381,32 +414,6 @@ public class Medical_Posting extends AppCompatActivity {
             return false;
         }
         businessContact.setError(null);
-
-
-      /*  final String B_Country = ac_country.getText().toString();
-        if (!validator.isValidName(B_Country)) {
-            ac_country.requestFocus();
-            ac_country.setError("Please seclect Conuntry From List");
-            return false;
-        }
-        ac_country.setError(null);
-
-
-        final String B_State = ac_state.getText().toString();
-        if (!validator.isValidName(B_State)) {
-            ac_state.requestFocus();
-            ac_state.setError("Please Enter Valid State Name");
-            return false;
-        }
-        ac_state.setError(null);
-
-        final String B_City = ac_city.getText().toString();
-        if (!validator.isValidName(B_City)) {
-            ac_city.requestFocus();
-            ac_city.setError("Please Select Native Place");
-            return false;
-        }
-        ac_city.setError(null);*/
 
         final String B_Qualification = businessQualification.getText().toString();
         if (!validator.isEmptyField(B_Qualification)) {
@@ -458,41 +465,6 @@ public class Medical_Posting extends AppCompatActivity {
         contactperson_email.setError(null);
 
 
-        /*final String B_O_Time = time.getText().toString();
-        if (!validator.isEmptyField(B_O_Time)) {
-            time.requestFocus();
-            time.setError("Please Select Open Time");
-            return false;
-        }
-            time.setError(null);
-
-        final String B_C_Time = businessCloseTime.getText().toString();
-        if (!validator.isEmptyField(B_C_Time)) {
-            time.requestFocus();
-            time.setError("Please Select Close Time");
-            return false;
-        }
-            time.setError(null);
-
-
-        final String B_AboutBusiness = aboutBusiness.getText().toString();
-        if (!validator.isValidName(B_AboutBusiness)) {
-            aboutBusiness.requestFocus();
-            aboutBusiness.setError("Please Mention About Business");
-            return false;
-        }
-        aboutBusiness.setError(null);
-
-
-        final String B_BusinessWebsite = businessWebsite.getText().toString();
-        if (!validator.isValidName(B_AboutBusiness)) {
-            businessWebsite.requestFocus();
-            businessWebsite.setError("Please Mention About Business");
-            return false;
-        }
-        businessWebsite.setError(null);
-        */
-
         if (!isImageAdded) {
             iv.requestFocus();
             Toast.makeText(this, "You have not Pick an Image", Toast.LENGTH_SHORT).show();
@@ -508,41 +480,71 @@ public class Medical_Posting extends AppCompatActivity {
         startActivityForResult(i, SELECTED_PICTURE);
     }
 
+    @TargetApi(Build.VERSION_CODES.M)
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
 
-        super.onActivityResult(requestCode, resultCode, data);
+        if (requestCode == SELECTED_PICTURE && resultCode == RESULT_OK && null != data)
+        {
+            super.onActivityResult(requestCode, resultCode, data);
 
-        switch (requestCode) {
-            case SELECTED_PICTURE:
+            Uri uri = data.getData();
+            String[] filePathColumn = {MediaStore.Images.Media.DATA};
 
-                if (resultCode == RESULT_OK) {
-                    if (data != null) {
-                        Uri uri = data.getData();
-                        String[] projection = {MediaStore.Images.Media.DATA};
-                        //String[] image = {""};
+            Cursor cursor;
+            if(Build.VERSION.SDK_INT >19)
+            {
 
-                        Cursor cursor = getContentResolver().query(uri, projection, null, null, null);
-                        if(cursor!=null && cursor.getCount()>0 ){
-                            cursor.moveToFirst();
-                        }
+                // Will return "image:x*"
+                String wholeID = DocumentsContract.getDocumentId(uri);
+                // Split at colon, use second item in the array
+                String id = wholeID.split(":")[1];
+                // where id is equal to
+                String sel = MediaStore.Images.Media._ID + "=?";
 
+                cursor = getContentResolver().query(MediaStore.Images.Media.EXTERNAL_CONTENT_URI,
+                        filePathColumn, sel, new String[]{ id }, null);
+            }
+            else
+            {
+                cursor = getContentResolver().query(uri, filePathColumn, null, null, null);
+            }
+            filePath = null;
+            try
+            {
+                int column_index = cursor.getColumnIndex(MediaStore.Images.Media.DATA);
+                cursor.moveToFirst();
+                filePath = cursor.getString(column_index);
+                cursor.close();
+                Glide.with(this).load(uri).into(iv);
+                //Bitmap bitmap = MediaStore.Images.Media.getBitmap(getContentResolver(), uri);
+                //iv.setImageBitmap(bitmap);
+                isImageAdded=true;
+            }
+            catch(NullPointerException e) {
 
-                        int columnIndex = cursor.getColumnIndex(projection[0]);
-                        filePath = cursor.getString(columnIndex);
-
-
-                        Bitmap slectedImage = BitmapFactory.decodeFile(filePath);
-                        Drawable d = new BitmapDrawable(slectedImage);
-                        iv.setVisibility(View.VISIBLE);
-                        iv.setBackground(d);
-                        isImageAdded = true;
-                        businessBrowseImage.setVisibility(View.GONE);
-                        // cursor.moveToNext();
-                        cursor.close();
-                    }
-                }
+            } /*catch (FileNotFoundException e) {
+                e.printStackTrace();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+*/
         }
+    }
 
+    @Override
+    public void onRequestPermissionsResult(int requestCode, String[] permissions, int[] grantResults) {
+        switch (requestCode) {
+            case MY_PERMISSIONS_REQUEST_READ_EXTERNAL_STORAGE: {
+                // If request is cancelled, the result arrays are empty.
+                if (grantResults.length > 0
+                        && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+
+                } else {
+
+                }
+                return;
+            }
+        }
     }
 
     public void MedicalServices() {
@@ -573,7 +575,15 @@ public class Medical_Posting extends AppCompatActivity {
         c_email = contactperson_email.getText().toString();
         c_contact = selectContactDetail.getText().toString();
 
-        File file = new File(filePath);
+
+        File afile= new File(filePath);
+        File file = null;
+        try {
+            file = new Compressor(this).compressToFile(afile);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
 
         RequestBody requestBody = RequestBody.create(MediaType.parse("*/*"), file);
         MultipartBody.Part fileToUpload = MultipartBody.Part.createFormData("file", file.getName(), requestBody);
@@ -597,11 +607,12 @@ public class Medical_Posting extends AppCompatActivity {
         RequestBody r_deg = RequestBody.create(MediaType.parse("text/plain"), c_desc);
         RequestBody r_email = RequestBody.create(MediaType.parse("text/plain"), c_email);
         RequestBody r_contact = RequestBody.create(MediaType.parse("text/plain"), c_contact);
+        RequestBody r_userid = RequestBody.create(MediaType.parse("text/plain"), user_id);
 
         MedicalServiceAPI getResponse = ApiClient.getRetrofit().create(MedicalServiceAPI.class);
         Call<Medical> call = getResponse.update_uploade_file(fileToUpload, Category1, business_Name, business_Address,
                 business_Pincode, business_Contact, country1, state1, city1, business_Qualification, open_Time,
-                Close_Time, about_Business, business_Website, r_name, r_mobile, r_email, r_deg, r_contact);
+                Close_Time, about_Business, business_Website, r_name, r_mobile, r_email, r_deg, r_contact,r_userid);
 
         call.enqueue(new Callback<Medical>() {
             @Override

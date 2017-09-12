@@ -15,17 +15,17 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="@dimen/layoutMargin"
             android:orientation="vertical">
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="vertical"
                 android:layout_marginBottom="@dimen/layoutMarginBottom"
+                android:orientation="vertical"
+                android:layout_margin="@dimen/layoutMargin"
                 >
 
-               <!-- <TextView
+                <!-- <TextView
                     android:id="@+id/EducationDetails"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -46,12 +46,12 @@
                     android:layout_marginTop="@dimen/layoutMarginBottom"
                     android:text="@string/SSC"
                     android:textAppearance="@style/TextAppearance.AppCompat.Title"
-                    android:textColor="#000000" />
+                    android:textColor="@color/black" />
 
                 <View
                     android:layout_width="@dimen/image_width"
                     android:layout_height="2dp"
-                    android:background="#ff0000" />
+                    android:background="@color/colorPrimary" />
 
                 <Spinner
                     android:id="@+id/spinnerstate"
@@ -150,12 +150,12 @@
                     android:layout_marginTop="@dimen/layoutMarginBottom"
                     android:text="@string/HSC"
                     android:textAppearance="@style/TextAppearance.AppCompat.Title"
-                    android:textColor="#000000" />
+                    android:textColor="@color/black" />
 
                 <View
                     android:layout_width="@dimen/image_width"
                     android:layout_height="2dp"
-                    android:background="#ff0000" />
+                    android:background="@color/colorPrimary" />
 
                 <Spinner
                     android:id="@+id/HSC_spinnerstate"
@@ -253,12 +253,12 @@
                     android:layout_marginTop="@dimen/layoutMarginBottom"
                     android:text="@string/Graduation"
                     android:textAppearance="@style/TextAppearance.AppCompat.Title"
-                    android:textColor="#000000" />
+                    android:textColor="@color/black" />
 
                 <View
                     android:layout_width="@dimen/image_width"
                     android:layout_height="2dp"
-                    android:background="#ff0000" />
+                    android:background="@color/colorPrimary" />
 
                 <Spinner
                     android:id="@+id/Graduation_spinnerstate"
@@ -356,7 +356,7 @@
                     android:layout_marginTop="@dimen/layoutMarginBottom"
                     android:text="@string/Final_Year"
                     android:textAppearance="@style/TextAppearance.AppCompat.Title"
-                    android:textColor="#000000"
+                    android:textColor="@color/black"
                     android:textSize="@dimen/text_size" />
 
                 <RadioGroup
@@ -393,12 +393,12 @@
                     android:layout_marginTop="@dimen/layoutMarginBottom"
                     android:text="@string/Post_Graduation"
                     android:textAppearance="@style/TextAppearance.AppCompat.Title"
-                    android:textColor="#000000" />
+                    android:textColor="@color/black" />
 
                 <View
                     android:layout_width="@dimen/image_width"
                     android:layout_height="2dp"
-                    android:background="#ff0000" />
+                    android:background="@color/colorPrimary" />
 
                 <Spinner
                     android:id="@+id/Post_Graduation_spinnerstate"
@@ -496,7 +496,7 @@
                     android:layout_marginTop="@dimen/layoutMarginBottom"
                     android:text="@string/Final_Year"
                     android:textAppearance="@style/TextAppearance.AppCompat.Title"
-                    android:textColor="#000000"
+                    android:textColor="@color/black"
                     android:textSize="@dimen/text_size" />
 
                 <RadioGroup
@@ -530,8 +530,8 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
-                    android:layout_margin="@dimen/button_margin"
                     android:gravity="center"
+                    android:layout_marginTop="@dimen/button_margin_top"
                     android:orientation="horizontal"
                     android:weightSum="1">
 
@@ -553,14 +553,12 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
-                        android:layout_margin="5dp"
-                        android:layout_marginTop="@dimen/layoutMargin"
                         android:layout_weight="1"
-                        android:background="#ef5350"
+                        android:background="@color/colorPrimary"
                         android:gravity="center"
                         android:onClick="startSecond"
                         android:text="@string/Next"
-                        android:textColor="#ffffff" />
+                        android:textColor="@color/white" />
                 </LinearLayout>
 
 

@@ -10,6 +10,19 @@ public class Medical {
 
     boolean success;
 
+    public String getFlagstatus() {
+        return flagstatus;
+    }
+
+    public void setFlagstatus(String flagstatus) {
+        this.flagstatus = flagstatus;
+    }
+
+    @SerializedName("flagstatus")
+    String flagstatus;
+
+
+
     @SerializedName("cid")
     String cid;
 

@@ -38,7 +38,8 @@ public class PagerAdapter extends FragmentStatePagerAdapter {
     }
 
     @Override
-    public int getCount() {
+    public int getCount()
+    {
         return mNumOfTabs;
     }
 

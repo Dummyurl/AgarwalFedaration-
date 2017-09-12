@@ -58,7 +58,7 @@
             android:layout_marginTop="@dimen/layoutMarginBottom"
             android:text="@string/First_Person"
             android:textAppearance="@style/TextAppearance.AppCompat.Title"
-            android:textColor="#ff0000" />
+            android:textColor="@color/colorPrimary" />
 
         <android.support.design.widget.TextInputLayout
             android:id="@+id/layout_R_Name1"
@@ -170,7 +170,7 @@
             android:layout_marginTop="@dimen/layoutMarginBottom"
             android:text="@string/Second_Person"
             android:textAppearance="@style/TextAppearance.AppCompat.Title"
-            android:textColor="#ff0000" />
+            android:textColor="@color/colorPrimary" />
 
         <android.support.design.widget.TextInputLayout
             android:id="@+id/layout_R_Name2"
@@ -296,7 +296,7 @@
                 android:focusable="true"
                 android:focusableInTouchMode="true"
                 android:text="@string/Term_and_Condition"
-                android:textColor="#000" />
+                android:textColor="@color/black" />
 
         </LinearLayout>
 
@@ -326,8 +326,9 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:layout_margin="@dimen/layoutMarginBottom"
             android:gravity="center"
+            android:layout_marginTop="@dimen/button_margin_top"
+            android:layout_marginBottom="@dimen/button_margin_bottom"
             android:orientation="horizontal"
             android:weightSum="1">
 
@@ -345,16 +346,16 @@
 
             <Button
                 android:id="@+id/Save"
-                android:layout_width="@dimen/button_margin_two"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_alignTop="@+id/bt_Prev"
                 android:layout_gravity="center"
-                android:layout_margin="@dimen/marginButton1"
                 android:layout_weight="1"
-                android:background="#ef5350"
+                android:background="@color/colorPrimary"
                 android:gravity="center"
                 android:onClick="startNext"
-                android:text="@string/SAVE"
+                android:textAllCaps="false"
+                android:text="@string/Save"
                 android:textColor="#ffffff" />
         </LinearLayout>
         </LinearLayout>

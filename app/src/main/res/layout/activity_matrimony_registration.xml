@@ -157,18 +157,18 @@
 
                 <Button
                     android:id="@+id/register"
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
-                    android:layout_weight="0.50"
                     android:background="#ef5350"
                     android:text="@string/Register"
                     android:textColor="@color/buttonTextColor"
                     android:textSize="@dimen/form_tv_size"
+                    android:textAllCaps="false"
 
                     />
 
-                <Button
+              <!--  <Button
                     android:id="@+id/button"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -176,9 +176,10 @@
                     android:layout_marginLeft="@dimen/button_margin_top"
                     android:layout_weight="0.50"
                     android:background="@color/colorPrimary"
-                    android:text="LogIn"
+                    android:text="@string/Login"
+                    android:textAllCaps="false"
                     android:textColor="@color/buttonTextColor"
-                    android:textSize="@dimen/form_tv_size" />
+                    android:textSize="@dimen/form_tv_size" />-->
             </LinearLayout>
 
 
