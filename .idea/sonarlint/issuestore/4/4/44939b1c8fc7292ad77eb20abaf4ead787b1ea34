@@ -1,0 +1,8 @@
+
+msquid:S00120"WRename this package name to match the regular expression '^[a-z]+(\.[a-z][a-z0-9]*)*$'.(ú
+lsquid:S00117"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ç£Óğÿÿÿÿÿ
+Fsquid:S1068"1Remove this unused "IS_USER_LOGIN" private field.(óù¡Î
+esquid:CommentedOutCodeLine"<This block of commented-out lines of code should be removed.( ñúÏüÿÿÿÿ
+psquid:S00115"ZRename this constant name to match the regular expression '^[A-Z][A-Z0-9]*(_[A-Z0-9]+)*$'.(—­öë
+esquid:CommentedOutCodeLine"<This block of commented-out lines of code should be removed.(÷™™üÿÿÿÿ
+Msquid:S1068"3Remove this unused "backgroundImage" private field.(‰“ïûÿÿÿÿ

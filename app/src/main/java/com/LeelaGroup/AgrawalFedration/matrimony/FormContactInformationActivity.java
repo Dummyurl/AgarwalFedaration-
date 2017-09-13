@@ -23,6 +23,7 @@ import com.LeelaGroup.AgrawalFedration.matrimony.models.CountryStateCity;
 import com.LeelaGroup.AgrawalFedration.matrimony.validation.CustomValidator;
 
 import java.io.File;
+import java.util.Arrays;
 import java.util.List;
 
 import retrofit2.Call;
@@ -30,7 +31,6 @@ import retrofit2.Callback;
 import retrofit2.Response;
 
 public class FormContactInformationActivity extends AppCompatActivity {
-    private GestureDetector gestureDetector;
     EditText etMobNo,etLandline,etEmail,etAddress,etPin;
     String id;
 
@@ -52,13 +52,10 @@ public class FormContactInformationActivity extends AppCompatActivity {
     String mat_reg_religion,mat_reg_caste,mat_reg_subcaste;
     File imageFile;
 
-    String Matsess,mreg_landline="",mreg_phone,mreg_email,mreg_addr,mreg_country,mreg_state,mreg_city,mreg_pincode,mreg_resid_status;
+    String mreg_landline="",mreg_phone,mreg_email,mreg_addr,mreg_country,mreg_state,mreg_city,mreg_pincode,mreg_resid_status;
     String mat_id;
     AutoCompleteTextView sprCountry,etCity,sprState;
     Spinner sprResdStats;
-    float dX;
-    float dY;
-    int lastAction;
 
     MatrimonySession matrimonySession;
     @Override
@@ -84,16 +81,8 @@ public class FormContactInformationActivity extends AppCompatActivity {
         catchBasicDetails();
 
     }
-    private class SingleTapConfirm extends GestureDetector.SimpleOnGestureListener {
-
-        @Override
-        public boolean onSingleTapUp(MotionEvent event) {
-            return true;
-        }
-    }
 
     public boolean validateFirst(){
-
 
         CustomValidator validator=new CustomValidator();
 
@@ -122,15 +111,17 @@ public class FormContactInformationActivity extends AppCompatActivity {
         etAddress.setError(null);
 
         final String country=sprCountry.getText().toString();
-        if(!validator.isValidName(country)){
+        List cnry= Arrays.asList(countryName);
+        if(!cnry.contains(country)){
             sprCountry.requestFocus();
-            sprState.setError("Please Enter valid Country Name");
+            sprCountry.setError("Please Enter valid Country Name");
             return false;
         }
         sprCountry.setError(null);
 
         final String state=sprState.getText().toString();
-        if(!validator.isValidName(state)){
+        List st= Arrays.asList(stateName);
+        if(!st.contains(state)){
             sprState.requestFocus();
             sprState.setError("Please Enter valid State Name");
             return false;
@@ -138,7 +129,8 @@ public class FormContactInformationActivity extends AppCompatActivity {
         sprState.setError(null);
 
         final String city=etCity.getText().toString();
-        if(!validator.isValidName(city)){
+        List ct= Arrays.asList(cityName);
+        if(!ct.contains(city)){
             etCity.requestFocus();
             etCity.setError("Please Enter Valid City Name");
             return false;
@@ -161,9 +153,7 @@ public class FormContactInformationActivity extends AppCompatActivity {
 
         return true;
     }
-    public void goToFormBasicDetails(View v){
-        startActivity(new Intent(this,FormBasicDetailsActivity.class));
-    }
+
     public void goToFormSocialAttribute(View v)
     {
         if (validateFirst())

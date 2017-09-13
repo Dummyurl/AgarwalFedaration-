@@ -4,6 +4,7 @@ import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.TextInputLayout;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.text.Editable;
@@ -147,15 +148,21 @@ public class BusinessFranchisee extends AppCompatActivity implements View.OnClic
             public void onResponse(Call<FranchiseeRegPojo> call, Response<FranchiseeRegPojo> response) {
                 FranchiseeRegPojo franchisee = response.body();
                 hidepDialog();
-                Toast.makeText(BusinessFranchisee.this, franchisee.getMessage(), Toast.LENGTH_SHORT).show();
-                Intent intent = new Intent(BusinessFranchisee.this, BusinessActivity.class);
-                intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-                startActivity(intent);
+                if (franchisee.getMessage()!=null)
+                {
+                    AlertDialog.Builder builder=new AlertDialog.Builder(BusinessFranchisee.this);
+                    builder.setTitle("Message");
+                    builder.setMessage(franchisee.getMessage());
+                   // Toast.makeText(BusinessFranchisee.this, franchisee.getMessage(), Toast.LENGTH_SHORT).show();
+                    Intent intent = new Intent(BusinessFranchisee.this, BusinessActivity.class);
+                    intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                    startActivity(intent);
+                }
             }
 
             @Override
             public void onFailure(Call<FranchiseeRegPojo> call, Throwable t) {
-                //Toast.makeText(BusinessFranchisee.this,"Regis", Toast.LENGTH_SHORT).show();
+                Toast.makeText(BusinessFranchisee.this,getText(R.string.checkConn), Toast.LENGTH_SHORT).show();
             }
         });
 
@@ -198,6 +205,7 @@ public class BusinessFranchisee extends AppCompatActivity implements View.OnClic
         if (country.isEmpty() || !country.matches("[a-zA-Z ]+")) {
             tl_country.setError("Please Enter Valid Country Name");
             sp_country.requestFocus();
+            sp_country.setError(null);
             return false;
         } else {
             tl_country.setErrorEnabled(false);
@@ -212,6 +220,7 @@ public class BusinessFranchisee extends AppCompatActivity implements View.OnClic
         if (state.isEmpty() || !state.matches("[a-zA-Z ]+")) {
             tl_stat.setError("Please Enter State");
             sp_state.requestFocus();
+            sp_state.setError(null);
             return false;
         } else {
             tl_stat.setErrorEnabled(false);
@@ -226,6 +235,7 @@ public class BusinessFranchisee extends AppCompatActivity implements View.OnClic
         if (city.isEmpty() || !city.matches("[a-zA-Z ]+")) {
             tl_city.setError("Please Enter City");
             sp_city.requestFocus();
+            sp_city.setError(null);
             return false;
         } else {
             tl_city.setErrorEnabled(false);
@@ -240,6 +250,7 @@ public class BusinessFranchisee extends AppCompatActivity implements View.OnClic
         if (first.isEmpty() || !first.matches("[a-zA-Z ]+")) {
             tl_firstName.setError("Please Enter Valid Name");
             et_firstName.requestFocus();
+            et_firstName.setError(null);
             return false;
         } else {
             tl_firstName.setErrorEnabled(false);
@@ -254,6 +265,7 @@ public class BusinessFranchisee extends AppCompatActivity implements View.OnClic
 
         if (last.isEmpty() || !last.matches("[a-zA-Z ]+")) {
             requestFocus(et_lastName);
+            et_lastName.setError(null);
             tl_lastName.setError("Please Enter Valid Name");
             return false;
         } else {
@@ -270,6 +282,7 @@ public class BusinessFranchisee extends AppCompatActivity implements View.OnClic
         if (email.isEmpty() || !isValidEmail(email)) {
             requestFocus(et_email);
             tl_email.setError(getString(R.string.err_email));
+            et_email.setError(null);
             return false;
         } else {
             tl_email.setErrorEnabled(false);
@@ -288,6 +301,7 @@ public class BusinessFranchisee extends AppCompatActivity implements View.OnClic
 
         if (mobile.isEmpty() || mobile.length() < 10) {
             tl_mobile_no.setError(getString(R.string.err_mobile_no));
+            et_mobile_no.setError(null);
             requestFocus(et_mobile_no);
             return false;
         } else {
@@ -303,6 +317,7 @@ public class BusinessFranchisee extends AppCompatActivity implements View.OnClic
         if (address.isEmpty()) {
             tl_address.setError(getString(R.string.err_address));
             requestFocus(et_address);
+            et_address.setError(null);
             return false;
         } else {
             tl_address.setErrorEnabled(false);

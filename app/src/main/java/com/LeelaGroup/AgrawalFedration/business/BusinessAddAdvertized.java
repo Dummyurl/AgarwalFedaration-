@@ -17,6 +17,7 @@ import android.provider.DocumentsContract;
 import android.provider.MediaStore;
 import android.support.design.widget.TextInputLayout;
 import android.support.v4.content.ContextCompat;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.text.Editable;
@@ -484,21 +485,23 @@ public class BusinessAddAdvertized extends AppCompatActivity implements View.OnC
             @Override
             public void onResponse(Call<List<C_S_C_Pojo>> call, Response<List<C_S_C_Pojo>> response) {
                 s_citydata = response.body();
-                try {
-                    if (s_citydata != null) {
-                        s_nameListcity = new String[s_citydata.size()];
 
-                        for (int i = 0; i < s_citydata.size(); i++) {
+                try {
+                    if(s_citydata!=null){
+                        s_nameListcity=new String[s_citydata.size()];
+                        for(int i=0;i<s_citydata.size();i++){
                             s_nameListcity[i] = s_citydata.get(i).getCity_name();
                         }
-                        s_dataAdaptercity = new ArrayAdapter<String>(BusinessAddAdvertized.this, android.R.layout.simple_list_item_1, s_nameListcity);
+
+                        s_dataAdaptercity=new ArrayAdapter<String>(BusinessAddAdvertized.this,android.R.layout.simple_list_item_1,s_nameListcity);
                         s_dataAdaptercity.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-                        sp_city2.setAdapter(dataAdaptercity);
-                        City2 = sp_city2.getSelectedItem().toString();
+                        sp_city2.setAdapter(s_dataAdaptercity);
+                        City2=sp_city2.getSelectedItem().toString();
                     }
                 } catch (Exception e) {
                     e.printStackTrace();
                 }
+
             }
 
             @Override
@@ -776,6 +779,14 @@ public class BusinessAddAdvertized extends AppCompatActivity implements View.OnC
 
 
     private boolean submiForm() {
+        if (!isImageAdded) {
+            iv_Logo.requestFocus();
+            AlertDialog.Builder builder=new AlertDialog.Builder(this);
+            builder.setTitle("Alert");
+            builder.setMessage("Please Choose Company Logo");
+            builder.show();
+            return false;
+        }
         if (!validateCompanyName()) {
             return false;
         }
@@ -797,11 +808,7 @@ public class BusinessAddAdvertized extends AppCompatActivity implements View.OnC
         if (!validateAddressFirst()) {
             return false;
         }
-        if (!isImageAdded) {
-            btnChooseImage.requestFocus();
-            Toast.makeText(this, "You have not Pick Logo", Toast.LENGTH_SHORT).show();
-            return false;
-        }
+
 
 
         // Toast.makeText(getApplicationContext(), "Thank You!", Toast.LENGTH_SHORT).show();
@@ -816,6 +823,7 @@ public class BusinessAddAdvertized extends AppCompatActivity implements View.OnC
         if (companyName.isEmpty()) {
             tl_company_name.setError(getString(R.string.err_company_name));
             requestFocus(et_company_name);
+            et_company_name.setError(null);
             return false;
         } else {
             tl_company_name.setErrorEnabled(false);
@@ -844,6 +852,7 @@ public class BusinessAddAdvertized extends AppCompatActivity implements View.OnC
         if (email.isEmpty() || !isValidEmail(email)) {
             tl_email.setError(getString(R.string.err_email));
             requestFocus(et_email);
+            et_email.setError(null);
             return false;
         } else {
             tl_email.setErrorEnabled(false);
@@ -862,6 +871,7 @@ public class BusinessAddAdvertized extends AppCompatActivity implements View.OnC
         if (mobile.isEmpty() || mobile.length() < 10) {
             tl_mobile.setError(getString(R.string.err_mobile));
             requestFocus(et_mobile);
+            et_mobile.setError(null);
             return false;
         } else {
             tl_mobile.setErrorEnabled(false);
@@ -870,43 +880,13 @@ public class BusinessAddAdvertized extends AppCompatActivity implements View.OnC
         return true;
     }
 
-
-
-
-    /*private boolean validateContactCode() {
-        String contactCode = et_contact_code.getText().toString().trim();
-
-        if (contactCode.isEmpty()) {
-            tl_contact_code.setError(getString(R.string.err_contact_code));
-            requestFocus(et_contact_code);
-            return false;
-        } else {
-            tl_contact_code.setErrorEnabled(false);
-        }
-
-        return true;
-    }
-*/
-   /* private boolean validateContactNo() {
-        String contactNo = et_contact_no.getText().toString().trim();
-
-        if (contactNo.isEmpty()) {
-            tl_contact_no.setError(getString(R.string.err_contact_no));
-            requestFocus(et_contact_no);
-            return false;
-        } else {
-            tl_contact_no.setErrorEnabled(false);
-        }
-
-        return true;
-    }*/
-
     private boolean validateAddressFirst() {
         String address1 = et_address_one.getText().toString().trim();
 
         if (address1.isEmpty()) {
             tl_address_one.setError(getString(R.string.err_address_one));
             requestFocus(et_address_one);
+            et_address_one.setError(null);
             return false;
         } else {
             tl_address_one.setErrorEnabled(false);

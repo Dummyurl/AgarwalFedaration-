@@ -1,4 +1,10 @@
 <resources>
+
+
+    <!--share pref-->
+    <string name="FCM_PREF">FCM_PREF</string>
+    <string name="FCM_TOKEN">FCM_TOKEN</string>
+    <!---->
     <string name="app_name">Agrawal Fedration</string>
 
     <string name="navigation_drawer_open">Open navigation drawer</string>
@@ -3303,6 +3309,7 @@ First and foremost, I would like to convey my personal thanks to all of you for 
     <string name="userName">Full Name</string>
     <string name="userEmail">Email</string>
     <string name="userPhone">Mobile Number</string>
+    <string name="checkConn">Please Check Internet Connection.</string>
     <string name="AboutUsStatic" formatted="false"> Lorem ipsum dolor sit amet,
         nam te sint accusam vituperata, nisl scaevola has no. Ut feugiat menandri ius, sit an convenire urbanitas. Ius minim principes in, his ex eros pertinacia reformidans. Has te alterum philosophia. Vix ea mucius mediocritatem.
         Summo zril malorum usu eu, ea sit audire aperiam tibique.</string>

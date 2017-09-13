@@ -64,6 +64,7 @@
                         android:layout_weight=".5"
                         android:hint="@string/contact_info_mob_no"
                         android:inputType="number"
+                        android:maxLength="10"
                         />
 
                 </android.support.design.widget.TextInputLayout>
@@ -99,6 +100,7 @@
                         android:layout_weight=".5"
                         android:hint="@string/contact_info_lanline_no"
                         android:inputType="number"
+                        android:maxLength="11"
                         />
                 </android.support.design.widget.TextInputLayout>
             </LinearLayout>

@@ -1,0 +1,54 @@
+
+S"squid:SwitchLastCaseIsDefaultCheck""Add a default case to this switch.(øå´¡ÿÿÿÿÿ
+9squid:S1659"$Declare "userid" on a separate line.(‰Ý•¢
+6squid:S1659"!Declare "otp" on a separate line.(‰Ý•¢
+esquid:S1301"KReplace this "switch" statement by "if" statements to increase readability.(øå´¡ÿÿÿÿÿ
+`squid:CommentedOutCodeLine"<This block of commented-out lines of code should be removed.(†íðô
+esquid:CommentedOutCodeLine"<This block of commented-out lines of code should be removed.(·Ç§üÿÿÿÿ
+esquid:CommentedOutCodeLine"<This block of commented-out lines of code should be removed.(™Å¤Ýúÿÿÿÿ
+esquid:CommentedOutCodeLine"<This block of commented-out lines of code should be removed.(ðç„¾ûÿÿÿÿ
+`squid:CommentedOutCodeLine"<This block of commented-out lines of code should be removed.(¬©ÉÓ
+`squid:CommentedOutCodeLine"<This block of commented-out lines of code should be removed.(´øðØ
+`squid:CommentedOutCodeLine"<This block of commented-out lines of code should be removed.(Ž®ƒ÷
+`squid:CommentedOutCodeLine"<This block of commented-out lines of code should be removed.(Ž®ƒ÷
+esquid:CommentedOutCodeLine"<This block of commented-out lines of code should be removed.(éØ»Úûÿÿÿÿ
+esquid:CommentedOutCodeLine"<This block of commented-out lines of code should be removed.(éØ»Úûÿÿÿÿ
+esquid:CommentedOutCodeLine"<This block of commented-out lines of code should be removed.(éØ»Úûÿÿÿÿ
+esquid:CommentedOutCodeLine"<This block of commented-out lines of code should be removed.(éØ»Úûÿÿÿÿ
+esquid:CommentedOutCodeLine"<This block of commented-out lines of code should be removed.(øõÀýÿÿÿÿ
+esquid:CommentedOutCodeLine"<This block of commented-out lines of code should be removed.(ëÕ°Ýþÿÿÿÿ
+esquid:CommentedOutCodeLine"<This block of commented-out lines of code should be removed.(·Ç§üÿÿÿÿ
+esquid:CommentedOutCodeLine"<This block of commented-out lines of code should be removed.(éØ»Úûÿÿÿÿ
+`squid:CommentedOutCodeLine"<This block of commented-out lines of code should be removed.(àí«ù
+_squid:CommentedOutCodeLine"<This block of commented-out lines of code should be removed.(ÖÅ`
+_squid:CommentedOutCodeLine"<This block of commented-out lines of code should be removed.(â†Å
+esquid:CommentedOutCodeLine"<This block of commented-out lines of code should be removed.(éØ»Úûÿÿÿÿ
+`squid:CommentedOutCodeLine"<This block of commented-out lines of code should be removed.(ŠíðÈ
+esquid:CommentedOutCodeLine"<This block of commented-out lines of code should be removed.(ˆì‰ùÿÿÿÿ
+`squid:CommentedOutCodeLine"<This block of commented-out lines of code should be removed.(´øðØ
+`squid:CommentedOutCodeLine"<This block of commented-out lines of code should be removed.(Ž®ƒ÷
+`squid:CommentedOutCodeLine"<This block of commented-out lines of code should be removed.(Ž®ƒ÷
+`squid:CommentedOutCodeLine"<This block of commented-out lines of code should be removed.(×ƒ«€
+esquid:CommentedOutCodeLine"<This block of commented-out lines of code should be removed.(éØ»Úûÿÿÿÿ
+esquid:CommentedOutCodeLine"<This block of commented-out lines of code should be removed.(éØ»Úûÿÿÿÿ
+esquid:CommentedOutCodeLine"<This block of commented-out lines of code should be removed.(–¹ëúÿÿÿÿ
+esquid:CommentedOutCodeLine"<This block of commented-out lines of code should be removed.(öš üûÿÿÿÿ
+`squid:CommentedOutCodeLine"<This block of commented-out lines of code should be removed.(û¼ö·
+esquid:CommentedOutCodeLine"<This block of commented-out lines of code should be removed.(¦Šú®üÿÿÿÿ
+`squid:CommentedOutCodeLine"<This block of commented-out lines of code should be removed.(Ž®ƒ÷
+_squid:CommentedOutCodeLine"<This block of commented-out lines of code should be removed.(‡ôÊ6
+`squid:CommentedOutCodeLine"<This block of commented-out lines of code should be removed.(Ž®ƒ÷
+`squid:CommentedOutCodeLine"<This block of commented-out lines of code should be removed.(žØ»å
+esquid:CommentedOutCodeLine"<This block of commented-out lines of code should be removed.(éØ»Úûÿÿÿÿ
+esquid:CommentedOutCodeLine"<This block of commented-out lines of code should be removed.(éØ»Úûÿÿÿÿ
+esquid:CommentedOutCodeLine"<This block of commented-out lines of code should be removed.(ü ¼ùüÿÿÿÿ
+esquid:CommentedOutCodeLine"<This block of commented-out lines of code should be removed.(Í÷†Ãúÿÿÿÿ
+`squid:CommentedOutCodeLine"<This block of commented-out lines of code should be removed.(àí«ù
+esquid:CommentedOutCodeLine"<This block of commented-out lines of code should be removed.(™²úÓþÿÿÿÿ
+esquid:CommentedOutCodeLine"<This block of commented-out lines of code should be removed.(éØ»Úûÿÿÿÿ
+esquid:CommentedOutCodeLine"<This block of commented-out lines of code should be removed.(éØ»Úûÿÿÿÿ
+gsquid:S00117"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(œþÂ™
+msquid:S00120"WRename this package name to match the regular expression '^[a-z]+(\.[a-z][a-z0-9]*)*$'.(Ÿ˜˜
+‡squid:UselessImportCheck"`Remove this unused import 'com.LeelaGroup.AgrawalFedration.Service.Medical.ServiceAPIEducation'.(¹ÞéÑýÿÿÿÿ
+Tsquid:S1161":Add the "@Override" annotation above this method signature(ž¨Œþÿÿÿÿ
+dsquid:MaximumInheritanceDepth"=This class has 11 parents which is greater than 5 authorized.(ñ‹ÈŠ

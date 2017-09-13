@@ -1,0 +1,78 @@
+
+S"squid:SwitchLastCaseIsDefaultCheck""Add a default case to this switch.(øå´¡ÿÿÿÿÿ
+=squid:S1659"(Declare "etLandline" on a separate line.(ë®Õ
+:squid:S1659"%Declare "etEmail" on a separate line.(ë®Õ
+<squid:S1659"'Declare "etAddress" on a separate line.(ë®Õ
+8squid:S1659"#Declare "etPin" on a separate line.(ë®Õ
+=squid:S1659"(Declare "mreg_fname" on a separate line.(ÛÖÂï
+=squid:S1659"(Declare "mreg_mname" on a separate line.(ÛÖÂï
+=squid:S1659"(Declare "mreg_lname" on a separate line.(ÛÖÂï
+Csquid:S1659".Declare "mreg_birth_place" on a separate line.(ÛÖÂï
+Bsquid:S1659"-Declare "mreg_birth_time" on a separate line.(ÛÖÂï
+Dsquid:S1659"/Declare "mreg_native_place" on a separate line.(ÛÖÂï
+;squid:S1659"&Declare "mreg_dob" on a separate line.(ÛÖÂï
+;squid:S1659"&Declare "mreg_age" on a separate line.(ÛÖÂï
+Fsquid:S1659"1Declare "mreg_marital_status" on a separate line.(ÛÖÂï
+>squid:S1659")Declare "mreg_gender" on a separate line.(ÛÖÂï
+@squid:S1659"+Declare "mreg_no_child" on a separate line.(ÛÖÂï
+Jsquid:S1659"5Declare "mreg_child_leave_status" on a separate line.(ÛÖÂï
+Esquid:S1659"0Declare "mreg_mother_tongue" on a separate line.(ÛÖÂï
+@squid:S1659"+Declare "mreg_about_me" on a separate line.(ÛÖÂï
+Esquid:S1659"+Declare "mat_reg_caste" on a separate line.(åùÀéøÿÿÿÿ
+Hsquid:S1659".Declare "mat_reg_subcaste" on a separate line.(åùÀéøÿÿÿÿ
+Esquid:S1659"+Declare "mreg_landline" on a separate line.(ùë›ƒÿÿÿÿÿ
+Bsquid:S1659"(Declare "mreg_phone" on a separate line.(ùë›ƒÿÿÿÿÿ
+Bsquid:S1659"(Declare "mreg_email" on a separate line.(ùë›ƒÿÿÿÿÿ
+Asquid:S1659"'Declare "mreg_addr" on a separate line.(ùë›ƒÿÿÿÿÿ
+Dsquid:S1659"*Declare "mreg_country" on a separate line.(ùë›ƒÿÿÿÿÿ
+Bsquid:S1659"(Declare "mreg_state" on a separate line.(ùë›ƒÿÿÿÿÿ
+Asquid:S1659"'Declare "mreg_city" on a separate line.(ùë›ƒÿÿÿÿÿ
+Dsquid:S1659"*Declare "mreg_pincode" on a separate line.(ùë›ƒÿÿÿÿÿ
+Isquid:S1659"/Declare "mreg_resid_status" on a separate line.(ùë›ƒÿÿÿÿÿ
+8squid:S1659"$Declare "etCity" on a separate line.(»¼çN
+:squid:S1659"&Declare "sprState" on a separate line.(»¼çN
+asquid:S1192"GDefine a constant instead of duplicating this literal "mat_id" 3 times.(ã’ÂÌşÿÿÿÿ
+Msquid:S1068"3Remove this unused "gestureDetector" private field.(’Œ¸Öıÿÿÿÿ
+ssquid:S2293"YReplace the type specification in this constructor call with the diamond operator ("<>").(üü¾éúÿÿÿÿ
+ssquid:S2293"YReplace the type specification in this constructor call with the diamond operator ("<>").(±°¤°ûÿÿÿÿ
+ssquid:S2293"YReplace the type specification in this constructor call with the diamond operator ("<>").(ÁŒçöşÿÿÿÿ
+Isquid:S3985"4Remove this unused private "SingleTapConfirm" class.(ÒËšì
+esquid:S1301"KReplace this "switch" statement by "if" statements to increase readability.(øå´¡ÿÿÿÿÿ
+`squid:CommentedOutCodeLine"<This block of commented-out lines of code should be removed.(Ú¶Š
+`squid:CommentedOutCodeLine"<This block of commented-out lines of code should be removed.(Ğ÷Åº
+esquid:CommentedOutCodeLine"<This block of commented-out lines of code should be removed.(Í¢ª˜øÿÿÿÿ
+esquid:CommentedOutCodeLine"<This block of commented-out lines of code should be removed.(Àµ®ãüÿÿÿÿ
+[squid:S1126"AReplace this if-then-else statement by a single return statement.(ı”¿—şÿÿÿÿ
+<squid:S1172"(Remove this unused method parameter "v".(Ù‡Ö
+=squid:S1172"(Remove this unused method parameter "v".(ßñŠ
+hsquid:S00116"RRename this field "mreg_am" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÛÖÂï
+ksquid:S00116"URename this field "mreg_fname" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÛÖÂï
+ksquid:S00116"URename this field "mreg_mname" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÛÖÂï
+ksquid:S00116"URename this field "mreg_lname" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÛÖÂï
+qsquid:S00116"[Rename this field "mreg_birth_place" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÛÖÂï
+psquid:S00116"ZRename this field "mreg_birth_time" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÛÖÂï
+rsquid:S00116"\Rename this field "mreg_native_place" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÛÖÂï
+isquid:S00116"SRename this field "mreg_dob" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÛÖÂï
+isquid:S00116"SRename this field "mreg_age" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÛÖÂï
+tsquid:S00116"^Rename this field "mreg_marital_status" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÛÖÂï
+lsquid:S00116"VRename this field "mreg_gender" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÛÖÂï
+nsquid:S00116"XRename this field "mreg_no_child" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÛÖÂï
+xsquid:S00116"bRename this field "mreg_child_leave_status" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÛÖÂï
+ssquid:S00116"]Rename this field "mreg_mother_tongue" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÛÖÂï
+nsquid:S00116"XRename this field "mreg_about_me" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÛÖÂï
+vsquid:S00116"[Rename this field "mat_reg_religion" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(åùÀéøÿÿÿÿ
+ssquid:S00116"XRename this field "mat_reg_caste" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(åùÀéøÿÿÿÿ
+vsquid:S00116"[Rename this field "mat_reg_subcaste" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(åùÀéøÿÿÿÿ
+msquid:S00116"RRename this field "Matsess" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ùë›ƒÿÿÿÿÿ
+ssquid:S00116"XRename this field "mreg_landline" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ùë›ƒÿÿÿÿÿ
+psquid:S00116"URename this field "mreg_phone" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ùë›ƒÿÿÿÿÿ
+psquid:S00116"URename this field "mreg_email" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ùë›ƒÿÿÿÿÿ
+osquid:S00116"TRename this field "mreg_addr" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ùë›ƒÿÿÿÿÿ
+rsquid:S00116"WRename this field "mreg_country" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ùë›ƒÿÿÿÿÿ
+psquid:S00116"URename this field "mreg_state" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ùë›ƒÿÿÿÿÿ
+osquid:S00116"TRename this field "mreg_city" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ùë›ƒÿÿÿÿÿ
+rsquid:S00116"WRename this field "mreg_pincode" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ùë›ƒÿÿÿÿÿ
+wsquid:S00116"\Rename this field "mreg_resid_status" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ùë›ƒÿÿÿÿÿ
+lsquid:S00116"QRename this field "mat_id" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(è–ñèûÿÿÿÿ
+msquid:S00120"WRename this package name to match the regular expression '^[a-z]+(\.[a-z][a-z0-9]*)*$'.(ëÃ•é
+dsquid:MaximumInheritanceDepth"=This class has 11 parents which is greater than 5 authorized.(«ÃÜ

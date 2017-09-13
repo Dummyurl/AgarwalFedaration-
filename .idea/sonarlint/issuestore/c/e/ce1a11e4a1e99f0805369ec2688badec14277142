@@ -1,0 +1,8 @@
+
+lsquid:S00117"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(üðŒÜøÿÿÿÿ
+lsquid:S00117"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ç£Óðÿÿÿÿÿ
+msquid:S00120"WRename this package name to match the regular expression '^[a-z]+(\.[a-z][a-z0-9]*)*$'.(Ÿ˜˜
+isquid:MaximumInheritanceDepth"=This class has 11 parents which is greater than 5 authorized.(ÑÑ¿„üÿÿÿÿ
+fsquid:UselessImportCheck">Remove this unused import 'android.support.v7.widget.Toolbar'.(à½£8ÀÏ„µæ+
+Tsquid:UselessImportCheck"3Remove this unused import 'android.content.Intent'.(³ð‹G
+{squid:UselessImportCheck"TRemove this unused import 'com.LeelaGroup.AgrawalFedration.business.Login_Business'.(Ú¼ßÎüÿÿÿÿ

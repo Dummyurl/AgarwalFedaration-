@@ -1,8 +1,8 @@
 <component name="libraryTable">
   <library name="fillableloaders-1.02">
     <CLASSES>
-      <root url="jar://$USER_HOME$/.android/build-cache/af9aee31aa26b9960dbc0d2095b91f323ae1aa9b/output/jars/classes.jar!/" />
-      <root url="file://$USER_HOME$/.android/build-cache/af9aee31aa26b9960dbc0d2095b91f323ae1aa9b/output/res" />
+      <root url="file://$USER_HOME$/.android/build-cache/539a29dedc9d0e705b5c5e73b0098dc99e601efd/output/res" />
+      <root url="jar://$USER_HOME$/.android/build-cache/539a29dedc9d0e705b5c5e73b0098dc99e601efd/output/jars/classes.jar!/" />
     </CLASSES>
     <JAVADOC />
     <SOURCES>

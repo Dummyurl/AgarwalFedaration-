@@ -17,6 +17,7 @@ import android.provider.DocumentsContract;
 import android.provider.MediaStore;
 import android.support.annotation.RequiresApi;
 import android.support.v4.content.ContextCompat;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.text.format.DateFormat;
@@ -412,18 +413,22 @@ public class FormBasicDetailsActivity extends AppCompatActivity {
         }
         etCast.setError(null);
 
-        final String subcast = etSubCast.getText().toString();
+       /* final String subcast = etSubCast.getText().toString();
         if (!validator.isValidName(subcast)) {
             etSubCast.requestFocus();
             etSubCast.setError("Please Select SubCast");
             return false;
         }
-        etCast.setError(null);
+        etCast.setError(null);*/
 
 
         if (!isImageAdded) {
             browseImage.requestFocus();
-            Toast.makeText(this, "You have not Pick an Image", Toast.LENGTH_SHORT).show();
+            AlertDialog.Builder aleBuilder=new AlertDialog.Builder(FormBasicDetailsActivity.this);
+            aleBuilder.setMessage("Please Select Profile Image");
+            aleBuilder.setTitle("Alert");
+            aleBuilder.show();
+           // Toast.makeText(this, "You have not Pick an Image", Toast.LENGTH_SHORT).show();
             return false;
         }
 

@@ -38,6 +38,10 @@ public class Business_Medical_Session {
     // Email address (make variable public to access from outside)
     public static final String KEY_Email = "email";
 
+    public static final String KEY_Name = "name";
+
+    public static final String Key_Token = "token";
+
 
 
 
@@ -49,7 +53,7 @@ public class Business_Medical_Session {
     }
 
     //Create login session
-    public void createUserLoginSession(String id, String email) {
+    public void createUserLoginSession(String id, String email,String fname) {
         // Storing login value as TRUE
         editor.putBoolean(IS_USER_LOGIN, true);
 
@@ -59,6 +63,8 @@ public class Business_Medical_Session {
         // Storing email in pref
         editor.putString(KEY_Email, email);
 
+        //Storing fname in pref
+        editor.putString(KEY_Name, fname);
 
         // commit changes
         editor.commit();
@@ -104,6 +110,12 @@ public class Business_Medical_Session {
 
         // user email id
         user.put(KEY_Email, pref.getString(KEY_Email, null));
+
+        // user fname
+        user.put(KEY_Name, pref.getString(KEY_Name, null));
+
+
+        user.put(Key_Token, pref.getString(Key_Token, null));
 
 
         // return user
@@ -175,6 +187,14 @@ public class Business_Medical_Session {
         else{
             return false;
         }
+    }
+
+
+    public void insertToken(String token) {
+        // Storing name in pref
+        editor.putString(Key_Token, token);
+
+        editor.commit();
     }
 
 }

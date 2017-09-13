@@ -1,0 +1,41 @@
+
+<squid:S1659""Declare "sess" on a separate line.(é³ğÏıÿÿÿÿ
+=squid:S1659")Declare "d_per_lname" on a separate line.(´£àO
+;squid:S1659"'Declare "d_per_dob" on a separate line.(´£àO
+Bsquid:S1659".Declare "d_per_fathername" on a separate line.(´£àO
+Bsquid:S1659".Declare "d_per_Mothername" on a separate line.(´£àO
+>squid:S1659"*Declare "d_per_gender" on a separate line.(´£àO
+>squid:S1659"*Declare "d_per_state1" on a separate line.(´£àO
+=squid:S1659")Declare "d_per_city1" on a separate line.(´£àO
+@squid:S1659",Declare "d_per_address1" on a separate line.(´£àO
+@squid:S1659",Declare "d_per_pincode1" on a separate line.(´£àO
+\squid:S1192"GDefine a constant instead of duplicating this literal "myname" 4 times.(š“çü
+esquid:CommentedOutCodeLine"<This block of commented-out lines of code should be removed.(âÉ ›úÿÿÿÿ
+`squid:CommentedOutCodeLine"<This block of commented-out lines of code should be removed.( †úß
+`squid:CommentedOutCodeLine"<This block of commented-out lines of code should be removed.(½¿Šá
+`squid:CommentedOutCodeLine"<This block of commented-out lines of code should be removed.(èü„†
+`squid:CommentedOutCodeLine"<This block of commented-out lines of code should be removed.(”şïÜ
+¡squid:S2681"†This line will not be executed conditionally; only the first line of this 4-line block will be. The rest will execute unconditionally.(×··Ñüÿÿÿÿ
+@squid:S1481"&Remove this unused "b" local variable.(çö¦†úÿÿÿÿ
+?squid:S00108")Either remove or fill this block of code.(”ı¾
+Osquid:S1854"5Remove this useless assignment to local variable "b".(çö¦†úÿÿÿÿ
+gsquid:S00116"RRename this field "d_fname" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(´£àO
+ksquid:S00116"VRename this field "d_per_lname" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(´£àO
+isquid:S00116"TRename this field "d_per_dob" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(´£àO
+psquid:S00116"[Rename this field "d_per_fathername" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(´£àO
+psquid:S00116"[Rename this field "d_per_Mothername" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(´£àO
+lsquid:S00116"WRename this field "d_per_gender" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(´£àO
+lsquid:S00116"WRename this field "d_per_state1" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(´£àO
+ksquid:S00116"VRename this field "d_per_city1" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(´£àO
+nsquid:S00116"YRename this field "d_per_address1" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(´£àO
+nsquid:S00116"YRename this field "d_per_pincode1" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(´£àO
+fsquid:S00117"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ğŠï_
+gsquid:S00117"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¸ı·ò
+lsquid:S00117"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ç°Ğæıÿÿÿÿ
+lsquid:S00117"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(øÇõ¢úÿÿÿÿ
+gsquid:S00117"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(³Å¼·
+gsquid:S00117"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(©ø·›
+rsquid:S00120"WRename this package name to match the regular expression '^[a-z]+(\.[a-z][a-z0-9]*)*$'.(”º£¼şÿÿÿÿ
+Rsquid:UselessImportCheck"+Remove this unused import 'java.util.List'.(Õë±Äøÿÿÿÿ
+tsquid:UselessImportCheck"MRemove this unused import 'com.LeelaGroup.AgrawalFedration.MatrimonySession'.(•¯Ù’úÿÿÿÿ
+dsquid:MaximumInheritanceDepth"=This class has 11 parents which is greater than 5 authorized.(ÅÔ§

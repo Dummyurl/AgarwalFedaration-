@@ -1,5 +1,7 @@
 package com.LeelaGroup.AgrawalFedration.Service.Medical;
 
+import com.LeelaGroup.AgrawalFedration.Business_Pojo.ProfileImageFetchPojo;
+import com.LeelaGroup.AgrawalFedration.Business_Pojo.ProfileImagePojo;
 import com.LeelaGroup.AgrawalFedration.ForgotPasswordPojo;
 import com.LeelaGroup.AgrawalFedration.Business_Pojo.BusinessCardPojo;
 import com.LeelaGroup.AgrawalFedration.Business_Pojo.BusinessGetCategoryDataPOJO;
@@ -11,8 +13,11 @@ import com.LeelaGroup.AgrawalFedration.Business_Pojo.Business_ViewFull_Add_POJO;
 import com.LeelaGroup.AgrawalFedration.Business_Pojo.C_S_C_Pojo;
 import com.LeelaGroup.AgrawalFedration.Business_Pojo.FranchiseeRegPojo;
 import com.LeelaGroup.AgrawalFedration.Business_Pojo.My_Add_Card_Pojo;
+import com.LeelaGroup.AgrawalFedration.NotificationPojo;
 import com.LeelaGroup.AgrawalFedration.ResetPasswordPojo;
+import com.LeelaGroup.AgrawalFedration.notification.NotifyPojo;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import okhttp3.MultipartBody;
@@ -135,4 +140,20 @@ public interface Business_ServiceAPI {
     @FormUrlEncoded
     @POST("Business/resetpassword.php")
     Call<ResetPasswordPojo> resetPassword(@Field("user_id")String userid, @Field("user_pwd")String pass);
+
+    @Multipart
+    @POST("inserOrUpdateProPic.php")
+    Call<ProfileImagePojo> setProfileImage(@Part MultipartBody.Part fileToUpload, @Part("userid")RequestBody id);
+
+    @FormUrlEncoded
+    @POST("fetchProPic.php")
+    Call<ProfileImageFetchPojo> getProfilePic(@Field("userid") String uid);
+
+    @FormUrlEncoded
+    @POST("pushNotification/fcm_insert.php")
+    Call<NotificationPojo> updateToken(@Field("user_id") String user_id,@Field("fcm_token") String fcm_token);
+
+    @FormUrlEncoded
+    @POST("pushNotification/getNotification.php")
+    Call<ArrayList<NotifyPojo>> getNotification(@Field("user_id") String user_id);
 }

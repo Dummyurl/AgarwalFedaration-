@@ -293,7 +293,8 @@ public class MatrimonyActivity extends AppCompatActivity {
 
             @Override
             public void onFailure(Call<List<SussessStoriesPojo>> call, Throwable t) {
-                Toast.makeText(MatrimonyActivity.this, t.getMessage(), Toast.LENGTH_LONG).show();            }
+                //Toast.makeText(MatrimonyActivity.this, t.getMessage(), Toast.LENGTH_LONG).show();
+            }
         });
     }
 

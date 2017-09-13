@@ -2,6 +2,7 @@ package com.LeelaGroup.AgrawalFedration.business;
 
 import android.app.ProgressDialog;
 import android.os.Bundle;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -74,9 +75,19 @@ public class Business_My_Add extends AppCompatActivity {
             public void onResponse(Call<List<My_Add_Card_Pojo>> call, Response<List<My_Add_Card_Pojo>> response) {
                 if (response.isSuccessful()) {
                     arrayList = (ArrayList<My_Add_Card_Pojo>) response.body();
-                    adapter = new Business_My_Add_Adapter(arrayList, Business_My_Add.this);
-                    recyclerView.setAdapter(adapter);
-                    //Toast.makeText(Business_My_Add.this, "success", Toast.LENGTH_SHORT).show();
+                    if (arrayList.isEmpty())
+                    {
+                        AlertDialog.Builder builder=new AlertDialog.Builder(Business_My_Add.this);
+                        builder.setTitle("Message");
+                        builder.setMessage("No Result Found");
+                        builder.show();
+
+                    }else {
+
+                        adapter = new Business_My_Add_Adapter(arrayList, Business_My_Add.this);
+                        recyclerView.setAdapter(adapter);
+                        //Toast.makeText(Business_My_Add.this, "success", Toast.LENGTH_SHORT).show();
+                    }
                 }
             }
 

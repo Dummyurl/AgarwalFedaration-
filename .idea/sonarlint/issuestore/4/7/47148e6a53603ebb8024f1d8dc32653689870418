@@ -1,0 +1,10 @@
+
+S"squid:SwitchLastCaseIsDefaultCheck""Add a default case to this switch.(øå´¡ÿÿÿÿÿ
+9squid:S1659"$Declare "userid" on a separate line.(×è§Õ
+6squid:S1659"!Declare "otp" on a separate line.(×è§Õ
+esquid:S1301"KReplace this "switch" statement by "if" statements to increase readability.(øå´¡ÿÿÿÿÿ
+esquid:CommentedOutCodeLine"<This block of commented-out lines of code should be removed.(™Å¤Ýúÿÿÿÿ
+?squid:S00108")Either remove or fill this block of code.(å¥ž‡
+msquid:S00120"WRename this package name to match the regular expression '^[a-z]+(\.[a-z][a-z0-9]*)*$'.(Ÿ˜˜
+Tsquid:S1161":Add the "@Override" annotation above this method signature(ž¨Œþÿÿÿÿ
+dsquid:MaximumInheritanceDepth"=This class has 11 parents which is greater than 5 authorized.( “‡¿

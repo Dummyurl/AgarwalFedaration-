@@ -1,0 +1,48 @@
+
+7squid:S1659""Declare "cast" on a separate line.(ÒÉ¢
+Asquid:S1659"'Declare "mat_fname" on a separate line.(”“­ùÿÿÿÿ
+Asquid:S1659"'Declare "mat_lname" on a separate line.(”“­ùÿÿÿÿ
+>squid:S1659"$Declare "f_city" on a separate line.(£“îªûÿÿÿÿ
+>squid:S1659"$Declare "f_cast" on a separate line.(£“îªûÿÿÿÿ
+:squid:S1659"%Declare "btnNext" on a separate line.(ç°žÎ
+asquid:S1192"GDefine a constant instead of duplicating this literal "mat_id" 4 times.(ã’ÂÌþÿÿÿÿ
+nsquid:S2293"YReplace the type specification in this constructor call with the diamond operator ("<>").(õ˜Ðé
+`squid:CommentedOutCodeLine"<This block of commented-out lines of code should be removed.(¼Š÷ˆ
+esquid:CommentedOutCodeLine"<This block of commented-out lines of code should be removed.(Õ†¯øÿÿÿÿ
+`squid:CommentedOutCodeLine"<This block of commented-out lines of code should be removed.(ùêÚ‡
+esquid:CommentedOutCodeLine"<This block of commented-out lines of code should be removed.(´ªÄÐþÿÿÿÿ
+esquid:CommentedOutCodeLine"<This block of commented-out lines of code should be removed.(äÏ¬–úÿÿÿÿ
+esquid:CommentedOutCodeLine"<This block of commented-out lines of code should be removed.(ì¶¶âþÿÿÿÿ
+esquid:CommentedOutCodeLine"<This block of commented-out lines of code should be removed.(Ö¯Ÿûÿÿÿÿ
+esquid:CommentedOutCodeLine"<This block of commented-out lines of code should be removed.(Ãõ…ðýÿÿÿÿ
+esquid:CommentedOutCodeLine"<This block of commented-out lines of code should be removed.(ÕÁšùÿÿÿÿ
+esquid:CommentedOutCodeLine"<This block of commented-out lines of code should be removed.(íåÝ‹øÿÿÿÿ
+esquid:CommentedOutCodeLine"<This block of commented-out lines of code should be removed.(Û§éÍÿÿÿÿÿ
+esquid:CommentedOutCodeLine"<This block of commented-out lines of code should be removed.(–›ù£þÿÿÿÿ
+esquid:CommentedOutCodeLine"<This block of commented-out lines of code should be removed.(¡ÄÜÓüÿÿÿÿ
+esquid:CommentedOutCodeLine"<This block of commented-out lines of code should be removed.(‹þ»¤úÿÿÿÿ
+`squid:CommentedOutCodeLine"<This block of commented-out lines of code should be removed.(›¬¦Ò
+@squid:S1481"&Remove this unused "b" local variable.(»ÑÌ‡ùÿÿÿÿ
+>squid:S1481")Remove this unused "name" local variable.(Šß¼¤
+Esquid:S1481"+Remove this unused "getNme" local variable.(¢Ø„ûÿÿÿÿ
+Bsquid:S1172"(Remove this unused method parameter "v".(ß¨‚¤ÿÿÿÿÿ
+Bsquid:S1172"(Remove this unused method parameter "v".(Ì“áÿÿÿÿÿ
+>squid:S00108")Either remove or fill this block of code.(ÂÓ¤v
+›squid:S1186"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(Éø­±úÿÿÿÿ
+Msquid:S1854"8Remove this useless assignment to local variable "name".(Šß¼¤
+Osquid:S1854"5Remove this useless assignment to local variable "b".(»ÑÌ‡ùÿÿÿÿ
+Tsquid:S1854":Remove this useless assignment to local variable "getNme".(¢Ø„ûÿÿÿÿ
+lsquid:S00116"QRename this field "mat_id" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(”“­ùÿÿÿÿ
+osquid:S00116"TRename this field "mat_fname" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(”“­ùÿÿÿÿ
+osquid:S00116"TRename this field "mat_lname" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(”“­ùÿÿÿÿ
+rsquid:S00116"WRename this field "f_lookingFor" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(£“îªûÿÿÿÿ
+lsquid:S00116"QRename this field "f_city" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(£“îªûÿÿÿÿ
+lsquid:S00116"QRename this field "f_cast" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(£“îªûÿÿÿÿ
+lsquid:S00117"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(üðŒÜøÿÿÿÿ
+msquid:S00120"WRename this package name to match the regular expression '^[a-z]+(\.[a-z][a-z0-9]*)*$'.(ëÃ•é
+`squid:UselessImportCheck">Remove this unused import 'android.support.v4.view.ViewPager'.(«˜‘’
+Ssquid:UselessImportCheck",Remove this unused import 'java.util.Timer'.(†£ñáÿÿÿÿÿ
+Qsquid:UselessImportCheck"/Remove this unused import 'android.os.Handler'.(ûÛ’¡
+rsquid:UselessImportCheck"PRemove this unused import 'com.LeelaGroup.AgrawalFedration.MainActivityModules'.(Žá€á
+Rsquid:UselessImportCheck"0Remove this unused import 'java.util.TimerTask'.(àÀÇÙ
+csquid:MaximumInheritanceDepth"=This class has 11 parents which is greater than 5 authorized.(¢ˆ‚7

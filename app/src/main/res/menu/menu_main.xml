@@ -34,10 +34,10 @@
         android:id="@+id/action_logout"
         android:title="Logout"
         />
-    <item
+  <!--  <item
         android:id="@+id/main"
         android:title="Logout"
-        />
+        />-->
     <!--   <item
        android:id="@+id/action_editprofile"
        android:title="Edit Profile"

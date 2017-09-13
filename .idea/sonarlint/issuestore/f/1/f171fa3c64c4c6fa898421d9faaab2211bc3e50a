@@ -1,0 +1,11 @@
+
+msquid:S00120"WRename this package name to match the regular expression '^[a-z]+(\.[a-z][a-z0-9]*)*$'.(Ÿ˜˜
+esquid:CommentedOutCodeLine"<This block of commented-out lines of code should be removed.(Àµ®ãüÿÿÿÿ
+esquid:CommentedOutCodeLine"<This block of commented-out lines of code should be removed.(Àµ®ãüÿÿÿÿ
+‚squid:S1319"mThe return type of this method should be an interface such as "Map" rather than the implementation "HashMap".(¶êÖú
+isquid:S00116"SRename this field "_context" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(òº€²
+nsquid:S2293"YReplace the type specification in this constructor call with the diamond operator ("<>").(ºãûó
+lsquid:S00116"WRename this field "PRIVATE_MODE" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Š™èo
+usquid:S00115"ZRename this constant name to match the regular expression '^[A-Z][A-Z0-9]*(_[A-Z0-9]+)*$'.(–­¾Àşÿÿÿÿ
+hsquid:S00101"MRename this class name to match the regular expression '^[A-Z][a-zA-Z0-9]*$'.(¢·ÅÔüÿÿÿÿ
+Vsquid:S1126"AReplace this if-then-else statement by a single return statement.(ôÒĞÕ

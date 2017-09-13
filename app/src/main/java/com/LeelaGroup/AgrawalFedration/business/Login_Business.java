@@ -20,6 +20,7 @@ import android.widget.Toast;
 import com.LeelaGroup.AgrawalFedration.ForgotPasswordAll;
 import com.LeelaGroup.AgrawalFedration.ForgotPasswordPojo;
 import com.LeelaGroup.AgrawalFedration.Business_Pojo.BusinessLoginResponsePOJO;
+import com.LeelaGroup.AgrawalFedration.Home;
 import com.LeelaGroup.AgrawalFedration.MainActivityModules;
 import com.LeelaGroup.AgrawalFedration.ResetPasswordPojo;
 import com.LeelaGroup.AgrawalFedration.Business_Medical_Session;
@@ -76,12 +77,8 @@ public class Login_Business extends AppCompatActivity {
             public void onClick(View v) {
                 if (submitForm()) {
                     login();
-
                 }
-
             }
-
-
         });
 
         signup.setOnClickListener(new View.OnClickListener() {
@@ -99,8 +96,6 @@ public class Login_Business extends AppCompatActivity {
                 finish();
             }
         });
-
-
     }
 
 
@@ -121,12 +116,13 @@ public class Login_Business extends AppCompatActivity {
                     //Toast.makeText(Login_Business.this, pojo.getMessage(), Toast.LENGTH_SHORT).show();
                     String business_reg_id = pojo.getUserId();
                     String business_reg_email = pojo.getUserEmail();
+                    String fname=pojo.getUserFname();
                     //String islogin="true";
-                    business_Medical_session.createUserLoginSession(business_reg_id,business_reg_email);
+                    business_Medical_session.createUserLoginSession(business_reg_id,business_reg_email,fname);
 
                     if (business_Medical_session.isIdStore())
                     {
-                        Intent intent = new Intent(getApplicationContext(), MainActivityModules.class);
+                        Intent intent = new Intent(getApplicationContext(), Home.class);
                         //Intent intent = new Intent(getApplicationContext(), MainActivityModules.class);
                         intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                         intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);

@@ -38,7 +38,7 @@ import retrofit2.Response;
 
 public class Login_Medical extends AppCompatActivity {
 
-    EditText email, password;
+  /*  EditText email, password;
     TextInputLayout layout_email, layout_password;
     Button login;
     TextView signUP,forgotPass;
@@ -125,8 +125,8 @@ public class Login_Medical extends AppCompatActivity {
                     String responseUserEmail = res.getUser_email();
                     medical__session.createUserLoginSession(responseUserId, responseUserEmail);
                     intent = new Intent(getApplicationContext(), Medical_Module.class);
-                    /*intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-                    intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);*/
+                    *//*intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                    intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);*//*
                     startActivity(intent);
                     finish();
                 } else {
@@ -477,5 +477,5 @@ public class Login_Medical extends AppCompatActivity {
 
     }
 
-
+*/
 }

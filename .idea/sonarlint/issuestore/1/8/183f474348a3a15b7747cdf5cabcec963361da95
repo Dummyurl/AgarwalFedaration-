@@ -1,0 +1,30 @@
+
+ysquid:S00116"cRename this field "business_Medical_session" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(­Ëñè
+csquid:S00101"MRename this class name to match the regular expression '^[A-Z][a-zA-Z0-9]*$'.(íßéí
+Zsquid:HiddenFieldCheck":Rename "intent" which hides the field declared at line 43.(»ü©‘
+;squid:S1659"!Declare "otp" on a separate line.(ô—Ú§ûÿÿÿÿ
+`squid:S1301"KReplace this "switch" statement by "if" statements to increase readability.(ºÖ
+fsquid:S00117"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(òÈ”K
+vsquid:UselessImportCheck"ORemove this unused import 'com.LeelaGroup.AgrawalFedration.ForgotPasswordPojo'.(­âòšûÿÿÿÿ
+rsquid:S00120"WRename this package name to match the regular expression '^[a-z]+(\.[a-z][a-z0-9]*)*$'.(šÇä€ûÿÿÿÿ
+\squid:HiddenFieldCheck"<Rename "getEmail" which hides the field declared at line 47.(éÛ°š
+N"squid:SwitchLastCaseIsDefaultCheck""Add a default case to this switch.(ºÖ
+Bsquid:S1659"-Declare "layout_password" on a separate line.(äïô
+Bsquid:S1659"(Declare "forgotPass" on a separate line.(Î’®òùÿÿÿÿ
+`squid:CommentedOutCodeLine"<This block of commented-out lines of code should be removed.(²¿õ‘
+–squid:S1186"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(÷ùäü
+csquid:UselessImportCheck"<Remove this unused import 'android.content.DialogInterface'.(Š­›¨şÿÿÿÿ
+@squid:S1659"&Declare "password" on a separate line.(ÀŠ­ıÿÿÿÿ
+usquid:UselessImportCheck"NRemove this unused import 'com.LeelaGroup.AgrawalFedration.ResetPasswordPojo'.(‹¿Ë‰ùÿÿÿÿ
+›squid:S1186"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(¹ßè†øÿÿÿÿ
+`squid:CommentedOutCodeLine"<This block of commented-out lines of code should be removed.(ÇĞ£Ì
+fsquid:S00117"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(““ú>
+`squid:CommentedOutCodeLine"<This block of commented-out lines of code should be removed.(…²ƒĞ
+ˆsquid:UselessImportCheck"aRemove this unused import 'com.LeelaGroup.AgrawalFedration.matrimony.validation.CustomValidator'.(Ÿ÷÷òúÿÿÿÿ
+`squid:UselessImportCheck"?Remove this unused import 'android.support.v7.app.AlertDialog'.(È­˜ 
+dsquid:MaximumInheritanceDepth"=This class has 11 parents which is greater than 5 authorized.(íßéí
+msquid:S00116"WRename this field "layout_email" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(äïô
+`squid:CommentedOutCodeLine"<This block of commented-out lines of code should be removed.(úÎüâ
+psquid:S00116"ZRename this field "layout_password" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(äïô
+Zsquid:HiddenFieldCheck":Rename "intent" which hides the field declared at line 43.(«¢¨å
+Vsquid:S1126"AReplace this if-then-else statement by a single return statement.(„ûõ‰

@@ -1,0 +1,8 @@
+
+Z"squid:SwitchLastCaseIsDefaultCheck""Add a default case to this switch.(úÍÇøÿÿÿÿ8Äíï©æ+
+lsquid:S1301"KReplace this "switch" statement by "if" statements to increase readability.(úÍÇøÿÿÿÿ8Äíï©æ+
+lsquid:CommentedOutCodeLine"<This block of commented-out lines of code should be removed.(Àµ®ãüÿÿÿÿ8Äíï©æ+
+msquid:S00120"WRename this package name to match the regular expression '^[a-z]+(\.[a-z][a-z0-9]*)*$'.(Ÿ˜˜
+gsquid:CommentedOutCodeLine"<This block of commented-out lines of code should be removed.(Ôö§ó8Äíï©æ+
+ssquid:S00117"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(üğŒÜøÿÿÿÿ8Äíï©æ+
+ssquid:S00117"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(î‡ï³ıÿÿÿÿ8Äíï©æ+

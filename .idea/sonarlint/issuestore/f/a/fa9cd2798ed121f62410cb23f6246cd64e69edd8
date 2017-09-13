@@ -1,0 +1,11 @@
+
+esquid:CommentedOutCodeLine"<This block of commented-out lines of code should be removed.(š“ˆíÿÿÿÿÿ
+msquid:S00120"WRename this package name to match the regular expression '^[a-z]+(\.[a-z][a-z0-9]*)*$'.(Ÿ˜˜
+zsquid:UselessImportCheck"XRemove this unused import 'com.LeelaGroup.AgrawalFedration.matrimony.MatrimonyActivity'.(¹¸«­
+S"squid:SwitchLastCaseIsDefaultCheck""Add a default case to this switch.(¼œóÛüÿÿÿÿ
+osquid:S1488"ZImmediately return this expression instead of assigning it to the temporary variable "vh".(Ö“ƒ³
+‘squid:S1319"wThe type of the "personImages" object should be an interface such as "List" rather than the implementation "ArrayList".(Èãæ­úÿÿÿÿ
+rsquid:UselessImportCheck"PRemove this unused import 'com.LeelaGroup.AgrawalFedration.education.Education'.(£·’
+osquid:S00116"TRename this field "ItemNames" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(×¬¨Êúÿÿÿÿ
+|squid:UselessImportCheck"URemove this unused import 'com.LeelaGroup.AgrawalFedration.matrimony.LoginMatrimony'.(èÍØøùÿÿÿÿ
+{squid:UselessImportCheck"TRemove this unused import 'com.LeelaGroup.AgrawalFedration.business.Login_Business'.(Ú¼ßÎüÿÿÿÿ

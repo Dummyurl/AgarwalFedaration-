@@ -1,0 +1,11 @@
+
+S"squid:SwitchLastCaseIsDefaultCheck""Add a default case to this switch.(øå´¡ÿÿÿÿÿ
+=squid:S1659"#Declare "epass" on a separate line.(şƒÚ»ùÿÿÿÿ
+^squid:HiddenFieldCheck"9Rename "epass" which hides the field declared at line 37.(Á¡Ñüÿÿÿÿ
+|squid:UselessImportCheck"URemove this unused import 'com.LeelaGroup.AgrawalFedration.Service.ServiceMatrimony'.(…˜òšÿÿÿÿÿ
+rsquid:S00120"WRename this package name to match the regular expression '^[a-z]+(\.[a-z][a-z0-9]*)*$'.(”º£¼şÿÿÿÿ
+ƒsquid:UselessImportCheck"\Remove this unused import 'com.LeelaGroup.AgrawalFedration.matrimony.ResetPasswordActivity'.(Ë¾Æ±úÿÿÿÿ
+isquid:MaximumInheritanceDepth"=This class has 11 parents which is greater than 5 authorized.(Ğ ûÿÿÿÿ
+|squid:UselessImportCheck"URemove this unused import 'com.LeelaGroup.AgrawalFedration.matrimony.LoginMatrimony'.(èÍØøùÿÿÿÿ
+Tsquid:S1161":Add the "@Override" annotation above this method signature(¨Œşÿÿÿÿ
+esquid:S1301"KReplace this "switch" statement by "if" statements to increase readability.(øå´¡ÿÿÿÿÿ

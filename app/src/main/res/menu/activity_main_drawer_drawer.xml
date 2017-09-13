@@ -22,7 +22,7 @@
         <item
             android:id="@+id/nav_logout"
             android:icon="@drawable/logoutt"
-            android:title="Tools" />
+            android:title="Logout" />
     </group>
 
 

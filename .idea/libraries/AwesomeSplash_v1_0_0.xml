@@ -1,8 +1,8 @@
 <component name="libraryTable">
   <library name="AwesomeSplash-v1.0.0">
     <CLASSES>
-      <root url="jar://$USER_HOME$/.android/build-cache/8f2a8bbdf6c3429a2952761e00730878ccff8b10/output/jars/classes.jar!/" />
-      <root url="file://$USER_HOME$/.android/build-cache/8f2a8bbdf6c3429a2952761e00730878ccff8b10/output/res" />
+      <root url="file://$USER_HOME$/.android/build-cache/4ad57be3472bfb8f2f03f8158cf429ac23e7d614/output/res" />
+      <root url="jar://$USER_HOME$/.android/build-cache/4ad57be3472bfb8f2f03f8158cf429ac23e7d614/output/jars/classes.jar!/" />
     </CLASSES>
     <JAVADOC />
     <SOURCES>

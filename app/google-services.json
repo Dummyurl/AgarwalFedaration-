@@ -15,6 +15,14 @@
       },
       "oauth_client": [
         {
+          "client_id": "162847528025-b8pnr0u0tgp1fboj06id894dd7efv1bc.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.LeelaGroup.AgrawalFedration",
+            "certificate_hash": "c057c6f71e92e56a7e4794df33f2afe328fa6db9"
+          }
+        },
+        {
           "client_id": "162847528025-bv62tc3dckv5537a0ie8iuncfoimpt0e.apps.googleusercontent.com",
           "client_type": 3
         }
@@ -29,8 +37,13 @@
           "status": 1
         },
         "appinvite_service": {
-          "status": 1,
-          "other_platform_oauth_client": []
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "162847528025-bv62tc3dckv5537a0ie8iuncfoimpt0e.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
         },
         "ads_service": {
           "status": 2

@@ -1,0 +1,28 @@
+
+S"squid:SwitchLastCaseIsDefaultCheck""Add a default case to this switch.(×“¾ñùÿÿÿÿ
+Jsquid:S1659"0Declare "tv_card_contact_no" on a separate line.(¯õÓ×þÿÿÿÿ
+Esquid:S1659"+Declare "tv_card_email" on a separate line.(¯õÓ×þÿÿÿÿ
+Hsquid:S1659".Declare "tv_card_location" on a separate line.(¯õÓ×þÿÿÿÿ
+Hsquid:S1659".Declare "tv_card_view_add" on a separate line.(¯õÓ×þÿÿÿÿ
+Dsquid:S1659"*Declare "tv_card_edit" on a separate line.(¯õÓ×þÿÿÿÿ
+Fsquid:S1659",Declare "tv_card_delete" on a separate line.(¯õÓ×þÿÿÿÿ
+Bsquid:S1199"-Extract this nested code block into a method.(ç¾“ì
+Bsquid:S1199"-Extract this nested code block into a method.(ôÒŽ×
+esquid:S1301"KReplace this "switch" statement by "if" statements to increase readability.(×“¾ñùÿÿÿÿ
+esquid:CommentedOutCodeLine"<This block of commented-out lines of code should be removed.(¡¹šéùÿÿÿÿ
+esquid:CommentedOutCodeLine"<This block of commented-out lines of code should be removed.(ò¯ã°ûÿÿÿÿ
+`squid:CommentedOutCodeLine"<This block of commented-out lines of code should be removed.(ˆ­í¬
+`squid:CommentedOutCodeLine"<This block of commented-out lines of code should be removed.(„àÍú
+‰squid:S1319"tThe type of the "arrayList" object should be an interface such as "List" rather than the implementation "ArrayList".(“éê
+‰squid:S1319"tThe type of the "arrayList" object should be an interface such as "List" rather than the implementation "ArrayList".(˜Äú—
+csquid:S00101"MRename this class name to match the regular expression '^[A-Z][a-zA-Z0-9]*$'.(ƒÛÞá
+vsquid:S00116"[Rename this field "tv_card_add_name" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¯õÓ×þÿÿÿÿ
+xsquid:S00116"]Rename this field "tv_card_contact_no" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¯õÓ×þÿÿÿÿ
+ssquid:S00116"XRename this field "tv_card_email" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¯õÓ×þÿÿÿÿ
+vsquid:S00116"[Rename this field "tv_card_location" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¯õÓ×þÿÿÿÿ
+vsquid:S00116"[Rename this field "tv_card_view_add" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¯õÓ×þÿÿÿÿ
+rsquid:S00116"WRename this field "tv_card_edit" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¯õÓ×þÿÿÿÿ
+tsquid:S00116"YRename this field "tv_card_delete" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¯õÓ×þÿÿÿÿ
+rsquid:S00120"WRename this package name to match the regular expression '^[a-z]+(\.[a-z][a-z0-9]*)*$'.(šÇä€ûÿÿÿÿ
+|squid:UselessImportCheck"[Remove this unused import 'com.LeelaGroup.AgrawalFedration.Business_Pojo.BusinessCardPojo'.(šëÏ
+squid:UselessImportCheck"XRemove this unused import 'com.LeelaGroup.AgrawalFedration.Business_Pojo.BusinessImage'.(û½äÚùÿÿÿÿ

@@ -1,0 +1,9 @@
+
+S"squid:SwitchLastCaseIsDefaultCheck""Add a default case to this switch.(øå´¡ÿÿÿÿÿ
+Esquid:S1068"+Remove this unused "pDialog" private field.(®ÿô´ùÿÿÿÿ
+esquid:S1301"KReplace this "switch" statement by "if" statements to increase readability.(øå´¡ÿÿÿÿÿ
+esquid:CommentedOutCodeLine"<This block of commented-out lines of code should be removed.(¬Þˆûÿÿÿÿ
+hsquid:S00101"MRename this class name to match the regular expression '^[A-Z][a-zA-Z0-9]*$'.(”÷‘³ûÿÿÿÿ
+ysquid:S00116"cRename this field "business_Medical_session" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(­Ëñè
+rsquid:S00120"WRename this package name to match the regular expression '^[a-z]+(\.[a-z][a-z0-9]*)*$'.(šÇä€ûÿÿÿÿ
+isquid:MaximumInheritanceDepth"=This class has 11 parents which is greater than 5 authorized.(”÷‘³ûÿÿÿÿ

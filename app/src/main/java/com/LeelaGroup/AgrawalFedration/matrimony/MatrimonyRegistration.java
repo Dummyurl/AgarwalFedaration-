@@ -24,17 +24,18 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
-public class MatrimonyRegistration extends AppCompatActivity implements View.OnClickListener{
-   EditText editTextfName, editTextEmail,editTextmName,
-           editTextlName, editTextNumber,editTextpassword, editTextconpassword;
+public class MatrimonyRegistration extends AppCompatActivity implements View.OnClickListener {
+    EditText editTextfName, editTextEmail, editTextmName,
+            editTextlName, editTextNumber, editTextpassword, editTextconpassword;
     Button register;
     private ProgressDialog pDialog;
-    String mat_fname,mat_mname,mat_lname,mat_email,mat_phone,mat_gender,mat_pwd;
+    String mat_fname, mat_mname, mat_lname, mat_email, mat_phone, mat_gender, mat_pwd;
     RadioGroup rg;
     RadioButton rb;
     Toolbar toolbar;
 
     private AwesomeValidation awesomeValidation;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -42,60 +43,53 @@ public class MatrimonyRegistration extends AppCompatActivity implements View.OnC
 
         awesomeValidation = new AwesomeValidation(ValidationStyle.BASIC);
 
-        editTextmName=(EditText) findViewById(R.id.midname);
+        editTextmName = (EditText) findViewById(R.id.midname);
         editTextfName = (EditText) findViewById(R.id.firstname);
         editTextlName = (EditText) findViewById(R.id.lastname);
         editTextEmail = (EditText) findViewById(R.id.mail);
         editTextNumber = (EditText) findViewById(R.id.num);
         editTextpassword = (EditText) findViewById(R.id.pass);
         editTextconpassword = (EditText) findViewById(R.id.cnpass);
-        toolbar=(Toolbar)findViewById(R.id.toolbar);
-        register = (Button)findViewById(R.id.register);
+        toolbar = (Toolbar) findViewById(R.id.toolbar);
+        register = (Button) findViewById(R.id.register);
         register.setOnClickListener(this);
 
-        setSupportActionBar(toolbar);
-        setTitle("Register");
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        getSupportActionBar().setDisplayShowHomeEnabled(true);
+        if (toolbar != null) {
+            setSupportActionBar(toolbar);
+            setTitle("Register");
+            getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+            getSupportActionBar().setDisplayShowHomeEnabled(true);
+        }
 
         pDialog = new ProgressDialog(this);
         pDialog.setMessage("Please wait...");
         pDialog.setCancelable(false);
 
     }
-    public void getGender()
-    {
+
+    public void getGender() {
         rg = (RadioGroup) findViewById(R.id.radioGroup);
         int radioButtonId = rg.getCheckedRadioButtonId();
-        rb = (RadioButton)findViewById(radioButtonId);
+        rb = (RadioButton) findViewById(radioButtonId);
     }
-  /*  private void submitForm() {
-        if (awesomeValidation.validate()) {
-            Toast.makeText(this, "Validation Successful", Toast.LENGTH_LONG).show();
 
-            //process the data further
-        }
-    }*/
-  @Override
-  public boolean onSupportNavigateUp() {
-      Intent intent=new Intent(MatrimonyRegistration.this,LoginMatrimony.class);
-      startActivity(intent);
-      finish();
-      return true;
-  }
+    @Override
+    public boolean onSupportNavigateUp() {
+        Intent intent = new Intent(MatrimonyRegistration.this, LoginMatrimony.class);
+        startActivity(intent);
+        finish();
+        return true;
+    }
 
     @Override
     public void onClick(View view) {
         if (view == register) {
-            if(validateFirst())
-            {
+            if (validateFirst()) {
                 setRegistration();
-
             }
-
-
         }
     }
+
     public boolean validateFirst() {
         CustomValidator validator = new CustomValidator();
 
@@ -148,9 +142,8 @@ public class MatrimonyRegistration extends AppCompatActivity implements View.OnC
         }
         editTextpassword.setError(null);
 
-        final  String cnfPass=editTextconpassword.getText().toString().trim();
-        if (!pass.equals(cnfPass))
-        {
+        final String cnfPass = editTextconpassword.getText().toString().trim();
+        if (!pass.equals(cnfPass)) {
             editTextconpassword.requestFocus();
             editTextconpassword.setError("Password Not Matched");
             return false;
@@ -160,35 +153,33 @@ public class MatrimonyRegistration extends AppCompatActivity implements View.OnC
         return true;
     }
 
-    public void setRegistration()
-    {
+    public void setRegistration() {
         showpDialog();
         getGender();
-        mat_fname=editTextfName.getText().toString();
-        mat_mname=editTextmName.getText().toString();
-        mat_lname=editTextlName.getText().toString();
-        mat_email=editTextEmail.getText().toString();
-        mat_phone=editTextNumber.getText().toString();
-        mat_gender=rb.getText().toString();
-        mat_pwd=editTextpassword.getText().toString();
+        mat_fname = editTextfName.getText().toString();
+        mat_mname = editTextmName.getText().toString();
+        mat_lname = editTextlName.getText().toString();
+        mat_email = editTextEmail.getText().toString();
+        mat_phone = editTextNumber.getText().toString();
+        mat_gender = rb.getText().toString();
+        mat_pwd = editTextpassword.getText().toString();
 
-        ServiceMatrimony serviceMatrimony= ApiClient.getRetrofit().create(ServiceMatrimony.class);
-        Call<RegistrationDetails> registrationDetailsCall=serviceMatrimony.setRegDetaild(mat_fname,mat_mname,mat_lname,mat_email,mat_phone,mat_gender,mat_pwd);
+        ServiceMatrimony serviceMatrimony = ApiClient.getRetrofit().create(ServiceMatrimony.class);
+        Call<RegistrationDetails> registrationDetailsCall = serviceMatrimony.setRegDetaild(mat_fname, mat_mname, mat_lname, mat_email, mat_phone, mat_gender, mat_pwd);
 
         registrationDetailsCall.enqueue(new Callback<RegistrationDetails>() {
             @Override
             public void onResponse(Call<RegistrationDetails> call, Response<RegistrationDetails> response) {
                 hidepDialog();
                 Toast.makeText(MatrimonyRegistration.this, "Success", Toast.LENGTH_SHORT).show();
-
-                startActivity(new Intent(MatrimonyRegistration.this,LoginMatrimony.class));
+                startActivity(new Intent(MatrimonyRegistration.this, LoginMatrimony.class));
                 finish();
             }
 
             @Override
             public void onFailure(Call<RegistrationDetails> call, Throwable t) {
                 hidepDialog();
-                Toast.makeText(MatrimonyRegistration.this, t.getMessage(), Toast.LENGTH_SHORT).show();
+                Toast.makeText(MatrimonyRegistration.this, "Please Check Internet Connection", Toast.LENGTH_SHORT).show();
 
             }
         });

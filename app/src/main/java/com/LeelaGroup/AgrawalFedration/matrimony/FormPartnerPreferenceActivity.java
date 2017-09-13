@@ -29,6 +29,7 @@ import com.LeelaGroup.AgrawalFedration.matrimony.models.ImageUploadPojo;
 import com.LeelaGroup.AgrawalFedration.matrimony.validation.CustomValidator;
 
 import java.io.File;
+import java.util.Arrays;
 import java.util.List;
 
 import okhttp3.MediaType;
@@ -442,7 +443,8 @@ public class FormPartnerPreferenceActivity extends AppCompatActivity {
             return false;
         }
         final String country=sprCountry.getText().toString();
-        if(!validator.isValidName(country)){
+        List cnty= Arrays.asList(countryName);
+        if(!cnty.contains(country)){
             sprCountry.requestFocus();
             sprCountry.setError("Please Enter Valid Country");
             return false;
@@ -450,7 +452,8 @@ public class FormPartnerPreferenceActivity extends AppCompatActivity {
         sprCountry.setError(null);
 
         final String state=sprState.getText().toString();
-        if(!validator.isValidName(state)){
+        List st=Arrays.asList(stateName);
+        if(!st.contains(state)){
             sprState.requestFocus();
             sprState.setError("Please Enter Valid State");
             return false;
@@ -458,7 +461,8 @@ public class FormPartnerPreferenceActivity extends AppCompatActivity {
         sprState.setError(null);
 
         final String city=etCity.getText().toString();
-        if(!validator.isValidName(city)){
+        List ct=Arrays.asList(cityName);
+        if(!ct.contains(city)){
             etCity.requestFocus();
             etCity.setError("Please Enter Valid State");
             return false;

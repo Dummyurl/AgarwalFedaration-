@@ -1,0 +1,11 @@
+
+`squid:CommentedOutCodeLine"<This block of commented-out lines of code should be removed.(á¡§Å
+esquid:CommentedOutCodeLine"<This block of commented-out lines of code should be removed.(ž¨Œþÿÿÿÿ
+dsquid:MaximumInheritanceDepth"=This class has 12 parents which is greater than 5 authorized.(×è¶‘
+`squid:CommentedOutCodeLine"<This block of commented-out lines of code should be removed.(¸‹ÇŽ
+_squid:CommentedOutCodeLine"<This block of commented-out lines of code should be removed.(ð½öL
+msquid:S00120"WRename this package name to match the regular expression '^[a-z]+(\.[a-z][a-z0-9]*)*$'.(Ÿ˜˜
+esquid:CommentedOutCodeLine"<This block of commented-out lines of code should be removed.(‘¼›¿þÿÿÿÿ
+Fsquid:S1068"1Remove this unused "IS_USER_LOGIN" private field.(óù¡Î
+isquid:S00116"SRename this field "_context" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(òº€²
+ysquid:S00116"cRename this field "business_medical_session" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¯ò›

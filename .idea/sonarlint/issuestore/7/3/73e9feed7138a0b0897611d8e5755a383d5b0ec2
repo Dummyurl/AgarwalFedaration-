@@ -1,0 +1,41 @@
+
+Rsquid:UnusedPrivateMethod"/Remove this unused private "forgotPass" method.(Ÿç’à
+N"squid:SwitchLastCaseIsDefaultCheck""Add a default case to this switch.(ºÖ
+@squid:S1659"&Declare "password" on a separate line.(ÀŠ­ıÿÿÿÿ
+Bsquid:S1659"-Declare "layout_password" on a separate line.(äïô
+9squid:S1659"$Declare "pd_pwd" on a separate line.(‘ä”Î
+@squid:S1659"&Declare "new_user" on a separate line.(ˆÎ«Èúÿÿÿÿ
+9squid:S1659"$Declare "userid" on a separate line.(›ù¹
+6squid:S1659"!Declare "otp" on a separate line.(›ù¹
+7squid:S1659""Declare "pass" on a separate line.(›ù¹
+`squid:S1301"KReplace this "switch" statement by "if" statements to increase readability.(ºÖ
+esquid:CommentedOutCodeLine"<This block of commented-out lines of code should be removed.(½³ƒùşÿÿÿÿ
+`squid:CommentedOutCodeLine"<This block of commented-out lines of code should be removed.(©ŸÖ½
+`squid:CommentedOutCodeLine"<This block of commented-out lines of code should be removed.(÷Ñ…Ğ
+esquid:CommentedOutCodeLine"<This block of commented-out lines of code should be removed.(çäÛúÿÿÿÿ
+esquid:CommentedOutCodeLine"<This block of commented-out lines of code should be removed.(˜úğ³ÿÿÿÿÿ
+esquid:CommentedOutCodeLine"<This block of commented-out lines of code should be removed.(©®§Şşÿÿÿÿ
+Vsquid:S1126"AReplace this if-then-else statement by a single return statement.(„ûõ‰
+Xsquid:HiddenFieldCheck"9Rename "email" which hides the field declared at line 45.(¸Â¥!
+csquid:S00101"MRename this class name to match the regular expression '^[A-Z][a-zA-Z0-9]*$'.(²ø
+dsquid:S00100"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¸Ğ•Ï
+›squid:S1186"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(¹ßè†øÿÿÿÿ
+–squid:S1186"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(÷ùäü
+msquid:S00116"WRename this field "layout_email" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(äïô
+psquid:S00116"ZRename this field "layout_password" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(äïô
+isquid:S00116"SRename this field "pd_email" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(‘ä”Î
+gsquid:S00116"QRename this field "pd_pwd" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(‘ä”Î
+nsquid:S00116"SRename this field "new_user" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ˆÎ«Èúÿÿÿÿ
+lsquid:S00117"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Ôàúßøÿÿÿÿ
+lsquid:S00117"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(€ò©Óşÿÿÿÿ
+lsquid:S00117"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(‹Ù×øÿÿÿÿ
+gsquid:S00117"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(âşÕ§
+gsquid:S00117"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÑÛù‘
+gsquid:S00117"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(À„Ì­
+rsquid:S00120"WRename this package name to match the regular expression '^[a-z]+(\.[a-z][a-z0-9]*)*$'.(”º£¼şÿÿÿÿ
+{squid:UselessImportCheck"TRemove this unused import 'com.LeelaGroup.AgrawalFedration.business.Login_Business'.(Ú¼ßÎüÿÿÿÿ
+ssquid:UselessImportCheck"RRemove this unused import 'com.LeelaGroup.AgrawalFedration.medical.Login_Medical'.(™˜ã@
+|squid:UselessImportCheck"URemove this unused import 'com.LeelaGroup.AgrawalFedration.matrimony.LoginMatrimony'.(èÍØøùÿÿÿÿ
+squid:UselessImportCheck"]Remove this unused import 'com.LeelaGroup.AgrawalFedration.matrimony.ForgotPasswordActivity'.(ÃË™”
+€squid:UselessImportCheck"^Remove this unused import 'com.LeelaGroup.AgrawalFedration.Service.Medical.MedicalServiceAPI'.(°âŸÜ
+dsquid:MaximumInheritanceDepth"=This class has 11 parents which is greater than 5 authorized.(²ø

@@ -8,6 +8,13 @@
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.INTERNET" />
 
+    <meta-data
+        android:name="com.google.firebase.messaging.default_notification_icon"
+        android:resource="@drawable/logo" />
+    <meta-data
+        android:name="com.google.firebase.messaging.default_notification_color"
+        android:resource="@color/colorAccent" />
+
     <supports-screens
         android:anyDensity="true"
         android:largeScreens="true"
@@ -18,6 +25,7 @@
 
     <application
         android:allowBackup="true"
+        android:debuggable="true"
         android:icon="@drawable/logosplash"
         android:label="@string/app_name"
         android:largeHeap="true"
@@ -32,6 +40,18 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <service android:name=".FCMInstanceIdService">
+            <intent-filter>
+                <action android:name="com.google.firebase.INSTANCE_ID_EVENT" />
+            </intent-filter>
+        </service>
+        <service android:name=".FcmMessagingServices">
+            <intent-filter>
+                <action android:name="com.google.firebase.MESSAGING_EVENT" />
+            </intent-filter>
+        </service>
+
         <!-- <activity android:name=".medical.MainActivityModules"/> -->
         <activity android:name=".MainActivityModules" />
         <activity android:name=".ForgotPasswordAll" />
@@ -48,9 +68,9 @@
         <activity android:name=".medical.Medical_browse" />
         <activity android:name=".medical.Login_Medical" />
         <activity android:name=".medical.Demo" />
-        <activity android:name=".medical.Doctor_fetch" />
-        <activity android:name=".medical.Hospital_fetch" />
-        <activity android:name=".medical.Medical_Fetch" />
+        <!-- <activity android:name=".medical.Doctor_fetch" /> -->
+        <!-- <activity android:name=".medical.Hospital_fetch" /> -->
+        <!-- <activity android:name=".medical.Medical_Fetch" /> -->
         <activity android:name=".medical.TopSearch" />
         <activity android:name=".medical.Medical_Sign_UP" />
         <activity android:name=".medical.Posting_ContactPerson" />
@@ -60,8 +80,10 @@
         <activity android:name=".education.Education" />
         <activity android:name=".education.BestOfLuck" />
         <activity android:name=".education.CET" />
+        <!--
         <activity android:name=".education.Education_Loan_Program" />
         <activity android:name=".education.Seed_Scholarship" />
+        -->
         <activity android:name=".education.Education_Scholarships" />
         <activity android:name=".education.Education_Upload_Doc" />
         <activity android:name=".education.EducationDetails" />
@@ -149,6 +171,14 @@
             android:name=".Home"
             android:label="@string/title_activity_main_drawer"
             android:theme="@style/AppTheme"></activity>
+        <activity android:name=".notification.UserNotification">
+            <intent-filter>
+                <action android:name="com.LeelaGroup.AgrawalFedration_TARGET" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".notification.NotificationViewActivity"></activity>
     </application>
 
 </manifest>

@@ -27,18 +27,6 @@ public class MainActivityModules extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_modules);
-
-
-
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
-
-
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        getSupportActionBar().setDisplayShowHomeEnabled(true);
-
-        setTitle("Home");
-
         RecyclerView recyclerView = (RecyclerView) findViewById(R.id.recyclerView);
         // set a GridLayoutManager with default vertical orientation and 2 number of columns
         GridLayoutManager gridLayoutManager = new GridLayoutManager(getApplicationContext(), 1);

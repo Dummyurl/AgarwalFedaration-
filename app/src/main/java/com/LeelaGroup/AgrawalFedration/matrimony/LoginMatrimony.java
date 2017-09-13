@@ -177,7 +177,7 @@ public class LoginMatrimony extends AppCompatActivity {
                 if (loginModel.getSuccess())
                 {
                     
-                    Toast.makeText(LoginMatrimony.this, loginModel.getMessage(), Toast.LENGTH_SHORT).show();
+                    //Toast.makeText(LoginMatrimony.this, loginModel.getMessage(), Toast.LENGTH_SHORT).show();
                     intent = new Intent(getApplicationContext(), MatrimonyActivity.class);
                     mat_id=loginModel.getMatId();
                     mat_fname=loginModel.getMatFname();
@@ -187,7 +187,7 @@ public class LoginMatrimony extends AppCompatActivity {
                     intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                     intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                     //intent.putExtra("mat_fname",mat_fname);
-                    Toast.makeText(LoginMatrimony.this, loginModel.getMatId(), Toast.LENGTH_SHORT).show();
+                    //Toast.makeText(LoginMatrimony.this, loginModel.getMatId(), Toast.LENGTH_SHORT).show();
                     //startActivity(intent);
                     email.setText("");
                     password.setText("");
@@ -195,14 +195,22 @@ public class LoginMatrimony extends AppCompatActivity {
                     isProfileCreated();
                    // finish();
                 }
-                Toast.makeText(LoginMatrimony.this, loginModel.getMessage(), Toast.LENGTH_SHORT).show();
+                else {
+
+                    AlertDialog.Builder aleBuilder=new AlertDialog.Builder(LoginMatrimony.this);
+                    aleBuilder.setMessage(loginModel.getMessage());
+                    aleBuilder.setTitle("Message");
+                    aleBuilder.show();
+                   // Toast.makeText(LoginMatrimony.this, loginModel.getMessage(), Toast.LENGTH_SHORT).show();
+                }
 
             }
 
             @Override
             public void onFailure(Call<LoginModel> call, Throwable t) {
                 hidepDialog();
-                Toast.makeText(LoginMatrimony.this, t.getMessage(), Toast.LENGTH_LONG).show();
+
+                Toast.makeText(LoginMatrimony.this, "Please Check Internet Connection", Toast.LENGTH_LONG).show();
             }
         });
 
